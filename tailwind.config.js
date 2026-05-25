@@ -2,8 +2,19 @@
 module.exports = {
     darkMode: ["class"],
     content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
+    safelist: ['bg-amber-500', 'text-amber-400'],
   theme: {
   	extend: {
+  		fontFamily: {
+  			'inter-tight': ['Inter Tight', 'sans-serif'],
+  			'playfair': ['Playfair Display', 'serif'],
+  		},
+  		colors: {
+  			obsidian: '#0A0A0C',
+  			honey: '#FFB800',
+  			smoked: '#1A1A1E',
+  			bone: '#F2F2F2',
+  		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
