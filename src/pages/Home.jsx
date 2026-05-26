@@ -5,6 +5,7 @@ import ServicesSection from '../components/ServicesSection';
 import ProcessSection from '../components/ProcessSection';
 import CTASection from '../components/CTASection';
 import ReviewsSection from '../components/ReviewsSection';
+import StoriesSection from '../components/StoriesSection';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <StorySection />
       <ServicesSection />
       <ProcessSection />
+      <StoriesSection />
       <ReviewsSection />
       <CTASection />
     </div>
