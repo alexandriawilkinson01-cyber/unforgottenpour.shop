@@ -10,6 +10,8 @@ import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
 import Order from './pages/Order';
 import Success from './pages/Success';
+import Memorial from './pages/Memorial';
+import Pricing from './pages/Pricing';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -41,6 +43,8 @@ const AuthenticatedApp = () => {
       <Route path="/portfolio" element={<Portfolio />} />
       <Route path="/order" element={<Order />} />
       <Route path="/success" element={<Success />} />
+      <Route path="/memorial" element={<Memorial />} />
+      <Route path="/pricing" element={<Pricing />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

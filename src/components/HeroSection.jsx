@@ -1,83 +1,39 @@
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-const HERO_IMG = 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/d40ae2606_generated_4eae1c8b.png';
+const HERO_IMG = 'https://pub-629428d185ca4960a0a73c850d32294b.r2.dev/company_126549/images/c74e8c31-759e-4744-80ef-b6034f08f266.png';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: '#0A0A0C' }}>
-      {/* Background image */}
-      <div className="absolute inset-0 z-0">
-        <img src={HERO_IMG} alt="Amber stone" className="w-full h-full object-cover opacity-40" style={{ objectPosition: '60% center' }} />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(10,10,12,0.97) 0%, rgba(10,10,12,0.6) 50%, rgba(10,10,12,0.2) 100%)' }} />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, #0A0A0C 0%, transparent 30%)' }} />
-      </div>
+    <section style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', background: '#0A0A0C' }}>
+      <img src={HERO_IMG} alt="Preserved floral orb"
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.45 }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,10,12,0.55)' }} />
+      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '200px', background: 'linear-gradient(to top, #0A0A0C, transparent)' }} />
 
-      {/* Ticker strip */}
-      <div className="absolute top-[72px] left-0 right-0 z-10 overflow-hidden border-y border-white/5 py-2.5">
-        <div className="flex animate-pulse gap-12 px-8 text-xs tracking-[0.15em] text-bone/30">
-          <span>PRESERVATION GRADE: AAA</span>
-          <span>•</span>
-          <span>UV-RESISTANT RESIN</span>
-          <span>•</span>
-          <span>SHIPPED NATIONWIDE</span>
-          <span>•</span>
-          <span>HANDCRAFTED IN SPARTANBURG, SC</span>
-          <span>•</span>
-          <span>MUSEUM QUALITY GUARANTEED</span>
+      <div style={{ position: 'relative', zIndex: 10, textAlign: 'center', padding: '0 24px', maxWidth: '800px' }}>
+        <div style={{ display: 'inline-block', border: '1px solid rgba(242,242,242,0.25)', borderRadius: '999px', padding: '8px 20px', fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.7)', marginBottom: '40px' }}>
+          Premium Resin Preservation Studio
+        </div>
+
+        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(48px, 7vw, 88px)', fontWeight: 700, lineHeight: 1.05, color: '#F2F2F2', marginBottom: '28px', letterSpacing: '-0.01em' }}>
+          Some things were never<br />meant to be forgotten.
+        </h1>
+
+        <p style={{ fontSize: '17px', color: 'rgba(242,242,242,0.65)', lineHeight: 1.7, marginBottom: '44px', maxWidth: '540px', margin: '0 auto 44px' }}>
+          AmberVault transforms your most meaningful objects into museum-quality resin art. Wedding bouquets, a parent's watch, baby shoes, military medals. Preserved forever, displayed beautifully.
+        </p>
+
+        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <Link to="/order" style={{ display: 'inline-block', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '14px 32px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none', transition: 'background 0.2s' }}
+            onMouseEnter={e => e.currentTarget.style.background='#b85d1a'} onMouseLeave={e => e.currentTarget.style.background='#C8681E'}>
+            Begin My Order
+          </Link>
+          <Link to="/portfolio" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.08)', color: '#F2F2F2', borderRadius: '999px', padding: '14px 32px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 500, textDecoration: 'none', border: '1px solid rgba(255,255,255,0.15)', transition: 'background 0.2s' }}
+            onMouseEnter={e => e.currentTarget.style.background='rgba(255,255,255,0.14)'} onMouseLeave={e => e.currentTarget.style.background='rgba(255,255,255,0.08)'}>
+            See the Work
+          </Link>
         </div>
       </div>
-
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-8 pt-28">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
-          className="max-w-2xl"
-        >
-          <p className="text-xs tracking-[0.3em] uppercase text-honey mb-8">Premium Resin Preservation Studio</p>
-          <h1 className="font-playfair font-black leading-[0.95] mb-8" style={{ fontSize: 'clamp(56px, 8vw, 100px)', color: '#F2F2F2' }}>
-            Some things<br />
-            <span style={{ color: '#FFB800' }}>were never</span><br />
-            meant to be<br />
-            forgotten.
-          </h1>
-          <p className="text-base text-bone/60 leading-relaxed mb-10 max-w-md">
-            AmberVault transforms your most meaningful objects into museum-quality resin art. Wedding bouquets, a parent's watch, baby shoes, military medals. Preserved forever, displayed beautifully.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Link to="/order"
-              className="inline-flex items-center gap-2 px-8 py-4 text-xs tracking-[0.2em] uppercase font-semibold text-obsidian transition-all duration-300 hover:scale-105"
-              style={{ background: '#FFB800', boxShadow: '0 0 40px rgba(255,184,0,0.3)' }}>
-              Begin My Order
-            </Link>
-            <Link to="/portfolio"
-              className="inline-flex items-center gap-2 px-8 py-4 text-xs tracking-[0.2em] uppercase font-semibold text-bone border border-white/20 hover:border-honey/50 transition-all duration-300">
-              See the Work
-            </Link>
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Vault widget */}
-      <motion.div
-        initial={{ opacity: 0, x: 40 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, delay: 0.5 }}
-        className="absolute bottom-16 right-8 md:right-16 z-10 border border-white/10 p-5 hidden md:block"
-        style={{ background: 'rgba(26,26,30,0.9)', backdropFilter: 'blur(20px)', minWidth: '200px' }}
-      >
-        <p className="text-xs tracking-[0.15em] uppercase text-bone/40 mb-3">Preservation Grade</p>
-        <p className="font-playfair text-3xl font-bold text-honey">AAA</p>
-        <p className="text-xs text-bone/40 mt-1">Museum Standard</p>
-        <div className="mt-3 flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-honey animate-pulse" />
-          <span className="text-xs text-bone/50">Accepting Orders</span>
-        </div>
-      </motion.div>
-
-      <div className="absolute bottom-0 left-0 right-0 h-32 z-10" style={{ background: 'linear-gradient(to top, #0A0A0C, transparent)' }} />
     </section>
   );
 }

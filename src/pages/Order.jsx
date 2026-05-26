@@ -1,198 +1,175 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Check, Lock } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { base44 } from '@/api/base44Client';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 
-const PLANS = [
-  {
-    id: 'memorial',
-    priceId: 'price_1Tau1YBlmDr5Ka7mwfMRYPad',
-    name: 'Memorial Keepsake',
-    price: '$199',
-    purity: 'Standard',
-    inclusion: '12–16 weeks',
-    desc: 'Funeral flowers, ashes, dried botanicals, or small personal mementos.',
-    features: ['UV-resistant resin', 'Documentation photos', 'Protective display box', 'Certificate of preservation'],
-  },
-  {
-    id: 'bloom',
-    priceId: 'price_1Tau1YBlmDr5Ka7m7g8C8Rj4',
-    name: 'Bloom Preservation',
-    price: '$299',
-    purity: 'Premium',
-    inclusion: '8–12 weeks',
-    desc: 'Bridal bouquets, boutonnieres, corsages, and ceremonial arrangements.',
-    features: ['Multi-layer pour', 'High-gloss finish', 'Choice of form factor', 'Engraved date plate', 'Documentation photos'],
-    featured: true,
-  },
-  {
-    id: 'legacy',
-    priceId: 'price_1Tau1YBlmDr5Ka7mTRT5EvqP',
-    name: 'Legacy Encapsulation',
-    price: '$449',
-    purity: 'Museum',
-    inclusion: '6–8 weeks',
-    desc: 'Military medals, vintage jewelry, watches, coins, letters, fabric swatches.',
-    features: ['Museum-grade resin', 'White-glove handling', 'Archival documentation', 'Custom display pedestal', 'Lifetime guarantee'],
-  },
-  {
-    id: 'custom',
-    priceId: 'price_1Tau1YBlmDr5Ka7m389hG6Rw',
-    name: 'Custom Commission',
-    price: '$599',
-    purity: 'Bespoke',
-    inclusion: '4–6 weeks',
-    desc: 'Tabletop art, shadow boxes, wearable pieces, or anything truly unique.',
-    features: ['Dedicated artisan', 'Consultation call', 'Unlimited revisions', 'Priority shipping', 'All Legacy features'],
-  },
+const TIERS = [
+  { id: 'keepsake', name: 'Keepsake', price: '$149', priceId: 'price_1TbEjxBlmDr5Ka7mekTTLIFX', desc: 'Jewelry, small keepsakes & compact paperweights' },
+  { id: 'heirloom', name: 'Heirloom', price: '$279', priceId: 'price_1TbEjxBlmDr5Ka7mNsZX2X4o', desc: 'Bouquets, orbs, shadow boxes & mid-size displays' },
+  { id: 'legacy', name: 'Legacy', price: '$499', priceId: 'price_1TbEjxBlmDr5Ka7m8K6XBIf0', desc: 'Custom sculptures, large tabletop art & legacy pieces' },
 ];
 
+const inputStyle = {
+  width: '100%', boxSizing: 'border-box',
+  background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)',
+  borderRadius: '6px', padding: '12px 14px', color: '#F2F2F2', fontSize: '15px',
+  outline: 'none', fontFamily: 'Inter Tight, sans-serif',
+};
+
+const labelStyle = { display: 'block', fontSize: '12px', letterSpacing: '0.06em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.5)', marginBottom: '8px' };
+
 export default function Order() {
-  const [selected, setSelected] = useState(PLANS[1]);
+  const urlParams = new URLSearchParams(window.location.search);
+  const [form, setForm] = useState({
+    firstName: '', lastName: '', email: '', phone: '',
+    category: urlParams.get('category') || '', format: '', description: '', instructions: '',
+  });
+  const [selectedTier, setSelectedTier] = useState('heirloom');
   const [loading, setLoading] = useState(false);
 
-  const handleCheckout = async () => {
+  const set = (key, val) => setForm(f => ({ ...f, [key]: val }));
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     const isInIframe = window.self !== window.top;
     if (isInIframe) {
       alert('Checkout is only available from the published app. Please open AmberVault in a new tab to complete your order.');
       return;
     }
-
+    const tier = TIERS.find(t => t.id === selectedTier);
     setLoading(true);
     const origin = window.location.origin;
     const response = await base44.functions.invoke('createCheckout', {
-      planId: selected.id,
-      priceId: selected.priceId,
+      planId: tier.id,
+      priceId: tier.priceId,
       successUrl: `${origin}/success`,
       cancelUrl: `${origin}/order`,
     });
     setLoading(false);
-    if (response.data?.url) {
-      window.location.href = response.data.url;
-    }
+    if (response.data?.url) window.location.href = response.data.url;
   };
 
   return (
     <div style={{ background: '#0A0A0C', minHeight: '100vh' }}>
       <Navbar />
-      <div className="pt-36 pb-24 px-8 max-w-7xl mx-auto">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="mb-16 text-center">
-          <p className="text-xs tracking-[0.3em] uppercase text-honey mb-4">Choose Your Plan</p>
-          <h1 className="font-playfair font-bold" style={{ fontSize: 'clamp(36px, 5vw, 72px)', color: '#F2F2F2' }}>
-            Select a Preservation<br />
-            <span style={{ color: 'rgba(242,242,242,0.35)' }}>Plan</span>
+      <div style={{ maxWidth: '720px', margin: '0 auto', padding: '100px 24px 80px' }}>
+        <div style={{ marginBottom: '48px' }}>
+          <div style={{ display: 'inline-block', border: '1px solid rgba(242,242,242,0.2)', borderRadius: '999px', padding: '7px 18px', fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.55)', marginBottom: '24px' }}>
+            Preservation Intake
+          </div>
+          <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 700, color: '#F2F2F2', lineHeight: 1.1, marginBottom: '16px' }}>
+            Tell us about your item.
           </h1>
-        </motion.div>
-
-        {/* Plans grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 mb-12">
-          {PLANS.map((plan, i) => (
-            <motion.div
-              key={plan.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.08 }}
-              onClick={() => setSelected(plan)}
-              className="relative cursor-pointer p-8 flex flex-col transition-all duration-300"
-              style={{
-                background: selected.id === plan.id ? '#1A1A1E' : '#0D0D10',
-                borderTop: selected.id === plan.id ? '2px solid #FFB800' : '2px solid transparent',
-              }}
-            >
-              {plan.featured && (
-                <div className="absolute top-4 right-4 px-2 py-0.5 text-xs tracking-[0.1em] uppercase font-semibold text-obsidian" style={{ background: '#FFB800' }}>
-                  Popular
-                </div>
-              )}
-              <div className="mb-6">
-                <p className="text-xs tracking-[0.2em] uppercase text-bone/40 mb-1">Purity Grade</p>
-                <p className="font-playfair text-sm font-semibold text-honey">{plan.purity}</p>
-              </div>
-              <h3 className="font-playfair text-xl font-bold text-bone mb-2">{plan.name}</h3>
-              <p className="text-xs text-bone/40 leading-relaxed mb-6">{plan.desc}</p>
-              <div className="mt-auto">
-                <p className="font-playfair text-3xl font-bold text-bone mb-1">{plan.price}</p>
-                <p className="text-xs text-bone/30">Delivery: {plan.inclusion}</p>
-                <div className="mt-6 flex flex-col gap-2">
-                  {plan.features.map(f => (
-                    <div key={f} className="flex items-center gap-2">
-                      <Check size={12} className="text-honey flex-shrink-0" />
-                      <span className="text-xs text-bone/50">{f}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              {selected.id === plan.id && (
-                <div className="mt-6 text-center">
-                  <div className="w-full h-px" style={{ background: '#FFB800', opacity: 0.3 }} />
-                  <p className="text-xs tracking-[0.1em] uppercase text-honey mt-3">Selected</p>
-                </div>
-              )}
-            </motion.div>
-          ))}
+          <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.45)', lineHeight: 1.7 }}>
+            We'll confirm your order and send a packing kit within 24 hours. No payment required until we've reviewed your item.
+          </p>
         </div>
 
-        {/* Order summary + checkout */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="grid md:grid-cols-2 gap-px bg-white/5 max-w-3xl mx-auto"
-        >
-          {/* Summary */}
-          <div className="p-8" style={{ background: '#0D0D10' }}>
-            <p className="text-xs tracking-[0.2em] uppercase text-honey mb-6">Order Summary</p>
-            <div className="flex justify-between items-start mb-4">
+        <form onSubmit={handleSubmit}>
+          {/* Your Details */}
+          <div style={{ marginBottom: '40px' }}>
+            <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>Your Details</p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '12px' }}>
               <div>
-                <p className="font-playfair text-lg font-semibold text-bone">{selected.name}</p>
-                <p className="text-xs text-bone/40 mt-1">{selected.purity} Grade</p>
+                <label style={labelStyle}>First Name *</label>
+                <input style={inputStyle} placeholder="Jane" required value={form.firstName} onChange={e => set('firstName', e.target.value)} />
               </div>
-              <p className="font-playfair text-2xl font-bold text-honey">{selected.price}</p>
+              <div>
+                <label style={labelStyle}>Last Name *</label>
+                <input style={inputStyle} placeholder="Smith" required value={form.lastName} onChange={e => set('lastName', e.target.value)} />
+              </div>
             </div>
-            <div className="border-t border-white/10 pt-4 mt-4">
-              <p className="text-xs text-bone/30 leading-relaxed">Estimated delivery in {selected.inclusion}. Free return shipping for objects under 5 lbs.</p>
-            </div>
-            <div className="mt-6 flex items-center gap-2">
-              <Lock size={12} className="text-bone/30" />
-              <p className="text-xs text-bone/30 tracking-wide">Secured by Stripe</p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+              <div>
+                <label style={labelStyle}>Email Address *</label>
+                <input type="email" style={inputStyle} placeholder="jane@example.com" required value={form.email} onChange={e => set('email', e.target.value)} />
+              </div>
+              <div>
+                <label style={labelStyle}>Phone Number</label>
+                <input style={inputStyle} placeholder="(555) 000-0000" value={form.phone} onChange={e => set('phone', e.target.value)} />
+              </div>
             </div>
           </div>
 
-          {/* Checkout action */}
-          <div className="p-8 flex flex-col justify-between" style={{ background: '#1A1A1E' }}>
-            <div>
-              <p className="text-xs tracking-[0.2em] uppercase text-honey mb-6">Secure Checkout</p>
-              <p className="text-sm text-bone/50 leading-relaxed mb-6">
-                After checkout, we'll ship your preservation kit within 2 business days. Your item will be handcrafted in Spartanburg, SC and shipped back to you.
-              </p>
-              <div className="flex flex-col gap-2 mb-8">
-                {['Branded preservation shipping kit', 'Full documentation & photos', 'Museum-grade materials', '30-day satisfaction guarantee'].map(f => (
-                  <div key={f} className="flex items-center gap-2">
-                    <Check size={11} className="text-honey flex-shrink-0" />
-                    <span className="text-xs text-bone/50">{f}</span>
-                  </div>
-                ))}
-              </div>
+          {/* About Your Item */}
+          <div style={{ marginBottom: '40px' }}>
+            <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>About Your Item</p>
+            <div style={{ marginBottom: '12px' }}>
+              <label style={labelStyle}>Item Category *</label>
+              <select required style={{ ...inputStyle, cursor: 'pointer' }} value={form.category} onChange={e => set('category', e.target.value)}>
+                <option value="">Select a category</option>
+                <option value="wedding">Wedding &amp; Event Florals</option>
+                <option value="memorial">Memorial Keepsakes</option>
+                <option value="milestone">Milestone Artifacts</option>
+                <option value="legacy">Legacy Pieces</option>
+                <option value="sports">Sports &amp; Achievement</option>
+                <option value="custom">Custom Commission</option>
+              </select>
             </div>
-            <button
-              onClick={handleCheckout}
-              disabled={loading}
-              className="w-full py-4 text-sm tracking-[0.2em] uppercase font-semibold text-obsidian transition-all duration-300 disabled:opacity-60 flex items-center justify-center gap-3"
-              style={{ background: '#FFB800', boxShadow: loading ? 'none' : '0 0 40px rgba(255,184,0,0.25)' }}
-            >
-              {loading ? (
-                <><span className="w-4 h-4 border-2 border-obsidian/30 border-t-obsidian rounded-full animate-spin" /> Processing...</>
-              ) : (
-                <><Lock size={14} /> Secure My Assets</>
-              )}
-            </button>
-            <p className="text-xs text-bone/25 text-center mt-3">Test mode: use card 4242 4242 4242 4242</p>
+            <div style={{ marginBottom: '12px' }}>
+              <label style={labelStyle}>Preferred Format *</label>
+              <select required style={{ ...inputStyle, cursor: 'pointer' }} value={form.format} onChange={e => set('format', e.target.value)}>
+                <option value="">Choose a format</option>
+                <option value="jewelry">Jewelry (pendant, ring, earring)</option>
+                <option value="paperweight">Paperweight / Display Block</option>
+                <option value="shadowbox">Shadow Box</option>
+                <option value="orb">Orb</option>
+                <option value="tabletop">Tabletop Art / Custom Sculpture</option>
+              </select>
+              <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.3)', marginTop: '6px' }}>
+                Not sure? <Link to="/portfolio" style={{ color: '#C8681E', textDecoration: 'none' }}>Browse the portfolio</Link> for format examples.
+              </p>
+            </div>
+            <div style={{ marginBottom: '12px' }}>
+              <label style={labelStyle}>Item Description *</label>
+              <textarea required rows={5} style={{ ...inputStyle, resize: 'vertical' }}
+                placeholder="Describe what you'd like preserved. Include details like size, condition, quantity (e.g. 'Wedding bouquet of 30 roses, partially dried, from June 2024')."
+                value={form.description} onChange={e => set('description', e.target.value)} />
+            </div>
+            <div>
+              <label style={labelStyle}>Special Instructions</label>
+              <textarea rows={3} style={{ ...inputStyle, resize: 'vertical' }}
+                placeholder="Any specific requests, concerns, or context we should know about..."
+                value={form.instructions} onChange={e => set('instructions', e.target.value)} />
+            </div>
           </div>
-        </motion.div>
+
+          {/* Tier Selection */}
+          <div style={{ marginBottom: '40px' }}>
+            <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>Select Your Tier *</p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '2px' }}>
+              {TIERS.map(tier => (
+                <div key={tier.id} onClick={() => setSelectedTier(tier.id)} style={{ background: selectedTier === tier.id ? '#1A1A1E' : '#111113', border: `2px solid ${selectedTier === tier.id ? '#C8681E' : 'transparent'}`, borderRadius: '4px', padding: '24px 20px', cursor: 'pointer', transition: 'all 0.2s' }}>
+                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: 700, color: '#F2F2F2', marginBottom: '4px' }}>{tier.name}</div>
+                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '28px', fontWeight: 700, color: selectedTier === tier.id ? '#C8681E' : '#F2F2F2', marginBottom: '8px' }}>{tier.price}</div>
+                  <div style={{ fontSize: '12px', color: 'rgba(242,242,242,0.4)', lineHeight: 1.5 }}>{tier.desc}</div>
+                  {selectedTier === tier.id && (
+                    <div style={{ marginTop: '12px', fontSize: '11px', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#C8681E', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                      Selected
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+            <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.3)', marginTop: '10px' }}>
+              Not sure? <Link to="/pricing" style={{ color: '#C8681E', textDecoration: 'none' }}>View full tier breakdown</Link>. You'll be directed to secure payment after submitting.
+            </p>
+          </div>
+
+          <button type="submit" disabled={loading}
+            style={{ width: '100%', background: '#C8681E', color: '#fff', border: 'none', borderRadius: '999px', padding: '16px 24px', fontSize: '13px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.7 : 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', fontFamily: 'Inter Tight, sans-serif' }}>
+            {loading ? 'Processing...' : 'Continue to Payment →'}
+          </button>
+
+          <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.25)', textAlign: 'center', marginTop: '16px', lineHeight: 1.6 }}>
+            Your order details are saved immediately. You'll be directed to Stripe's secure checkout to complete payment. We'll email you a confirmation and packing kit instructions after payment.
+          </p>
+          <p style={{ fontSize: '11px', color: 'rgba(242,242,242,0.2)', textAlign: 'center', marginTop: '8px' }}>
+            Test mode: use card 4242 4242 4242 4242, any future date, any CVV
+          </p>
+        </form>
       </div>
-      <Footer />
     </div>
   );
 }

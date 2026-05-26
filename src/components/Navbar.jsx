@@ -1,54 +1,51 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5"
-        style={{ background: 'linear-gradient(to bottom, rgba(10,10,12,0.95) 0%, transparent 100%)' }}>
-        <Link to="/" className="font-playfair text-xl font-semibold tracking-widest text-bone uppercase">
+      <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '20px 32px', background: 'rgba(10,10,12,0.85)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+        <Link to="/" style={{ fontFamily: "'Playfair Display', serif", fontSize: '18px', fontWeight: 500, color: '#F2F2F2', textDecoration: 'none', letterSpacing: '0.02em' }}>
           AmberVault
         </Link>
-        <div className="hidden md:flex items-center gap-10">
-          <Link to="/portfolio" className="text-xs tracking-[0.2em] uppercase text-bone/60 hover:text-honey transition-colors duration-300">Portfolio</Link>
-          <Link to="/order" className="text-xs tracking-[0.2em] uppercase text-bone/60 hover:text-honey transition-colors duration-300">Begin Order</Link>
-          <Link to="/order" className="px-6 py-2.5 bg-honey text-obsidian text-xs tracking-[0.15em] uppercase font-semibold hover:bg-yellow-400 transition-all duration-300">
-            Preserve Now
+
+        {/* Desktop nav */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '36px' }} className="hidden md:flex">
+          <Link to="/portfolio" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
+            onMouseEnter={e => e.target.style.color='#F2F2F2'} onMouseLeave={e => e.target.style.color='rgba(242,242,242,0.6)'}>
+            Portfolio
+          </Link>
+          <Link to="/memorial" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
+            onMouseEnter={e => e.target.style.color='#F2F2F2'} onMouseLeave={e => e.target.style.color='rgba(242,242,242,0.6)'}>
+            Memorial
+          </Link>
+          <Link to="/pricing" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
+            onMouseEnter={e => e.target.style.color='#F2F2F2'} onMouseLeave={e => e.target.style.color='rgba(242,242,242,0.6)'}>
+            Pricing
+          </Link>
+          <Link to="/order" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#F2F2F2', textDecoration: 'none', border: '1px solid rgba(242,242,242,0.3)', padding: '8px 18px', transition: 'border-color 0.2s' }}
+            onMouseEnter={e => e.target.style.borderColor='rgba(242,242,242,0.8)'} onMouseLeave={e => e.target.style.borderColor='rgba(242,242,242,0.3)'}>
+            Start Order
           </Link>
         </div>
-        <button className="md:hidden text-bone" onClick={() => setMenuOpen(true)}>
-          <Menu size={22} />
-        </button>
+
+        {/* Mobile */}
+        <button className="md:hidden" onClick={() => setOpen(true)} style={{ color: '#F2F2F2', background: 'none', border: 'none', cursor: 'pointer', fontSize: '20px' }}>☰</button>
       </nav>
 
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            initial={{ y: '-100%' }}
-            animate={{ y: 0 }}
-            exit={{ y: '-100%' }}
-            transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 z-[100] flex flex-col justify-center items-start px-10"
-            style={{ background: '#0A0A0C' }}
-          >
-            <button className="absolute top-5 right-8 text-bone" onClick={() => setMenuOpen(false)}>
-              <X size={26} />
-            </button>
-            <div className="flex flex-col gap-8">
-              {[['/', 'Home'], ['/portfolio', 'Portfolio'], ['/order', 'Begin Order']].map(([to, label]) => (
-                <Link key={to} to={to} onClick={() => setMenuOpen(false)}
-                  className="font-playfair text-5xl font-semibold text-bone hover:text-honey transition-colors duration-300">
-                  {label}
-                </Link>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {open && (
+        <div style={{ position: 'fixed', inset: 0, zIndex: 200, background: '#0A0A0C', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '48px' }}>
+          <button onClick={() => setOpen(false)} style={{ position: 'absolute', top: '20px', right: '32px', color: '#F2F2F2', background: 'none', border: 'none', cursor: 'pointer', fontSize: '24px' }}>✕</button>
+          {[['/', 'Home'], ['/portfolio', 'Portfolio'], ['/memorial', 'Memorial'], ['/pricing', 'Pricing'], ['/order', 'Start Order']].map(([to, label]) => (
+            <Link key={to} to={to} onClick={() => setOpen(false)}
+              style={{ fontFamily: "'Playfair Display', serif", fontSize: '40px', fontWeight: 600, color: '#F2F2F2', textDecoration: 'none', marginBottom: '24px', display: 'block' }}>
+              {label}
+            </Link>
+          ))}
+        </div>
+      )}
     </>
   );
 }

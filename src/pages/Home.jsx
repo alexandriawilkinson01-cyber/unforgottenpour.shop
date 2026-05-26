@@ -1,8 +1,7 @@
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
-import ProblemSolutionSection from '../components/ProblemSolutionSection';
-import CategoriesSection from '../components/CategoriesSection';
+import StorySection from '../components/StorySection';
+import ServicesSection from '../components/ServicesSection';
 import ProcessSection from '../components/ProcessSection';
 import CTASection from '../components/CTASection';
 
@@ -11,11 +10,10 @@ export default function Home() {
     <div style={{ background: '#0A0A0C', minHeight: '100vh' }}>
       <Navbar />
       <HeroSection />
-      <ProblemSolutionSection />
-      <CategoriesSection />
+      <StorySection />
+      <ServicesSection />
       <ProcessSection />
       <CTASection />
-      <Footer />
     </div>
   );
 }

@@ -1,12 +1,5 @@
 import Stripe from 'npm:stripe@14';
 
-const PLANS = {
-  bloom: { priceId: 'price_bloom', name: 'Bloom Preservation', amount: 29900 },
-  memorial: { priceId: 'price_memorial', name: 'Memorial Keepsake', amount: 19900 },
-  legacy: { priceId: 'price_legacy', name: 'Legacy Encapsulation', amount: 44900 },
-  custom: { priceId: 'price_custom', name: 'Custom Commission', amount: 59900 },
-};
-
 Deno.serve(async (req) => {
   try {
     const { planId, priceId, successUrl, cancelUrl } = await req.json();
@@ -15,10 +8,7 @@ Deno.serve(async (req) => {
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
-      line_items: [{
-        price: priceId,
-        quantity: 1,
-      }],
+      line_items: [{ price: priceId, quantity: 1 }],
       mode: 'payment',
       success_url: successUrl,
       cancel_url: cancelUrl,

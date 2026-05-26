@@ -1,64 +1,157 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 
-const IMAGES = [
-  { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/a624ea814_generated_debeb8e7.png', label: 'Wedding Bouquet' },
-  { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/9d11288e6_generated_1d8e1e5c.png', label: 'Memorial Keepsake' },
-  { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/fe500614f_generated_2b4a56ef.png', label: 'Baby Shoes' },
-  { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/36fce8703_generated_3d4f2099.png', label: 'Legacy Pieces' },
-  { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/35235b8c4_generated_98401acb.png', label: 'Gold in Resin' },
-  { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/4d98f60a1_generated_b8cc65a1.png', label: 'Precision Craft' },
-  { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/d40ae2606_generated_4eae1c8b.png', label: 'Amber Formation' },
-  { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/a624ea814_generated_debeb8e7.png', label: 'Floral Sphere' },
-  { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/9d11288e6_generated_1d8e1e5c.png', label: 'Botanical Resin' },
+const CATEGORIES = [
+  {
+    id: 'wedding',
+    label: 'Wedding & Event Florals',
+    num: '01',
+    title: 'Wedding & Event Florals',
+    desc: 'Bridal bouquets, boutonnieres, corsages, and ceremonial arrangements — preserved in crystal-clear resin blocks, orbs, and jewelry. Your wedding flowers deserve to outlast the day.',
+    items: ['Bridal bouquets', 'Boutonnieres & corsages', 'Ceremonial arrangements', 'Pressed petals & confetti', 'Champagne corks & ribbons'],
+    images: [
+      { url: 'https://pub-629428d185ca4960a0a73c850d32294b.r2.dev/company_126549/images/c74e8c31-759e-4744-80ef-b6034f08f266.png', label: 'Featured Work' },
+      { url: 'https://pub-629428d185ca4960a0a73c850d32294b.r2.dev/company_126549/images/df404ac9-7888-46cb-b538-26cc32f7d3cd.png', label: '' },
+      { url: 'https://pub-629428d185ca4960a0a73c850d32294b.r2.dev/company_126549/images/3221f836-1f71-4e89-badd-cafcecdc7e3c.jpg', label: '' },
+      { url: 'https://pub-629428d185ca4960a0a73c850d32294b.r2.dev/company_126549/images/e55cf420-7a88-49d3-832f-d4f36082ff02.jpg', label: '' },
+      { url: 'https://pub-629428d185ca4960a0a73c850d32294b.r2.dev/company_126549/images/9064f719-d32e-4000-83af-a647500268de.jpg', label: '' },
+      { url: 'https://pub-629428d185ca4960a0a73c850d32294b.r2.dev/company_126549/images/451b147d-bb59-4a8f-92cf-34bf41f533b7.jpg', label: '' },
+    ],
+  },
+  {
+    id: 'memorial',
+    label: 'Memorial Keepsakes',
+    num: '02',
+    title: 'Memorial Keepsakes',
+    desc: 'Funeral flowers, cremation ashes, dried botanicals from gravesites. A permanent, tangible way to hold someone close — transformed into something beautiful you can keep forever.',
+    items: ['Funeral florals', 'Cremation ashes', 'Graveside botanicals', 'Pet fur & paw prints', 'Handwritten letters'],
+    images: [
+      { url: 'https://pub-629428d185ca4960a0a73c850d32294b.r2.dev/company_126549/images/53e2d4d9-1b21-47bb-ad2d-34ed75b18430.png', label: 'Memorial Collection' },
+    ],
+  },
+  {
+    id: 'milestone',
+    label: 'Milestone Artifacts',
+    num: '03',
+    title: 'Milestone Artifacts',
+    desc: "Baby's first shoes, hospital wristbands, locks of hair. The small objects that mark enormous moments — now preserved in museum-quality resin to last for generations.",
+    items: ["Baby's first shoes", 'Hospital wristbands', 'Locks of hair', 'First teeth & keepsakes', 'Graduation & achievement items'],
+    images: [
+      { url: 'https://pub-629428d185ca4960a0a73c850d32294b.r2.dev/company_126549/images/b72be2d5-7e0a-422a-9fdb-dafda1a53c4a.png', label: 'Milestone Series' },
+    ],
+  },
+];
+
+const FORMATS = [
+  { icon: '◎', name: 'Jewelry', desc: 'Pendants, rings, and earrings — wear your memory every day.' },
+  { icon: '▪', name: 'Paperweight', desc: 'A polished block for desk or shelf display.' },
+  { icon: '⬜', name: 'Shadow Box', desc: 'Framed resin inlay paired with photographs or mementos.' },
+  { icon: '○', name: 'Orb', desc: 'A perfect sphere suspended in time — striking as décor.' },
+  { icon: '◆', name: 'Tabletop Art', desc: 'Custom sculptural pieces made to anchor a room.' },
 ];
 
 export default function Portfolio() {
+  const [activeTab, setActiveTab] = useState('wedding');
+
   return (
     <div style={{ background: '#0A0A0C', minHeight: '100vh' }}>
       <Navbar />
-      <div className="pt-36 pb-24 px-8 max-w-7xl mx-auto">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="mb-16">
-          <p className="text-xs tracking-[0.3em] uppercase text-honey mb-4">Our Work</p>
-          <h1 className="font-playfair font-bold" style={{ fontSize: 'clamp(40px, 6vw, 80px)', color: '#F2F2F2' }}>
-            The Portfolio
-          </h1>
-          <p className="text-base text-bone/50 mt-4 max-w-md leading-relaxed">
-            Every piece is unique. Every piece is permanent. A selection of our museum-quality preservation work.
-          </p>
-        </motion.div>
 
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-px space-y-px">
-          {IMAGES.map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: i * 0.07, duration: 0.6 }}
-              className="group relative overflow-hidden break-inside-avoid mb-px"
-            >
-              <img src={item.url} alt={item.label} className="w-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5"
-                style={{ background: 'linear-gradient(to top, rgba(10,10,12,0.9) 0%, transparent 60%)' }}>
-                <p className="font-playfair text-sm text-bone">{item.label}</p>
-              </div>
-              <div className="absolute bottom-0 left-0 w-0 group-hover:w-full h-0.5 transition-all duration-500" style={{ background: '#FFB800' }} />
-            </motion.div>
+      {/* Hero */}
+      <section style={{ paddingTop: '120px', paddingBottom: '80px', textAlign: 'center', padding: '120px 24px 80px' }}>
+        <div style={{ display: 'inline-block', border: '1px solid rgba(242,242,242,0.2)', borderRadius: '999px', padding: '7px 18px', fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.55)', marginBottom: '32px' }}>
+          What We Preserve
+        </div>
+        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(40px, 6vw, 72px)', fontWeight: 700, color: '#F2F2F2', lineHeight: 1.1, marginBottom: '24px' }}>
+          Every category.<br />Every memory.
+        </h1>
+        <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.5)', maxWidth: '500px', margin: '0 auto', lineHeight: 1.7 }}>
+          From bridal bouquets to memorial tributes to milestone keepsakes — real pieces from our studio, each one handcrafted and unique.
+        </p>
+      </section>
+
+      {/* Tabs */}
+      <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)', background: '#0D0D10' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', gap: '0', overflowX: 'auto' }}>
+          {CATEGORIES.map(cat => (
+            <button key={cat.id} onClick={() => setActiveTab(cat.id)}
+              style={{ padding: '18px 28px', fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', background: 'none', border: 'none', cursor: 'pointer', whiteSpace: 'nowrap', borderBottom: activeTab === cat.id ? '2px solid #C8681E' : '2px solid transparent', color: activeTab === cat.id ? '#F2F2F2' : 'rgba(242,242,242,0.4)', transition: 'color 0.2s', fontFamily: 'Inter Tight, sans-serif' }}>
+              {cat.label}
+            </button>
           ))}
         </div>
-
-        <div className="mt-20 text-center">
-          <p className="text-bone/40 text-sm mb-8">Ready to preserve what matters most?</p>
-          <Link to="/order"
-            className="inline-flex items-center gap-3 px-10 py-4 text-xs tracking-[0.2em] uppercase font-semibold text-obsidian transition-all duration-300 hover:scale-105"
-            style={{ background: '#FFB800', boxShadow: '0 0 40px rgba(255,184,0,0.2)' }}>
-            Begin My Order
-          </Link>
-        </div>
       </div>
-      <Footer />
+
+      {/* Category Content */}
+      {CATEGORIES.filter(c => c.id === activeTab).map(cat => (
+        <section key={cat.id} style={{ maxWidth: '1100px', margin: '0 auto', padding: '80px 24px' }}>
+          <div style={{ display: 'flex', gap: '8px', alignItems: 'flex-start', marginBottom: '60px', flexWrap: 'wrap' }}>
+            <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '80px', fontWeight: 700, color: 'rgba(242,242,242,0.06)', lineHeight: 1, marginRight: '16px' }}>{cat.num}</span>
+            <div style={{ paddingTop: '12px' }}>
+              <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '8px' }}>Category {cat.num}</p>
+              <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 700, color: '#F2F2F2' }}>{cat.title}</h2>
+            </div>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', alignItems: 'start' }}>
+            {/* Images */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '4px' }}>
+              {cat.images.map((img, i) => (
+                <div key={i} style={{ position: 'relative', gridColumn: i === 0 ? '1 / -1' : 'auto' }}>
+                  <img src={img.url} alt={img.label} style={{ width: '100%', display: 'block', objectFit: 'cover', aspectRatio: i === 0 ? '16/10' : '1' }} />
+                  {img.label && (
+                    <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '12px 16px', background: 'linear-gradient(to top, rgba(10,10,12,0.85), transparent)' }}>
+                      <span style={{ fontSize: '11px', color: 'rgba(242,242,242,0.7)', letterSpacing: '0.05em' }}>{img.label}</span>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Details */}
+            <div style={{ paddingLeft: '16px' }}>
+              <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.55)', lineHeight: 1.75, marginBottom: '28px' }}>{cat.desc}</p>
+              <ul style={{ listStyle: 'none', padding: 0, marginBottom: '36px' }}>
+                {cat.items.map(item => (
+                  <li key={item} style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.05)', fontSize: '14px', color: 'rgba(242,242,242,0.6)' }}>
+                    <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#C8681E', flexShrink: 0 }} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Link to={`/order?category=${cat.id}`} style={{ display: 'inline-block', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '13px 28px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
+                Preserve Mine →
+              </Link>
+            </div>
+          </div>
+        </section>
+      ))}
+
+      {/* Available Formats */}
+      <section style={{ background: '#0D0D10', padding: '80px 24px', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 700, color: '#F2F2F2', marginBottom: '48px' }}>
+            How do you want to display it?
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '2px' }}>
+            {FORMATS.map(f => (
+              <div key={f.name} style={{ background: '#111113', padding: '28px 24px' }}>
+                <div style={{ fontSize: '20px', marginBottom: '12px', opacity: 0.5 }}>{f.icon}</div>
+                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '16px', fontWeight: 600, color: '#F2F2F2', marginBottom: '8px' }}>{f.name}</h3>
+                <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.4)', lineHeight: 1.6 }}>{f.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div style={{ marginTop: '64px', textAlign: 'center' }}>
+            <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '28px', fontWeight: 600, color: '#F2F2F2', marginBottom: '12px' }}>Ready to start?</h3>
+            <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.45)', marginBottom: '28px' }}>Tell us what you have and we'll take it from there.</p>
+            <Link to="/order" style={{ display: 'inline-block', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '13px 32px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
+              Begin My Order
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
