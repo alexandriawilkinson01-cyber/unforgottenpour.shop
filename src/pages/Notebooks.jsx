@@ -6,9 +6,21 @@ const NOTEBOOK_PRICE_ID = 'price_1TifblBlmDr5Ka7mnW5kiPD1';   // $75
 const CUSTOM_PRICE_ID   = 'price_1TifblBlmDr5Ka7m1a7zuugN';   // $100
 
 const EXAMPLES = [
-  { label: 'Wildflower Cover', desc: 'Pressed botanicals sealed in resin over a linen-bound journal.' },
-  { label: 'Wedding Bloom', desc: 'Petals from your bouquet embedded in the cover — a keepsake you write in.' },
-  { label: 'Memorial Garden', desc: 'Florals from a meaningful ceremony, preserved on the front of your notebook.' },
+  {
+    label: 'Botanical Collection',
+    desc: 'Pressed wildflowers, ferns, and gold leaf sealed under crystal-clear resin. Each cover is one of a kind.',
+    img: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/1df70194a_Firefly_GeminiFlash_customresin4notebooks522599.png',
+  },
+  {
+    label: 'Custom Name Journals',
+    desc: 'Your name, initials, or a loved one\'s — hand-lettered and preserved alongside dried florals and gold accents.',
+    img: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/179c733c7_Firefly_GeminiFlash_customresinnotebooks6682.png',
+  },
+  {
+    label: 'Nature\'s Notes',
+    desc: 'Eucalyptus, daisies, lavender, and rose petals embedded in resin — a garden you carry with you.',
+    img: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/f695e7c3e_Firefly_GeminiFlash_customresinnotebooks522599.png',
+  },
 ];
 
 export default function Notebooks() {
@@ -59,14 +71,15 @@ export default function Notebooks() {
 
       {/* Examples grid */}
       <section style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 24px 80px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '2px', marginBottom: '80px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '2px', marginBottom: '80px' }}>
           {EXAMPLES.map((ex, i) => (
-            <div key={i} style={{ background: '#111113', padding: '40px 32px', borderTop: '2px solid rgba(200,104,30,0.3)' }}>
-              <div style={{ width: '48px', height: '48px', background: 'rgba(200,104,30,0.12)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8681E" strokeWidth="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <div key={i} style={{ position: 'relative', overflow: 'hidden', background: '#111113' }}>
+              <img src={ex.img} alt={ex.label} style={{ width: '100%', height: '320px', objectFit: 'cover', display: 'block' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,10,12,0.92) 0%, rgba(10,10,12,0.2) 55%, transparent 100%)' }} />
+              <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '28px 28px 28px' }}>
+                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '20px', fontWeight: 600, marginBottom: '8px', color: '#F2F2F2' }}>{ex.label}</h3>
+                <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.55)', lineHeight: 1.65 }}>{ex.desc}</p>
               </div>
-              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '20px', fontWeight: 600, marginBottom: '10px' }}>{ex.label}</h3>
-              <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.45)', lineHeight: 1.7 }}>{ex.desc}</p>
             </div>
           ))}
         </div>
