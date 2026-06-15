@@ -21,6 +21,10 @@ export default function Navbar() {
             onMouseEnter={e => e.target.style.color='#F2F2F2'} onMouseLeave={e => e.target.style.color='rgba(242,242,242,0.6)'}>
             Memorial
           </Link>
+          <Link to="/notebooks" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
+            onMouseEnter={e => e.target.style.color='#F2F2F2'} onMouseLeave={e => e.target.style.color='rgba(242,242,242,0.6)'}>
+            Notebooks
+          </Link>
           <Link to="/pricing" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
             onMouseEnter={e => e.target.style.color='#F2F2F2'} onMouseLeave={e => e.target.style.color='rgba(242,242,242,0.6)'}>
             Pricing

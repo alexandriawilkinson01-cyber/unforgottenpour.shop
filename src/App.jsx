@@ -12,6 +12,7 @@ import Order from './pages/Order';
 import Success from './pages/Success';
 import Memorial from './pages/Memorial';
 import Pricing from './pages/Pricing';
+import Notebooks from './pages/Notebooks';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -45,6 +46,7 @@ const AuthenticatedApp = () => {
       <Route path="/success" element={<Success />} />
       <Route path="/memorial" element={<Memorial />} />
       <Route path="/pricing" element={<Pricing />} />
+      <Route path="/notebooks" element={<Notebooks />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
