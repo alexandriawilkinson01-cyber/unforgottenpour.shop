@@ -4,9 +4,9 @@ import { base44 } from '@/api/base44Client';
 import Navbar from '../components/Navbar';
 
 const TIERS = [
-  { id: 'keepsake', name: 'Keepsake', price: '$149', priceId: 'price_1TbEjxBlmDr5Ka7mekTTLIFX', desc: 'Jewelry, small keepsakes & compact paperweights' },
-  { id: 'heirloom', name: 'Heirloom', price: '$279', priceId: 'price_1TbEjxBlmDr5Ka7mNsZX2X4o', desc: 'Bouquets, orbs, shadow boxes & mid-size displays' },
-  { id: 'legacy', name: 'Legacy', price: '$499', priceId: 'price_1TbEjxBlmDr5Ka7m8K6XBIf0', desc: 'Custom sculptures, large tabletop art & legacy pieces' },
+  { id: 'keepsake', name: 'Keepsake', price: '$149', priceId: 'price_1Tk0cNLfTuG5tMiXdpbNNHIq', desc: 'Jewelry, small keepsakes & compact paperweights' },
+  { id: 'heirloom', name: 'Heirloom', price: '$279', priceId: 'price_1Tk0cNLfTuG5tMiXmtvqhwHS', desc: 'Bouquets, orbs, shadow boxes & mid-size displays' },
+  { id: 'legacy', name: 'Legacy', price: '$499', priceId: 'price_1Tk0cNLfTuG5tMiX9cXwvIxz', desc: 'Custom sculptures, large tabletop art & legacy pieces' },
 ];
 
 const inputStyle = {
@@ -36,17 +36,26 @@ export default function Order() {
       alert('Checkout is only available from the published app. Please open AmberVault in a new tab to complete your order.');
       return;
     }
-    const tier = TIERS.find(t => t.id === selectedTier);
     setLoading(true);
+    const tier = TIERS.find(t => t.id === selectedTier);
     const origin = window.location.origin;
-    const response = await base44.functions.invoke('createCheckout', {
-      planId: tier.id,
-      priceId: tier.priceId,
-      successUrl: `${origin}/success`,
-      cancelUrl: `${origin}/order`,
-    });
-    setLoading(false);
-    if (response.data?.url) window.location.href = response.data.url;
+    try {
+      const response = await base44.functions.invoke('createCheckout', {
+        planId: tier.id,
+        priceId: tier.priceId,
+        successUrl: `${origin}/success`,
+        cancelUrl: `${origin}/order`,
+      });
+      if (response.data?.url) {
+        window.location.href = response.data.url;
+      } else {
+        alert('Something went wrong starting checkout. Please try again.');
+        setLoading(false);
+      }
+    } catch (err) {
+      alert('Something went wrong starting checkout. Please try again.');
+      setLoading(false);
+    }
   };
 
   return (
