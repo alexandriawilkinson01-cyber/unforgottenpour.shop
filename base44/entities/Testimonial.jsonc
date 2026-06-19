@@ -1,0 +1,37 @@
+{
+  "name": "Testimonial",
+  "type": "object",
+  "properties": {
+    "author_name": {
+      "type": "string",
+      "title": "Author Name"
+    },
+    "location": {
+      "type": "string",
+      "title": "Location"
+    },
+    "rating": {
+      "type": "number",
+      "title": "Rating",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "item_preserved": {
+      "type": "string",
+      "title": "Item Preserved"
+    },
+    "description": {
+      "type": "string",
+      "title": "Testimonial Text"
+    },
+    "featured": {
+      "type": "boolean",
+      "title": "Featured",
+      "default": false
+    }
+  },
+  "required": [
+    "author_name",
+    "description"
+  ]
+}

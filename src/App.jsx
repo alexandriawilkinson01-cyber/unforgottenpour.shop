@@ -15,6 +15,7 @@ import Pricing from './pages/Pricing';
 import Notebooks from './pages/Notebooks';
 import Jewelry from './pages/Jewelry';
 import About from './pages/About';
+import HowItWorks from './pages/HowItWorks';
 import Contact from './pages/Contact';
 
 const AuthenticatedApp = () => {
@@ -51,6 +52,7 @@ const AuthenticatedApp = () => {
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/notebooks" element={<Notebooks />} />
       <Route path="/jewelry" element={<Jewelry />} />
+      <Route path="/how-it-works" element={<HowItWorks />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="*" element={<PageNotFound />} />
