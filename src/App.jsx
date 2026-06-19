@@ -14,6 +14,8 @@ import Memorial from './pages/Memorial';
 import Pricing from './pages/Pricing';
 import Notebooks from './pages/Notebooks';
 import Jewelry from './pages/Jewelry';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -49,6 +51,8 @@ const AuthenticatedApp = () => {
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/notebooks" element={<Notebooks />} />
       <Route path="/jewelry" element={<Jewelry />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
