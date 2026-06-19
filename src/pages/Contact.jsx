@@ -67,20 +67,7 @@ export default function Contact() {
             <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.5)', lineHeight: 1.7 }}>American South<br />Shipping worldwide</p>
           </div>
 
-          <div>
-            <p style={{ fontSize: '10px', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '12px' }}>Follow Us</p>
-            <div style={{ display: 'flex', gap: '12px' }}>
-              {[
-                { label: 'Instagram', href: 'https://instagram.com/ambervault' },
-                { label: 'Pinterest', href: 'https://pinterest.com/ambervault' },
-              ].map(s => (
-                <a key={s.label} href={s.href} target="_blank" rel="noreferrer"
-                  style={{ fontSize: '12px', letterSpacing: '0.08em', textTransform: 'uppercase', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '999px', padding: '7px 16px', color: 'rgba(242,242,242,0.6)', textDecoration: 'none' }}>
-                  {s.label}
-                </a>
-              ))}
-            </div>
-          </div>
+
         </div>
 
         {/* Form */}
