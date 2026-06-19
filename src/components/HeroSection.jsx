@@ -20,7 +20,7 @@ export default function HeroSection() {
         </h1>
 
         <p style={{ fontSize: '17px', color: 'rgba(242,242,242,0.65)', lineHeight: 1.7, marginBottom: '44px', maxWidth: '540px', margin: '0 auto 44px' }}>
-          AmberVault transforms your most meaningful objects into museum-quality resin art. Wedding bouquets, a parent's watch, baby shoes, military medals. Preserved forever, displayed beautifully.
+          AmberVault encases cremation ashes, memorial flowers, and cherished keepsakes into handcrafted resin jewelry and art. Pendants, rings, and heirloom pieces — carry your loved ones with you, always.
         </p>
 
         <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
