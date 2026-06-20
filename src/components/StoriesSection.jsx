@@ -13,7 +13,7 @@ const STORIES = [
     name: 'The Calloway Bridal Bouquet',
     location: 'Charleston, SC · October 2023',
     category: 'Wedding Florals',
-    image: 'https://pub-629428d185ca4960a0a73c850d32294b.r2.dev/company_126549/images/df404ac9-7888-46cb-b538-26cc32f7d3cd.png',
+    image: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/cb7f3eb6a_optimized-df404ac9-7888-46cb-b538-26cc32f7d3cd.webp',
     memory: 'Anna carried a soft, romantic bouquet of blush roses, white ranunculus, wax flowers, and eucalyptus. The day after her wedding she reached out to us — she couldn\'t bear the thought of watching it wither.',
     preserved: 'We dried and arranged every stem in their original groupings, then cast them into a round orb. Anna now keeps it on her kitchen table as a daily reminder of that morning — the same hand that holds it still wears the ring.',
     format: 'Resin Orb',
