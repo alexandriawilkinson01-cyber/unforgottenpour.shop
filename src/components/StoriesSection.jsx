@@ -3,7 +3,7 @@ const STORIES = [
     name: 'The Hartley Garden Wedding',
     location: 'Savannah, GA · June 2023',
     category: 'Wedding Florals',
-    image: 'https://pub-629428d185ca4960a0a73c850d32294b.r2.dev/company_126549/images/c74e8c31-759e-4744-80ef-b6034f08f266.png',
+    image: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/e3b0d5720_optimized-c74e8c31-759e-4744-80ef-b6034f08f266.webp',
     memory: 'Claire\'s ceremony bouquet was a riot of color — garden roses, lavender sprigs, wild purple larkspur, yellow buttercups, and delicate white buds. She wanted every stem preserved exactly as it was on the morning of her wedding.',
     preserved: 'Each flower was individually dried and arranged to mirror the original bouquet. We cast the full collection into a large round orb, now displayed on their marble mantle — a permanent bloom that will never fade.',
     format: 'Resin Orb',

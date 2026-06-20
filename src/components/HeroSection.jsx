@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const HERO_IMG = 'https://pub-629428d185ca4960a0a73c850d32294b.r2.dev/company_126549/images/c74e8c31-759e-4744-80ef-b6034f08f266.png';
+const HERO_IMG = 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/e3b0d5720_optimized-c74e8c31-759e-4744-80ef-b6034f08f266.webp';
 
 export default function HeroSection() {
   return (
