@@ -26,7 +26,7 @@ export default function DownloadCatalog() {
     ];
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Products');
-    XLSX.writeFile(wb, 'AmberVault-Product-Catalog.xlsx');
+    XLSX.writeFile(wb, 'UnforgottenPour-Product-Catalog.xlsx');
   };
 
   return (

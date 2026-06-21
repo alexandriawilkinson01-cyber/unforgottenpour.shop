@@ -13,7 +13,7 @@ export default function About() {
           We preserve what matters most.
         </h1>
         <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.5)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.75 }}>
-          AmberVault is a boutique resin preservation studio dedicated to turning life's most meaningful objects into permanent, handcrafted heirlooms.
+          Unforgotten Pour is a boutique resin preservation studio dedicated to turning life's most meaningful objects into permanent, handcrafted heirlooms.
         </p>
       </section>
 
@@ -23,7 +23,7 @@ export default function About() {
 
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '28px', fontWeight: 700, color: '#F2F2F2', marginBottom: '20px' }}>What we do</h2>
           <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.6)', lineHeight: 1.85, marginBottom: '36px' }}>
-            At AmberVault, we encapsulate the things you can't afford to lose — wedding bouquets, cremation ashes, baby shoes, military medals, pet collars, pressed botanicals — into crystal-clear, museum-grade resin. Each piece is hand-poured, polished, and finished by our in-house artisans, resulting in an object that will remain unchanged for generations. We also craft custom resin-covered notebooks and wearable memorial jewelry: pendants, rings, and sets that let you carry a piece of someone you love wherever you go.
+            At Unforgotten Pour, we encapsulate the things you can't afford to lose — wedding bouquets, cremation ashes, baby shoes, military medals, pet collars, pressed botanicals — into crystal-clear, museum-grade resin. Each piece is hand-poured, polished, and finished by our in-house artisans, resulting in an object that will remain unchanged for generations. We also craft custom resin-covered notebooks and wearable memorial jewelry: pendants, rings, and sets that let you carry a piece of someone you love wherever you go.
           </p>
 
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '28px', fontWeight: 700, color: '#F2F2F2', marginBottom: '20px' }}>Who we serve</h2>
@@ -33,7 +33,7 @@ export default function About() {
 
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '28px', fontWeight: 700, color: '#F2F2F2', marginBottom: '20px' }}>Who builds it</h2>
           <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.6)', lineHeight: 1.85, marginBottom: '48px' }}>
-            AmberVault was founded by a small team of artisans and designers who believe that physical objects carry emotional weight no photograph can replicate. Every order is handled personally — from intake to casting to final polish — by our studio team. We take on a limited number of commissions each month to ensure every piece receives the time and care it deserves. Our studio is based in the American South, and we ship worldwide.
+            Unforgotten Pour was founded by a small team of artisans and designers who believe that physical objects carry emotional weight no photograph can replicate. Every order is handled personally — from intake to casting to final polish — by our studio team. We take on a limited number of commissions each month to ensure every piece receives the time and care it deserves. Our studio is based in the American South, and we ship worldwide.
           </p>
 
           <Link to="/order" style={{ display: 'inline-block', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '14px 36px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>

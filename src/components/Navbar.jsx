@@ -8,7 +8,7 @@ export default function Navbar() {
     <>
       <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '20px 32px', background: 'rgba(10,10,12,0.85)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
         <Link to="/" style={{ fontFamily: "'Playfair Display', serif", fontSize: '18px', fontWeight: 500, color: '#F2F2F2', textDecoration: 'none', letterSpacing: '0.02em' }}>
-          AmberVault
+          Unforgotten Pour
         </Link>
 
         {/* Desktop nav */}
