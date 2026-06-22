@@ -27,10 +27,12 @@ Deno.serve(async (req) => {
       const sessionId = session.id;
 
       const base44 = createClientFromRequest(req);
+
+      // Studio notification
       await base44.asServiceRole.integrations.Core.SendEmail({
         to: 'AlexandriaWilkinson01@gmail.com',
-        subject: `💰 New AmberVault Purchase — $${amountPaid} ${currency}`,
-        body: `A new order has been completed on AmberVault!\n\n` +
+        subject: `💰 New Unforgotten Pour Purchase — $${amountPaid} ${currency}`,
+        body: `A new order has been completed on Unforgotten Pour!\n\n` +
           `Customer: ${customerName}\n` +
           `Email: ${customerEmail}\n` +
           `Amount: $${amountPaid} ${currency}\n` +
@@ -39,7 +41,28 @@ Deno.serve(async (req) => {
           `View in Stripe: https://dashboard.stripe.com/payments/${session.payment_intent}`,
       });
 
-      console.log(`Purchase notification sent for session ${sessionId}`);
+      // Customer confirmation email
+      if (customerEmail && customerEmail !== 'Unknown') {
+        await base44.asServiceRole.integrations.Core.SendEmail({
+          to: customerEmail,
+          subject: `Thank you for your order — Unforgotten Pour`,
+          body: `Hi ${customerName},\n\n` +
+            `Thank you for your order with Unforgotten Pour. We're honored you've trusted us to preserve what matters most.\n\n` +
+            `Order Summary:\n` +
+            `Product: ${plan}\n` +
+            `Amount: $${amountPaid} ${currency}\n` +
+            `Order Reference: ${sessionId}\n\n` +
+            `What happens next?\n` +
+            `• Within 24 hours, we'll reach out personally with intake instructions and your prepaid shipping label.\n` +
+            `• Once we receive your items, we'll send confirmation photos and a progress timeline.\n` +
+            `• Your handcrafted piece will be cast, polished, and shipped back to you within the estimated turnaround.\n\n` +
+            `If you have any questions, simply reply to this email or contact us at AlexandriaWilkinson01@gmail.com.\n\n` +
+            `With gratitude,\n` +
+            `The Unforgotten Pour Studio Team`,
+        });
+      }
+
+      console.log(`Purchase notifications sent for session ${sessionId}`);
     }
 
     return Response.json({ received: true });
