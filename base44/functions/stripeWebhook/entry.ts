@@ -62,6 +62,23 @@ Deno.serve(async (req) => {
         });
       }
 
+      // Save order to database
+      try {
+        await base44.asServiceRole.entities.Order.create({
+          customer_name: customerName,
+          customer_email: customerEmail,
+          amount: parseFloat(amountPaid),
+          currency,
+          product: plan,
+          stripe_session_id: sessionId,
+          stripe_payment_intent_id: session.payment_intent || '',
+          status: 'new',
+        });
+        console.log(`Order saved to database for session ${sessionId}`);
+      } catch (dbErr) {
+        console.error('Failed to save order to database:', dbErr.message);
+      }
+
       console.log(`Purchase notifications sent for session ${sessionId}`);
     }
 

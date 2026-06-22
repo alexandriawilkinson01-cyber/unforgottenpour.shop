@@ -1,0 +1,53 @@
+{
+  "name": "Order",
+  "type": "object",
+  "properties": {
+    "customer_name": {
+      "type": "string",
+      "title": "Customer Name"
+    },
+    "customer_email": {
+      "type": "string",
+      "title": "Customer Email"
+    },
+    "amount": {
+      "type": "number",
+      "title": "Amount"
+    },
+    "currency": {
+      "type": "string",
+      "title": "Currency",
+      "default": "USD"
+    },
+    "product": {
+      "type": "string",
+      "title": "Product"
+    },
+    "stripe_session_id": {
+      "type": "string",
+      "title": "Stripe Session ID"
+    },
+    "stripe_payment_intent_id": {
+      "type": "string",
+      "title": "Stripe Payment Intent ID"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "new",
+        "processing",
+        "in_production",
+        "shipped",
+        "delivered"
+      ],
+      "default": "new"
+    }
+  },
+  "required": [
+    "customer_name",
+    "customer_email",
+    "amount",
+    "product"
+  ]
+}
