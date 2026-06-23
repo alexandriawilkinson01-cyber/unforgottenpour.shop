@@ -17,7 +17,7 @@ const REVIEWS = [
     name: 'Diane R.',
     location: 'Atlanta, GA',
     rating: 5,
-    text: "We preserved flowers from my mother's funeral. The finished piece sits on our mantle and brings us so much comfort. AmberVault handled everything with such care and sensitivity.",
+    text: "We preserved flowers from my mother's funeral. The finished piece sits on our mantle and brings us so much comfort. Unforgotten Pour handled everything with such care and sensitivity.",
     item: 'Memorial Florals',
   },
   {
@@ -55,13 +55,13 @@ const Stars = () => (
 
 export default function ReviewsSection() {
   return (
-    <section style={{ background: '#0D0D10', padding: '100px 24px', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+    <section style={{ background: '#F5F0EA', padding: '100px 24px', borderTop: '1px solid rgba(42,42,40,0.06)' }}>
       <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
         <div style={{ marginBottom: '64px' }}>
           <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>Customer Reviews</p>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 700, color: '#F2F2F2', lineHeight: 1.2, marginBottom: '12px' }}>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 700, color: '#2A2A28', lineHeight: 1.2, marginBottom: '12px' }}>
             Trusted by families<br />
-            <span style={{ color: 'rgba(242,242,242,0.35)' }}>across the country.</span>
+            <span style={{ color: 'rgba(42,42,40,0.4)' }}>across the country.</span>
           </h2>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '20px' }}>
             <div style={{ display: 'flex', gap: '3px' }}>
@@ -71,21 +71,21 @@ export default function ReviewsSection() {
                 </svg>
               ))}
             </div>
-            <span style={{ fontSize: '14px', color: 'rgba(242,242,242,0.5)' }}>5.0 · 200+ verified orders</span>
+            <span style={{ fontSize: '14px', color: 'rgba(42,42,40,0.55)' }}>5.0 · 200+ verified orders</span>
           </div>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '2px' }}>
           {REVIEWS.map(r => (
-            <div key={r.name} style={{ background: '#111113', padding: '32px 28px', borderTop: '1px solid rgba(255,255,255,0.04)' }}>
+            <div key={r.name} style={{ background: '#FFFFFF', padding: '32px 28px', borderTop: '1px solid rgba(42,42,40,0.06)' }}>
               <Stars />
-              <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.7)', lineHeight: 1.75, marginBottom: '24px', fontStyle: 'italic' }}>
+              <p style={{ fontSize: '15px', color: 'rgba(42,42,40,0.7)', lineHeight: 1.75, marginBottom: '24px', fontStyle: 'italic' }}>
                 "{r.text}"
               </p>
-              <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+              <div style={{ borderTop: '1px solid rgba(42,42,40,0.08)', paddingTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                 <div>
-                  <p style={{ fontSize: '13px', fontWeight: 600, color: '#F2F2F2', marginBottom: '2px' }}>{r.name}</p>
-                  <p style={{ fontSize: '11px', color: 'rgba(242,242,242,0.3)', letterSpacing: '0.04em' }}>{r.location}</p>
+                  <p style={{ fontSize: '13px', fontWeight: 600, color: '#2A2A28', marginBottom: '2px' }}>{r.name}</p>
+                  <p style={{ fontSize: '11px', color: 'rgba(42,42,40,0.4)', letterSpacing: '0.04em' }}>{r.location}</p>
                 </div>
                 <div style={{ fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#C8681E', background: 'rgba(200,104,30,0.1)', padding: '4px 10px', borderRadius: '999px' }}>
                   {r.item}

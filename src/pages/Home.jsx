@@ -10,7 +10,7 @@ import MemoriesSection from '../components/MemoriesSection';
 
 export default function Home() {
   return (
-    <div style={{ background: '#0A0A0C', minHeight: '100vh' }}>
+    <div style={{ background: '#FAF8F5', minHeight: '100vh' }}>
       <Navbar />
       <HeroSection />
       <StorySection />

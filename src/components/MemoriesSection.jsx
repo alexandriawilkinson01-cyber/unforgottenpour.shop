@@ -1,6 +1,6 @@
 const MEMORIES = [
   {
-    quote: "I gave my mother's funeral bouquet to AmberVault two days after her service. I couldn't explain why — I just couldn't let it go. What came back was something I'll keep forever. It's the first thing I see when I wake up.",
+    quote: "I gave my mother's funeral bouquet to Unforgotten Pour two days after her service. I couldn't explain why — I just couldn't let it go. What came back was something I'll keep forever. It's the first thing I see when I wake up.",
     name: 'Diane M.',
     location: 'Nashville, TN',
     item: 'Funeral florals preserved in a resin orb',
@@ -45,16 +45,16 @@ const MEMORIES = [
 
 export default function MemoriesSection() {
   return (
-    <section style={{ background: '#0D0D0F', padding: '100px 24px', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+    <section style={{ background: '#FAF8F5', padding: '100px 24px', borderTop: '1px solid rgba(42,42,40,0.06)' }}>
       <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
 
         {/* Header */}
         <div style={{ marginBottom: '72px', maxWidth: '560px' }}>
           <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>Customer Memories</p>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 700, color: '#F2F2F2', lineHeight: 1.2, marginBottom: '16px' }}>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 700, color: '#2A2A28', lineHeight: 1.2, marginBottom: '16px' }}>
             In their own words.
           </h2>
-          <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.4)', lineHeight: 1.7 }}>
+          <p style={{ fontSize: '15px', color: 'rgba(42,42,40,0.5)', lineHeight: 1.7 }}>
             The pieces we make are only half the story. Here's what our customers said when they arrived home.
           </p>
         </div>
@@ -62,25 +62,25 @@ export default function MemoriesSection() {
         {/* Grid */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '2px' }}>
           {MEMORIES.map((m, i) => (
-            <div key={i} style={{ background: '#111113', padding: '40px 36px', display: 'flex', flexDirection: 'column', gap: '28px', borderTop: i < 3 ? '2px solid rgba(200,104,30,0.25)' : '2px solid transparent' }}>
+            <div key={i} style={{ background: '#FFFFFF', padding: '40px 36px', display: 'flex', flexDirection: 'column', gap: '28px', borderTop: i < 3 ? '2px solid rgba(200,104,30,0.4)' : '2px solid transparent' }}>
               {/* Quote mark */}
               <svg width="28" height="20" viewBox="0 0 28 20" fill="none" style={{ flexShrink: 0 }}>
-                <path d="M0 20V12.5C0 5.6 4.2 1.4 12.6 0L13.4 1.8C9.4 2.6 7 5 6.4 8.4H11.2V20H0ZM16.8 20V12.5C16.8 5.6 21 1.4 29.4 0L30.2 1.8C26.2 2.6 23.8 5 23.2 8.4H28V20H16.8Z" fill="#C8681E" fillOpacity="0.4"/>
+                <path d="M0 20V12.5C0 5.6 4.2 1.4 12.6 0L13.4 1.8C9.4 2.6 7 5 6.4 8.4H11.2V20H0ZM16.8 20V12.5C16.8 5.6 21 1.4 29.4 0L30.2 1.8C26.2 2.6 23.8 5 23.2 8.4H28V20H16.8Z" fill="#C8681E" fillOpacity="0.5"/>
               </svg>
 
               {/* Quote */}
-              <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.7)', lineHeight: 1.8, fontStyle: 'italic', flex: 1 }}>
+              <p style={{ fontSize: '15px', color: 'rgba(42,42,40,0.7)', lineHeight: 1.8, fontStyle: 'italic', flex: 1 }}>
                 "{m.quote}"
               </p>
 
               {/* Footer */}
-              <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '20px', display: 'flex', alignItems: 'center', gap: '14px' }}>
-                <div style={{ width: '38px', height: '38px', borderRadius: '999px', background: 'rgba(200,104,30,0.15)', border: '1px solid rgba(200,104,30,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+              <div style={{ borderTop: '1px solid rgba(42,42,40,0.08)', paddingTop: '20px', display: 'flex', alignItems: 'center', gap: '14px' }}>
+                <div style={{ width: '38px', height: '38px', borderRadius: '999px', background: 'rgba(200,104,30,0.12)', border: '1px solid rgba(200,104,30,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '16px', color: '#C8681E', fontWeight: 600 }}>{m.initial}</span>
                 </div>
                 <div>
-                  <p style={{ fontSize: '13px', fontWeight: 600, color: '#F2F2F2', marginBottom: '2px' }}>{m.name}</p>
-                  <p style={{ fontSize: '11px', color: 'rgba(242,242,242,0.3)', marginBottom: '4px' }}>{m.location}</p>
+                  <p style={{ fontSize: '13px', fontWeight: 600, color: '#2A2A28', marginBottom: '2px' }}>{m.name}</p>
+                  <p style={{ fontSize: '11px', color: 'rgba(42,42,40,0.4)', marginBottom: '4px' }}>{m.location}</p>
                   <p style={{ fontSize: '11px', color: '#C8681E', letterSpacing: '0.05em' }}>{m.item}</p>
                 </div>
               </div>
