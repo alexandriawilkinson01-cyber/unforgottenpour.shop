@@ -64,7 +64,7 @@ export default function Contact() {
 
           <div style={{ marginBottom: '28px' }}>
             <p style={{ fontSize: '10px', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '8px' }}>Location</p>
-            <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.5)', lineHeight: 1.7 }}>American South<br />Shipping worldwide</p>
+            <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.5)', lineHeight: 1.7 }}>Blacksburg, South Carolina<br />Shipping worldwide</p>
           </div>
 
 
