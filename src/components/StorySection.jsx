@@ -1,7 +1,9 @@
 export default function StorySection() {
   return (
-    <section style={{ background: '#FAF8F5', padding: '100px 24px' }}>
-      <div style={{ maxWidth: '640px', margin: '0 auto' }}>
+    <section style={{ background: '#FAF8F5', padding: '100px 24px', position: 'relative', overflow: 'hidden' }}>
+      <img src="https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/cb7f3eb6a_optimized-df404ac9-7888-46cb-b538-26cc32f7d3cd.webp" alt=""
+        style={{ position: 'absolute', right: '-120px', top: '50%', transform: 'translateY(-50%)', width: '520px', height: '520px', objectFit: 'cover', opacity: 0.06, borderRadius: '50%', filter: 'blur(2px)' }} />
+      <div style={{ maxWidth: '640px', margin: '0 auto', position: 'relative', zIndex: 2 }}>
         <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '28px' }}>The Problem</p>
         <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, color: '#2A2A28', lineHeight: 1.2, marginBottom: '28px' }}>
           Memories fade.<br />Objects deteriorate.<br />Time doesn't wait.

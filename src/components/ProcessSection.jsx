@@ -7,8 +7,10 @@ const STEPS = [
 
 export default function ProcessSection() {
   return (
-    <section style={{ background: '#FAF8F5', padding: '100px 24px', borderTop: '1px solid rgba(42,42,40,0.06)' }}>
-      <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+    <section style={{ background: '#FAF8F5', padding: '100px 24px', borderTop: '1px solid rgba(42,42,40,0.06)', position: 'relative', overflow: 'hidden' }}>
+      <img src="https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/6ff549137_optimized-b72be2d5-7e0a-422a-9fdb-dafda1a53c4a.webp" alt=""
+        style={{ position: 'absolute', left: '-100px', bottom: '-80px', width: '420px', height: '420px', objectFit: 'cover', opacity: 0.05, borderRadius: '50%', filter: 'blur(1px)' }} />
+      <div style={{ maxWidth: '1100px', margin: '0 auto', position: 'relative', zIndex: 2 }}>
         <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>The Process</p>
         <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, color: '#2A2A28', lineHeight: 1.2, marginBottom: '64px' }}>
           From treasured object<br />to timeless art.

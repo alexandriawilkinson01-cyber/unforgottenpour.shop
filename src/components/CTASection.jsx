@@ -13,8 +13,11 @@ export default function CTASection() {
   return (
     <>
       {/* Closing CTA */}
-      <section style={{ background: '#FAF8F5', padding: '100px 24px', textAlign: 'center', borderTop: '1px solid rgba(42,42,40,0.06)' }}>
-        <div style={{ maxWidth: '640px', margin: '0 auto' }}>
+      <section style={{ background: '#FAF8F5', padding: '100px 24px', textAlign: 'center', borderTop: '1px solid rgba(42,42,40,0.06)', position: 'relative', overflow: 'hidden' }}>
+        <img src="https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/e3b0d5720_optimized-c74e8c31-759e-4744-80ef-b6034f08f266.webp" alt=""
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.07 }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, #FAF8F5, rgba(250,248,245,0.85), #FAF8F5)' }} />
+        <div style={{ maxWidth: '640px', margin: '0 auto', position: 'relative', zIndex: 2 }}>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, color: '#2A2A28', lineHeight: 1.2, marginBottom: '28px' }}>
             Some things deserve to last<br />as long as the memory does.
           </h2>
