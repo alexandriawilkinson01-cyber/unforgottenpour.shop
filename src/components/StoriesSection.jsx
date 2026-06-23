@@ -43,8 +43,16 @@ const STORIES = [
 
 export default function StoriesSection() {
   return (
-    <section style={{ background: '#F5F0EA', padding: '100px 24px', borderTop: '1px solid rgba(42,42,40,0.06)' }}>
-      <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+    <section style={{ background: '#F5F0EA', padding: '100px 24px', borderTop: '1px solid rgba(42,42,40,0.06)', position: 'relative', overflow: 'hidden' }}>
+      <svg width="300" height="300" viewBox="0 0 300 300" style={{ position: 'absolute', left: '-40px', top: '10%', opacity: 0.04 }} fill="none" stroke="#2A2A28" strokeWidth="1">
+        <circle cx="150" cy="150" r="140" /><circle cx="150" cy="150" r="110" /><circle cx="150" cy="150" r="80" /><circle cx="150" cy="150" r="50" />
+        <line x1="10" y1="150" x2="290" y2="150" /><line x1="150" y1="10" x2="150" y2="290" />
+      </svg>
+      <svg width="200" height="200" viewBox="0 0 200 200" style={{ position: 'absolute', right: '20px', bottom: '5%', opacity: 0.05 }} fill="none" stroke="#C8681E" strokeWidth="1">
+        <path d="M100 10 C60 50, 60 150, 100 190 C140 150, 140 50, 100 10 Z" /><line x1="100" y1="10" x2="100" y2="190" />
+        <path d="M100 50 C80 70, 80 130, 100 150 C120 130, 120 70, 100 50 Z" />
+      </svg>
+      <div style={{ maxWidth: '1100px', margin: '0 auto', position: 'relative', zIndex: 2 }}>
         <div style={{ marginBottom: '72px' }}>
           <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>Real Memories, Preserved Forever</p>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 700, color: '#2A2A28', lineHeight: 1.2 }}>

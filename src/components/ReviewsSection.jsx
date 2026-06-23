@@ -55,8 +55,12 @@ const Stars = () => (
 
 export default function ReviewsSection() {
   return (
-    <section style={{ background: '#F5F0EA', padding: '100px 24px', borderTop: '1px solid rgba(42,42,40,0.06)' }}>
-      <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+    <section style={{ background: '#F5F0EA', padding: '100px 24px', borderTop: '1px solid rgba(42,42,40,0.06)', position: 'relative', overflow: 'hidden' }}>
+      <img src="https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/e3b0d5720_optimized-c74e8c31-759e-4744-80ef-b6034f08f266.webp" alt=""
+        style={{ position: 'absolute', right: '-100px', top: '20%', width: '380px', height: '380px', objectFit: 'cover', opacity: 0.06, borderRadius: '50%', filter: 'blur(2px)' }} />
+      <img src="https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/6ff549137_optimized-b72be2d5-7e0a-422a-9fdb-dafda1a53c4a.webp" alt=""
+        style={{ position: 'absolute', left: '-80px', bottom: '10%', width: '320px', height: '320px', objectFit: 'cover', opacity: 0.05, borderRadius: '50%', filter: 'blur(2px)' }} />
+      <div style={{ maxWidth: '1100px', margin: '0 auto', position: 'relative', zIndex: 2 }}>
         <div style={{ marginBottom: '64px' }}>
           <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>Customer Reviews</p>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 700, color: '#2A2A28', lineHeight: 1.2, marginBottom: '12px' }}>

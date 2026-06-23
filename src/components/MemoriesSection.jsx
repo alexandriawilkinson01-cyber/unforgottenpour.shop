@@ -45,8 +45,12 @@ const MEMORIES = [
 
 export default function MemoriesSection() {
   return (
-    <section style={{ background: '#FAF8F5', padding: '100px 24px', borderTop: '1px solid rgba(42,42,40,0.06)' }}>
-      <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+    <section style={{ background: '#FAF8F5', padding: '100px 24px', borderTop: '1px solid rgba(42,42,40,0.06)', position: 'relative', overflow: 'hidden' }}>
+      <img src="https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/cb7f3eb6a_optimized-df404ac9-7888-46cb-b538-26cc32f7d3cd.webp" alt=""
+        style={{ position: 'absolute', left: '-100px', top: '-60px', width: '400px', height: '400px', objectFit: 'cover', opacity: 0.05, borderRadius: '50%', filter: 'blur(2px)' }} />
+      <img src="https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/0ca7489d4_optimized-53e2d4d9-1b21-47bb-ad2d-34ed75b18430.webp" alt=""
+        style={{ position: 'absolute', right: '-80px', bottom: '-60px', width: '360px', height: '360px', objectFit: 'cover', opacity: 0.05, borderRadius: '50%', filter: 'blur(2px)' }} />
+      <div style={{ maxWidth: '1100px', margin: '0 auto', position: 'relative', zIndex: 2 }}>
 
         {/* Header */}
         <div style={{ marginBottom: '72px', maxWidth: '560px' }}>
