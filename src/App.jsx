@@ -19,6 +19,7 @@ import HowItWorks from './pages/HowItWorks';
 import Contact from './pages/Contact';
 import DownloadCatalog from './pages/DownloadCatalog';
 import AdminOrders from './pages/AdminOrders';
+import OrderStatusChat from './pages/OrderStatusChat';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -59,6 +60,7 @@ const AuthenticatedApp = () => {
       <Route path="/contact" element={<Contact />} />
       <Route path="/download-catalog" element={<DownloadCatalog />} />
       <Route path="/admin/orders" element={<AdminOrders />} />
+      <Route path="/track-order" element={<OrderStatusChat />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
