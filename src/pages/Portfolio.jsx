@@ -31,6 +31,17 @@ const CATEGORIES = [
     ],
   },
   {
+    id: 'spheres',
+    label: 'Resin Spheres',
+    num: '04',
+    title: 'Floral Resin Spheres',
+    desc: 'Perfect crystal spheres encasing preserved roses, baby\'s breath, lavender, and eucalyptus. Each orb is hand-poured and polished to a glass-like finish — a complete floral world suspended in time, striking as décor and meaningful as keepsake.',
+    items: ['Bridal rose arrangements', 'Baby\'s breath & lavender', 'Eucalyptus & botanicals', 'Blush, mauve & peach palettes', 'Custom floral combinations'],
+    images: [
+      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/563e26a68_373b4dc6-ac8c-43bb-888f-db4b8c87d5b33.png', label: 'Sphere Collection' },
+    ],
+  },
+  {
     id: 'milestone',
     label: 'Milestone Artifacts',
     num: '03',
