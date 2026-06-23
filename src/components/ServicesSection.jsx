@@ -11,27 +11,25 @@ const SERVICES = [
 
 export default function ServicesSection() {
   return (
-    <section style={{ background: '#F5F0EA', padding: '100px 24px', borderTop: '1px solid rgba(42,42,40,0.06)', position: 'relative', overflow: 'hidden' }}>
-      <img src="https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/0ca7489d4_optimized-53e2d4d9-1b21-47bb-ad2d-34ed75b18430.webp" alt=""
-        style={{ position: 'absolute', right: '-120px', top: '-60px', width: '460px', height: '460px', objectFit: 'cover', opacity: 0.06, borderRadius: '50%', filter: 'blur(2px)' }} />
-      <div style={{ maxWidth: '1100px', margin: '0 auto', position: 'relative', zIndex: 2 }}>
+    <section style={{ background: '#0A0A0C', padding: '100px 24px', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+      <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
         <div style={{ marginBottom: '64px' }}>
           <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>What We Preserve</p>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, color: '#2A2A28', lineHeight: 1.2, marginBottom: '16px' }}>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, color: '#F2F2F2', lineHeight: 1.2, marginBottom: '16px' }}>
             Not just flowers.<br />Everything that matters.
           </h2>
-          <p style={{ fontSize: '16px', color: 'rgba(42,42,40,0.5)', maxWidth: '480px', lineHeight: 1.7 }}>
-            Most preservation studios only handle bouquets. Unforgotten Pour was built for the full spectrum of what people treasure.
+          <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.45)', maxWidth: '480px', lineHeight: 1.7 }}>
+            Most preservation studios only handle bouquets. AmberVault was built for the full spectrum of what people treasure.
           </p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '2px' }}>
           {SERVICES.map(s => (
-            <div key={s.title} style={{ background: '#FFFFFF', padding: '36px 32px', borderTop: '1px solid rgba(42,42,40,0.06)', transition: 'background 0.2s', cursor: 'default' }}
-              onMouseEnter={e => e.currentTarget.style.background='#FAF8F5'} onMouseLeave={e => e.currentTarget.style.background='#FFFFFF'}>
+            <div key={s.title} style={{ background: '#111113', padding: '36px 32px', borderTop: '1px solid rgba(255,255,255,0.05)', transition: 'background 0.2s', cursor: 'default' }}
+              onMouseEnter={e => e.currentTarget.style.background='#161618'} onMouseLeave={e => e.currentTarget.style.background='#111113'}>
               <div style={{ fontSize: '24px', marginBottom: '20px', opacity: 0.6 }}>{s.icon}</div>
-              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '18px', fontWeight: 600, color: '#2A2A28', marginBottom: '12px' }}>{s.title}</h3>
-              <p style={{ fontSize: '14px', color: 'rgba(42,42,40,0.55)', lineHeight: 1.7 }}>{s.desc}</p>
+              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '18px', fontWeight: 600, color: '#F2F2F2', marginBottom: '12px' }}>{s.title}</h3>
+              <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.45)', lineHeight: 1.7 }}>{s.desc}</p>
             </div>
           ))}
         </div>
