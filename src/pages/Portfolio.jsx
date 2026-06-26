@@ -19,6 +19,7 @@ const CATEGORIES = [
       { url: 'https://pub-629428d185ca4960a0a73c850d32294b.r2.dev/company_126549/images/451b147d-bb59-4a8f-92cf-34bf41f533b7.jpg', label: '' },
       { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/0cacf85d9_517568015_10166096206013747_799119564642891177_n.jpg', label: 'Rose & Peony Resin Block' },
       { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/f7002181a_494216822_1201457428655811_7052543975862834227_n.jpg', label: 'Engraved Wedding Block' },
+      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/fd2e06155_499118967_1221039663364254_7154084407973034054_n.jpg', label: 'Lily & Rose Tribute Block' },
     ],
   },
   {
