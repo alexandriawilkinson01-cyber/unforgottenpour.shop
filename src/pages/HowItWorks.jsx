@@ -24,6 +24,36 @@ const STEPS = [
   },
 ];
 
+const SHIPPING = [
+  {
+    title: 'Inbound Shipping — Sending Items to the Studio',
+    points: [
+      'Pack all florals, ashes, and keepsakes in a sturdy box with ample padding. Place delicate flowers between sheets of tissue paper and seal cremation ashes in a labeled, double-bagged container.',
+      'Ship via UPS, FedEx, or USPS with tracking and insurance. We recommend insuring your outbound shipment for the item\'s sentimental or declared value.',
+      'Ship fresh florals within 48 hours of your event if possible, or freeze them and ship overnight on dry ice for best color retention. Detailed packing instructions are included with every order confirmation.',
+      'Address all shipments to: Unforgotten Pour Studio, Blacksburg, South Carolina. You will receive a confirmation email with the exact shipping address after placing your order.',
+    ],
+  },
+  {
+    title: 'Return Shipping — Finished Piece Delivery',
+    points: [
+      'All finished pieces are shipped fully insured via FedEx or UPS Ground, with signature confirmation required upon delivery.',
+      'Return shipping is complimentary within the continental United States for all preservation tiers. International shipping is available at a flat rate of $45 USD, with applicable customs duties paid by the recipient.',
+      'Each piece is packed in a keepsake gift box with a certificate of authenticity, enclosed inside a crush-resistant shipping carton with custom foam inserts.',
+      'Tracking information is emailed the moment your finished piece leaves the studio. Typical domestic transit time is 3–5 business days; international transit ranges from 7–14 business days.',
+    ],
+  },
+  {
+    title: 'Studio Responsibility & Damage Policy',
+    points: [
+      'Once your items are received and signed for by our studio, we assume full responsibility for their safekeeping throughout the preservation process.',
+      'In the rare event of damage occurring within our studio, we will notify you immediately and work to find an alternative solution or issue a full refund of your order.',
+      'Damage occurring during inbound transit (before studio receipt) is the responsibility of the sender. Please retain your outbound tracking and insurance records.',
+      'If your finished piece arrives damaged due to carrier handling, contact us within 7 days with photos and we will file an insurance claim and arrange a replacement or repair at no additional cost.',
+    ],
+  },
+];
+
 const FAQS = [
   {
     q: 'What items can you preserve in resin?',
@@ -103,6 +133,33 @@ export default function HowItWorks() {
               <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.55)', lineHeight: 1.8 }}>
                 {faq.a}
               </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Shipping Policy */}
+      <section style={{ maxWidth: '900px', margin: '0 auto', padding: '0 24px 80px', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <div style={{ textAlign: 'center', padding: '60px 0 48px' }}>
+          <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '16px' }}>Shipping & Handling</p>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(26px, 4vw, 40px)', fontWeight: 700, color: '#F2F2F2' }}>
+            Shipping policy
+          </h2>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+          {SHIPPING.map((section) => (
+            <div key={section.title} style={{ background: '#111113', padding: '36px 40px' }}>
+              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '18px', fontWeight: 700, color: '#F2F2F2', marginBottom: '20px' }}>
+                {section.title}
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                {section.points.map((point, i) => (
+                  <li key={i} style={{ display: 'flex', gap: '12px', padding: '10px 0', fontSize: '14px', color: 'rgba(242,242,242,0.55)', lineHeight: 1.8, borderTop: i === 0 ? 'none' : '1px solid rgba(255,255,255,0.04)' }}>
+                    <span style={{ color: '#C8681E', flexShrink: 0, marginTop: '2px' }}>▪</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
