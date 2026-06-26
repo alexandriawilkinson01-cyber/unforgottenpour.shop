@@ -17,15 +17,15 @@ const CATEGORIES = [
       { url: 'https://pub-629428d185ca4960a0a73c850d32294b.r2.dev/company_126549/images/e55cf420-7a88-49d3-832f-d4f36082ff02.jpg', label: '' },
       { url: 'https://pub-629428d185ca4960a0a73c850d32294b.r2.dev/company_126549/images/9064f719-d32e-4000-83af-a647500268de.jpg', label: '' },
       { url: 'https://pub-629428d185ca4960a0a73c850d32294b.r2.dev/company_126549/images/451b147d-bb59-4a8f-92cf-34bf41f533b7.jpg', label: '' },
-      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/0cacf85d9_517568015_10166096206013747_799119564642891177_n.jpg', label: 'Rose & Peony Resin Block' },
-      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/f7002181a_494216822_1201457428655811_7052543975862834227_n.jpg', label: 'Engraved Wedding Block' },
-      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/fe1d7044d_520873874_1277968801004673_4128750413421443177_n.jpg', label: 'Heart Resin Paperweight' },
-      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/8f5dc7f1e_523835742_1277969641004589_6444637789351428028_n.jpg', label: 'Floral Resin Spheres' },
-      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/9d9291a4a_556528575_1342912871176932_7211617229588252135_n.jpg', label: 'Hexagonal Resin Block' },
-      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/98508d6a5_596859509_1408934014574817_8786174887677198184_n.jpg', label: 'Engraved Heart Block' },
+      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/0cacf85d9_517568015_10166096206013747_799119564642891177_n.jpg', label: '' },
+      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/f7002181a_494216822_1201457428655811_7052543975862834227_n.jpg', label: '' },
+      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/fe1d7044d_520873874_1277968801004673_4128750413421443177_n.jpg', label: '' },
+      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/8f5dc7f1e_523835742_1277969641004589_6444637789351428028_n.jpg', label: '' },
+      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/9d9291a4a_556528575_1342912871176932_7211617229588252135_n.jpg', label: '' },
+      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/98508d6a5_596859509_1408934014574817_8786174887677198184_n.jpg', label: '' },
       { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/a25ae7b94_597624556_1408933964574822_9039555353428654077_n.jpg', label: '' },
       { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/eb45a883f_600306908_1413993667402185_4026996115270414416_n.jpg', label: '' },
-      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/ca3b9898f_600276829_1415445290590356_8840858216308380883_n.jpg', label: 'Floral Resin Ornaments' },
+      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/ca3b9898f_600276829_1415445290590356_8840858216308380883_n.jpg', label: '' },
     ],
   },
   {
@@ -37,8 +37,8 @@ const CATEGORIES = [
     items: ['Funeral florals', 'Cremation ashes', 'Graveside botanicals', 'Pet fur & paw prints', 'Handwritten letters'],
     images: [
       { url: 'https://pub-629428d185ca4960a0a73c850d32294b.r2.dev/company_126549/images/53e2d4d9-1b21-47bb-ad2d-34ed75b18430.png', label: 'Memorial Collection' },
-      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/bc52c2c8d_598697365_1413994444068774_6730136808041610728_n.jpg', label: 'In Loving Memory Heart' },
-      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/1e09b91d1_671284273_1524234836378067_8292117622520524363_n.jpg', label: 'Patriotic Floral Keepsake' },
+      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/bc52c2c8d_598697365_1413994444068774_6730136808041610728_n.jpg', label: '' },
+      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/1e09b91d1_671284273_1524234836378067_8292117622520524363_n.jpg', label: '' },
     ],
   },
   {
@@ -49,7 +49,7 @@ const CATEGORIES = [
     desc: 'Perfect crystal spheres encasing preserved roses, baby\'s breath, lavender, and eucalyptus. Each orb is hand-poured and polished to a glass-like finish — a complete floral world suspended in time, striking as décor and meaningful as keepsake.',
     items: ['Bridal rose arrangements', 'Baby\'s breath & lavender', 'Eucalyptus & botanicals', 'Blush, mauve & peach palettes', 'Custom floral combinations'],
     images: [
-      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/563e26a68_373b4dc6-ac8c-43bb-888f-db4b8c87d5b33.png', label: 'Sphere Collection' },
+      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/563e26a68_373b4dc6-ac8c-43bb-888f-db4b8c87d5b33.png', label: '' },
     ],
   },
   {
@@ -60,7 +60,7 @@ const CATEGORIES = [
     desc: 'Cremation ashes and preserved botanicals set into wearable resin pendants, rings, and earrings — intimate, portable keepsakes you can carry every day.',
     items: ['Resin pendants', 'Memorial rings', 'Earring sets', 'Ashes & petal infusion', 'Custom shapes & color tints'],
     images: [
-      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/b6cd0ae4c_517298203_10166088166648747_5996983620115148223_n.jpg', label: 'Fingerprint Heart Pendants' },
+      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/b6cd0ae4c_517298203_10166088166648747_5996983620115148223_n.jpg', label: '' },
     ],
   },
   {
