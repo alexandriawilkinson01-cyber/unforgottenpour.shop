@@ -20,6 +20,7 @@ const CATEGORIES = [
       { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/0cacf85d9_517568015_10166096206013747_799119564642891177_n.jpg', label: 'Rose & Peony Resin Block' },
       { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/f7002181a_494216822_1201457428655811_7052543975862834227_n.jpg', label: 'Engraved Wedding Block' },
       { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/fe1d7044d_520873874_1277968801004673_4128750413421443177_n.jpg', label: 'Heart Resin Paperweight' },
+      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/8f5dc7f1e_523835742_1277969641004589_6444637789351428028_n.jpg', label: 'Floral Resin Spheres' },
     ],
   },
   {
