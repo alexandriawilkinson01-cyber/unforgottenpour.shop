@@ -36,6 +36,7 @@ const CATEGORIES = [
     items: ['Funeral florals', 'Cremation ashes', 'Graveside botanicals', 'Pet fur & paw prints', 'Handwritten letters'],
     images: [
       { url: 'https://pub-629428d185ca4960a0a73c850d32294b.r2.dev/company_126549/images/53e2d4d9-1b21-47bb-ad2d-34ed75b18430.png', label: 'Memorial Collection' },
+      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/bc52c2c8d_598697365_1413994444068774_6730136808041610728_n.jpg', label: 'In Loving Memory Heart' },
     ],
   },
   {
