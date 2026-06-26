@@ -22,6 +22,8 @@ const CATEGORIES = [
       { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/fe1d7044d_520873874_1277968801004673_4128750413421443177_n.jpg', label: 'Heart Resin Paperweight' },
       { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/8f5dc7f1e_523835742_1277969641004589_6444637789351428028_n.jpg', label: 'Floral Resin Spheres' },
       { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/9d9291a4a_556528575_1342912871176932_7211617229588252135_n.jpg', label: 'Hexagonal Resin Block' },
+      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/98508d6a5_596859509_1408934014574817_8786174887677198184_n.jpg', label: 'Engraved Heart Block' },
+      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/a25ae7b94_597624556_1408933964574822_9039555353428654077_n.jpg', label: '' },
     ],
   },
   {
