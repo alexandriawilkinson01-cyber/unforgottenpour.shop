@@ -48,7 +48,9 @@ const CATEGORIES = [
     title: 'Memorial Jewelry',
     desc: 'Cremation ashes and preserved botanicals set into wearable resin pendants, rings, and earrings — intimate, portable keepsakes you can carry every day.',
     items: ['Resin pendants', 'Memorial rings', 'Earring sets', 'Ashes & petal infusion', 'Custom shapes & color tints'],
-    images: [],
+    images: [
+      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/b6cd0ae4c_517298203_10166088166648747_5996983620115148223_n.jpg', label: 'Fingerprint Heart Pendants' },
+    ],
   },
   {
     id: 'notebooks',
