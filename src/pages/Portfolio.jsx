@@ -42,6 +42,24 @@ const CATEGORIES = [
     ],
   },
   {
+    id: 'jewelry',
+    label: 'Memorial Jewelry',
+    num: '05',
+    title: 'Memorial Jewelry',
+    desc: 'Cremation ashes and preserved botanicals set into wearable resin pendants, rings, and earrings — intimate, portable keepsakes you can carry every day.',
+    items: ['Resin pendants', 'Memorial rings', 'Earring sets', 'Ashes & petal infusion', 'Custom shapes & color tints'],
+    images: [],
+  },
+  {
+    id: 'notebooks',
+    label: 'Studio Notebooks',
+    num: '06',
+    title: 'Hand-Poured Notebooks',
+    desc: 'A5 journals with hand-poured resin covers featuring preserved botanicals and florals — one-of-a-kind functional art for your desk or journaling practice.',
+    items: ['Botanical resin covers', 'Crystal-clear UV resin', 'A5 lined journals', 'One-of-a-kind designs', 'Custom flower & name options'],
+    images: [],
+  },
+  {
     id: 'milestone',
     label: 'Milestone Artifacts',
     num: '03',
@@ -108,6 +126,11 @@ export default function Portfolio() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', alignItems: 'start' }}>
             {/* Images */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '4px' }}>
+              {cat.images.length === 0 && (
+                <div style={{ gridColumn: '1 / -1', display: 'flex', alignItems: 'center', justifyContent: 'center', aspectRatio: '16/10', background: '#111113', border: '1px dashed rgba(255,255,255,0.1)', color: 'rgba(242,242,242,0.25)', fontSize: '13px', letterSpacing: '0.05em' }}>
+                  Photos coming soon
+                </div>
+              )}
               {cat.images.map((img, i) => (
                 <div key={i} style={{ position: 'relative', gridColumn: i === 0 ? '1 / -1' : 'auto' }}>
                   <img src={img.url} alt={img.label} style={{ width: '100%', display: 'block', objectFit: 'cover', aspectRatio: i === 0 ? '16/10' : '1' }} />
