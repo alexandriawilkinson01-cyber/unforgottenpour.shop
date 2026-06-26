@@ -21,7 +21,7 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-16 grid grid-cols-2 md:grid-cols-4 gap-10">
           <div>
             <p className="font-playfair text-lg font-semibold text-bone mb-4">Unforgotten Pour</p>
-            <p className="text-xs text-bone/40 leading-relaxed">Museum-quality resin preservation.<br />Spartanburg, South Carolina.</p>
+            <p className="text-xs text-bone/40 leading-relaxed">Museum-quality resin preservation.<br />Blacksburg, South Carolina.</p>
           </div>
           <div>
             <p className="text-xs tracking-[0.15em] uppercase text-honey mb-4">Navigate</p>
@@ -42,7 +42,7 @@ export default function Footer() {
           <div>
             <p className="text-xs tracking-[0.15em] uppercase text-honey mb-4">Contact</p>
             <p className="text-xs text-bone/50">AlexandriaWilkinson01@gmail.com</p>
-            <p className="text-xs text-bone/50 mt-1">Spartanburg, SC</p>
+            <p className="text-xs text-bone/50 mt-1">Blacksburg, SC</p>
           </div>
         </div>
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">

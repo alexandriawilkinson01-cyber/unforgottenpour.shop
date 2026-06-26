@@ -22,7 +22,7 @@ export default function CTASection() {
             Unforgotten Pour exists because the most meaningful objects in our lives are also the most fragile. We believe if something matters enough to keep, it matters enough to preserve forever.
           </p>
           <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.3)', marginBottom: '44px', letterSpacing: '0.03em' }}>
-            Handcrafted in Spartanburg, South Carolina. Shipped nationwide.
+            Handcrafted in Blacksburg, South Carolina. Shipped nationwide.
           </p>
           <Link to="/order" style={{ display: 'inline-block', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '15px 36px', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
             Begin My Order

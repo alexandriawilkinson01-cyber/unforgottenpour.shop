@@ -19,7 +19,7 @@ export default function Success() {
           <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.5)', lineHeight: 1.75, marginBottom: '12px' }}>
             Your preservation order has been received. We'll be in touch within 24 hours with your branded shipping kit and next steps.
           </p>
-          <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.25)', marginBottom: '44px', letterSpacing: '0.03em' }}>Handcrafted in Spartanburg, South Carolina.</p>
+          <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.25)', marginBottom: '44px', letterSpacing: '0.03em' }}>Handcrafted in Blacksburg, South Carolina.</p>
           <Link to="/" style={{ display: 'inline-block', background: 'none', color: '#F2F2F2', border: '1px solid rgba(242,242,242,0.2)', borderRadius: '999px', padding: '13px 32px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 500, textDecoration: 'none' }}>
             Return Home
           </Link>
