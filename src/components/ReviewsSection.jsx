@@ -17,7 +17,7 @@ const REVIEWS = [
     name: 'Diane R.',
     location: 'Atlanta, GA',
     rating: 5,
-    text: "We preserved flowers from my mother's funeral. The finished piece sits on our mantle and brings us so much comfort. AmberVault handled everything with such care and sensitivity.",
+    text: "We preserved flowers from my mother's funeral. The finished piece sits on our mantle and brings us so much comfort. Unforgotten Pour handled everything with such care and sensitivity.",
     item: 'Memorial Florals',
   },
   {

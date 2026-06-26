@@ -55,13 +55,13 @@ export default function HowItWorks() {
       {/* Hero */}
       <section style={{ paddingTop: '140px', paddingBottom: '60px', textAlign: 'center', padding: '140px 24px 60px' }}>
         <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>
-          The AmberVault Process
+          The Unforgotten Pour Process
         </p>
         <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 5vw, 64px)', fontWeight: 700, lineHeight: 1.1, marginBottom: '24px', maxWidth: '820px', margin: '0 auto 24px' }}>
           How we turn your memories into permanent, handcrafted resin keepsakes
         </h1>
         <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.5)', maxWidth: '580px', margin: '0 auto 48px', lineHeight: 1.8 }}>
-          AmberVault is a boutique preservation studio that encapsulates flowers, cremation ashes, personal objects, and botanicals into optical-clarity resin jewelry, orbs, paperweights, and custom art pieces. Every order is handled personally by our studio artisans — no factories, no shortcuts. Below is a detailed walkthrough of our four-stage process, from the moment you ship your items to the day your finished piece arrives back at your door.
+          Unforgotten Pour is a boutique preservation studio that encapsulates flowers, cremation ashes, personal objects, and botanicals into optical-clarity resin jewelry, orbs, paperweights, and custom art pieces. Every order is handled personally by our studio artisans — no factories, no shortcuts. Below is a detailed walkthrough of our four-stage process, from the moment you ship your items to the day your finished piece arrives back at your door.
         </p>
       </section>
 

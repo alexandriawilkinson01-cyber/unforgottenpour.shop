@@ -33,7 +33,7 @@ export default function Order() {
     e.preventDefault();
     const isInIframe = window.self !== window.top;
     if (isInIframe) {
-      alert('Checkout is only available from the published app. Please open AmberVault in a new tab to complete your order.');
+      alert('Checkout is only available from the published app. Please open Unforgotten Pour in a new tab to complete your order.');
       return;
     }
     setLoading(true);

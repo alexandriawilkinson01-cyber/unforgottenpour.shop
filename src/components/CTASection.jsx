@@ -19,7 +19,7 @@ export default function CTASection() {
             Some things deserve to last<br />as long as the memory does.
           </h2>
           <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.5)', lineHeight: 1.75, marginBottom: '16px' }}>
-            AmberVault exists because the most meaningful objects in our lives are also the most fragile. We believe if something matters enough to keep, it matters enough to preserve forever.
+            Unforgotten Pour exists because the most meaningful objects in our lives are also the most fragile. We believe if something matters enough to keep, it matters enough to preserve forever.
           </p>
           <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.3)', marginBottom: '44px', letterSpacing: '0.03em' }}>
             Handcrafted in Spartanburg, South Carolina. Shipped nationwide.

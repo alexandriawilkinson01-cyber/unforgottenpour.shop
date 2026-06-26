@@ -19,7 +19,7 @@ export default function ServicesSection() {
             Not just flowers.<br />Everything that matters.
           </h2>
           <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.45)', maxWidth: '480px', lineHeight: 1.7 }}>
-            Most preservation studios only handle bouquets. AmberVault was built for the full spectrum of what people treasure.
+            Most preservation studios only handle bouquets. Unforgotten Pour was built for the full spectrum of what people treasure.
           </p>
         </div>
 

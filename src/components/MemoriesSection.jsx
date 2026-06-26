@@ -1,6 +1,6 @@
 const MEMORIES = [
   {
-    quote: "I gave my mother's funeral bouquet to AmberVault two days after her service. I couldn't explain why — I just couldn't let it go. What came back was something I'll keep forever. It's the first thing I see when I wake up.",
+    quote: "I gave my mother's funeral bouquet to Unforgotten Pour two days after her service. I couldn't explain why — I just couldn't let it go. What came back was something I'll keep forever. It's the first thing I see when I wake up.",
     name: 'Diane M.',
     location: 'Nashville, TN',
     item: 'Funeral florals preserved in a resin orb',

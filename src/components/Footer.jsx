@@ -13,14 +13,14 @@ export default function Footer() {
       {/* Watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
         <span className="font-playfair text-[12vw] font-black text-white/[0.03] select-none tracking-widest uppercase whitespace-nowrap">
-          AmberVault
+          Unforgotten Pour
         </span>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-8 py-24">
         <div className="border-t border-white/10 pt-16 grid grid-cols-2 md:grid-cols-4 gap-10">
           <div>
-            <p className="font-playfair text-lg font-semibold text-bone mb-4">AmberVault</p>
+            <p className="font-playfair text-lg font-semibold text-bone mb-4">Unforgotten Pour</p>
             <p className="text-xs text-bone/40 leading-relaxed">Museum-quality resin preservation.<br />Spartanburg, South Carolina.</p>
           </div>
           <div>
@@ -41,12 +41,12 @@ export default function Footer() {
           </div>
           <div>
             <p className="text-xs tracking-[0.15em] uppercase text-honey mb-4">Contact</p>
-            <p className="text-xs text-bone/50">hello@ambervault.com</p>
+            <p className="text-xs text-bone/50">AlexandriaWilkinson01@gmail.com</p>
             <p className="text-xs text-bone/50 mt-1">Spartanburg, SC</p>
           </div>
         </div>
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-bone/30">© 2026 AmberVault. All rights reserved.</p>
+          <p className="text-xs text-bone/30">© 2026 Unforgotten Pour. All rights reserved.</p>
           <div className="flex gap-6">
             <span className="text-xs text-bone/30 cursor-pointer hover:text-bone/50 transition-colors">Privacy Policy</span>
             <span className="text-xs text-bone/30 cursor-pointer hover:text-bone/50 transition-colors">Terms of Service</span>
