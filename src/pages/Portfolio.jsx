@@ -24,6 +24,7 @@ const CATEGORIES = [
       { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/9d9291a4a_556528575_1342912871176932_7211617229588252135_n.jpg', label: 'Hexagonal Resin Block' },
       { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/98508d6a5_596859509_1408934014574817_8786174887677198184_n.jpg', label: 'Engraved Heart Block' },
       { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/a25ae7b94_597624556_1408933964574822_9039555353428654077_n.jpg', label: '' },
+      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/eb45a883f_600306908_1413993667402185_4026996115270414416_n.jpg', label: '' },
     ],
   },
   {
