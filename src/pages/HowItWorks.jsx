@@ -29,8 +29,9 @@ const SHIPPING = [
     title: 'Inbound Shipping — Sending Items to the Studio',
     points: [
       'Pack all florals, ashes, and keepsakes in a sturdy box with ample padding. Place delicate flowers between sheets of tissue paper and seal cremation ashes in a labeled, double-bagged container.',
-      'Ship via UPS, FedEx, or USPS with tracking and insurance. We recommend insuring your outbound shipment for the item\'s sentimental or declared value.',
+      'Ship via UPS, FedEx, or USPS with tracking and insurance. We recommend insuring your outbound shipment for the item\'s sentimental or declared value. Cremation ashes must be shipped exclusively via USPS Priority Mail Express and the package must be clearly labeled "Human Remains" on the outside, in accordance with USPS Publication 52 guidelines.',
       'Ship fresh florals within 48 hours of your event if possible, or freeze them and ship overnight on dry ice for best color retention. Detailed packing instructions are included with every order confirmation.',
+      'Cremation ashes must be shipped via USPS Priority Mail Express only — no other carrier is permitted. The package must be clearly labeled "Human Remains" on the exterior and sealed in a sift-proof inner container. USPS requires the sender to use their designated Cremated Remains label (Label 139) and tape it securely over the box seam. Visit your local Post Office or usps.com to obtain the proper shipping kit.',
       'Address all shipments to: Unforgotten Pour Studio, Blacksburg, South Carolina. You will receive a confirmation email with the exact shipping address after placing your order.',
     ],
   },
