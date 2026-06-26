@@ -8,7 +8,7 @@ const GOLD_IMG = 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b
 
 const CATEGORIES = [
   { icon: '✿', title: 'Wedding & Event Florals', desc: 'Bridal bouquets, boutonnieres, corsages, and ceremonial arrangements cast in crystal-clear resin blocks, orbs, or jewelry.', img: GOLD_IMG },
-  { icon: '♥', title: 'Memorial Keepsakes', desc: 'Funeral flowers, ashes, dried botanicals from gravesites. A permanent, tangible way to hold someone close.', img: MEMORIAL_IMG },
+  { icon: '♥', title: 'Memorial Keepsakes', desc: 'Funeral flowers, cremation ashes from loved ones and pets, dried botanicals from gravesites. A permanent, tangible way to hold someone close.', img: MEMORIAL_IMG },
   { icon: '★', title: 'Milestone Artifacts', desc: "Baby's first shoes, hospital wristbands, locks of hair, pet fur, teeth, first toys. The small objects that mark enormous moments.", img: BABY_IMG },
   { icon: '♦', title: 'Legacy Pieces', desc: 'Military medals, vintage jewelry, watches, coins, letters, fabric swatches. Family history you can see and touch for generations.', img: LEGACY_IMG },
   { icon: '♣', title: 'Sports & Achievement', desc: 'Championship game tickets, jersey patches, race bibs, trophy fragments. The physical proof of your proudest moments.', img: GOLD_IMG },
