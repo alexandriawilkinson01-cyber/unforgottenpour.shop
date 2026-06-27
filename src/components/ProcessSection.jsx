@@ -9,10 +9,10 @@ const STEPS = [
 
 export default function ProcessSection() {
   return (
-    <section style={{ background: 'transparent', padding: '100px 24px', borderTop: '1px solid rgba(74,59,63,0.05)' }}>
+    <section style={{ background: '#0A0A0C', padding: '100px 24px', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
       <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-        <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C47B6D', marginBottom: '20px' }}>The Process</p>
-        <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, color: '#4A3B3F', lineHeight: 1.2, marginBottom: '64px' }}>
+        <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>The Process</p>
+        <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, color: '#F2F2F2', lineHeight: 1.2, marginBottom: '64px' }}>
           From treasured object<br />to timeless art.
         </h2>
 
@@ -23,9 +23,9 @@ export default function ProcessSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}>
-              <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '52px', fontWeight: 700, color: 'rgba(74,59,63,0.08)', marginBottom: '16px', lineHeight: 1 }}>{step.num}</div>
-              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '20px', fontWeight: 600, color: '#4A3B3F', marginBottom: '12px' }}>{step.title}</h3>
-              <p style={{ fontSize: '14px', color: 'rgba(74,59,63,0.45)', lineHeight: 1.75 }}>{step.desc}</p>
+              <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '52px', fontWeight: 700, color: 'rgba(242,242,242,0.08)', marginBottom: '16px', lineHeight: 1 }}>{step.num}</div>
+              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '20px', fontWeight: 600, color: '#F2F2F2', marginBottom: '12px' }}>{step.title}</h3>
+              <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.45)', lineHeight: 1.75 }}>{step.desc}</p>
             </motion.div>
           ))}
         </div>

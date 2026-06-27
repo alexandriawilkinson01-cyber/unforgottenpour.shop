@@ -11,12 +11,12 @@ const TIERS = [
 
 const inputStyle = {
   width: '100%', boxSizing: 'border-box',
-  background: 'rgba(74,59,63,0.04)', border: '1px solid rgba(74,59,63,0.1)',
-  borderRadius: '6px', padding: '12px 14px', color: '#4A3B3F', fontSize: '15px',
+  background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)',
+  borderRadius: '6px', padding: '12px 14px', color: '#F2F2F2', fontSize: '15px',
   outline: 'none', fontFamily: 'Inter Tight, sans-serif',
 };
 
-const labelStyle = { display: 'block', fontSize: '12px', letterSpacing: '0.06em', textTransform: 'uppercase', color: 'rgba(74,59,63,0.5)', marginBottom: '8px' };
+const labelStyle = { display: 'block', fontSize: '12px', letterSpacing: '0.06em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.5)', marginBottom: '8px' };
 
 export default function Order() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -59,17 +59,17 @@ export default function Order() {
   };
 
   return (
-    <div style={{ background: 'transparent', minHeight: '100vh' }}>
+    <div style={{ background: '#0A0A0C', minHeight: '100vh' }}>
       <Navbar />
       <div style={{ maxWidth: '720px', margin: '0 auto', padding: '100px 24px 80px' }}>
         <div style={{ marginBottom: '48px' }}>
-          <div style={{ display: 'inline-block', border: '1px solid rgba(74,59,63,0.2)', borderRadius: '999px', padding: '7px 18px', fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(74,59,63,0.55)', marginBottom: '24px' }}>
+          <div style={{ display: 'inline-block', border: '1px solid rgba(242,242,242,0.2)', borderRadius: '999px', padding: '7px 18px', fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.55)', marginBottom: '24px' }}>
             Preservation Intake
           </div>
-          <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 700, color: '#4A3B3F', lineHeight: 1.1, marginBottom: '16px' }}>
+          <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 700, color: '#F2F2F2', lineHeight: 1.1, marginBottom: '16px' }}>
             Tell us about your item.
           </h1>
-          <p style={{ fontSize: '15px', color: 'rgba(74,59,63,0.45)', lineHeight: 1.7 }}>
+          <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.45)', lineHeight: 1.7 }}>
             We'll confirm your order and send a packing kit within 24 hours. No payment required until we've reviewed your item.
           </p>
         </div>
@@ -77,7 +77,7 @@ export default function Order() {
         <form onSubmit={handleSubmit}>
           {/* Your Details */}
           <div style={{ marginBottom: '40px' }}>
-            <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C47B6D', marginBottom: '20px' }}>Your Details</p>
+            <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>Your Details</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '12px' }}>
               <div>
                 <label style={labelStyle}>First Name *</label>
@@ -102,7 +102,7 @@ export default function Order() {
 
           {/* About Your Item */}
           <div style={{ marginBottom: '40px' }}>
-            <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C47B6D', marginBottom: '20px' }}>About Your Item</p>
+            <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>About Your Item</p>
             <div style={{ marginBottom: '12px' }}>
               <label style={labelStyle}>Item Category *</label>
               <select required style={{ ...inputStyle, cursor: 'pointer' }} value={form.category} onChange={e => set('category', e.target.value)}>
@@ -125,8 +125,8 @@ export default function Order() {
                 <option value="orb">Orb</option>
                 <option value="tabletop">Tabletop Art / Custom Sculpture</option>
               </select>
-              <p style={{ fontSize: '12px', color: 'rgba(74,59,63,0.3)', marginTop: '6px' }}>
-                Not sure? <Link to="/portfolio" style={{ color: '#C47B6D', textDecoration: 'none' }}>Browse the portfolio</Link> for format examples.
+              <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.3)', marginTop: '6px' }}>
+                Not sure? <Link to="/portfolio" style={{ color: '#C8681E', textDecoration: 'none' }}>Browse the portfolio</Link> for format examples.
               </p>
             </div>
             <div style={{ marginBottom: '12px' }}>
@@ -145,15 +145,15 @@ export default function Order() {
 
           {/* Tier Selection */}
           <div style={{ marginBottom: '40px' }}>
-            <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C47B6D', marginBottom: '20px' }}>Select Your Tier *</p>
+            <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>Select Your Tier *</p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '2px' }}>
               {TIERS.map(tier => (
-                <div key={tier.id} onClick={() => setSelectedTier(tier.id)} style={{ background: selectedTier === tier.id ? 'rgba(249,241,236,0.75)' : 'rgba(255,255,255,0.75)', border: `2px solid ${selectedTier === tier.id ? '#C47B6D' : 'transparent'}`, borderRadius: '4px', padding: '24px 20px', cursor: 'pointer', transition: 'all 0.2s' }}>
-                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: 700, color: '#4A3B3F', marginBottom: '4px' }}>{tier.name}</div>
-                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '28px', fontWeight: 700, color: selectedTier === tier.id ? '#C47B6D' : '#4A3B3F', marginBottom: '8px' }}>{tier.price}</div>
-                  <div style={{ fontSize: '12px', color: 'rgba(74,59,63,0.4)', lineHeight: 1.5 }}>{tier.desc}</div>
+                <div key={tier.id} onClick={() => setSelectedTier(tier.id)} style={{ background: selectedTier === tier.id ? '#1A1A1E' : '#111113', border: `2px solid ${selectedTier === tier.id ? '#C8681E' : 'transparent'}`, borderRadius: '4px', padding: '24px 20px', cursor: 'pointer', transition: 'all 0.2s' }}>
+                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: 700, color: '#F2F2F2', marginBottom: '4px' }}>{tier.name}</div>
+                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '28px', fontWeight: 700, color: selectedTier === tier.id ? '#C8681E' : '#F2F2F2', marginBottom: '8px' }}>{tier.price}</div>
+                  <div style={{ fontSize: '12px', color: 'rgba(242,242,242,0.4)', lineHeight: 1.5 }}>{tier.desc}</div>
                   {selectedTier === tier.id && (
-                    <div style={{ marginTop: '12px', fontSize: '11px', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#C47B6D', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <div style={{ marginTop: '12px', fontSize: '11px', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#C8681E', display: 'flex', alignItems: 'center', gap: '6px' }}>
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
                       Selected
                     </div>
@@ -161,20 +161,20 @@ export default function Order() {
                 </div>
               ))}
             </div>
-            <p style={{ fontSize: '12px', color: 'rgba(74,59,63,0.3)', marginTop: '10px' }}>
-              Not sure? <Link to="/pricing" style={{ color: '#C47B6D', textDecoration: 'none' }}>View full tier breakdown</Link>. You'll be directed to secure payment after submitting.
+            <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.3)', marginTop: '10px' }}>
+              Not sure? <Link to="/pricing" style={{ color: '#C8681E', textDecoration: 'none' }}>View full tier breakdown</Link>. You'll be directed to secure payment after submitting.
             </p>
           </div>
 
           <button type="submit" disabled={loading}
-            style={{ width: '100%', background: '#C47B6D', color: '#fff', border: 'none', borderRadius: '999px', padding: '16px 24px', fontSize: '13px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.7 : 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', fontFamily: 'Inter Tight, sans-serif' }}>
+            style={{ width: '100%', background: '#C8681E', color: '#fff', border: 'none', borderRadius: '999px', padding: '16px 24px', fontSize: '13px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.7 : 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', fontFamily: 'Inter Tight, sans-serif' }}>
             {loading ? 'Processing...' : 'Continue to Payment →'}
           </button>
 
-          <p style={{ fontSize: '12px', color: 'rgba(74,59,63,0.25)', textAlign: 'center', marginTop: '16px', lineHeight: 1.6 }}>
+          <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.25)', textAlign: 'center', marginTop: '16px', lineHeight: 1.6 }}>
             Your order details are saved immediately. You'll be directed to Stripe's secure checkout to complete payment. We'll email you a confirmation and packing kit instructions after payment.
           </p>
-          <p style={{ fontSize: '11px', color: 'rgba(74,59,63,0.2)', textAlign: 'center', marginTop: '8px' }}>
+          <p style={{ fontSize: '11px', color: 'rgba(242,242,242,0.2)', textAlign: 'center', marginTop: '8px' }}>
             Test mode: use card 4242 4242 4242 4242, any future date, any CVV
           </p>
         </form>

@@ -6,35 +6,35 @@
 
 @layer base {
   :root {
-    --background: 30 33% 97%;
-    --foreground: 10 15% 25%;
-    --card: 0 0% 100%;
-    --card-foreground: 10 15% 25%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 10 15% 25%;
-    --primary: 12 40% 62%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 30 20% 92%;
-    --secondary-foreground: 10 15% 25%;
-    --muted: 30 20% 92%;
-    --muted-foreground: 10 10% 45%;
-    --accent: 12 40% 62%;
-    --accent-foreground: 0 0% 100%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
+    --card: 240 3% 11%;
+    --card-foreground: 0 0% 95%;
+    --popover: 240 3% 11%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 43 100% 50%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 240 3% 11%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 240 3% 11%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 43 100% 50%;
+    --accent-foreground: 0 0% 4%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 30 15% 85%;
-    --input: 30 15% 85%;
-    --ring: 12 40% 62%;
-    --chart-1: 12 40% 62%;
+    --border: 240 3% 20%;
+    --input: 240 3% 20%;
+    --ring: 43 100% 50%;
+    --chart-1: 43 100% 50%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.25rem;
-    --obsidian: #FBF7F4;
-    --honey: #C47B6D;
-    --smoked: #FFFFFF;
-    --bone: #4A3B3F;
+    --obsidian: #0A0A0C;
+    --honey: #FFB800;
+    --smoked: #1A1A1E;
+    --bone: #F2F2F2;
   }
 }
 
@@ -46,19 +46,19 @@
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 12 40% 62%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
-    --accent: 12 40% 62%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
-    --ring: 12 40% 62%;
+    --ring: 0 0% 3.9%;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -125,12 +125,8 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter Tight', sans-serif;
-    background-color: #FBF7F4;
-    background-image: url('https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/77bb47099_generated_image.png');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    color: #4A3B3F;
+    background-color: #0A0A0C;
+    color: #F2F2F2;
     overflow-x: hidden;
   }
 }
