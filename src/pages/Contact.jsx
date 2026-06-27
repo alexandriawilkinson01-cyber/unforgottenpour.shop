@@ -6,17 +6,25 @@ export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    await base44.integrations.Core.SendEmail({
-      to: 'AlexandriaWilkinson01@gmail.com',
-      subject: `New message from ${form.name}`,
-      body: `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`,
-    });
-    setSent(true);
-    setLoading(false);
+    setError('');
+    try {
+      await base44.integrations.Core.SendEmail({
+        to: 'AlexandriaWilkinson01@gmail.com',
+        from_name: 'Unforgotten Pour Website',
+        subject: `New message from ${form.name}`,
+        body: `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`,
+      });
+      setSent(true);
+    } catch (err) {
+      setError('Something went wrong sending your message. Please try again or email us directly.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const input = {
@@ -93,6 +101,9 @@ export default function Contact() {
                 <label style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', display: 'block', marginBottom: '8px' }}>Message</label>
                 <textarea required rows={5} value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))} style={{ ...input, resize: 'vertical' }} placeholder="Tell us about your item or ask us anything…" />
               </div>
+              {error && (
+                <p style={{ fontSize: '13px', color: '#ef4444', marginTop: '4px' }}>{error}</p>
+              )}
               <button type="submit" disabled={loading}
                 style={{ background: loading ? 'rgba(200,104,30,0.5)' : '#C8681E', color: '#fff', border: 'none', borderRadius: '999px', padding: '14px 32px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer' }}>
                 {loading ? 'Sending…' : 'Send Message'}
