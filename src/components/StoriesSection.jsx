@@ -45,14 +45,14 @@ const STORIES = [
 
 export default function StoriesSection() {
   return (
-    <section style={{ background: '#0A0A0C', padding: '100px 24px', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+    <section style={{ background: '#F8F4EF', padding: '100px 24px', borderTop: '1px solid rgba(26,26,26,0.05)' }}>
       <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
         <div style={{ marginBottom: '72px' }}>
-          <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>Real Memories, Preserved Forever</p>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 700, color: '#F2F2F2', lineHeight: 1.2 }}>
+          <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C48D4A', marginBottom: '20px' }}>Real Memories, Preserved Forever</p>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 700, color: '#1A1A1A', lineHeight: 1.2 }}>
             Stories from our studio.
           </h2>
-          <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.4)', marginTop: '16px', maxWidth: '480px', lineHeight: 1.7 }}>
+          <p style={{ fontSize: '15px', color: 'rgba(26,26,26,0.4)', marginTop: '16px', maxWidth: '480px', lineHeight: 1.7 }}>
             Every piece begins as a story. Here are a few of the memories we have been trusted to preserve for a lifetime.
           </p>
         </div>
@@ -64,7 +64,7 @@ export default function StoriesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              style={{ display: 'grid', gridTemplateColumns: i % 2 === 0 ? '420px 1fr' : '1fr 420px', background: '#111113', overflow: 'hidden' }}
+              style={{ display: 'grid', gridTemplateColumns: i % 2 === 0 ? '420px 1fr' : '1fr 420px', background: '#FFFFFF', overflow: 'hidden' }}
               className="flex-col-mobile">
               {/* Image */}
               <div style={{ order: i % 2 === 0 ? 0 : 1, position: 'relative', minHeight: '320px' }}>
@@ -80,29 +80,29 @@ export default function StoriesSection() {
 
               {/* Content */}
               <div style={{ padding: '48px 44px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <p style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.3)', marginBottom: '12px' }}>{story.location}</p>
-                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(20px, 2.5vw, 28px)', fontWeight: 700, color: '#F2F2F2', marginBottom: '24px', lineHeight: 1.25 }}>
+                <p style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(26,26,26,0.3)', marginBottom: '12px' }}>{story.location}</p>
+                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(20px, 2.5vw, 28px)', fontWeight: 700, color: '#1A1A1A', marginBottom: '24px', lineHeight: 1.25 }}>
                   {story.name}
                 </h3>
 
                 <div style={{ marginBottom: '20px' }}>
-                  <p style={{ fontSize: '10px', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '10px' }}>The Memory</p>
-                  <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.55)', lineHeight: 1.75 }}>{story.memory}</p>
+                  <p style={{ fontSize: '10px', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#C48D4A', marginBottom: '10px' }}>The Memory</p>
+                  <p style={{ fontSize: '14px', color: 'rgba(26,26,26,0.55)', lineHeight: 1.75 }}>{story.memory}</p>
                 </div>
 
                 <div style={{ marginBottom: '28px' }}>
-                  <p style={{ fontSize: '10px', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '10px' }}>How We Preserved It</p>
-                  <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.55)', lineHeight: 1.75 }}>{story.preserved}</p>
+                  <p style={{ fontSize: '10px', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#C48D4A', marginBottom: '10px' }}>How We Preserved It</p>
+                  <p style={{ fontSize: '14px', color: 'rgba(26,26,26,0.55)', lineHeight: 1.75 }}>{story.preserved}</p>
                 </div>
 
-                <div style={{ display: 'flex', gap: '24px', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '20px' }}>
+                <div style={{ display: 'flex', gap: '24px', borderTop: '1px solid rgba(26,26,26,0.06)', paddingTop: '20px' }}>
                   <div>
-                    <p style={{ fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.3)', marginBottom: '4px' }}>Format</p>
-                    <p style={{ fontSize: '13px', color: '#F2F2F2', fontWeight: 500 }}>{story.format}</p>
+                    <p style={{ fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(26,26,26,0.3)', marginBottom: '4px' }}>Format</p>
+                    <p style={{ fontSize: '13px', color: '#1A1A1A', fontWeight: 500 }}>{story.format}</p>
                   </div>
                   <div>
-                    <p style={{ fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.3)', marginBottom: '4px' }}>Turnaround</p>
-                    <p style={{ fontSize: '13px', color: '#F2F2F2', fontWeight: 500 }}>{story.time}</p>
+                    <p style={{ fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(26,26,26,0.3)', marginBottom: '4px' }}>Turnaround</p>
+                    <p style={{ fontSize: '13px', color: '#1A1A1A', fontWeight: 500 }}>{story.time}</p>
                   </div>
                 </div>
               </div>

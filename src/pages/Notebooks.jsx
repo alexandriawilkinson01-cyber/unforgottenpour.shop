@@ -55,16 +55,16 @@ export default function Notebooks() {
   };
 
   return (
-    <div style={{ background: '#0A0A0C', minHeight: '100vh', color: '#F2F2F2' }}>
-      <Navbar />
+    <div style={{ background: '#F8F4EF', minHeight: '100vh', color: '#1A1A1A' }}>
+      <Navbar light />
 
       {/* Hero */}
       <section style={{ paddingTop: '140px', paddingBottom: '80px', textAlign: 'center', padding: '140px 24px 80px' }}>
-        <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>Studio Collection</p>
+        <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C48D4A', marginBottom: '20px' }}>Studio Collection</p>
         <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 5vw, 64px)', fontWeight: 700, lineHeight: 1.1, marginBottom: '24px' }}>
           Handcrafted<br />Resin Notebooks
         </h1>
-        <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.5)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.75 }}>
+        <p style={{ fontSize: '16px', color: 'rgba(26,26,26,0.5)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.75 }}>
           Each notebook cover is hand-poured with preserved botanicals and premium resin. A journal you'll never want to put away.
         </p>
       </section>
@@ -73,44 +73,44 @@ export default function Notebooks() {
       <section style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 24px 80px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '2px', marginBottom: '80px' }}>
           {EXAMPLES.map((ex, i) => (
-            <div key={i} style={{ position: 'relative', overflow: 'hidden', background: '#111113' }}>
+            <div key={i} style={{ position: 'relative', overflow: 'hidden', background: '#FFFFFF' }}>
               <img src={ex.img} alt={ex.label} style={{ width: '100%', height: '320px', objectFit: 'cover', display: 'block' }} />
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,10,12,0.92) 0%, rgba(10,10,12,0.2) 55%, transparent 100%)' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(248,244,239,0.92) 0%, rgba(248,244,239,0.2) 55%, transparent 100%)' }} />
               <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '28px 28px 28px' }}>
-                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '20px', fontWeight: 600, marginBottom: '8px', color: '#F2F2F2' }}>{ex.label}</h3>
-                <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.55)', lineHeight: 1.65 }}>{ex.desc}</p>
+                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '20px', fontWeight: 600, marginBottom: '8px', color: '#1A1A1A' }}>{ex.label}</h3>
+                <p style={{ fontSize: '13px', color: 'rgba(26,26,26,0.55)', lineHeight: 1.65 }}>{ex.desc}</p>
               </div>
             </div>
           ))}
         </div>
 
         {/* Order card */}
-        <div style={{ background: '#111113', border: '1px solid rgba(255,255,255,0.07)', padding: '48px', maxWidth: '600px', margin: '0 auto' }}>
+        <div style={{ background: '#FFFFFF', border: '1px solid rgba(26,26,26,0.07)', padding: '48px', maxWidth: '600px', margin: '0 auto' }}>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '28px', fontWeight: 700, marginBottom: '8px' }}>Order a Notebook</h2>
-          <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.4)', marginBottom: '36px' }}>Each piece is handmade to order. Allow 4–6 weeks for delivery.</p>
+          <p style={{ fontSize: '14px', color: 'rgba(26,26,26,0.4)', marginBottom: '36px' }}>Each piece is handmade to order. Allow 4–6 weeks for delivery.</p>
 
           {/* Qty */}
           <div style={{ marginBottom: '28px' }}>
-            <label style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.5)', display: 'block', marginBottom: '10px' }}>Quantity</label>
+            <label style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(26,26,26,0.5)', display: 'block', marginBottom: '10px' }}>Quantity</label>
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-              <button onClick={() => setQty(q => Math.max(1, q - 1))} style={{ width: '36px', height: '36px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#F2F2F2', fontSize: '18px', cursor: 'pointer', borderRadius: '4px' }}>−</button>
+              <button onClick={() => setQty(q => Math.max(1, q - 1))} style={{ width: '36px', height: '36px', background: 'rgba(26,26,26,0.05)', border: '1px solid rgba(26,26,26,0.1)', color: '#1A1A1A', fontSize: '18px', cursor: 'pointer', borderRadius: '4px' }}>−</button>
               <span style={{ fontSize: '20px', fontWeight: 600, minWidth: '24px', textAlign: 'center' }}>{qty}</span>
-              <button onClick={() => setQty(q => q + 1)} style={{ width: '36px', height: '36px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#F2F2F2', fontSize: '18px', cursor: 'pointer', borderRadius: '4px' }}>+</button>
+              <button onClick={() => setQty(q => q + 1)} style={{ width: '36px', height: '36px', background: 'rgba(26,26,26,0.05)', border: '1px solid rgba(26,26,26,0.1)', color: '#1A1A1A', fontSize: '18px', cursor: 'pointer', borderRadius: '4px' }}>+</button>
             </div>
           </div>
 
           {/* Custom add-on */}
           <div style={{ marginBottom: '28px' }}>
-            <label style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.5)', display: 'block', marginBottom: '12px' }}>Add-Ons</label>
+            <label style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(26,26,26,0.5)', display: 'block', marginBottom: '12px' }}>Add-Ons</label>
             <div
               onClick={() => setCustom(c => !c)}
-              style={{ display: 'flex', alignItems: 'flex-start', gap: '14px', padding: '18px', border: `1px solid ${custom ? '#C8681E' : 'rgba(255,255,255,0.1)'}`, background: custom ? 'rgba(200,104,30,0.07)' : 'transparent', cursor: 'pointer', borderRadius: '4px', transition: 'all 0.2s' }}>
-              <div style={{ width: '20px', height: '20px', border: `2px solid ${custom ? '#C8681E' : 'rgba(255,255,255,0.3)'}`, borderRadius: '4px', background: custom ? '#C8681E' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px', transition: 'all 0.2s' }}>
+              style={{ display: 'flex', alignItems: 'flex-start', gap: '14px', padding: '18px', border: `1px solid ${custom ? '#C48D4A' : 'rgba(26,26,26,0.1)'}`, background: custom ? 'rgba(196,141,74,0.07)' : 'transparent', cursor: 'pointer', borderRadius: '4px', transition: 'all 0.2s' }}>
+              <div style={{ width: '20px', height: '20px', border: `2px solid ${custom ? '#C48D4A' : 'rgba(26,26,26,0.3)'}`, borderRadius: '4px', background: custom ? '#C48D4A' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px', transition: 'all 0.2s' }}>
                 {custom && <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3"><polyline points="20 6 9 17 4 12"/></svg>}
               </div>
               <div>
-                <p style={{ fontSize: '14px', fontWeight: 600, color: '#F2F2F2', marginBottom: '4px' }}>Custom Personalization <span style={{ color: '#C8681E' }}>+$18</span></p>
-                <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.4)', lineHeight: 1.6 }}>Add your own flowers, a name, date, or special request. We'll reach out after purchase to discuss your vision.</p>
+                <p style={{ fontSize: '14px', fontWeight: 600, color: '#1A1A1A', marginBottom: '4px' }}>Custom Personalization <span style={{ color: '#C48D4A' }}>+$18</span></p>
+                <p style={{ fontSize: '13px', color: 'rgba(26,26,26,0.4)', lineHeight: 1.6 }}>Add your own flowers, a name, date, or special request. We'll reach out after purchase to discuss your vision.</p>
               </div>
             </div>
           </div>
@@ -118,21 +118,21 @@ export default function Notebooks() {
           {/* Custom note */}
           {custom && (
             <div style={{ marginBottom: '28px' }}>
-              <label style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.5)', display: 'block', marginBottom: '10px' }}>Tell us about your custom request</label>
+              <label style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(26,26,26,0.5)', display: 'block', marginBottom: '10px' }}>Tell us about your custom request</label>
               <textarea value={customNote} onChange={e => setCustomNote(e.target.value)} rows={3} placeholder="E.g. pressed roses from our anniversary, engrave 'Emma & James 2024' on the spine…"
-                style={{ width: '100%', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '4px', padding: '12px 14px', color: '#F2F2F2', fontSize: '14px', resize: 'vertical', outline: 'none', fontFamily: 'Inter Tight, sans-serif', boxSizing: 'border-box' }} />
+                style={{ width: '100%', background: 'rgba(26,26,26,0.04)', border: '1px solid rgba(26,26,26,0.1)', borderRadius: '4px', padding: '12px 14px', color: '#1A1A1A', fontSize: '14px', resize: 'vertical', outline: 'none', fontFamily: 'Inter Tight, sans-serif', boxSizing: 'border-box' }} />
             </div>
           )}
 
           {/* Total & CTA */}
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)', paddingTop: '24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
+          <div style={{ borderTop: '1px solid rgba(26,26,26,0.07)', paddingTop: '24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
             <div>
-              <p style={{ fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.35)', marginBottom: '4px' }}>Total</p>
+              <p style={{ fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(26,26,26,0.35)', marginBottom: '4px' }}>Total</p>
               <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '32px', fontWeight: 700 }}>${total}</p>
-              <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.3)', marginTop: '2px' }}>{qty} × ${price}{custom ? ' (incl. custom)' : ''}</p>
+              <p style={{ fontSize: '12px', color: 'rgba(26,26,26,0.3)', marginTop: '2px' }}>{qty} × ${price}{custom ? ' (incl. custom)' : ''}</p>
             </div>
             <button onClick={handleOrder} disabled={loading}
-              style={{ background: loading ? 'rgba(200,104,30,0.5)' : '#C8681E', color: '#fff', border: 'none', borderRadius: '999px', padding: '15px 36px', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', transition: 'background 0.2s' }}>
+              style={{ background: loading ? 'rgba(196,141,74,0.5)' : '#C48D4A', color: '#fff', border: 'none', borderRadius: '999px', padding: '15px 36px', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', transition: 'background 0.2s' }}>
               {loading ? 'Redirecting…' : 'Order Now'}
             </button>
           </div>

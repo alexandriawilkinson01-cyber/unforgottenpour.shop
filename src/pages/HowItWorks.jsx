@@ -80,18 +80,18 @@ const FAQS = [
 
 export default function HowItWorks() {
   return (
-    <div style={{ background: '#0A0A0C', minHeight: '100vh', color: '#F2F2F2' }}>
-      <Navbar />
+    <div style={{ background: '#F8F4EF', minHeight: '100vh', color: '#1A1A1A' }}>
+      <Navbar light />
 
       {/* Hero */}
       <section style={{ paddingTop: '140px', paddingBottom: '60px', textAlign: 'center', padding: '140px 24px 60px' }}>
-        <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>
+        <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C48D4A', marginBottom: '20px' }}>
           The Unforgotten Pour Process
         </p>
         <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 5vw, 64px)', fontWeight: 700, lineHeight: 1.1, marginBottom: '24px', maxWidth: '820px', margin: '0 auto 24px' }}>
           How we turn your memories into permanent, handcrafted resin keepsakes
         </h1>
-        <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.5)', maxWidth: '580px', margin: '0 auto 48px', lineHeight: 1.8 }}>
+        <p style={{ fontSize: '16px', color: 'rgba(26,26,26,0.5)', maxWidth: '580px', margin: '0 auto 48px', lineHeight: 1.8 }}>
           Unforgotten Pour is a boutique preservation studio that encapsulates flowers, cremation ashes, personal objects, and botanicals into optical-clarity resin jewelry, orbs, paperweights, and custom art pieces. Every order is handled personally by our studio artisans — no factories, no shortcuts. Below is a detailed walkthrough of our four-stage process, from the moment you ship your items to the day your finished piece arrives back at your door.
         </p>
       </section>
@@ -100,15 +100,15 @@ export default function HowItWorks() {
       <section style={{ maxWidth: '900px', margin: '0 auto', padding: '0 24px 80px' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
           {STEPS.map((step) => (
-            <div key={step.number} style={{ background: '#111113', padding: '44px 48px', display: 'grid', gridTemplateColumns: '80px 1fr', gap: '32px', alignItems: 'flex-start' }}>
-              <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '48px', fontWeight: 700, color: '#C8681E', lineHeight: 1, opacity: 0.7 }}>
+            <div key={step.number} style={{ background: '#FFFFFF', padding: '44px 48px', display: 'grid', gridTemplateColumns: '80px 1fr', gap: '32px', alignItems: 'flex-start' }}>
+              <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '48px', fontWeight: 700, color: '#C48D4A', lineHeight: 1, opacity: 0.7 }}>
                 {step.number}
               </div>
               <div>
-                <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '24px', fontWeight: 700, color: '#F2F2F2', marginBottom: '14px' }}>
+                <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '24px', fontWeight: 700, color: '#1A1A1A', marginBottom: '14px' }}>
                   {step.title}
                 </h2>
-                <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.6)', lineHeight: 1.85 }}>
+                <p style={{ fontSize: '15px', color: 'rgba(26,26,26,0.6)', lineHeight: 1.85 }}>
                   {step.body}
                 </p>
               </div>
@@ -118,20 +118,20 @@ export default function HowItWorks() {
       </section>
 
       {/* FAQ */}
-      <section style={{ maxWidth: '900px', margin: '0 auto', padding: '0 24px 60px', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+      <section style={{ maxWidth: '900px', margin: '0 auto', padding: '0 24px 60px', borderTop: '1px solid rgba(26,26,26,0.05)' }}>
         <div style={{ textAlign: 'center', padding: '60px 0 48px' }}>
-          <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '16px' }}>Common Questions</p>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(26px, 4vw, 40px)', fontWeight: 700, color: '#F2F2F2' }}>
+          <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C48D4A', marginBottom: '16px' }}>Common Questions</p>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(26px, 4vw, 40px)', fontWeight: 700, color: '#1A1A1A' }}>
             Frequently asked questions
           </h2>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
           {FAQS.map((faq) => (
-            <div key={faq.q} style={{ background: '#111113', padding: '32px 40px' }}>
-              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '18px', fontWeight: 700, color: '#F2F2F2', marginBottom: '12px' }}>
+            <div key={faq.q} style={{ background: '#FFFFFF', padding: '32px 40px' }}>
+              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '18px', fontWeight: 700, color: '#1A1A1A', marginBottom: '12px' }}>
                 {faq.q}
               </h3>
-              <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.55)', lineHeight: 1.8 }}>
+              <p style={{ fontSize: '14px', color: 'rgba(26,26,26,0.55)', lineHeight: 1.8 }}>
                 {faq.a}
               </p>
             </div>
@@ -140,23 +140,23 @@ export default function HowItWorks() {
       </section>
 
       {/* Shipping Policy */}
-      <section style={{ maxWidth: '900px', margin: '0 auto', padding: '0 24px 80px', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+      <section style={{ maxWidth: '900px', margin: '0 auto', padding: '0 24px 80px', borderTop: '1px solid rgba(26,26,26,0.05)' }}>
         <div style={{ textAlign: 'center', padding: '60px 0 48px' }}>
-          <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '16px' }}>Shipping & Handling</p>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(26px, 4vw, 40px)', fontWeight: 700, color: '#F2F2F2' }}>
+          <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C48D4A', marginBottom: '16px' }}>Shipping & Handling</p>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(26px, 4vw, 40px)', fontWeight: 700, color: '#1A1A1A' }}>
             Shipping policy
           </h2>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
           {SHIPPING.map((section) => (
-            <div key={section.title} style={{ background: '#111113', padding: '36px 40px' }}>
-              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '18px', fontWeight: 700, color: '#F2F2F2', marginBottom: '20px' }}>
+            <div key={section.title} style={{ background: '#FFFFFF', padding: '36px 40px' }}>
+              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '18px', fontWeight: 700, color: '#1A1A1A', marginBottom: '20px' }}>
                 {section.title}
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                 {section.points.map((point, i) => (
-                  <li key={i} style={{ display: 'flex', gap: '12px', padding: '10px 0', fontSize: '14px', color: 'rgba(242,242,242,0.55)', lineHeight: 1.8, borderTop: i === 0 ? 'none' : '1px solid rgba(255,255,255,0.04)' }}>
-                    <span style={{ color: '#C8681E', flexShrink: 0, marginTop: '2px' }}>▪</span>
+                  <li key={i} style={{ display: 'flex', gap: '12px', padding: '10px 0', fontSize: '14px', color: 'rgba(26,26,26,0.55)', lineHeight: 1.8, borderTop: i === 0 ? 'none' : '1px solid rgba(26,26,26,0.04)' }}>
+                    <span style={{ color: '#C48D4A', flexShrink: 0, marginTop: '2px' }}>▪</span>
                     <span>{point}</span>
                   </li>
                 ))}
@@ -168,13 +168,13 @@ export default function HowItWorks() {
 
       {/* CTA */}
       <section style={{ textAlign: 'center', padding: '60px 24px 100px' }}>
-        <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 700, color: '#F2F2F2', marginBottom: '20px' }}>
+        <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 700, color: '#1A1A1A', marginBottom: '20px' }}>
           Ready to begin?
         </h2>
-        <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.45)', marginBottom: '36px', lineHeight: 1.7 }}>
+        <p style={{ fontSize: '15px', color: 'rgba(26,26,26,0.45)', marginBottom: '36px', lineHeight: 1.7 }}>
           Start your order today — we'll guide you through every step.
         </p>
-        <Link to="/order" style={{ display: 'inline-block', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '14px 36px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
+        <Link to="/order" style={{ display: 'inline-block', background: '#C48D4A', color: '#fff', borderRadius: '999px', padding: '14px 36px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
           Start My Order
         </Link>
       </section>
