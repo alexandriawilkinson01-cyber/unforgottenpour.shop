@@ -87,7 +87,7 @@ export default function Notebooks() {
         {/* Order card */}
         <div style={{ background: '#111113', border: '1px solid rgba(255,255,255,0.07)', padding: '48px', maxWidth: '600px', margin: '0 auto' }}>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '28px', fontWeight: 700, marginBottom: '8px' }}>Order a Notebook</h2>
-          <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.4)', marginBottom: '36px' }}>Each piece is handmade to order. Allow 3–5 weeks for delivery.</p>
+          <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.4)', marginBottom: '36px' }}>Each piece is handmade to order. Allow 4–6 weeks for delivery.</p>
 
           {/* Qty */}
           <div style={{ marginBottom: '28px' }}>

@@ -62,7 +62,7 @@ const FAQS = [
   },
   {
     q: 'How long does the process take?',
-    a: 'Turnaround varies by tier and current studio volume. Jewelry and small keepsake pieces typically take 6–10 weeks. Orbs and mid-size displays take 8–12 weeks. Large custom sculptures take 10–16 weeks. Rush options are available on select tiers — inquire when placing your order.',
+    a: 'All pieces typically take 4–6 weeks, depending on current studio volume. Rush options are available on select tiers — inquire when placing your order.',
   },
   {
     q: 'Will my preserved piece last forever?',

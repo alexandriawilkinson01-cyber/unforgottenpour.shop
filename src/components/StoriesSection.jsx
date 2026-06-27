@@ -9,7 +9,7 @@ const STORIES = [
     memory: 'Claire\'s ceremony bouquet was a riot of color — garden roses, lavender sprigs, wild purple larkspur, yellow buttercups, and delicate white buds. She wanted every stem preserved exactly as it was on the morning of her wedding.',
     preserved: 'Each flower was individually dried and arranged to mirror the original bouquet. We cast the full collection into a large round orb, now displayed on their marble mantle — a permanent bloom that will never fade.',
     format: 'Resin Orb',
-    time: '10 weeks',
+    time: '6 weeks',
   },
   {
     name: 'The Calloway Bridal Bouquet',
@@ -19,7 +19,7 @@ const STORIES = [
     memory: 'Anna carried a soft, romantic bouquet of blush roses, white ranunculus, wax flowers, and eucalyptus. The day after her wedding she reached out to us — she couldn\'t bear the thought of watching it wither.',
     preserved: 'We dried and arranged every stem in their original groupings, then cast them into a round orb. Anna now keeps it on her kitchen table as a daily reminder of that morning — the same hand that holds it still wears the ring.',
     format: 'Resin Orb',
-    time: '9 weeks',
+    time: '5 weeks',
   },
   {
     name: 'Mia Rose\'s First Shoes',
@@ -29,7 +29,7 @@ const STORIES = [
     memory: 'Mia\'s grandmother hand-knitted these booties before she was born. They were worn twice — once home from the hospital, once for a first family photo. Her parents wanted them kept exactly as they were, forever.',
     preserved: 'The booties were gently cleaned and positioned inside a clear resin block, with an engraved brass nameplate reading "MIA ROSE · Born Oct 12, 2021 ♥". Every stitch is visible. It will be hers one day.',
     format: 'Engraved Block',
-    time: '7 weeks',
+    time: '5 weeks',
   },
   {
     name: 'In Memory of Thomas',
