@@ -97,28 +97,28 @@ export default function Portfolio() {
   const [activeTab, setActiveTab] = useState('wedding');
 
   return (
-    <div style={{ background: '#F8F4EF', minHeight: '100vh' }}>
-      <Navbar light />
+    <div style={{ background: '#0A0A0C', minHeight: '100vh' }}>
+      <Navbar />
 
       {/* Hero */}
       <section style={{ paddingTop: '120px', paddingBottom: '80px', textAlign: 'center', padding: '120px 24px 80px' }}>
-        <div style={{ display: 'inline-block', border: '1px solid rgba(26,26,26,0.2)', borderRadius: '999px', padding: '7px 18px', fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(26,26,26,0.55)', marginBottom: '32px' }}>
+        <div style={{ display: 'inline-block', border: '1px solid rgba(242,242,242,0.2)', borderRadius: '999px', padding: '7px 18px', fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.55)', marginBottom: '32px' }}>
           What We Preserve
         </div>
-        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(40px, 6vw, 72px)', fontWeight: 700, color: '#1A1A1A', lineHeight: 1.1, marginBottom: '24px' }}>
+        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(40px, 6vw, 72px)', fontWeight: 700, color: '#F2F2F2', lineHeight: 1.1, marginBottom: '24px' }}>
           Every category.<br />Every memory.
         </h1>
-        <p style={{ fontSize: '16px', color: 'rgba(26,26,26,0.5)', maxWidth: '500px', margin: '0 auto', lineHeight: 1.7 }}>
+        <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.5)', maxWidth: '500px', margin: '0 auto', lineHeight: 1.7 }}>
           From bridal bouquets to memorial tributes to milestone keepsakes — real pieces from our studio, each one handcrafted and unique.
         </p>
       </section>
 
       {/* Tabs */}
-      <div style={{ borderTop: '1px solid rgba(26,26,26,0.06)', borderBottom: '1px solid rgba(26,26,26,0.06)', background: '#F0EBE3' }}>
+      <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)', background: '#0D0D10' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', gap: '0', overflowX: 'auto' }}>
           {CATEGORIES.map(cat => (
             <button key={cat.id} onClick={() => setActiveTab(cat.id)}
-              style={{ padding: '18px 28px', fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', background: 'none', border: 'none', cursor: 'pointer', whiteSpace: 'nowrap', borderBottom: activeTab === cat.id ? '2px solid #C8681E' : '2px solid transparent', color: activeTab === cat.id ? '#1A1A1A' : 'rgba(26,26,26,0.4)', transition: 'color 0.2s', fontFamily: 'Inter Tight, sans-serif' }}>
+              style={{ padding: '18px 28px', fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', background: 'none', border: 'none', cursor: 'pointer', whiteSpace: 'nowrap', borderBottom: activeTab === cat.id ? '2px solid #C8681E' : '2px solid transparent', color: activeTab === cat.id ? '#F2F2F2' : 'rgba(242,242,242,0.4)', transition: 'color 0.2s', fontFamily: 'Inter Tight, sans-serif' }}>
               {cat.label}
             </button>
           ))}
@@ -129,10 +129,10 @@ export default function Portfolio() {
       {CATEGORIES.filter(c => c.id === activeTab).map(cat => (
         <section key={cat.id} style={{ maxWidth: '1100px', margin: '0 auto', padding: '80px 24px' }}>
           <div style={{ display: 'flex', gap: '8px', alignItems: 'flex-start', marginBottom: '60px', flexWrap: 'wrap' }}>
-            <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '80px', fontWeight: 700, color: 'rgba(26,26,26,0.06)', lineHeight: 1, marginRight: '16px' }}>{cat.num}</span>
+            <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '80px', fontWeight: 700, color: 'rgba(242,242,242,0.06)', lineHeight: 1, marginRight: '16px' }}>{cat.num}</span>
             <div style={{ paddingTop: '12px' }}>
-              <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C48D4A', marginBottom: '8px' }}>Category {cat.num}</p>
-              <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 700, color: '#1A1A1A' }}>{cat.title}</h2>
+              <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '8px' }}>Category {cat.num}</p>
+              <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 700, color: '#F2F2F2' }}>{cat.title}</h2>
             </div>
           </div>
 
@@ -140,7 +140,7 @@ export default function Portfolio() {
             {/* Images */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '4px' }}>
               {cat.images.length === 0 && (
-                <div style={{ gridColumn: '1 / -1', display: 'flex', alignItems: 'center', justifyContent: 'center', aspectRatio: '16/10', background: '#FFFFFF', border: '1px dashed rgba(26,26,26,0.1)', color: 'rgba(26,26,26,0.25)', fontSize: '13px', letterSpacing: '0.05em' }}>
+                <div style={{ gridColumn: '1 / -1', display: 'flex', alignItems: 'center', justifyContent: 'center', aspectRatio: '16/10', background: '#111113', border: '1px dashed rgba(255,255,255,0.1)', color: 'rgba(242,242,242,0.25)', fontSize: '13px', letterSpacing: '0.05em' }}>
                   Photos coming soon
                 </div>
               )}
@@ -148,8 +148,8 @@ export default function Portfolio() {
                 <div key={i} style={{ position: 'relative', gridColumn: i === 0 ? '1 / -1' : 'auto' }}>
                   <img src={img.url} alt={img.label} style={{ width: '100%', display: 'block', objectFit: 'cover', aspectRatio: i === 0 ? '16/10' : '1' }} />
                   {img.label && (
-                    <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '12px 16px', background: 'linear-gradient(to top, rgba(248,244,239,0.85), transparent)' }}>
-                      <span style={{ fontSize: '11px', color: 'rgba(26,26,26,0.7)', letterSpacing: '0.05em' }}>{img.label}</span>
+                    <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '12px 16px', background: 'linear-gradient(to top, rgba(10,10,12,0.85), transparent)' }}>
+                      <span style={{ fontSize: '11px', color: 'rgba(242,242,242,0.7)', letterSpacing: '0.05em' }}>{img.label}</span>
                     </div>
                   )}
                 </div>
@@ -158,16 +158,16 @@ export default function Portfolio() {
 
             {/* Details */}
             <div style={{ paddingLeft: '16px' }}>
-              <p style={{ fontSize: '15px', color: 'rgba(26,26,26,0.55)', lineHeight: 1.75, marginBottom: '28px' }}>{cat.desc}</p>
+              <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.55)', lineHeight: 1.75, marginBottom: '28px' }}>{cat.desc}</p>
               <ul style={{ listStyle: 'none', padding: 0, marginBottom: '36px' }}>
                 {cat.items.map(item => (
-                  <li key={item} style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '8px 0', borderBottom: '1px solid rgba(26,26,26,0.05)', fontSize: '14px', color: 'rgba(26,26,26,0.6)' }}>
-                    <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#C48D4A', flexShrink: 0 }} />
+                  <li key={item} style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.05)', fontSize: '14px', color: 'rgba(242,242,242,0.6)' }}>
+                    <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#C8681E', flexShrink: 0 }} />
                     {item}
                   </li>
                 ))}
               </ul>
-              <Link to={`/order?category=${cat.id}`} style={{ display: 'inline-block', background: '#C48D4A', color: '#fff', borderRadius: '999px', padding: '13px 28px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
+              <Link to={`/order?category=${cat.id}`} style={{ display: 'inline-block', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '13px 28px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
                 Preserve Mine →
               </Link>
             </div>
@@ -176,24 +176,24 @@ export default function Portfolio() {
       ))}
 
       {/* Available Formats */}
-      <section style={{ background: '#F0EBE3', padding: '80px 24px', borderTop: '1px solid rgba(26,26,26,0.05)' }}>
+      <section style={{ background: '#0D0D10', padding: '80px 24px', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 700, color: '#1A1A1A', marginBottom: '48px' }}>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 700, color: '#F2F2F2', marginBottom: '48px' }}>
             How do you want to display it?
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '2px' }}>
             {FORMATS.map(f => (
-              <div key={f.name} style={{ background: '#FFFFFF', padding: '28px 24px' }}>
+              <div key={f.name} style={{ background: '#111113', padding: '28px 24px' }}>
                 <div style={{ fontSize: '20px', marginBottom: '12px', opacity: 0.5 }}>{f.icon}</div>
-                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '16px', fontWeight: 600, color: '#1A1A1A', marginBottom: '8px' }}>{f.name}</h3>
-                <p style={{ fontSize: '13px', color: 'rgba(26,26,26,0.4)', lineHeight: 1.6 }}>{f.desc}</p>
+                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '16px', fontWeight: 600, color: '#F2F2F2', marginBottom: '8px' }}>{f.name}</h3>
+                <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.4)', lineHeight: 1.6 }}>{f.desc}</p>
               </div>
             ))}
           </div>
           <div style={{ marginTop: '64px', textAlign: 'center' }}>
-            <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '28px', fontWeight: 600, color: '#1A1A1A', marginBottom: '12px' }}>Ready to start?</h3>
-            <p style={{ fontSize: '15px', color: 'rgba(26,26,26,0.45)', marginBottom: '28px' }}>Tell us what you have and we'll take it from there.</p>
-            <Link to="/order" style={{ display: 'inline-block', background: '#C48D4A', color: '#fff', borderRadius: '999px', padding: '13px 32px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
+            <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '28px', fontWeight: 600, color: '#F2F2F2', marginBottom: '12px' }}>Ready to start?</h3>
+            <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.45)', marginBottom: '28px' }}>Tell us what you have and we'll take it from there.</p>
+            <Link to="/order" style={{ display: 'inline-block', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '13px 32px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
               Begin My Order
             </Link>
           </div>

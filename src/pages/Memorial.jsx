@@ -12,23 +12,23 @@ const ITEMS = [
 
 export default function Memorial() {
   return (
-    <div style={{ background: '#F8F4EF', minHeight: '100vh' }}>
-      <Navbar light />
+    <div style={{ background: '#0A0A0C', minHeight: '100vh' }}>
+      <Navbar />
 
       <section style={{ position: 'relative', minHeight: '70vh', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '120px 24px 80px', overflow: 'hidden' }}>
         <img src={MEMORIAL_IMG} alt="Memorial orb" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.2 }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'rgba(248,244,239,0.7)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,10,12,0.7)' }} />
         <div style={{ position: 'relative', zIndex: 10, maxWidth: '620px' }}>
-          <div style={{ display: 'inline-block', border: '1px solid rgba(26,26,26,0.2)', borderRadius: '999px', padding: '7px 18px', fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(26,26,26,0.55)', marginBottom: '32px' }}>
+          <div style={{ display: 'inline-block', border: '1px solid rgba(242,242,242,0.2)', borderRadius: '999px', padding: '7px 18px', fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.55)', marginBottom: '32px' }}>
             Memorial Keepsakes
           </div>
-          <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 5vw, 64px)', fontWeight: 700, color: '#1A1A1A', lineHeight: 1.1, marginBottom: '24px' }}>
+          <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 5vw, 64px)', fontWeight: 700, color: '#F2F2F2', lineHeight: 1.1, marginBottom: '24px' }}>
             A permanent way<br />to hold someone close.
           </h1>
-          <p style={{ fontSize: '16px', color: 'rgba(26,26,26,0.55)', lineHeight: 1.75, marginBottom: '44px' }}>
+          <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.55)', lineHeight: 1.75, marginBottom: '44px' }}>
             Funeral flowers, cremation ashes, dried botanicals from gravesites, pet fur and paw prints, handwritten letters. Whatever connects you to the person or companion you have lost — preserved forever in museum-quality resin.
           </p>
-          <Link to="/order?category=memorial" style={{ display: 'inline-block', background: '#C48D4A', color: '#fff', borderRadius: '999px', padding: '14px 36px', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
+          <Link to="/order?category=memorial" style={{ display: 'inline-block', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '14px 36px', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
             Begin Memorial Order
           </Link>
         </div>
@@ -37,10 +37,10 @@ export default function Memorial() {
       <section style={{ maxWidth: '900px', margin: '0 auto', padding: '80px 24px' }}>
         {ITEMS.map((item, i) => (
           <div key={item.title} style={{ display: 'grid', gridTemplateColumns: '60px 1fr', gap: '32px', padding: '40px 0', borderBottom: '1px solid rgba(255,255,255,0.06)', alignItems: 'start' }}>
-            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '13px', fontWeight: 600, color: '#C48D4A', paddingTop: '4px' }}>0{i + 1}</div>
+            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '13px', fontWeight: 600, color: '#C8681E', paddingTop: '4px' }}>0{i + 1}</div>
             <div>
-              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: 600, color: '#1A1A1A', marginBottom: '10px' }}>{item.title}</h3>
-              <p style={{ fontSize: '15px', color: 'rgba(26,26,26,0.45)', lineHeight: 1.7 }}>{item.desc}</p>
+              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: 600, color: '#F2F2F2', marginBottom: '10px' }}>{item.title}</h3>
+              <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.45)', lineHeight: 1.7 }}>{item.desc}</p>
             </div>
           </div>
         ))}

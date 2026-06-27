@@ -10,10 +10,10 @@ module.exports = {
   			'playfair': ['Playfair Display', 'serif'],
   		},
   		colors: {
-  			obsidian: '#F8F4EF',
-  			honey: '#C48D4A',
-  			smoked: '#EBE5DC',
-  			bone: '#1A1A1A',
+  			obsidian: '#0A0A0C',
+  			honey: '#FFB800',
+  			smoked: '#1A1A1E',
+  			bone: '#F2F2F2',
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

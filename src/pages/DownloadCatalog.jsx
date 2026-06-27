@@ -30,13 +30,13 @@ export default function DownloadCatalog() {
   };
 
   return (
-    <div style={{ background: '#F8F4EF', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1A1A1A', fontFamily: 'Inter Tight, sans-serif' }}>
+    <div style={{ background: '#0A0A0C', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#F2F2F2', fontFamily: 'Inter Tight, sans-serif' }}>
       <div style={{ textAlign: 'center', padding: '48px 24px' }}>
-        <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C48D4A', marginBottom: '20px' }}>Product Catalog</p>
+        <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>Product Catalog</p>
         <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 700, marginBottom: '16px' }}>Download Your Catalog</h1>
-        <p style={{ fontSize: '15px', color: 'rgba(26,26,26,0.45)', marginBottom: '40px' }}>All 8 products with prices, descriptions, IDs, and order URLs.</p>
+        <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.45)', marginBottom: '40px' }}>All 8 products with prices, descriptions, IDs, and order URLs.</p>
         <button onClick={handleDownload}
-          style={{ background: '#C48D4A', color: '#fff', border: 'none', borderRadius: '999px', padding: '14px 36px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, cursor: 'pointer' }}>
+          style={{ background: '#C8681E', color: '#fff', border: 'none', borderRadius: '999px', padding: '14px 36px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, cursor: 'pointer' }}>
           Download Excel File
         </button>
       </div>
