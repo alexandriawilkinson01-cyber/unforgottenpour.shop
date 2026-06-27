@@ -46,23 +46,23 @@ export default function ContactSubmissions() {
           <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C47B6D', marginBottom: '8px' }}>Inquiries</p>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(22px,3vw,32px)', fontWeight: 700 }}>Contact Form Submissions</h2>
         </div>
-        <span style={{ background: '#FFFFFF', padding: '8px 16px', borderRadius: '999px', fontSize: '13px', color: 'rgba(74,59,63,0.6)' }}>
+        <span style={{ background: 'rgba(255,255,255,0.75)', padding: '8px 16px', borderRadius: '999px', fontSize: '13px', color: 'rgba(74,59,63,0.6)' }}>
           {submissions.length} total
         </span>
       </div>
 
       {loading ? (
-        <div style={{ textAlign: 'center', padding: '40px', background: '#FFFFFF' }}>
+        <div style={{ textAlign: 'center', padding: '40px', background: 'rgba(255,255,255,0.75)' }}>
           <div className="w-8 h-8 border-4 border-slate-700 border-t-amber-500 rounded-full animate-spin" style={{ margin: '0 auto' }} />
         </div>
       ) : submissions.length === 0 ? (
-        <div style={{ textAlign: 'center', padding: '40px', background: '#FFFFFF' }}>
+        <div style={{ textAlign: 'center', padding: '40px', background: 'rgba(255,255,255,0.75)' }}>
           <p style={{ color: 'rgba(74,59,63,0.4)', fontSize: '15px' }}>No contact submissions yet.</p>
         </div>
       ) : (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
           {submissions.map(s => (
-            <div key={s.id} style={{ background: '#FFFFFF', border: '1px solid rgba(74,59,63,0.06)', borderRadius: '8px', overflow: 'hidden' }}>
+            <div key={s.id} style={{ background: 'rgba(255,255,255,0.75)', border: '1px solid rgba(74,59,63,0.06)', borderRadius: '8px', overflow: 'hidden' }}>
               <div
                 onClick={() => setExpandedId(expandedId === s.id ? null : s.id)}
                 style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '20px 24px', cursor: 'pointer' }}

@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 
 export default function Success() {
   return (
-    <div style={{ background: '#FBF7F4', minHeight: '100vh' }}>
+    <div style={{ background: 'transparent', minHeight: '100vh' }}>
       <Navbar />
       <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: '480px' }}>

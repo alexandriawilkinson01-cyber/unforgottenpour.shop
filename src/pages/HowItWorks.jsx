@@ -80,7 +80,7 @@ const FAQS = [
 
 export default function HowItWorks() {
   return (
-    <div style={{ background: '#FBF7F4', minHeight: '100vh', color: '#4A3B3F' }}>
+    <div style={{ background: 'transparent', minHeight: '100vh', color: '#4A3B3F' }}>
       <Navbar />
 
       {/* Hero */}
@@ -100,7 +100,7 @@ export default function HowItWorks() {
       <section style={{ maxWidth: '900px', margin: '0 auto', padding: '0 24px 80px' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
           {STEPS.map((step) => (
-            <div key={step.number} style={{ background: '#FFFFFF', padding: '44px 48px', display: 'grid', gridTemplateColumns: '80px 1fr', gap: '32px', alignItems: 'flex-start' }}>
+            <div key={step.number} style={{ background: 'rgba(255,255,255,0.75)', padding: '44px 48px', display: 'grid', gridTemplateColumns: '80px 1fr', gap: '32px', alignItems: 'flex-start' }}>
               <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '48px', fontWeight: 700, color: '#C47B6D', lineHeight: 1, opacity: 0.7 }}>
                 {step.number}
               </div>
@@ -127,7 +127,7 @@ export default function HowItWorks() {
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
           {FAQS.map((faq) => (
-            <div key={faq.q} style={{ background: '#FFFFFF', padding: '32px 40px' }}>
+            <div key={faq.q} style={{ background: 'rgba(255,255,255,0.75)', padding: '32px 40px' }}>
               <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '18px', fontWeight: 700, color: '#4A3B3F', marginBottom: '12px' }}>
                 {faq.q}
               </h3>
@@ -149,7 +149,7 @@ export default function HowItWorks() {
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
           {SHIPPING.map((section) => (
-            <div key={section.title} style={{ background: '#FFFFFF', padding: '36px 40px' }}>
+            <div key={section.title} style={{ background: 'rgba(255,255,255,0.75)', padding: '36px 40px' }}>
               <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '18px', fontWeight: 700, color: '#4A3B3F', marginBottom: '20px' }}>
                 {section.title}
               </h3>

@@ -68,7 +68,7 @@ export default function AdminOrders() {
 
   if (!authChecked) {
     return (
-      <div style={{ minHeight: '100vh', background: '#FBF7F4', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ minHeight: '100vh', background: 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div className="w-8 h-8 border-4 border-slate-700 border-t-amber-500 rounded-full animate-spin" />
       </div>
     );
@@ -76,7 +76,7 @@ export default function AdminOrders() {
 
   if (!user) {
     return (
-      <div style={{ minHeight: '100vh', background: '#FBF7F4', color: '#4A3B3F' }}>
+      <div style={{ minHeight: '100vh', background: 'transparent', color: '#4A3B3F' }}>
         <Navbar />
         <div style={{ paddingTop: '140px', textAlign: 'center', padding: '140px 24px 80px' }}>
           <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px,4vw,48px)', fontWeight: 700, marginBottom: '16px' }}>Admin Access Required</h1>
@@ -92,7 +92,7 @@ export default function AdminOrders() {
 
   if (user.role !== 'admin') {
     return (
-      <div style={{ minHeight: '100vh', background: '#FBF7F4', color: '#4A3B3F' }}>
+      <div style={{ minHeight: '100vh', background: 'transparent', color: '#4A3B3F' }}>
         <Navbar />
         <div style={{ paddingTop: '140px', textAlign: 'center', padding: '140px 24px 80px' }}>
           <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px,4vw,48px)', fontWeight: 700, marginBottom: '16px' }}>Access Denied</h1>
@@ -123,7 +123,7 @@ export default function AdminOrders() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: '#FBF7F4', color: '#4A3B3F' }}>
+    <div style={{ minHeight: '100vh', background: 'transparent', color: '#4A3B3F' }}>
       <Navbar />
 
       <div style={{ paddingTop: '120px', padding: '120px 24px 80px', maxWidth: '1200px', margin: '0 auto' }}>
@@ -132,19 +132,19 @@ export default function AdminOrders() {
 
         {/* Stats */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', marginBottom: '40px' }}>
-          <div style={{ background: '#FFFFFF', padding: '24px', borderTop: '2px solid #C47B6D' }}>
+          <div style={{ background: 'rgba(255,255,255,0.75)', padding: '24px', borderTop: '2px solid #C47B6D' }}>
             <p style={{ fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(74,59,63,0.4)', marginBottom: '8px' }}>Total Orders</p>
             <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '32px', fontWeight: 700 }}>{orders.length}</p>
           </div>
-          <div style={{ background: '#FFFFFF', padding: '24px', borderTop: '2px solid #FFB800' }}>
+          <div style={{ background: 'rgba(255,255,255,0.75)', padding: '24px', borderTop: '2px solid #FFB800' }}>
             <p style={{ fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(74,59,63,0.4)', marginBottom: '8px' }}>Total Revenue</p>
             <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '32px', fontWeight: 700 }}>${totalRevenue.toFixed(2)}</p>
           </div>
-          <div style={{ background: '#FFFFFF', padding: '24px', borderTop: '2px solid #818cf8' }}>
+          <div style={{ background: 'rgba(255,255,255,0.75)', padding: '24px', borderTop: '2px solid #818cf8' }}>
             <p style={{ fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(74,59,63,0.4)', marginBottom: '8px' }}>New</p>
             <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '32px', fontWeight: 700 }}>{newCount}</p>
           </div>
-          <div style={{ background: '#FFFFFF', padding: '24px', borderTop: '2px solid #4ade80' }}>
+          <div style={{ background: 'rgba(255,255,255,0.75)', padding: '24px', borderTop: '2px solid #4ade80' }}>
             <p style={{ fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(74,59,63,0.4)', marginBottom: '8px' }}>Delivered</p>
             <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '32px', fontWeight: 700 }}>{completedCount}</p>
           </div>
@@ -157,13 +157,13 @@ export default function AdminOrders() {
             placeholder="Search by name, email, or product..."
             value={search}
             onChange={e => setSearch(e.target.value)}
-            style={{ flex: '1', minWidth: '240px', background: '#FFFFFF', border: '1px solid rgba(74,59,63,0.1)', borderRadius: '8px', padding: '12px 16px', color: '#4A3B3F', fontSize: '14px', outline: 'none' }}
+            style={{ flex: '1', minWidth: '240px', background: 'rgba(255,255,255,0.75)', border: '1px solid rgba(74,59,63,0.1)', borderRadius: '8px', padding: '12px 16px', color: '#4A3B3F', fontSize: '14px', outline: 'none' }}
           />
           <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
             {['all', ...STATUS_OPTIONS].map(s => (
               <button key={s} onClick={() => setFilter(s)}
                 style={{
-                  background: filter === s ? '#C47B6D' : '#FFFFFF',
+                  background: filter === s ? '#C47B6D' : 'rgba(255,255,255,0.75)',
                   color: filter === s ? '#fff' : 'rgba(74,59,63,0.6)',
                   border: '1px solid rgba(74,59,63,0.1)',
                   borderRadius: '999px',
@@ -186,11 +186,11 @@ export default function AdminOrders() {
             <div className="w-8 h-8 border-4 border-slate-700 border-t-amber-500 rounded-full animate-spin" style={{ margin: '0 auto' }} />
           </div>
         ) : filteredOrders.length === 0 ? (
-          <div style={{ textAlign: 'center', padding: '60px', background: '#FFFFFF' }}>
+          <div style={{ textAlign: 'center', padding: '60px', background: 'rgba(255,255,255,0.75)' }}>
             <p style={{ color: 'rgba(74,59,63,0.4)', fontSize: '15px' }}>No orders found.</p>
           </div>
         ) : (
-          <div style={{ overflowX: 'auto', background: '#FFFFFF' }}>
+          <div style={{ overflowX: 'auto', background: 'rgba(255,255,255,0.75)' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '800px' }}>
               <thead>
                 <tr style={{ borderBottom: '1px solid rgba(74,59,63,0.06)' }}>
@@ -224,7 +224,7 @@ export default function AdminOrders() {
                           value={order.status}
                           disabled={updatingId === order.id}
                           onChange={e => handleStatusChange(order.id, e.target.value)}
-                          style={{ background: '#FBF7F4', border: '1px solid rgba(74,59,63,0.1)', borderRadius: '6px', padding: '8px 12px', color: '#4A3B3F', fontSize: '12px', cursor: 'pointer', outline: 'none' }}
+                          style={{ background: 'transparent', border: '1px solid rgba(74,59,63,0.1)', borderRadius: '6px', padding: '8px 12px', color: '#4A3B3F', fontSize: '12px', cursor: 'pointer', outline: 'none' }}
                         >
                           {STATUS_OPTIONS.map(s => (
                             <option key={s} value={s}>{STATUS_STYLES[s].label}</option>

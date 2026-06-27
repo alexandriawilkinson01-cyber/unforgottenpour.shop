@@ -45,7 +45,7 @@ const MEMORIES = [
 
 export default function MemoriesSection() {
   return (
-    <section style={{ background: '#F5EFE9', padding: '100px 24px', borderTop: '1px solid rgba(74,59,63,0.05)' }}>
+    <section style={{ background: 'rgba(245,239,233,0.6)', padding: '100px 24px', borderTop: '1px solid rgba(74,59,63,0.05)' }}>
       <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
 
         {/* Header */}
@@ -62,7 +62,7 @@ export default function MemoriesSection() {
         {/* Grid */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '2px' }}>
           {MEMORIES.map((m, i) => (
-            <div key={i} style={{ background: '#FFFFFF', padding: '40px 36px', display: 'flex', flexDirection: 'column', gap: '28px', borderTop: i < 3 ? '2px solid rgba(196,123,109,0.25)' : '2px solid transparent' }}>
+            <div key={i} style={{ background: 'rgba(255,255,255,0.75)', padding: '40px 36px', display: 'flex', flexDirection: 'column', gap: '28px', borderTop: i < 3 ? '2px solid rgba(196,123,109,0.25)' : '2px solid transparent' }}>
               {/* Quote mark */}
               <svg width="28" height="20" viewBox="0 0 28 20" fill="none" style={{ flexShrink: 0 }}>
                 <path d="M0 20V12.5C0 5.6 4.2 1.4 12.6 0L13.4 1.8C9.4 2.6 7 5 6.4 8.4H11.2V20H0ZM16.8 20V12.5C16.8 5.6 21 1.4 29.4 0L30.2 1.8C26.2 2.6 23.8 5 23.2 8.4H28V20H16.8Z" fill="#C47B6D" fillOpacity="0.4"/>

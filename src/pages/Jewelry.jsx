@@ -56,7 +56,7 @@ export default function Jewelry() {
   };
 
   return (
-    <div style={{ background: '#FBF7F4', minHeight: '100vh', color: '#4A3B3F' }}>
+    <div style={{ background: 'transparent', minHeight: '100vh', color: '#4A3B3F' }}>
       <Navbar />
 
       {/* Hero */}
@@ -78,7 +78,7 @@ export default function Jewelry() {
       <section style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 24px 80px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '2px', marginBottom: '80px' }}>
           {PIECES.map((p, i) => (
-            <div key={i} style={{ position: 'relative', overflow: 'hidden', background: '#FFFFFF' }}>
+            <div key={i} style={{ position: 'relative', overflow: 'hidden', background: 'rgba(255,255,255,0.75)' }}>
               <img src={p.img} alt={p.label} style={{ width: '100%', height: '320px', objectFit: 'cover', display: 'block' }} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(251,247,244,0.92) 0%, rgba(251,247,244,0.2) 55%, transparent 100%)' }} />
               <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '28px' }}>
@@ -104,7 +104,7 @@ export default function Jewelry() {
             { step: '03', title: 'Handcrafted', desc: 'Each piece is carefully hand-poured and cured over several days.' },
             { step: '04', title: 'Delivered to You', desc: 'Your finished piece arrives in a keepsake gift box, ready to wear.' },
           ].map((s, i) => (
-            <div key={i} style={{ padding: '32px 24px', background: '#FFFFFF', borderTop: '2px solid rgba(196,123,109,0.3)' }}>
+            <div key={i} style={{ padding: '32px 24px', background: 'rgba(255,255,255,0.75)', borderTop: '2px solid rgba(196,123,109,0.3)' }}>
               <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '13px', color: '#C47B6D', marginBottom: '12px' }}>{s.step}</p>
               <h4 style={{ fontSize: '16px', fontWeight: 600, marginBottom: '8px' }}>{s.title}</h4>
               <p style={{ fontSize: '13px', color: 'rgba(74,59,63,0.45)', lineHeight: 1.65 }}>{s.desc}</p>
@@ -119,7 +119,7 @@ export default function Jewelry() {
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '2px', maxWidth: '920px', margin: '0 auto' }}>
           {PRODUCTS.map((prod) => (
-            <div key={prod.name} style={{ background: prod.featured ? 'rgba(196,123,109,0.08)' : '#FFFFFF', border: prod.featured ? '1px solid rgba(196,123,109,0.3)' : '1px solid rgba(74,59,63,0.07)', padding: '40px 32px', display: 'flex', flexDirection: 'column' }}>
+            <div key={prod.name} style={{ background: prod.featured ? 'rgba(196,123,109,0.08)' : 'rgba(255,255,255,0.75)', border: prod.featured ? '1px solid rgba(196,123,109,0.3)' : '1px solid rgba(74,59,63,0.07)', padding: '40px 32px', display: 'flex', flexDirection: 'column' }}>
               {prod.featured && <p style={{ fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#C47B6D', marginBottom: '12px' }}>Best Value</p>}
               <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: 600, marginBottom: '8px' }}>{prod.name}</h3>
               <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '36px', fontWeight: 700, marginBottom: '24px' }}>${prod.price}</p>

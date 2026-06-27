@@ -4,11 +4,11 @@ const HERO_IMG = 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b
 
 export default function HeroSection() {
   return (
-    <section style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', background: '#FBF7F4' }}>
+    <section style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', background: 'transparent' }}>
       <img src={HERO_IMG} alt="Preserved floral orb"
         style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.45 }} />
       <div style={{ position: 'absolute', inset: 0, background: 'rgba(251,247,244,0.55)' }} />
-      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '200px', background: 'linear-gradient(to top, #FBF7F4, transparent)' }} />
+      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '200px', background: 'linear-gradient(to top, transparent, transparent)' }} />
 
       <div style={{ position: 'relative', zIndex: 10, textAlign: 'center', padding: '0 24px', maxWidth: '800px' }}>
         <div style={{ display: 'inline-block', border: '1px solid rgba(74,59,63,0.25)', borderRadius: '999px', padding: '8px 20px', fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(74,59,63,0.7)', marginBottom: '40px' }}>

@@ -30,7 +30,7 @@ export default function DownloadCatalog() {
   };
 
   return (
-    <div style={{ background: '#FBF7F4', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#4A3B3F', fontFamily: 'Inter Tight, sans-serif' }}>
+    <div style={{ background: 'transparent', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#4A3B3F', fontFamily: 'Inter Tight, sans-serif' }}>
       <div style={{ textAlign: 'center', padding: '48px 24px' }}>
         <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C47B6D', marginBottom: '20px' }}>Product Catalog</p>
         <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 700, marginBottom: '16px' }}>Download Your Catalog</h1>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function About() {
   return (
-    <div style={{ background: '#FBF7F4', minHeight: '100vh', color: '#4A3B3F' }}>
+    <div style={{ background: 'transparent', minHeight: '100vh', color: '#4A3B3F' }}>
       <Navbar />
 
       {/* Hero */}
@@ -19,7 +19,7 @@ export default function About() {
 
       {/* Body */}
       <section style={{ maxWidth: '780px', margin: '0 auto', padding: '0 24px 100px' }}>
-        <div style={{ background: '#FFFFFF', padding: '56px 52px', borderTop: '2px solid #C47B6D' }}>
+        <div style={{ background: 'rgba(255,255,255,0.75)', padding: '56px 52px', borderTop: '2px solid #C47B6D' }}>
 
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '28px', fontWeight: 700, color: '#4A3B3F', marginBottom: '20px' }}>What we do</h2>
           <p style={{ fontSize: '15px', color: 'rgba(74,59,63,0.6)', lineHeight: 1.85, marginBottom: '36px' }}>

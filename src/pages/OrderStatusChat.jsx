@@ -75,7 +75,7 @@ export default function OrderStatusChat() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: '#FBF7F4', color: '#4A3B3F', display: 'flex', flexDirection: 'column' }}>
+    <div style={{ minHeight: '100vh', background: 'transparent', color: '#4A3B3F', display: 'flex', flexDirection: 'column' }}>
       <Navbar />
 
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', maxWidth: '720px', width: '100%', margin: '0 auto', padding: '120px 24px 40px' }}>
@@ -94,7 +94,7 @@ export default function OrderStatusChat() {
           ) : (
             <>
               {messages.length === 0 && (
-                <div style={{ background: '#FFFFFF', padding: '24px', borderRadius: '12px', border: '1px solid rgba(74,59,63,0.06)' }}>
+                <div style={{ background: 'rgba(255,255,255,0.75)', padding: '24px', borderRadius: '12px', border: '1px solid rgba(74,59,63,0.06)' }}>
                   <p style={{ fontSize: '14px', color: 'rgba(74,59,63,0.6)', lineHeight: 1.6 }}>
                     Hi! I'm here to help you track your order. Just share your order reference number or the email you used when placing your order, and I'll look it up for you.
                   </p>
@@ -106,7 +106,7 @@ export default function OrderStatusChat() {
                   <div key={idx} style={{ display: 'flex', justifyContent: isUser ? 'flex-end' : 'flex-start' }}>
                     <div style={{
                       maxWidth: '80%',
-                      background: isUser ? '#C47B6D' : '#FFFFFF',
+                      background: isUser ? '#C47B6D' : 'rgba(255,255,255,0.75)',
                       color: isUser ? '#fff' : '#4A3B3F',
                       padding: '14px 20px',
                       borderRadius: isUser ? '16px 4px 16px 16px' : '4px 16px 16px 16px',
@@ -134,7 +134,7 @@ export default function OrderStatusChat() {
               })}
               {sending && messages.length > 0 && messages[messages.length - 1].role === 'user' && (
                 <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
-                  <div style={{ background: '#FFFFFF', padding: '14px 20px', borderRadius: '4px 16px 16px 16px', border: '1px solid rgba(74,59,63,0.06)' }}>
+                  <div style={{ background: 'rgba(255,255,255,0.75)', padding: '14px 20px', borderRadius: '4px 16px 16px 16px', border: '1px solid rgba(74,59,63,0.06)' }}>
                     <div style={{ display: 'flex', gap: '4px' }}>
                       <span style={{ width: '6px', height: '6px', background: 'rgba(74,59,63,0.3)', borderRadius: '50%', animation: 'bounce 1s infinite' }} />
                       <span style={{ width: '6px', height: '6px', background: 'rgba(74,59,63,0.3)', borderRadius: '50%', animation: 'bounce 1s infinite 0.2s' }} />
@@ -157,7 +157,7 @@ export default function OrderStatusChat() {
             onKeyDown={handleKeyDown}
             placeholder="Type your message..."
             disabled={loading || sending}
-            style={{ flex: 1, background: '#FFFFFF', border: '1px solid rgba(74,59,63,0.1)', borderRadius: '999px', padding: '14px 20px', color: '#4A3B3F', fontSize: '14px', outline: 'none' }}
+            style={{ flex: 1, background: 'rgba(255,255,255,0.75)', border: '1px solid rgba(74,59,63,0.1)', borderRadius: '999px', padding: '14px 20px', color: '#4A3B3F', fontSize: '14px', outline: 'none' }}
           />
           <button
             onClick={handleSend}

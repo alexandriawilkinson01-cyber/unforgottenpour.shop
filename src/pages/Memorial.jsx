@@ -12,7 +12,7 @@ const ITEMS = [
 
 export default function Memorial() {
   return (
-    <div style={{ background: '#FBF7F4', minHeight: '100vh' }}>
+    <div style={{ background: 'transparent', minHeight: '100vh' }}>
       <Navbar />
 
       <section style={{ position: 'relative', minHeight: '70vh', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '120px 24px 80px', overflow: 'hidden' }}>

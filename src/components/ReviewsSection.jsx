@@ -57,7 +57,7 @@ const Stars = () => (
 
 export default function ReviewsSection() {
   return (
-    <section style={{ background: '#F5EFE9', padding: '100px 24px', borderTop: '1px solid rgba(74,59,63,0.05)' }}>
+    <section style={{ background: 'rgba(245,239,233,0.6)', padding: '100px 24px', borderTop: '1px solid rgba(74,59,63,0.05)' }}>
       <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
         <div style={{ marginBottom: '64px' }}>
           <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C47B6D', marginBottom: '20px' }}>Customer Reviews</p>
@@ -84,7 +84,7 @@ export default function ReviewsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
-              style={{ background: '#FFFFFF', padding: '32px 28px', borderTop: '1px solid rgba(74,59,63,0.04)' }}>
+              style={{ background: 'rgba(255,255,255,0.75)', padding: '32px 28px', borderTop: '1px solid rgba(74,59,63,0.04)' }}>
               <Stars />
               <p style={{ fontSize: '15px', color: 'rgba(74,59,63,0.7)', lineHeight: 1.75, marginBottom: '24px', fontStyle: 'italic' }}>
                 "{r.text}"

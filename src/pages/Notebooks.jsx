@@ -55,7 +55,7 @@ export default function Notebooks() {
   };
 
   return (
-    <div style={{ background: '#FBF7F4', minHeight: '100vh', color: '#4A3B3F' }}>
+    <div style={{ background: 'transparent', minHeight: '100vh', color: '#4A3B3F' }}>
       <Navbar />
 
       {/* Hero */}
@@ -73,7 +73,7 @@ export default function Notebooks() {
       <section style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 24px 80px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '2px', marginBottom: '80px' }}>
           {EXAMPLES.map((ex, i) => (
-            <div key={i} style={{ position: 'relative', overflow: 'hidden', background: '#FFFFFF' }}>
+            <div key={i} style={{ position: 'relative', overflow: 'hidden', background: 'rgba(255,255,255,0.75)' }}>
               <img src={ex.img} alt={ex.label} style={{ width: '100%', height: '320px', objectFit: 'cover', display: 'block' }} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(251,247,244,0.92) 0%, rgba(251,247,244,0.2) 55%, transparent 100%)' }} />
               <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '28px 28px 28px' }}>
@@ -85,7 +85,7 @@ export default function Notebooks() {
         </div>
 
         {/* Order card */}
-        <div style={{ background: '#FFFFFF', border: '1px solid rgba(74,59,63,0.07)', padding: '48px', maxWidth: '600px', margin: '0 auto' }}>
+        <div style={{ background: 'rgba(255,255,255,0.75)', border: '1px solid rgba(74,59,63,0.07)', padding: '48px', maxWidth: '600px', margin: '0 auto' }}>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '28px', fontWeight: 700, marginBottom: '8px' }}>Order a Notebook</h2>
           <p style={{ fontSize: '14px', color: 'rgba(74,59,63,0.4)', marginBottom: '36px' }}>Each piece is handmade to order. Allow 4–6 weeks for delivery.</p>
 

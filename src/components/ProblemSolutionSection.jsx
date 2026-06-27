@@ -6,7 +6,7 @@ export default function ProblemSolutionSection() {
   return (
     <>
       {/* Problem */}
-      <section className="py-32 px-8" style={{ background: '#FBF7F4' }}>
+      <section className="py-32 px-8" style={{ background: 'transparent' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -29,7 +29,7 @@ export default function ProblemSolutionSection() {
       </section>
 
       {/* Solution */}
-      <section className="py-32 px-8" style={{ background: '#F5EFE9' }}>
+      <section className="py-32 px-8" style={{ background: 'rgba(245,239,233,0.6)' }}>
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}

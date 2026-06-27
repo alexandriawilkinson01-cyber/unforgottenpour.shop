@@ -1,6 +1,6 @@
 export default function StorySection() {
   return (
-    <section style={{ background: '#FBF7F4', padding: '100px 24px' }}>
+    <section style={{ background: 'transparent', padding: '100px 24px' }}>
       <div style={{ maxWidth: '640px', margin: '0 auto' }}>
         <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C47B6D', marginBottom: '28px' }}>The Problem</p>
         <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, color: '#4A3B3F', lineHeight: 1.2, marginBottom: '28px' }}>

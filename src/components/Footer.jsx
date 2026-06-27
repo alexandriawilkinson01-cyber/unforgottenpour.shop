@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img src={FOOTER_BG} alt="" className="w-full h-full object-cover opacity-20" />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, #FBF7F4 0%, transparent 30%, #FBF7F4 100%)' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 0%, transparent 30%, transparent 100%)' }} />
       </div>
 
       {/* Watermark */}

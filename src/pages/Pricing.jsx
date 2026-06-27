@@ -72,7 +72,7 @@ const JEWELRY = [
 
 function PriceCard({ item, accent = false }) {
   return (
-    <div style={{ background: item.featured ? '#F9F1EC' : '#FFFFFF', padding: '40px 32px', textAlign: 'left', position: 'relative', borderTop: item.featured ? '2px solid #C47B6D' : '2px solid transparent' }}>
+    <div style={{ background: item.featured ? 'rgba(249,241,236,0.75)' : 'rgba(255,255,255,0.75)', padding: '40px 32px', textAlign: 'left', position: 'relative', borderTop: item.featured ? '2px solid #C47B6D' : '2px solid transparent' }}>
       {item.featured && (
         <div style={{ position: 'absolute', top: '-1px', right: '24px', background: '#C47B6D', color: '#fff', fontSize: '10px', letterSpacing: '0.12em', textTransform: 'uppercase', padding: '4px 12px', fontWeight: 600 }}>
           Best Value
@@ -108,7 +108,7 @@ function SectionHeader({ label, title, subtitle }) {
 
 export default function Pricing() {
   return (
-    <div style={{ background: '#FBF7F4', minHeight: '100vh' }}>
+    <div style={{ background: 'transparent', minHeight: '100vh' }}>
       <Navbar />
 
       {/* Page Hero */}

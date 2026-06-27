@@ -13,7 +13,7 @@ export default function CTASection() {
   return (
     <>
       {/* Closing CTA */}
-      <section style={{ background: '#FBF7F4', padding: '100px 24px', textAlign: 'center', borderTop: '1px solid rgba(74,59,63,0.05)' }}>
+      <section style={{ background: 'transparent', padding: '100px 24px', textAlign: 'center', borderTop: '1px solid rgba(74,59,63,0.05)' }}>
         <div style={{ maxWidth: '640px', margin: '0 auto' }}>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, color: '#4A3B3F', lineHeight: 1.2, marginBottom: '28px' }}>
             Some things deserve to last<br />as long as the memory does.
@@ -31,7 +31,7 @@ export default function CTASection() {
       </section>
 
       {/* Email capture */}
-      <section style={{ background: '#F5EFE9', padding: '80px 24px', borderTop: '1px solid rgba(74,59,63,0.05)' }}>
+      <section style={{ background: 'rgba(245,239,233,0.6)', padding: '80px 24px', borderTop: '1px solid rgba(74,59,63,0.05)' }}>
         <div style={{ maxWidth: '480px', margin: '0 auto', textAlign: 'center' }}>
           <div style={{ width: '48px', height: '48px', border: '1px solid rgba(196,123,109,0.4)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px', color: '#C47B6D' }}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>

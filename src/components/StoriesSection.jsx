@@ -45,7 +45,7 @@ const STORIES = [
 
 export default function StoriesSection() {
   return (
-    <section style={{ background: '#FBF7F4', padding: '100px 24px', borderTop: '1px solid rgba(74,59,63,0.05)' }}>
+    <section style={{ background: 'transparent', padding: '100px 24px', borderTop: '1px solid rgba(74,59,63,0.05)' }}>
       <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
         <div style={{ marginBottom: '72px' }}>
           <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C47B6D', marginBottom: '20px' }}>Real Memories, Preserved Forever</p>
@@ -64,13 +64,13 @@ export default function StoriesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              style={{ display: 'grid', gridTemplateColumns: i % 2 === 0 ? '420px 1fr' : '1fr 420px', background: '#FFFFFF', overflow: 'hidden' }}
+              style={{ display: 'grid', gridTemplateColumns: i % 2 === 0 ? '420px 1fr' : '1fr 420px', background: 'rgba(255,255,255,0.75)', overflow: 'hidden' }}
               className="flex-col-mobile">
               {/* Image */}
               <div style={{ order: i % 2 === 0 ? 0 : 1, position: 'relative', minHeight: '320px' }}>
                 <img src={story.image} alt={story.name}
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', minHeight: '320px' }} />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, transparent 60%, #FFFFFF)' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, transparent 60%, rgba(255,255,255,0.75))' }} />
                 <div style={{ position: 'absolute', top: '20px', left: '20px' }}>
                   <span style={{ fontSize: '10px', letterSpacing: '0.12em', textTransform: 'uppercase', background: 'rgba(200,104,30,0.85)', color: '#fff', padding: '5px 12px', borderRadius: '999px' }}>
                     {story.category}

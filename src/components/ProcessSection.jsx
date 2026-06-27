@@ -9,7 +9,7 @@ const STEPS = [
 
 export default function ProcessSection() {
   return (
-    <section style={{ background: '#FBF7F4', padding: '100px 24px', borderTop: '1px solid rgba(74,59,63,0.05)' }}>
+    <section style={{ background: 'transparent', padding: '100px 24px', borderTop: '1px solid rgba(74,59,63,0.05)' }}>
       <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
         <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C47B6D', marginBottom: '20px' }}>The Process</p>
         <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, color: '#4A3B3F', lineHeight: 1.2, marginBottom: '64px' }}>

@@ -97,7 +97,7 @@ export default function Portfolio() {
   const [activeTab, setActiveTab] = useState('wedding');
 
   return (
-    <div style={{ background: '#FBF7F4', minHeight: '100vh' }}>
+    <div style={{ background: 'transparent', minHeight: '100vh' }}>
       <Navbar />
 
       {/* Hero */}
@@ -114,7 +114,7 @@ export default function Portfolio() {
       </section>
 
       {/* Tabs */}
-      <div style={{ borderTop: '1px solid rgba(74,59,63,0.06)', borderBottom: '1px solid rgba(74,59,63,0.06)', background: '#F5EFE9' }}>
+      <div style={{ borderTop: '1px solid rgba(74,59,63,0.06)', borderBottom: '1px solid rgba(74,59,63,0.06)', background: 'rgba(245,239,233,0.6)' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', gap: '0', overflowX: 'auto' }}>
           {CATEGORIES.map(cat => (
             <button key={cat.id} onClick={() => setActiveTab(cat.id)}
@@ -140,7 +140,7 @@ export default function Portfolio() {
             {/* Images */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '4px' }}>
               {cat.images.length === 0 && (
-                <div style={{ gridColumn: '1 / -1', display: 'flex', alignItems: 'center', justifyContent: 'center', aspectRatio: '16/10', background: '#FFFFFF', border: '1px dashed rgba(74,59,63,0.1)', color: 'rgba(74,59,63,0.25)', fontSize: '13px', letterSpacing: '0.05em' }}>
+                <div style={{ gridColumn: '1 / -1', display: 'flex', alignItems: 'center', justifyContent: 'center', aspectRatio: '16/10', background: 'rgba(255,255,255,0.75)', border: '1px dashed rgba(74,59,63,0.1)', color: 'rgba(74,59,63,0.25)', fontSize: '13px', letterSpacing: '0.05em' }}>
                   Photos coming soon
                 </div>
               )}
@@ -176,14 +176,14 @@ export default function Portfolio() {
       ))}
 
       {/* Available Formats */}
-      <section style={{ background: '#F5EFE9', padding: '80px 24px', borderTop: '1px solid rgba(74,59,63,0.05)' }}>
+      <section style={{ background: 'rgba(245,239,233,0.6)', padding: '80px 24px', borderTop: '1px solid rgba(74,59,63,0.05)' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 700, color: '#4A3B3F', marginBottom: '48px' }}>
             How do you want to display it?
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '2px' }}>
             {FORMATS.map(f => (
-              <div key={f.name} style={{ background: '#FFFFFF', padding: '28px 24px' }}>
+              <div key={f.name} style={{ background: 'rgba(255,255,255,0.75)', padding: '28px 24px' }}>
                 <div style={{ fontSize: '20px', marginBottom: '12px', opacity: 0.5 }}>{f.icon}</div>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '16px', fontWeight: 600, color: '#4A3B3F', marginBottom: '8px' }}>{f.name}</h3>
                 <p style={{ fontSize: '13px', color: 'rgba(74,59,63,0.4)', lineHeight: 1.6 }}>{f.desc}</p>

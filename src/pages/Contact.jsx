@@ -40,7 +40,7 @@ export default function Contact() {
   };
 
   return (
-    <div style={{ background: '#FBF7F4', minHeight: '100vh', color: '#4A3B3F' }}>
+    <div style={{ background: 'transparent', minHeight: '100vh', color: '#4A3B3F' }}>
       <Navbar />
 
       <section style={{ paddingTop: '140px', paddingBottom: '80px', textAlign: 'center', padding: '140px 24px 60px' }}>
@@ -56,7 +56,7 @@ export default function Contact() {
       <section style={{ maxWidth: '900px', margin: '0 auto', padding: '0 24px 100px', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '2px' }}>
 
         {/* Contact info */}
-        <div style={{ background: '#FFFFFF', padding: '48px 40px', borderTop: '2px solid #C47B6D' }}>
+        <div style={{ background: 'rgba(255,255,255,0.75)', padding: '48px 40px', borderTop: '2px solid #C47B6D' }}>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '24px', fontWeight: 700, marginBottom: '32px' }}>Contact details</h2>
 
           <div style={{ marginBottom: '28px' }}>
@@ -78,7 +78,7 @@ export default function Contact() {
         </div>
 
         {/* Form */}
-        <div style={{ background: '#FFFFFF', padding: '48px 40px' }}>
+        <div style={{ background: 'rgba(255,255,255,0.75)', padding: '48px 40px' }}>
           {sent ? (
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', textAlign: 'center', gap: '16px' }}>
               <div style={{ width: '52px', height: '52px', borderRadius: '999px', background: 'rgba(200,104,30,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px' }}>✓</div>

@@ -17,7 +17,7 @@ const CATEGORIES = [
 
 export default function CategoriesSection() {
   return (
-    <section className="py-32 px-8" style={{ background: '#FBF7F4' }}>
+    <section className="py-32 px-8" style={{ background: 'transparent' }}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -41,7 +41,7 @@ export default function CategoriesSection() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
               className="group relative overflow-hidden cursor-pointer"
-              style={{ background: '#FBF7F4' }}
+              style={{ background: 'transparent' }}
             >
               <div className="absolute inset-0 z-0">
                 <img src={cat.img} alt="" className="w-full h-full object-cover opacity-10 group-hover:opacity-25 transition-opacity duration-500 scale-105 group-hover:scale-100 transition-transform" />
