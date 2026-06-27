@@ -2,8 +2,8 @@ import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import { base44 } from '@/api/base44Client';
 
-const NOTEBOOK_PRICE_ID = 'price_1TifblBlmDr5Ka7mnW5kiPD1';   // $75
-const CUSTOM_PRICE_ID   = 'price_1TifblBlmDr5Ka7m1a7zuugN';   // $100
+const NOTEBOOK_PRICE_ID = 'price_1Tmv6bLfTuG5tMiXY7CSGzxE';   // $52
+const CUSTOM_PRICE_ID   = 'price_1Tmv6bLfTuG5tMiXamw6lm5g';   // $70
 
 const EXAMPLES = [
   {
@@ -29,7 +29,7 @@ export default function Notebooks() {
   const [qty, setQty] = useState(1);
   const [loading, setLoading] = useState(false);
 
-  const price = custom ? 100 : 75;
+  const price = custom ? 70 : 52;
   const total = price * qty;
 
   const handleOrder = async () => {
@@ -109,7 +109,7 @@ export default function Notebooks() {
                 {custom && <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3"><polyline points="20 6 9 17 4 12"/></svg>}
               </div>
               <div>
-                <p style={{ fontSize: '14px', fontWeight: 600, color: '#F2F2F2', marginBottom: '4px' }}>Custom Personalization <span style={{ color: '#C8681E' }}>+$25</span></p>
+                <p style={{ fontSize: '14px', fontWeight: 600, color: '#F2F2F2', marginBottom: '4px' }}>Custom Personalization <span style={{ color: '#C8681E' }}>+$18</span></p>
                 <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.4)', lineHeight: 1.6 }}>Add your own flowers, a name, date, or special request. We'll reach out after purchase to discuss your vision.</p>
               </div>
             </div>

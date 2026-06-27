@@ -26,9 +26,9 @@ const PIECES = [
 ];
 
 const PRODUCTS = [
-  { name: 'Pendant', price: 199, priceId: 'price_1TjsvJLfTuG5tMiXnRFpVqyp', features: ['Sterling silver bezel', 'Teardrop, circle, or hexagon', '18″ chain included', 'Gift box'] },
-  { name: 'Ring', price: 249, priceId: 'price_1TjsvJLfTuG5tMiXVEvjTgpo', features: ['Silver or gold finish', 'Full size range', 'Channel-set resin inlay', 'Comfort fit band'] },
-  { name: 'Set', price: 399, priceId: 'price_1TjsvJLfTuG5tMiXEQlvOl8B', featured: true, features: ['Matching ring + pendant', 'Choice of finishes', 'Premium gift presentation', 'Save $49 vs. individual'] },
+  { name: 'Pendant', price: 139, priceId: 'price_1Tmv61LfTuG5tMiXNtM0RM28', features: ['Sterling silver bezel', 'Teardrop, circle, or hexagon', '18″ chain included', 'Gift box'] },
+  { name: 'Ring', price: 174, priceId: 'price_1Tmv61LfTuG5tMiX0ho1eE9K', features: ['Silver or gold finish', 'Full size range', 'Channel-set resin inlay', 'Comfort fit band'] },
+  { name: 'Set', price: 279, priceId: 'price_1Tmv61LfTuG5tMiXN2s2m11s', featured: true, features: ['Matching ring + pendant', 'Choice of finishes', 'Premium gift presentation', 'Save $34 vs. individual'] },
 ];
 
 export default function Jewelry() {

@@ -4,9 +4,9 @@ import { base44 } from '@/api/base44Client';
 import Navbar from '../components/Navbar';
 
 const TIERS = [
-  { id: 'keepsake', name: 'Keepsake', price: '$149', priceId: 'price_1Tk0cNLfTuG5tMiXdpbNNHIq', desc: 'Jewelry, small keepsakes & compact paperweights' },
-  { id: 'heirloom', name: 'Heirloom', price: '$279', priceId: 'price_1Tk0cNLfTuG5tMiXmtvqhwHS', desc: 'Bouquets, orbs, shadow boxes & mid-size displays' },
-  { id: 'legacy', name: 'Legacy', price: '$499', priceId: 'price_1Tk0cNLfTuG5tMiX9cXwvIxz', desc: 'Custom sculptures, large tabletop art & legacy pieces' },
+  { id: 'keepsake', name: 'Keepsake', price: '$104', priceId: 'price_1Tmv61LfTuG5tMiXGywKqPx5', desc: 'Jewelry, small keepsakes & compact paperweights' },
+  { id: 'heirloom', name: 'Heirloom', price: '$195', priceId: 'price_1Tmv61LfTuG5tMiXKlElIXep', desc: 'Bouquets, orbs, shadow boxes & mid-size displays' },
+  { id: 'legacy', name: 'Legacy', price: '$349', priceId: 'price_1Tmv61LfTuG5tMiXFpy3voxJ', desc: 'Custom sculptures, large tabletop art & legacy pieces' },
 ];
 
 const inputStyle = {
