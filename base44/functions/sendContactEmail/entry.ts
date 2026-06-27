@@ -25,28 +25,51 @@ Deno.serve(async (req) => {
     }
 
     const base44 = createClientFromRequest(req);
-    const { accessToken } = await base44.asServiceRole.connectors.getConnection('gmail');
 
-    const subject = `New message from ${name}`;
-    const emailBody = `Name: ${name}\nEmail: ${email}\n\n${message}`;
-    const raw = buildGmailMessage('AlexandriaWilkinson01@gmail.com', subject, emailBody);
-
-    const res = await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${accessToken}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ raw }),
-    });
-
-    if (!res.ok) {
-      const errText = await res.text();
-      console.error('Gmail API error:', errText);
-      return Response.json({ error: `Gmail API error: ${errText}` }, { status: 500 });
+    // Save the submission to the database first (so it's never lost)
+    let submission;
+    try {
+      submission = await base44.asServiceRole.entities.ContactSubmission.create({
+        name,
+        email,
+        message,
+        email_sent: false,
+      });
+    } catch (dbErr) {
+      console.error('Failed to save contact submission:', dbErr.message);
     }
 
-    return Response.json({ success: true });
+    // Send email via Gmail
+    let emailSent = false;
+    try {
+      const { accessToken } = await base44.asServiceRole.connectors.getConnection('gmail');
+      const subject = `New message from ${name}`;
+      const emailBody = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+      const raw = buildGmailMessage('AlexandriaWilkinson01@gmail.com', subject, emailBody);
+
+      const res = await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${accessToken}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ raw }),
+      });
+
+      if (res.ok) {
+        emailSent = true;
+        if (submission) {
+          await base44.asServiceRole.entities.ContactSubmission.update(submission.id, { email_sent: true });
+        }
+      } else {
+        const errText = await res.text();
+        console.error('Gmail API error:', errText);
+      }
+    } catch (emailErr) {
+      console.error('Email send failed:', emailErr.message);
+    }
+
+    return Response.json({ success: true, email_sent: emailSent });
   } catch (error) {
     console.error('Contact form email error:', error);
     return Response.json({ error: error.message }, { status: 500 });
