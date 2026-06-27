@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import ContactSubmissions from '../components/ContactSubmissions';
 import { base44 } from '@/api/base44Client';
 
 const STATUS_STYLES = {
@@ -237,6 +238,9 @@ export default function AdminOrders() {
             </table>
           </div>
         )}
+
+        {/* Contact Submissions */}
+        <ContactSubmissions />
       </div>
     </div>
   );
