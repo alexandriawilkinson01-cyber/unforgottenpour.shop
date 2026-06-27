@@ -6,7 +6,7 @@ export default function ProblemSolutionSection() {
   return (
     <>
       {/* Problem */}
-      <section className="py-32 px-8" style={{ background: '#0A0A0C' }}>
+      <section className="py-32 px-8" style={{ background: '#FBF7F4' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -16,10 +16,10 @@ export default function ProblemSolutionSection() {
             className="max-w-3xl"
           >
             <p className="text-xs tracking-[0.3em] uppercase text-honey mb-6">The Problem</p>
-            <h2 className="font-playfair font-bold leading-tight mb-8" style={{ fontSize: 'clamp(36px, 5vw, 64px)', color: '#F2F2F2' }}>
+            <h2 className="font-playfair font-bold leading-tight mb-8" style={{ fontSize: 'clamp(36px, 5vw, 64px)', color: '#4A3B3F' }}>
               Memories fade.<br />
               Objects deteriorate.<br />
-              <span style={{ color: 'rgba(242,242,242,0.4)' }}>Time doesn't wait.</span>
+              <span style={{ color: 'rgba(74,59,63,0.4)' }}>Time doesn't wait.</span>
             </h2>
             <p className="text-base text-bone/50 leading-relaxed max-w-xl">
               That wedding bouquet dries and crumbles within weeks. The championship jersey yellows in a closet. Your grandmother's brooch tarnishes in a drawer nobody opens. The physical things that anchor our most important memories are quietly disappearing.
@@ -29,7 +29,7 @@ export default function ProblemSolutionSection() {
       </section>
 
       {/* Solution */}
-      <section className="py-32 px-8" style={{ background: '#0D0D10' }}>
+      <section className="py-32 px-8" style={{ background: '#F5EFE9' }}>
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -38,7 +38,7 @@ export default function ProblemSolutionSection() {
             transition={{ duration: 0.9 }}
           >
             <p className="text-xs tracking-[0.3em] uppercase text-honey mb-6">The Solution</p>
-            <h2 className="font-playfair font-bold leading-tight mb-8" style={{ fontSize: 'clamp(32px, 4vw, 56px)', color: '#F2F2F2' }}>
+            <h2 className="font-playfair font-bold leading-tight mb-8" style={{ fontSize: 'clamp(32px, 4vw, 56px)', color: '#4A3B3F' }}>
               Resin stops time.
             </h2>
             <p className="text-base text-bone/50 leading-relaxed mb-6">
@@ -63,7 +63,7 @@ export default function ProblemSolutionSection() {
             transition={{ duration: 0.9 }}
             className="relative"
           >
-            <div className="absolute inset-0 blur-3xl opacity-20 rounded-full" style={{ background: '#FFB800' }} />
+            <div className="absolute inset-0 blur-3xl opacity-20 rounded-full" style={{ background: '#C47B6D' }} />
             <img src={BOUQUET_IMG} alt="Preserved bouquet" className="relative w-full rounded-sm object-cover" style={{ aspectRatio: '4/3' }} />
           </motion.div>
         </div>

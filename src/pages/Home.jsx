@@ -11,7 +11,7 @@ import MemoriesSection from '../components/MemoriesSection';
 
 export default function Home() {
   return (
-    <div style={{ background: '#0A0A0C', minHeight: '100vh' }}>
+    <div style={{ background: '#FBF7F4', minHeight: '100vh' }}>
       <Navbar />
       <HeroSection />
       <FadeIn><StorySection /></FadeIn>

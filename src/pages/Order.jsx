@@ -59,7 +59,7 @@ export default function Order() {
   };
 
   return (
-    <div style={{ background: '#0A0A0C', minHeight: '100vh' }}>
+    <div style={{ background: '#FBF7F4', minHeight: '100vh' }}>
       <Navbar />
       <div style={{ maxWidth: '720px', margin: '0 auto', padding: '100px 24px 80px' }}>
         <div style={{ marginBottom: '48px' }}>
