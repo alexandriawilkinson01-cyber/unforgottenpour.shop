@@ -13,11 +13,10 @@ export default function Contact() {
     setLoading(true);
     setError('');
     try {
-      await base44.integrations.Core.SendEmail({
-        to: 'AlexandriaWilkinson01@gmail.com',
-        from_name: 'Unforgotten Pour Website',
-        subject: `New message from ${form.name}`,
-        body: `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`,
+      await base44.functions.invoke('sendContactEmail', {
+        name: form.name,
+        email: form.email,
+        message: form.message,
       });
       setSent(true);
     } catch (err) {
