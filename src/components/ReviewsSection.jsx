@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 const REVIEWS = [
   {
     name: 'Sarah M.',
@@ -76,8 +78,13 @@ export default function ReviewsSection() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '2px' }}>
-          {REVIEWS.map(r => (
-            <div key={r.name} style={{ background: '#111113', padding: '32px 28px', borderTop: '1px solid rgba(255,255,255,0.04)' }}>
+          {REVIEWS.map((r, i) => (
+            <motion.div key={r.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.5, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
+              style={{ background: '#111113', padding: '32px 28px', borderTop: '1px solid rgba(255,255,255,0.04)' }}>
               <Stars />
               <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.7)', lineHeight: 1.75, marginBottom: '24px', fontStyle: 'italic' }}>
                 "{r.text}"
@@ -91,7 +98,7 @@ export default function ReviewsSection() {
                   {r.item}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

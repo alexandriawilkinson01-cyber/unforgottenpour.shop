@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 const STEPS = [
   { num: '01', title: 'Ship It Safely', desc: 'We send you a branded preservation kit with archival-grade packing materials. Your irreplaceable item, protected in transit.' },
   { num: '02', title: 'Preparation', desc: 'Every item is carefully cleaned, dried (if organic), and arranged by hand. We photograph and document the process for you.' },
@@ -15,12 +17,16 @@ export default function ProcessSection() {
         </h2>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '40px' }}>
-          {STEPS.map(step => (
-            <div key={step.num}>
+          {STEPS.map((step, i) => (
+            <motion.div key={step.num}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.5, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}>
               <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '52px', fontWeight: 700, color: 'rgba(242,242,242,0.08)', marginBottom: '16px', lineHeight: 1 }}>{step.num}</div>
               <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '20px', fontWeight: 600, color: '#F2F2F2', marginBottom: '12px' }}>{step.title}</h3>
               <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.45)', lineHeight: 1.75 }}>{step.desc}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

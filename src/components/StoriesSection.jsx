@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 const STORIES = [
   {
     name: 'The Hartley Garden Wedding',
@@ -57,7 +59,12 @@ export default function StoriesSection() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
           {STORIES.map((story, i) => (
-            <div key={story.name} style={{ display: 'grid', gridTemplateColumns: i % 2 === 0 ? '420px 1fr' : '1fr 420px', background: '#111113', overflow: 'hidden' }}
+            <motion.div key={story.name}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              style={{ display: 'grid', gridTemplateColumns: i % 2 === 0 ? '420px 1fr' : '1fr 420px', background: '#111113', overflow: 'hidden' }}
               className="flex-col-mobile">
               {/* Image */}
               <div style={{ order: i % 2 === 0 ? 0 : 1, position: 'relative', minHeight: '320px' }}>
@@ -99,7 +106,7 @@ export default function StoriesSection() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

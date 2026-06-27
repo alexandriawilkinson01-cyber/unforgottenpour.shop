@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar';
+import FadeIn from '../components/FadeIn';
 import HeroSection from '../components/HeroSection';
 import StorySection from '../components/StorySection';
 import ServicesSection from '../components/ServicesSection';
@@ -13,13 +14,13 @@ export default function Home() {
     <div style={{ background: '#0A0A0C', minHeight: '100vh' }}>
       <Navbar />
       <HeroSection />
-      <StorySection />
-      <ServicesSection />
-      <ProcessSection />
-      <StoriesSection />
-      <MemoriesSection />
-      <ReviewsSection />
-      <CTASection />
+      <FadeIn><StorySection /></FadeIn>
+      <FadeIn><ServicesSection /></FadeIn>
+      <FadeIn><ProcessSection /></FadeIn>
+      <FadeIn><StoriesSection /></FadeIn>
+      <FadeIn><MemoriesSection /></FadeIn>
+      <FadeIn><ReviewsSection /></FadeIn>
+      <FadeIn><CTASection /></FadeIn>
     </div>
   );
 }
