@@ -122,6 +122,10 @@ export default function Pricing() {
         <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.45)', maxWidth: '440px', margin: '0 auto', lineHeight: 1.7 }}>
           Every piece is handcrafted to order. No hidden fees, no surprises.
         </p>
+        <Link to="/download-catalog" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginTop: '28px', fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#C8681E', textDecoration: 'none', border: '1px solid rgba(200,104,30,0.4)', borderRadius: '999px', padding: '10px 22px', fontWeight: 600, transition: 'border-color 0.2s' }}
+          onMouseEnter={e => e.target.style.borderColor='rgba(200,104,30,0.8)'} onMouseLeave={e => e.target.style.borderColor='rgba(200,104,30,0.4)'}>
+          ↓ Download Product Catalog (Excel)
+        </Link>
       </section>
 
       {/* Preservation Tiers */}
