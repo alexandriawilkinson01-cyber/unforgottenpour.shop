@@ -105,7 +105,7 @@ export default function Order() {
             <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>About Your Item</p>
             <div style={{ marginBottom: '12px' }}>
               <label style={labelStyle}>Item Category *</label>
-              <select required style={{ ...inputStyle, cursor: 'pointer' }} value={form.category} onChange={e => set('category', e.target.value)}>
+              <select required style={{ ...inputStyle, cursor: 'pointer' }} defaultValue={form.category} onChange={e => set('category', e.target.value)}>
                 <option value="">Select a category</option>
                 <option value="wedding">Wedding &amp; Event Florals</option>
                 <option value="memorial">Memorial Keepsakes</option>
@@ -117,7 +117,7 @@ export default function Order() {
             </div>
             <div style={{ marginBottom: '12px' }}>
               <label style={labelStyle}>Preferred Format *</label>
-              <select required style={{ ...inputStyle, cursor: 'pointer' }} value={form.format} onChange={e => set('format', e.target.value)}>
+              <select required style={{ ...inputStyle, cursor: 'pointer' }} defaultValue={form.format} onChange={e => set('format', e.target.value)}>
                 <option value="">Choose a format</option>
                 <option value="jewelry">Jewelry (pendant, ring, earring)</option>
                 <option value="paperweight">Paperweight / Display Block</option>
