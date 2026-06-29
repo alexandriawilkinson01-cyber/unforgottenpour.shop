@@ -4,20 +4,20 @@ import Navbar from '../components/Navbar';
 const TIERS = [
   {
     name: 'Keepsake',
-    price: '$104',
+    price: '$156',
     desc: 'Jewelry, small keepsakes & compact paperweights',
     features: ['Pendant, ring, or earring', 'Compact paperweight block', 'Standard UV-resistant resin', 'Documentation photos', '4–6 week turnaround'],
   },
   {
     name: 'Heirloom',
-    price: '$195',
+    price: '$293',
     desc: 'Bouquets, orbs, shadow boxes & mid-size displays',
     featured: true,
     features: ['Full bouquet preservation', 'Orb or shadow box format', 'Multi-layer premium resin', 'High-gloss polish finish', 'Engraved date plate', '4–6 week turnaround'],
   },
   {
     name: 'Legacy',
-    price: '$349',
+    price: '$524',
     desc: 'Custom sculptures, large tabletop art & legacy pieces',
     features: ['Custom sculptural form', 'Dedicated artisan', 'Archival documentation', 'White-glove handling', 'Custom display pedestal', 'Lifetime guarantee', '4–6 week turnaround'],
   },
@@ -26,7 +26,7 @@ const TIERS = [
 const NOTEBOOKS = [
   {
     name: 'Standard Notebook',
-    price: '$52',
+    price: '$78',
     desc: 'Hand-poured resin cover with preserved botanicals',
     features: ['Botanical & floral resin cover', 'Crystal-clear UV resin', 'A5 lined journal', 'One-of-a-kind design', '4–6 week turnaround'],
     link: '/notebooks',
@@ -34,7 +34,7 @@ const NOTEBOOKS = [
   },
   {
     name: 'Custom Notebook',
-    price: '$70',
+    price: '$105',
     desc: 'Personalized with your own flowers, name, or date',
     features: ['Everything in Standard', 'Your supplied botanicals or name', 'Custom design consultation', 'Engraved spine option', '4–6 week turnaround'],
     link: '/notebooks',
@@ -45,7 +45,7 @@ const NOTEBOOKS = [
 const JEWELRY = [
   {
     name: 'Memorial Pendant',
-    price: '$139',
+    price: '$209',
     desc: 'Cremation ashes encased in a wearable resin pendant',
     features: ['Ashes or flower petal infusion', 'Sterling silver bail', 'Choice of shape & color tint', 'Gift box included', '4–6 week turnaround'],
     link: '/jewelry',
@@ -53,7 +53,7 @@ const JEWELRY = [
   },
   {
     name: 'Memorial Ring',
-    price: '$174',
+    price: '$261',
     desc: 'Ashes set in a hand-cast resin band',
     features: ['Ashes or botanical infusion', 'Hypoallergenic resin band', 'Custom sizing', 'Polished finish', '4–6 week turnaround'],
     link: '/jewelry',
@@ -61,7 +61,7 @@ const JEWELRY = [
   },
   {
     name: 'Memorial Jewelry Set',
-    price: '$279',
+    price: '$419',
     desc: 'Matching pendant and ring from the same memorial',
     features: ['Pendant + ring from same ashes', 'Coordinated design', 'Custom sizing & color tint', 'Keepsake gift box', '4–6 week turnaround'],
     link: '/jewelry',

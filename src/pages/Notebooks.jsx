@@ -2,8 +2,8 @@ import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import { base44 } from '@/api/base44Client';
 
-const NOTEBOOK_PRICE_ID = 'price_1Tmv6bLfTuG5tMiXY7CSGzxE';   // $52
-const CUSTOM_PRICE_ID   = 'price_1Tmv6bLfTuG5tMiXamw6lm5g';   // $70
+const NOTEBOOK_PRICE_ID = 'price_1TncnOLfTuG5tMiXZN0R9EfB';   // $78
+const CUSTOM_PRICE_ID   = 'price_1TncnOLfTuG5tMiXHBmvCGib';   // $105
 
 const EXAMPLES = [
   {
@@ -29,7 +29,7 @@ export default function Notebooks() {
   const [qty, setQty] = useState(1);
   const [loading, setLoading] = useState(false);
 
-  const price = custom ? 70 : 52;
+  const price = custom ? 105 : 78;
   const total = price * qty;
 
   const handleOrder = async () => {
