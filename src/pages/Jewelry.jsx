@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import { base44 } from '@/api/base44Client';
 
@@ -78,14 +79,15 @@ export default function Jewelry() {
       <section style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 24px 80px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '2px', marginBottom: '80px' }}>
           {PIECES.map((p, i) => (
-            <div key={i} style={{ position: 'relative', overflow: 'hidden', background: '#111113' }}>
+            <Link key={i} to="/order?category=memorial&format=jewelry" style={{ position: 'relative', overflow: 'hidden', background: '#111113', display: 'block', textDecoration: 'none' }}>
               <img src={p.img} alt={p.label} style={{ width: '100%', height: '320px', objectFit: 'cover', display: 'block' }} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,10,12,0.92) 0%, rgba(10,10,12,0.2) 55%, transparent 100%)' }} />
               <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '28px' }}>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '20px', fontWeight: 600, marginBottom: '8px', color: '#F2F2F2' }}>{p.label}</h3>
                 <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.55)', lineHeight: 1.65 }}>{p.desc}</p>
+                <p style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#C8681E', marginTop: '12px' }}>Start Order →</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
