@@ -174,9 +174,7 @@ export default function Order() {
           <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.25)', textAlign: 'center', marginTop: '16px', lineHeight: 1.6 }}>
             Your order details are saved immediately. You'll be directed to Stripe's secure checkout to complete payment. We'll email you a confirmation and packing kit instructions after payment.
           </p>
-          <p style={{ fontSize: '11px', color: 'rgba(242,242,242,0.2)', textAlign: 'center', marginTop: '8px' }}>
-            Test mode: use card 4242 4242 4242 4242, any future date, any CVV
-          </p>
+
         </form>
       </div>
     </div>
