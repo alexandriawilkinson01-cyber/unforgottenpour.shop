@@ -2,12 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { base44 } from '@/api/base44Client';
 import Navbar from '../components/Navbar';
-
-const TIERS = [
-  { id: 'keepsake', name: 'Keepsake', price: '$156', priceId: 'price_1TncnOLfTuG5tMiXMWTjs5ui', desc: 'Jewelry, small keepsakes & compact paperweights' },
-  { id: 'heirloom', name: 'Heirloom', price: '$293', priceId: 'price_1TncnOLfTuG5tMiXDgEnXggg', desc: 'Bouquets, orbs, shadow boxes & mid-size displays' },
-  { id: 'legacy', name: 'Legacy', price: '$524', priceId: 'price_1TncnOLfTuG5tMiXIXLTnWDS', desc: 'Custom sculptures, large tabletop art & legacy pieces' },
-];
+import { GLOBES, SHAPES, NOTEBOOK, JEWELRY, ALL_ITEMS } from '@/data/products';
 
 const inputStyle = {
   width: '100%', boxSizing: 'border-box',
@@ -23,28 +18,34 @@ export default function Order() {
   const [form, setForm] = useState({
     firstName: '', lastName: '', email: '', phone: '',
     category: urlParams.get('category') || '', format: '', description: '', instructions: '',
+    item: urlParams.get('item') || '',
   });
-  const [selectedTier, setSelectedTier] = useState('heirloom');
   const [loading, setLoading] = useState(false);
 
   const set = (key, val) => setForm(f => ({ ...f, [key]: val }));
 
+  const selectedItem = ALL_ITEMS.find(i => i.id === form.item);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!selectedItem) {
+      alert('Please select an item to purchase.');
+      return;
+    }
     const isInIframe = window.self !== window.top;
     if (isInIframe) {
       alert('Checkout is only available from the published app. Please open Unforgotten Pour in a new tab to complete your order.');
       return;
     }
     setLoading(true);
-    const tier = TIERS.find(t => t.id === selectedTier);
     const origin = window.location.origin;
     try {
       const response = await base44.functions.invoke('createCheckout', {
-        planId: tier.id,
-        priceId: tier.priceId,
+        planId: selectedItem.id,
+        priceId: selectedItem.priceId,
         successUrl: `${origin}/success`,
         cancelUrl: `${origin}/order`,
+        metadata: { item: selectedItem.name, description: form.description },
       });
       if (response.data?.url) {
         window.location.href = response.data.url;
@@ -70,7 +71,7 @@ export default function Order() {
             Tell us about your item.
           </h1>
           <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.45)', lineHeight: 1.7 }}>
-            We'll confirm your order and send a packing kit within 24 hours. No payment required until we've reviewed your item.
+            Select your piece, tell us what you'd like preserved, and complete secure checkout. We'll send a packing kit within 24 hours.
           </p>
         </div>
 
@@ -143,26 +144,35 @@ export default function Order() {
             </div>
           </div>
 
-          {/* Tier Selection */}
+          {/* Item Selection */}
           <div style={{ marginBottom: '40px' }}>
-            <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>Select Your Tier *</p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '2px' }}>
-              {TIERS.map(tier => (
-                <div key={tier.id} onClick={() => setSelectedTier(tier.id)} style={{ background: selectedTier === tier.id ? '#1A1A1E' : '#111113', border: `2px solid ${selectedTier === tier.id ? '#C8681E' : 'transparent'}`, borderRadius: '4px', padding: '24px 20px', cursor: 'pointer', transition: 'all 0.2s' }}>
-                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: 700, color: '#F2F2F2', marginBottom: '4px' }}>{tier.name}</div>
-                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '28px', fontWeight: 700, color: selectedTier === tier.id ? '#C8681E' : '#F2F2F2', marginBottom: '8px' }}>{tier.price}</div>
-                  <div style={{ fontSize: '12px', color: 'rgba(242,242,242,0.4)', lineHeight: 1.5 }}>{tier.desc}</div>
-                  {selectedTier === tier.id && (
-                    <div style={{ marginTop: '12px', fontSize: '11px', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#C8681E', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                      Selected
-                    </div>
-                  )}
+            <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>Select Your Piece *</p>
+            <select required style={{ ...inputStyle, cursor: 'pointer' }} value={form.item} onChange={e => set('item', e.target.value)}>
+              <option value="">Choose a piece</option>
+              <optgroup label="Resin Globes">
+                {GLOBES.map(g => <option key={g.id} value={g.id}>{g.name} — ${g.price}</option>)}
+              </optgroup>
+              <optgroup label="Shaped Pieces">
+                {SHAPES.map(s => <option key={s.id} value={s.id}>{s.name} — ${s.price}</option>)}
+              </optgroup>
+              <optgroup label="Notebooks">
+                <option value={NOTEBOOK.id}>{NOTEBOOK.name} — ${NOTEBOOK.price}</option>
+              </optgroup>
+              <optgroup label="Memorial Jewelry">
+                {JEWELRY.map(j => <option key={j.id} value={j.id}>{j.name} — ${j.price}</option>)}
+              </optgroup>
+            </select>
+            {selectedItem && (
+              <div style={{ marginTop: '16px', background: '#1A1A1E', border: '2px solid #C8681E', borderRadius: '4px', padding: '20px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div>
+                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: 700, color: '#F2F2F2' }}>{selectedItem.name}</div>
+                  {selectedItem.size && <div style={{ fontSize: '13px', color: 'rgba(242,242,242,0.4)', marginTop: '2px' }}>{selectedItem.size}</div>}
                 </div>
-              ))}
-            </div>
+                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '32px', fontWeight: 700, color: '#C8681E' }}>${selectedItem.price}</div>
+              </div>
+            )}
             <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.3)', marginTop: '10px' }}>
-              Not sure? <Link to="/pricing" style={{ color: '#C8681E', textDecoration: 'none' }}>View full tier breakdown</Link>. You'll be directed to secure payment after submitting.
+              Not sure? <Link to="/pricing" style={{ color: '#C8681E', textDecoration: 'none' }}>View all pricing</Link>. You'll be directed to secure payment after submitting.
             </p>
           </div>
 
@@ -174,7 +184,6 @@ export default function Order() {
           <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.25)', textAlign: 'center', marginTop: '16px', lineHeight: 1.6 }}>
             Your order details are saved immediately. You'll be directed to Stripe's secure checkout to complete payment. We'll email you a confirmation and packing kit instructions after payment.
           </p>
-
         </form>
       </div>
     </div>
