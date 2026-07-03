@@ -39,8 +39,9 @@ export default function Pricing() {
         <SectionHeader label="Resin Globes" title="Preservation globes by size." subtitle="Crystal-clear resin globes in seven sizes — pick the one that fits your keepsake." />
         <div style={{ background: '#111113', border: '1px solid rgba(255,255,255,0.05)' }}>
           {GLOBES.map((g, i) => (
-            <div key={g.id} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '18px 28px', borderBottom: i < GLOBES.length - 1 ? '1px solid rgba(255,255,255,0.04)' : 'none' }}>
-              <div>
+            <div key={g.id} style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '16px 28px', borderBottom: i < GLOBES.length - 1 ? '1px solid rgba(255,255,255,0.04)' : 'none' }}>
+              <img src={g.img} alt={g.name} style={{ width: '64px', height: '64px', objectFit: 'cover', borderRadius: '6px', flexShrink: 0, background: '#0A0A0C' }} />
+              <div style={{ flex: 1 }}>
                 <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '18px', fontWeight: 600, color: '#F2F2F2' }}>{g.name}</span>
                 <span style={{ fontSize: '13px', color: 'rgba(242,242,242,0.35)', marginLeft: '12px' }}>{g.size}</span>
               </div>
@@ -58,13 +59,16 @@ export default function Pricing() {
         <SectionHeader label="Shaped Pieces" title="Beyond the globe." subtitle="Square, hexagon, heart, and ornament formats for a unique presentation." />
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '2px' }}>
           {SHAPES.map(s => (
-            <div key={s.id} style={{ background: '#111113', padding: '36px 28px' }}>
-              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '20px', fontWeight: 600, color: '#F2F2F2', marginBottom: '6px' }}>{s.name}</h3>
-              <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.35)', marginBottom: '24px' }}>{s.size}</p>
-              <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '36px', fontWeight: 700, color: '#F2F2F2', marginBottom: '24px' }}>${s.price}</div>
-              <Link to={`/order?item=${s.id}`} style={{ display: 'block', textAlign: 'center', background: 'rgba(255,255,255,0.07)', color: '#fff', borderRadius: '999px', padding: '12px 24px', fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
-                Select {s.name}
-              </Link>
+            <div key={s.id} style={{ background: '#111113', overflow: 'hidden' }}>
+              <img src={s.img} alt={s.name} style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block' }} />
+              <div style={{ padding: '28px 24px' }}>
+                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '20px', fontWeight: 600, color: '#F2F2F2', marginBottom: '6px' }}>{s.name}</h3>
+                <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.35)', marginBottom: '24px' }}>{s.size}</p>
+                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '36px', fontWeight: 700, color: '#F2F2F2', marginBottom: '24px' }}>${s.price}</div>
+                <Link to={`/order?item=${s.id}`} style={{ display: 'block', textAlign: 'center', background: 'rgba(255,255,255,0.07)', color: '#fff', borderRadius: '999px', padding: '12px 24px', fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
+                  Select {s.name}
+                </Link>
+              </div>
             </div>
           ))}
         </div>
@@ -74,13 +78,16 @@ export default function Pricing() {
       <section style={{ maxWidth: '1100px', margin: '0 auto', padding: '60px 24px', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
         <SectionHeader label="Studio Collection" title="Handcrafted resin notebooks." subtitle="Botanical covers hand-poured with preserved flowers and premium resin." />
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <div style={{ background: '#111113', padding: '40px 32px', maxWidth: '360px', width: '100%' }}>
-            <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: 700, color: '#F2F2F2', marginBottom: '6px' }}>{NOTEBOOK.name}</h3>
-            <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.4)', marginBottom: '24px', lineHeight: 1.5 }}>Hand-poured resin cover with preserved botanicals. A5 lined journal. 4–6 week turnaround.</p>
-            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '40px', fontWeight: 700, color: '#F2F2F2', marginBottom: '28px' }}>${NOTEBOOK.price}</div>
-            <Link to="/notebooks" style={{ display: 'block', textAlign: 'center', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '13px 24px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
-              Order Notebook
-            </Link>
+          <div style={{ background: '#111113', maxWidth: '360px', width: '100%', overflow: 'hidden' }}>
+            <img src={NOTEBOOK.img} alt={NOTEBOOK.name} style={{ width: '100%', height: '280px', objectFit: 'cover', display: 'block' }} />
+            <div style={{ padding: '32px 28px' }}>
+              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: 700, color: '#F2F2F2', marginBottom: '6px' }}>{NOTEBOOK.name}</h3>
+              <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.4)', marginBottom: '24px', lineHeight: 1.5 }}>Hand-poured resin cover with preserved botanicals. A5 lined journal. 4–6 week turnaround.</p>
+              <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '40px', fontWeight: 700, color: '#F2F2F2', marginBottom: '28px' }}>${NOTEBOOK.price}</div>
+              <Link to="/notebooks" style={{ display: 'block', textAlign: 'center', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '13px 24px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
+                Order Notebook
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -90,15 +97,18 @@ export default function Pricing() {
         <SectionHeader label="Memorial Jewelry" title="Wearable memorial pieces." subtitle="Cremation ashes or botanicals encased in hand-cast resin jewelry." />
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '2px' }}>
           {JEWELRY.map(j => (
-            <div key={j.id} style={{ background: j.featured ? '#161618' : '#111113', padding: '40px 32px', borderTop: j.featured ? '2px solid #C8681E' : '2px solid transparent', position: 'relative' }}>
+            <div key={j.id} style={{ background: j.featured ? '#161618' : '#111113', borderTop: j.featured ? '2px solid #C8681E' : '2px solid transparent', position: 'relative', overflow: 'hidden' }}>
+              <img src={j.img} alt={j.name} style={{ width: '100%', height: '260px', objectFit: 'cover', display: 'block' }} />
               {j.featured && (
-                <div style={{ position: 'absolute', top: '-1px', right: '24px', background: '#C8681E', color: '#fff', fontSize: '10px', letterSpacing: '0.12em', textTransform: 'uppercase', padding: '4px 12px', fontWeight: 600 }}>Best Value</div>
+                <div style={{ position: 'absolute', top: '0', right: '24px', background: '#C8681E', color: '#fff', fontSize: '10px', letterSpacing: '0.12em', textTransform: 'uppercase', padding: '4px 12px', fontWeight: 600 }}>Best Value</div>
               )}
-              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: 700, color: '#F2F2F2', marginBottom: '6px' }}>{j.name}</h3>
-              <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '40px', fontWeight: 700, color: '#F2F2F2', marginBottom: '28px' }}>${j.price}</div>
-              <Link to={j.link} style={{ display: 'block', textAlign: 'center', background: j.featured ? '#C8681E' : 'rgba(255,255,255,0.07)', color: '#fff', borderRadius: '999px', padding: '13px 24px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
-                Order {j.name}
-              </Link>
+              <div style={{ padding: '32px 28px' }}>
+                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: 700, color: '#F2F2F2', marginBottom: '6px' }}>{j.name}</h3>
+                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '40px', fontWeight: 700, color: '#F2F2F2', marginBottom: '28px' }}>${j.price}</div>
+                <Link to={j.link} style={{ display: 'block', textAlign: 'center', background: j.featured ? '#C8681E' : 'rgba(255,255,255,0.07)', color: '#fff', borderRadius: '999px', padding: '13px 24px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
+                  Order {j.name}
+                </Link>
+              </div>
             </div>
           ))}
         </div>
