@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { base44 } from '@/api/base44Client';
 import Navbar from '../components/Navbar';
-import { GLOBES, SHAPES, NOTEBOOK, JEWELRY, ALL_ITEMS } from '@/data/products';
+import { GLOBES, SHAPES, NOTEBOOK, JEWELRY, PET_MEMORIAL, ALL_ITEMS } from '@/data/products';
 
 const inputStyle = {
   width: '100%', boxSizing: 'border-box',
@@ -160,6 +160,9 @@ export default function Order() {
               </optgroup>
               <optgroup label="Memorial Jewelry">
                 {JEWELRY.map(j => <option key={j.id} value={j.id}>{j.name} — ${j.price}</option>)}
+              </optgroup>
+              <optgroup label="Pet Memorials">
+                {PET_MEMORIAL.map(p => <option key={p.id} value={p.id}>{p.name} — ${p.price}</option>)}
               </optgroup>
             </select>
             {selectedItem && (

@@ -23,4 +23,8 @@ export const JEWELRY = [
   { id: 'set', name: 'Memorial Jewelry Set', price: 419, priceId: 'price_1TncnOLfTuG5tMiXixbr0SOg', productId: 'prod_UjLctvnPlbjhBy', link: '/jewelry', featured: true, img: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/6e00c1bce_f238f981-0091-4479-88cf-4a815244664c.png' },
 ];
 
-export const ALL_ITEMS = [...GLOBES, ...SHAPES, NOTEBOOK, ...JEWELRY];
+export const PET_MEMORIAL = [
+  { id: 'dog-tag-angels', name: '"Man\'s Best Friend" Memorial Dog Tag', size: 'Resin block with angels', price: 150, priceId: 'price_1TpS1zLfTuG5tMiXz5okDdmR', productId: 'prod_Up6EmZESeAFfoe', img: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/7dabab3d5_UnforgottenPour_DogTagMemorialwithAngels.png' },
+];
+
+export const ALL_ITEMS = [...GLOBES, ...SHAPES, NOTEBOOK, ...JEWELRY, ...PET_MEMORIAL];

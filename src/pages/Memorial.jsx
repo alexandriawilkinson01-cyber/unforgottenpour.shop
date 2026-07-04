@@ -34,6 +34,26 @@ export default function Memorial() {
         </div>
       </section>
 
+      {/* Featured Pet Memorial */}
+      <section style={{ maxWidth: '1100px', margin: '0 auto', padding: '40px 24px 20px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'center', background: '#111113', overflow: 'hidden' }}>
+          <img src="https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/7dabab3d5_UnforgottenPour_DogTagMemorialwithAngels.png" alt="Man's Best Friend Memorial Dog Tag with Angels" style={{ width: '100%', height: '100%', minHeight: '360px', objectFit: 'cover', display: 'block' }} />
+          <div style={{ padding: '40px 40px 40px 0' }}>
+            <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '16px' }}>Featured Pet Memorial</p>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 700, color: '#F2F2F2', lineHeight: 1.2, marginBottom: '16px' }}>"Man's Best Friend"<br />Memorial Dog Tag</h2>
+            <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.5)', lineHeight: 1.7, marginBottom: '24px' }}>
+              A bone-shaped name plaque set in crystal-clear resin, surrounded by four guardian angels. A touching tribute to the companion who gave you their whole life. Personalized with your pet's name.
+            </p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '24px', marginBottom: '28px' }}>
+              <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '36px', fontWeight: 700, color: '#F2F2F2' }}>$150</span>
+            </div>
+            <Link to="/order?item=dog-tag-angels" style={{ display: 'inline-block', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '13px 32px', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
+              Order This Piece →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section style={{ maxWidth: '900px', margin: '0 auto', padding: '80px 24px' }}>
         {ITEMS.map((item, i) => (
           <div key={item.title} style={{ display: 'grid', gridTemplateColumns: '60px 1fr', gap: '32px', padding: '40px 0', borderBottom: '1px solid rgba(255,255,255,0.06)', alignItems: 'start' }}>
