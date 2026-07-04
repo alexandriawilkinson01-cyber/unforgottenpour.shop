@@ -70,7 +70,11 @@ const CATEGORIES = [
     title: 'Hand-Poured Notebooks',
     desc: 'A5 journals with hand-poured resin covers featuring preserved botanicals and florals — one-of-a-kind functional art for your desk or journaling practice.',
     items: ['Botanical resin covers', 'Crystal-clear UV resin', 'A5 lined journals', 'One-of-a-kind designs', 'Custom flower & name options'],
-    images: [],
+    images: [
+      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/1df70194a_Firefly_GeminiFlash_customresin4notebooks522599.png', label: 'Botanical Collection' },
+      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/179c733c7_Firefly_GeminiFlash_customresinnotebooks6682.png', label: 'Custom Name Journals' },
+      { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/f695e7c3e_Firefly_GeminiFlash_customresinnotebooks522599.png', label: "Nature's Notes" },
+    ],
   },
   {
     id: 'milestone',
