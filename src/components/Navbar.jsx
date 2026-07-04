@@ -37,6 +37,10 @@ export default function Navbar() {
             onMouseEnter={e => e.target.style.color='#F2F2F2'} onMouseLeave={e => e.target.style.color='rgba(242,242,242,0.6)'}>
             How It Works
           </Link>
+          <Link to="/shipping-guide" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
+            onMouseEnter={e => e.target.style.color='#F2F2F2'} onMouseLeave={e => e.target.style.color='rgba(242,242,242,0.6)'}>
+            Shipping Guide
+          </Link>
           <Link to="/about" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
             onMouseEnter={e => e.target.style.color='#F2F2F2'} onMouseLeave={e => e.target.style.color='rgba(242,242,242,0.6)'}>
             About
@@ -58,7 +62,7 @@ export default function Navbar() {
       {open && (
         <div style={{ position: 'fixed', inset: 0, zIndex: 200, background: '#0A0A0C', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '48px' }}>
           <button onClick={() => setOpen(false)} style={{ position: 'absolute', top: '20px', right: '32px', color: '#F2F2F2', background: 'none', border: 'none', cursor: 'pointer', fontSize: '24px' }}>✕</button>
-          {[['/', 'Home'], ['/portfolio', 'Portfolio'], ['/memorial', 'Memorial'], ['/notebooks', 'Notebooks'], ['/jewelry', 'Jewelry'], ['/pricing', 'Pricing'], ['/how-it-works', 'How It Works'], ['/about', 'About'], ['/contact', 'Contact'], ['/order', 'Start Order']].map(([to, label]) => (
+          {[['/', 'Home'], ['/portfolio', 'Portfolio'], ['/memorial', 'Memorial'], ['/notebooks', 'Notebooks'], ['/jewelry', 'Jewelry'], ['/pricing', 'Pricing'], ['/how-it-works', 'How It Works'], ['/shipping-guide', 'Shipping Guide'], ['/about', 'About'], ['/contact', 'Contact'], ['/order', 'Start Order']].map(([to, label]) => (
             <Link key={to} to={to} onClick={() => setOpen(false)}
               style={{ fontFamily: "'Playfair Display', serif", fontSize: '40px', fontWeight: 600, color: '#F2F2F2', textDecoration: 'none', marginBottom: '24px', display: 'block' }}>
               {label}
