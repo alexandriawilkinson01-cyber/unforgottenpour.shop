@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import ContactSubmissions from '../components/ContactSubmissions';
 import { base44 } from '@/api/base44Client';
+import { RefreshCw } from 'lucide-react';
 
 const STATUS_STYLES = {
   new: { bg: 'rgba(255,184,0,0.12)', color: '#FFB800', label: 'New' },
@@ -22,6 +23,8 @@ export default function AdminOrders() {
   const [filter, setFilter] = useState('all');
   const [search, setSearch] = useState('');
   const [updatingId, setUpdatingId] = useState(null);
+  const [syncing, setSyncing] = useState(false);
+  const [syncResult, setSyncResult] = useState(null);
 
   const loadOrders = useCallback(async () => {
     setLoading(true);
@@ -63,6 +66,22 @@ export default function AdminOrders() {
       console.error('Failed to update order status:', err);
     } finally {
       setUpdatingId(null);
+    }
+  };
+
+  const handleSyncSquare = async () => {
+    setSyncing(true);
+    setSyncResult(null);
+    try {
+      const res = await base44.functions.invoke('syncSquareOrders', {});
+      setSyncResult({ synced: res.data?.synced || 0, total: res.data?.total || 0 });
+      if (res.data?.synced > 0) {
+        await loadOrders();
+      }
+    } catch (err) {
+      setSyncResult({ error: err.message || 'Sync failed' });
+    } finally {
+      setSyncing(false);
     }
   };
 
@@ -159,6 +178,28 @@ export default function AdminOrders() {
             onChange={e => setSearch(e.target.value)}
             style={{ flex: '1', minWidth: '240px', background: '#111113', border: '1px solid rgba(242,242,242,0.1)', borderRadius: '8px', padding: '12px 16px', color: '#F2F2F2', fontSize: '14px', outline: 'none' }}
           />
+          <button
+            onClick={handleSyncSquare}
+            disabled={syncing}
+            style={{
+              display: 'flex', alignItems: 'center', gap: '8px',
+              background: '#111113',
+              color: syncing ? 'rgba(242,242,242,0.4)' : '#F2F2F2',
+              border: '1px solid rgba(242,242,242,0.15)',
+              borderRadius: '999px',
+              padding: '10px 20px',
+              fontSize: '11px',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+              fontWeight: 600,
+              cursor: syncing ? 'not-allowed' : 'pointer',
+              whiteSpace: 'nowrap',
+              transition: 'all 0.2s',
+            }}
+          >
+            <RefreshCw size={14} className={syncing ? 'animate-spin' : ''} />
+            {syncing ? 'Syncing...' : 'Sync Square'}
+          </button>
           <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
             {['all', ...STATUS_OPTIONS].map(s => (
               <button key={s} onClick={() => setFilter(s)}
@@ -179,6 +220,23 @@ export default function AdminOrders() {
             ))}
           </div>
         </div>
+
+        {syncResult && (
+          <div style={{
+            marginBottom: '16px', padding: '12px 20px',
+            background: syncResult.error ? 'rgba(239,68,68,0.08)' : 'rgba(34,197,94,0.08)',
+            border: `1px solid ${syncResult.error ? 'rgba(239,68,68,0.2)' : 'rgba(34,197,94,0.2)'}`,
+            borderRadius: '8px',
+            fontSize: '13px',
+            color: syncResult.error ? '#f87171' : '#4ade80',
+          }}>
+            {syncResult.error
+              ? `Sync failed: ${syncResult.error}`
+              : syncResult.synced > 0
+                ? `Synced ${syncResult.synced} new order${syncResult.synced !== 1 ? 's' : ''} from Square.`
+                : 'No new Square orders to sync.'}
+          </div>
+        )}
 
         {/* Orders Table */}
         {loading ? (
@@ -212,7 +270,12 @@ export default function AdminOrders() {
                         <p style={{ fontSize: '14px', color: '#F2F2F2', marginBottom: '2px' }}>{order.customer_name}</p>
                         <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.4)' }}>{order.customer_email}</p>
                       </td>
-                      <td style={{ padding: '16px 20px', fontSize: '14px', color: 'rgba(242,242,242,0.7)' }}>{order.product}</td>
+                      <td style={{ padding: '16px 20px', fontSize: '14px', color: 'rgba(242,242,242,0.7)' }}>
+            {order.product}
+            {order.square_order_id && (
+              <span style={{ marginLeft: '8px', fontSize: '9px', letterSpacing: '0.08em', textTransform: 'uppercase', fontWeight: 600, color: '#3b82f6', border: '1px solid rgba(59,130,246,0.2)', borderRadius: '4px', padding: '2px 6px' }}>Square</span>
+            )}
+          </td>
                       <td style={{ padding: '16px 20px', textAlign: 'right', fontSize: '15px', fontWeight: 600, color: '#F2F2F2' }}>${(order.amount || 0).toFixed(2)}</td>
                       <td style={{ padding: '16px 20px' }}>
                         <span style={{ display: 'inline-block', background: style.bg, color: style.color, fontSize: '10px', letterSpacing: '0.08em', textTransform: 'uppercase', fontWeight: 600, padding: '4px 12px', borderRadius: '999px' }}>
