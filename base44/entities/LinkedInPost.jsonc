@@ -1,0 +1,65 @@
+{
+  "name": "LinkedInPost",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Title"
+    },
+    "content": {
+      "type": "string",
+      "title": "Post Content"
+    },
+    "topic": {
+      "type": "string",
+      "title": "Topic",
+      "enum": [
+        "new_product",
+        "company_news",
+        "shop_update",
+        "milestone",
+        "general"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "draft",
+        "posted",
+        "archived"
+      ],
+      "default": "draft"
+    },
+    "source_data": {
+      "type": "string",
+      "title": "Source Data"
+    }
+  },
+  "required": [
+    "title",
+    "content"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
