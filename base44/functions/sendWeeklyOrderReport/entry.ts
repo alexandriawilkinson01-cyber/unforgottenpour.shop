@@ -22,14 +22,15 @@ Deno.serve(async (req) => {
   try {
     const base44 = createClientFromRequest(req);
 
-    // Auth check: block non-admin direct calls; allow scheduled (no-user) context
+    // Auth check: require admin authentication — no anonymous access
+    let user;
     try {
-      const user = await base44.auth.me();
-      if (user && user.role !== 'admin') {
-        return Response.json({ error: 'Forbidden' }, { status: 403 });
-      }
+      user = await base44.auth.me();
     } catch {
-      // No user context — scheduled task, proceed
+      return Response.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+    if (!user || user.role !== 'admin') {
+      return Response.json({ error: 'Forbidden' }, { status: 403 });
     }
 
     // Date range: last 7 days
