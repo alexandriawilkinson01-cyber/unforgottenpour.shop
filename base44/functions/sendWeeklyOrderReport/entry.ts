@@ -1,6 +1,7 @@
 import { createClientFromRequest } from 'npm:@base44/sdk@0.8.31';
 
 // Build an RFC 2822 message with proper base64url encoding for Gmail API
+// Uses TextEncoder so UTF-8 characters (em-dashes, etc.) don't break btoa()
 function buildGmailMessage(to, subject, body) {
   const lines = [
     `To: ${to}`,
@@ -11,7 +12,10 @@ function buildGmailMessage(to, subject, body) {
     body,
   ];
   const raw = lines.join('\r\n');
-  return btoa(raw).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  const bytes = new TextEncoder().encode(raw);
+  let binary = '';
+  for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+  return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 }
 
 Deno.serve(async (req) => {
