@@ -2,7 +2,7 @@ import Stripe from 'npm:stripe@14';
 
 Deno.serve(async (req) => {
   try {
-    const { planId, priceId, successUrl, cancelUrl } = await req.json();
+    const { planId, priceId, successUrl, cancelUrl, metadata } = await req.json();
 
     const stripe = new Stripe(Deno.env.get('STRIPE_SECRET_KEY'));
 
@@ -15,6 +15,7 @@ Deno.serve(async (req) => {
       metadata: {
         base44_app_id: Deno.env.get('BASE44_APP_ID'),
         plan: planId,
+        ...metadata,
       },
     });
 

@@ -23,7 +23,7 @@ Deno.serve(async (req) => {
       const customerName = session.customer_details?.name || 'Unknown';
       const amountPaid = (session.amount_total / 100).toFixed(2);
       const currency = session.currency?.toUpperCase() || 'USD';
-      const plan = session.metadata?.plan || 'N/A';
+      const plan = session.metadata?.item || session.metadata?.plan || 'N/A';
       const sessionId = session.id;
 
       const base44 = createClientFromRequest(req);
