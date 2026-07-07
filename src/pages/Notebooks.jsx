@@ -35,7 +35,7 @@ export default function Notebooks() {
     setLoading(true);
     try {
       const res = await base44.functions.invoke('createCheckout', {
-        priceId: NOTEBOOK.priceId,
+        planId: NOTEBOOK.id,
         quantity: qty,
         successUrl: window.location.origin + '/success',
         cancelUrl: window.location.href,

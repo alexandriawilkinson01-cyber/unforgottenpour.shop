@@ -1,18 +1,25 @@
 import { createClientFromRequest } from 'npm:@base44/sdk@0.8.31';
 
+// Strip CR/LF to prevent email header injection (CWE-93)
+function sanitizeHeader(value) {
+  return String(value || '').replace(/[\r\n]/g, '');
+}
+
 // Build an RFC 2822 message with proper base64url encoding for Gmail API
 function buildGmailMessage(to, subject, body) {
   const lines = [
-    `To: ${to}`,
-    `Subject: ${subject}`,
+    `To: ${sanitizeHeader(to)}`,
+    `Subject: ${sanitizeHeader(subject)}`,
     `Content-Type: text/plain; charset=UTF-8`,
     `MIME-Version: 1.0`,
     ``,
     body,
   ];
   const raw = lines.join('\r\n');
-  // base64url encode
-  return btoa(raw).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  const bytes = new TextEncoder().encode(raw);
+  let binary = '';
+  for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+  return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 }
 
 Deno.serve(async (req) => {

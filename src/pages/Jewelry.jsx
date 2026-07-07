@@ -43,7 +43,7 @@ export default function Jewelry() {
     setLoading(product.priceId);
     try {
       const res = await base44.functions.invoke('createCheckout', {
-        priceId: product.priceId,
+        planId: product.id,
         quantity: 1,
         successUrl: window.location.origin + '/success',
         cancelUrl: window.location.href,
