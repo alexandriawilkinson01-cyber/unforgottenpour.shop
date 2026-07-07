@@ -22,6 +22,7 @@ import AdminOrders from './pages/AdminOrders';
 import OrderStatusChat from './pages/OrderStatusChat';
 import ShippingGuide from './pages/ShippingGuide';
 import Inquiries from './pages/Inquiries';
+import InstagramComments from './pages/InstagramComments';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -63,6 +64,7 @@ const AuthenticatedApp = () => {
       <Route path="/download-catalog" element={<DownloadCatalog />} />
       <Route path="/admin/orders" element={<AdminOrders />} />
       <Route path="/inquiries" element={<Inquiries />} />
+      <Route path="/admin/instagram" element={<InstagramComments />} />
       <Route path="/shipping-guide" element={<ShippingGuide />} />
       <Route path="/track-order" element={<OrderStatusChat />} />
       <Route path="*" element={<PageNotFound />} />
