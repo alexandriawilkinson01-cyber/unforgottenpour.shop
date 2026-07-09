@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { base44 } from '@/api/base44Client';
 import Navbar from '../components/Navbar';
 import { GLOBES, SHAPES, NOTEBOOK, JEWELRY, PET_MEMORIAL, ALL_ITEMS } from '@/data/products';
+import { trackAddToCart, trackAddPaymentInfo, trackInitiateCheckout, trackPlaceAnOrder } from '@/lib/tiktokPixel';
 
 const inputStyle = {
   width: '100%', boxSizing: 'border-box',
@@ -26,6 +27,15 @@ export default function Order() {
 
   const selectedItem = ALL_ITEMS.find(i => i.id === form.item);
 
+  const handleItemSelect = (e) => {
+    const itemId = e.target.value;
+    set('item', itemId);
+    const item = ALL_ITEMS.find(i => i.id === itemId);
+    if (item) {
+      trackAddToCart({ contentId: item.id, contentName: item.name, value: item.price });
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!selectedItem) {
@@ -39,6 +49,9 @@ export default function Order() {
     }
     setLoading(true);
     const origin = window.location.origin;
+    trackInitiateCheckout({ contentId: selectedItem.id, contentName: selectedItem.name, value: selectedItem.price });
+    trackAddPaymentInfo({ contentId: selectedItem.id, contentName: selectedItem.name, value: selectedItem.price });
+    trackPlaceAnOrder({ contentId: selectedItem.id, contentName: selectedItem.name, value: selectedItem.price });
     try {
       const response = await base44.functions.invoke('createCheckout', {
         planId: selectedItem.id,
@@ -146,7 +159,7 @@ export default function Order() {
           {/* Item Selection */}
           <div style={{ marginBottom: '40px' }}>
             <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>Select Your Piece *</p>
-            <select required style={{ ...inputStyle, cursor: 'pointer' }} value={form.item} onChange={e => set('item', e.target.value)}>
+            <select required style={{ ...inputStyle, cursor: 'pointer' }} value={form.item} onChange={handleItemSelect}>
               <option value="">Choose a piece</option>
               <optgroup label="Resin Globes">
                 {GLOBES.map(g => <option key={g.id} value={g.id}>{g.name} — ${g.price}</option>)}

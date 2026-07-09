@@ -1,7 +1,19 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import { trackPurchase } from '@/lib/tiktokPixel';
 
 export default function Success() {
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const sessionId = params.get('session_id');
+    trackPurchase({
+      contentId: sessionId || 'checkout-success',
+      contentName: 'Order',
+      value: undefined,
+    });
+  }, []);
+
   return (
     <div style={{ background: '#0A0A0C', minHeight: '100vh' }}>
       <Navbar />

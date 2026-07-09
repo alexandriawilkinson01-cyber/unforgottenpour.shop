@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import { base44 } from '@/api/base44Client';
+import { trackViewContent, trackInitiateCheckout } from '@/lib/tiktokPixel';
 
 const PIECES = [
   {
@@ -35,12 +36,21 @@ const PRODUCTS = [
 export default function Jewelry() {
   const [loading, setLoading] = useState(null);
 
+  useEffect(() => {
+    trackViewContent({
+      contentId: 'jewelry-collection',
+      contentName: 'Memorial Jewelry',
+      contentCategory: 'Jewelry',
+    });
+  }, []);
+
   const handleOrder = async (product) => {
     if (window.self !== window.top) {
       alert('Checkout is only available from the published app, not inside an iframe preview.');
       return;
     }
     setLoading(product.priceId);
+    trackInitiateCheckout({ contentId: product.name, contentName: product.name, value: product.price });
     try {
       const res = await base44.functions.invoke('createCheckout', {
         planId: product.id,

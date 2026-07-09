@@ -1,6 +1,8 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import { GLOBES, SHAPES, NOTEBOOK, JEWELRY } from '@/data/products';
+import { trackViewContent } from '@/lib/tiktokPixel';
 
 function SectionHeader({ label, title, subtitle }) {
   return (
@@ -13,6 +15,14 @@ function SectionHeader({ label, title, subtitle }) {
 }
 
 export default function Pricing() {
+  useEffect(() => {
+    trackViewContent({
+      contentId: 'pricing',
+      contentName: 'Product Pricing',
+      contentCategory: 'Pricing',
+    });
+  }, []);
+
   return (
     <div style={{ background: '#0A0A0C', minHeight: '100vh' }}>
       <Navbar />

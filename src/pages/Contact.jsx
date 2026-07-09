@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import { base44 } from '@/api/base44Client';
+import { identifyUser } from '@/lib/tiktokPixel';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -12,6 +13,7 @@ export default function Contact() {
     e.preventDefault();
     setLoading(true);
     setError('');
+    await identifyUser({ email: form.email });
     try {
       await base44.functions.invoke('sendContactEmail', {
         name: form.name,

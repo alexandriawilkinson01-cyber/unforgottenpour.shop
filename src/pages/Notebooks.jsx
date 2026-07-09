@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import { base44 } from '@/api/base44Client';
 import { NOTEBOOK } from '@/data/products';
+import { trackViewContent, trackInitiateCheckout } from '@/lib/tiktokPixel';
 
 const EXAMPLES = [
   {
@@ -25,6 +26,15 @@ export default function Notebooks() {
   const [qty, setQty] = useState(1);
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    trackViewContent({
+      contentId: NOTEBOOK.id,
+      contentName: NOTEBOOK.name,
+      contentCategory: 'Notebooks',
+      price: NOTEBOOK.price,
+    });
+  }, []);
+
   const total = NOTEBOOK.price * qty;
 
   const handleOrder = async () => {
@@ -33,6 +43,7 @@ export default function Notebooks() {
       return;
     }
     setLoading(true);
+    trackInitiateCheckout({ contentId: NOTEBOOK.id, contentName: NOTEBOOK.name, value: NOTEBOOK.price * qty });
     try {
       const res = await base44.functions.invoke('createCheckout', {
         planId: NOTEBOOK.id,

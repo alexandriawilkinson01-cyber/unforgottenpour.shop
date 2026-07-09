@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import { trackViewContent } from '@/lib/tiktokPixel';
 
 const CATEGORIES = [
   {
@@ -100,6 +101,15 @@ const FORMATS = [
 
 export default function Portfolio() {
   const [activeTab, setActiveTab] = useState('wedding');
+
+  useEffect(() => {
+    const cat = CATEGORIES.find(c => c.id === activeTab) || CATEGORIES[0];
+    trackViewContent({
+      contentId: cat.id,
+      contentName: cat.title,
+      contentCategory: 'Portfolio',
+    });
+  }, [activeTab]);
 
   return (
     <div style={{ background: '#0A0A0C', minHeight: '100vh' }}>
