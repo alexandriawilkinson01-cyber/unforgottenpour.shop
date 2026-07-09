@@ -18,6 +18,7 @@ export default function Memorial() {
       contentId: 'memorial',
       contentName: 'Memorial Keepsakes',
       contentCategory: 'Memorial',
+      price: 150,
     });
   }, []);
 

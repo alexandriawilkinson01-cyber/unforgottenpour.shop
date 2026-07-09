@@ -7,10 +7,12 @@ export default function Success() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const sessionId = params.get('session_id');
+    const value = params.get('value');
+    const contentId = params.get('content_id');
     trackPurchase({
-      contentId: sessionId || 'checkout-success',
+      contentId: contentId || sessionId || 'checkout-success',
       contentName: 'Order',
-      value: undefined,
+      value: value ? parseFloat(value) : undefined,
     });
   }, []);
 

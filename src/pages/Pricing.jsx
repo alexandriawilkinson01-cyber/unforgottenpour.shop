@@ -20,6 +20,7 @@ export default function Pricing() {
       contentId: 'pricing',
       contentName: 'Product Pricing',
       contentCategory: 'Pricing',
+      price: 50,
     });
   }, []);
 

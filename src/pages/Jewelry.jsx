@@ -41,6 +41,7 @@ export default function Jewelry() {
       contentId: 'jewelry-collection',
       contentName: 'Memorial Jewelry',
       contentCategory: 'Jewelry',
+      price: 209,
     });
   }, []);
 
@@ -55,7 +56,7 @@ export default function Jewelry() {
       const res = await base44.functions.invoke('createCheckout', {
         planId: product.id,
         quantity: 1,
-        successUrl: window.location.origin + '/success',
+        successUrl: window.location.origin + `/success?value=${product.price}&content_id=${product.name}`,
         cancelUrl: window.location.href,
       });
       if (res.data?.url) window.location.href = res.data.url;

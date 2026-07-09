@@ -108,6 +108,7 @@ export default function Portfolio() {
       contentId: cat.id,
       contentName: cat.title,
       contentCategory: 'Portfolio',
+      price: 50,
     });
   }, [activeTab]);
 

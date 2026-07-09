@@ -55,7 +55,7 @@ export default function Order() {
     try {
       const response = await base44.functions.invoke('createCheckout', {
         planId: selectedItem.id,
-        successUrl: `${origin}/success`,
+        successUrl: `${origin}/success?value=${selectedItem.price}&content_id=${selectedItem.id}`,
         cancelUrl: `${origin}/order`,
         metadata: { item: selectedItem.name, description: form.description },
       });

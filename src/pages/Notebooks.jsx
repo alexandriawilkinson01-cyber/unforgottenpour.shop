@@ -48,7 +48,7 @@ export default function Notebooks() {
       const res = await base44.functions.invoke('createCheckout', {
         planId: NOTEBOOK.id,
         quantity: qty,
-        successUrl: window.location.origin + '/success',
+        successUrl: window.location.origin + `/success?value=${NOTEBOOK.price * qty}&content_id=${NOTEBOOK.id}`,
         cancelUrl: window.location.href,
       });
       if (res.data?.url) window.location.href = res.data.url;
