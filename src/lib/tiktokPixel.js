@@ -4,6 +4,10 @@
 const BRAND = 'Unforgotten Pour';
 const CURRENCY = 'USD';
 
+// TikTok Pixel test event code — set to verify events in TikTok's Test Event tool.
+// Remove or set to null after testing is complete.
+const TEST_EVENT_CODE = 'TEST09143';
+
 /**
  * Hash a string with SHA-256 using the Web Crypto API.
  * Returns a hex string, or null if input is empty/unavailable.
@@ -23,6 +27,9 @@ async function sha256(value) {
 function safe(fn) {
   if (typeof window === 'undefined' || !window.ttq) return;
   try {
+    if (TEST_EVENT_CODE && typeof window.ttq.setTestEventCode === 'function') {
+      window.ttq.setTestEventCode(TEST_EVENT_CODE);
+    }
     fn();
   } catch {
     // swallow — tracking should never break the page
