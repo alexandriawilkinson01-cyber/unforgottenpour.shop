@@ -76,16 +76,18 @@ function getOrCreateExternalId() {
 }
 
 /**
- * Call ttq.identify with all available PII.
- * The TikTok pixel hashes values internally before sending.
- * Empty strings are passed for unavailable fields per TikTok EMQ best practices.
+ * Call ttq.identify with available PII.
+ * The TikTok pixel hashes plain-text values internally before sending.
+ * Only include fields that have real values — passing empty strings causes the
+ * pixel to hash the empty string, which TikTok rejects as invalid data.
  */
 function callIdentify(email, phone, externalId) {
-  safe(() => window.ttq.identify({
-    email: email || '',
-    phone_number: phone || '',
-    external_id: externalId || '',
-  }));
+  const data = {};
+  if (email) data.email = email;
+  if (phone) data.phone_number = phone;
+  if (externalId) data.external_id = externalId;
+  if (Object.keys(data).length === 0) return;
+  safe(() => window.ttq.identify(data));
 }
 
 /**
