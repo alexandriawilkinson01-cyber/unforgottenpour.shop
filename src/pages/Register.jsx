@@ -9,7 +9,7 @@ import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp
 import AuthLayout from "@/components/AuthLayout";
 import GoogleIcon from "@/components/GoogleIcon";
 import { toast } from "@/components/ui/use-toast";
-import { trackCompleteRegistration } from "@/lib/tiktokPixel";
+import { trackCompleteRegistration, identifyUser } from "@/lib/tiktokPixel";
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -46,6 +46,7 @@ export default function Register() {
       if (result?.access_token) {
         base44.auth.setToken(result.access_token);
       }
+      identifyUser({ email });
       trackCompleteRegistration({ contentId: "register", contentName: "User Registration" });
       window.location.href = "/";
     } catch (err) {

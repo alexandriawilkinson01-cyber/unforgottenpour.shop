@@ -3,26 +3,12 @@
 
 const BRAND = 'Unforgotten Pour';
 const CURRENCY = 'USD';
+const PII_KEY = 'ttq_user_pii';
+const EXT_ID_KEY = 'ttq_external_id';
 
 // TikTok Pixel test event code — set to verify events in TikTok's Test Event tool.
 // Remove or set to null after testing is complete.
 const TEST_EVENT_CODE = 'TEST09143';
-
-/**
- * Hash a string with SHA-256 using the Web Crypto API.
- * Returns a hex string, or null if input is empty/unavailable.
- */
-async function sha256(value) {
-  if (!value) return null;
-  try {
-    const normalized = String(value).trim().toLowerCase();
-    if (!normalized) return null;
-    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(normalized));
-    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
-  } catch {
-    return null;
-  }
-}
 
 function safe(fn) {
   if (typeof window === 'undefined' || !window.ttq) return;
@@ -37,21 +23,93 @@ function safe(fn) {
 }
 
 /**
- * Identify a user with hashed PII (email/phone/external_id).
- * All values are SHA-256 hashed on the client side before sending.
+ * Normalize a phone number to E.164 format (+[country code][number]).
+ * Assumes US (+1) if no country code is present.
  */
-export async function identifyUser({ email, phone, externalId } = {}) {
-  const [hashedEmail, hashedPhone, hashedExternalId] = await Promise.all([
-    sha256(email),
-    sha256(phone),
-    sha256(externalId),
-  ]);
-  const data = {};
-  if (hashedEmail) data.email = hashedEmail;
-  if (hashedPhone) data.phone_number = hashedPhone;
-  if (hashedExternalId) data.external_id = hashedExternalId;
-  if (Object.keys(data).length === 0) return;
-  safe(() => window.ttq.identify(data));
+function normalizePhoneE164(phone) {
+  if (!phone) return '';
+  const digits = String(phone).replace(/\D/g, '');
+  if (!digits) return '';
+  if (digits.length === 10) return '+1' + digits;
+  if (digits.length === 11 && digits.startsWith('1')) return '+' + digits;
+  return '+' + digits;
+}
+
+/**
+ * Retrieve persisted user PII from localStorage.
+ */
+function getStoredPII() {
+  try {
+    return JSON.parse(localStorage.getItem(PII_KEY) || '{}');
+  } catch {
+    return {};
+  }
+}
+
+/**
+ * Persist user PII to localStorage so it survives page navigations.
+ */
+function storePII(data) {
+  try {
+    const merged = { ...getStoredPII(), ...data };
+    localStorage.setItem(PII_KEY, JSON.stringify(merged));
+    return merged;
+  } catch {
+    return data;
+  }
+}
+
+/**
+ * Get or create a persistent external ID for the visitor.
+ */
+function getOrCreateExternalId() {
+  try {
+    let id = localStorage.getItem(EXT_ID_KEY);
+    if (!id) {
+      id = 'fp-' + crypto.randomUUID();
+      localStorage.setItem(EXT_ID_KEY, id);
+    }
+    return id;
+  } catch {
+    return '';
+  }
+}
+
+/**
+ * Call ttq.identify with all available PII.
+ * The TikTok pixel hashes values internally before sending.
+ * Empty strings are passed for unavailable fields per TikTok EMQ best practices.
+ */
+function callIdentify(email, phone, externalId) {
+  safe(() => window.ttq.identify({
+    email: email || '',
+    phone_number: phone || '',
+    external_id: externalId || '',
+  }));
+}
+
+/**
+ * Initialize pixel identification on page load.
+ * Reads persisted PII and external ID from localStorage and calls ttq.identify
+ * so that all subsequent events (including the pageview) carry user data.
+ */
+export function initPixel() {
+  const pii = getStoredPII();
+  const externalId = getOrCreateExternalId();
+  callIdentify(pii.email, pii.phone ? normalizePhoneE164(pii.phone) : '', externalId);
+}
+
+/**
+ * Identify a user and persist their PII for future pageviews.
+ * Accepts raw (unhashed) email and phone — the pixel hashes internally.
+ */
+export function identifyUser({ email, phone, externalId } = {}) {
+  const pii = storePII({
+    ...(email ? { email: email.trim().toLowerCase() } : {}),
+    ...(phone ? { phone: normalizePhoneE164(phone) } : {}),
+  });
+  const extId = externalId || getOrCreateExternalId();
+  callIdentify(pii.email, pii.phone, extId);
 }
 
 /**

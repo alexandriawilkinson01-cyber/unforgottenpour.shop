@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { base44 } from '@/api/base44Client';
 import Navbar from '../components/Navbar';
 import { GLOBES, SHAPES, NOTEBOOK, JEWELRY, PET_MEMORIAL, ALL_ITEMS } from '@/data/products';
-import { trackAddToCart, trackAddPaymentInfo, trackInitiateCheckout, trackPlaceAnOrder } from '@/lib/tiktokPixel';
+import { trackAddToCart, trackAddPaymentInfo, trackInitiateCheckout, trackPlaceAnOrder, identifyUser } from '@/lib/tiktokPixel';
 
 const inputStyle = {
   width: '100%', boxSizing: 'border-box',
@@ -49,6 +49,7 @@ export default function Order() {
     }
     setLoading(true);
     const origin = window.location.origin;
+    identifyUser({ email: form.email, phone: form.phone });
     trackInitiateCheckout({ contentId: selectedItem.id, contentName: selectedItem.name, value: selectedItem.price });
     trackAddPaymentInfo({ contentId: selectedItem.id, contentName: selectedItem.name, value: selectedItem.price });
     trackPlaceAnOrder({ contentId: selectedItem.id, contentName: selectedItem.name, value: selectedItem.price });
