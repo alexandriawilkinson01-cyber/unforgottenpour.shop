@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
+import { useMetaDescription } from '@/hooks/useMetaDescription';
 
 const STEPS = [
   {
@@ -79,6 +80,9 @@ const FAQS = [
 ];
 
 export default function HowItWorks() {
+  useMetaDescription(
+    'How it works — ship your flowers or keepsakes, we dry and prepare them, cast in optical-clarity resin, and ship your finished heirloom back in 4–6 weeks.'
+  );
   return (
     <div style={{ background: '#0A0A0C', minHeight: '100vh', color: '#F2F2F2' }}>
       <Navbar />

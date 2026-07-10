@@ -2,8 +2,12 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { trackPurchase } from '@/lib/tiktokPixel';
+import { useMetaDescription } from '@/hooks/useMetaDescription';
 
 export default function Success() {
+  useMetaDescription(
+    'Order confirmed — thank you for your purchase. We\'ll send a packing kit within 24 hours and begin crafting your custom resin preservation piece.'
+  );
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const sessionId = params.get('session_id');

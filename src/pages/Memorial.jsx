@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { trackViewContent } from '@/lib/tiktokPixel';
+import { useMetaDescription } from '@/hooks/useMetaDescription';
 
 const MEMORIAL_IMG = 'https://pub-629428d185ca4960a0a73c850d32294b.r2.dev/company_126549/images/53e2d4d9-1b21-47bb-ad2d-34ed75b18430.png';
 
@@ -13,6 +14,9 @@ const ITEMS = [
 ];
 
 export default function Memorial() {
+  useMetaDescription(
+    'Custom resin keepsakes preserving ashes, flowers, and fingerprints — a lasting tribute to someone you love. Memorial orbs, pendants, and paperweights.'
+  );
   useEffect(() => {
     trackViewContent({
       contentId: 'memorial',

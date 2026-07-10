@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import { base44 } from '@/api/base44Client';
 import { NOTEBOOK } from '@/data/products';
 import { trackViewContent, trackInitiateCheckout } from '@/lib/tiktokPixel';
+import { useMetaDescription } from '@/hooks/useMetaDescription';
 
 const EXAMPLES = [
   {
@@ -23,6 +24,9 @@ const EXAMPLES = [
 ];
 
 export default function Notebooks() {
+  useMetaDescription(
+    'Handcrafted resin notebooks with pressed flowers, gold leaf, and botanicals sealed under crystal-clear covers. Each A5 journal is one of a kind.'
+  );
   const [qty, setQty] = useState(1);
   const [loading, setLoading] = useState(false);
 

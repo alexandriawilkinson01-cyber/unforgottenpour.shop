@@ -2,8 +2,12 @@ import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import { base44 } from '@/api/base44Client';
 import { identifyUser } from '@/lib/tiktokPixel';
+import { useMetaDescription } from '@/hooks/useMetaDescription';
 
 export default function Contact() {
+  useMetaDescription(
+    'Contact Unforgotten Pour to start a custom resin preservation or ask about our memorial jewelry, wedding bouquet keepsakes, and custom commissions.'
+  );
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);

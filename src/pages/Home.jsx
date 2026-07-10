@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar';
+import { useMetaDescription } from '../hooks/useMetaDescription';
 import FadeIn from '../components/FadeIn';
 import HeroSection from '../components/HeroSection';
 import StorySection from '../components/StorySection';
@@ -10,6 +11,9 @@ import StoriesSection from '../components/StoriesSection';
 import MemoriesSection from '../components/MemoriesSection';
 
 export default function Home() {
+  useMetaDescription(
+    'Unforgotten Pour preserves wedding flowers, ashes, and keepsakes in handcrafted resin art and jewelry — heirlooms that last a lifetime.'
+  );
   return (
     <div style={{ background: '#0A0A0C', minHeight: '100vh' }}>
       <Navbar />

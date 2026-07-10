@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import { base44 } from '@/api/base44Client';
 import { trackViewContent, trackInitiateCheckout } from '@/lib/tiktokPixel';
+import { useMetaDescription } from '@/hooks/useMetaDescription';
 
 const PIECES = [
   {
@@ -34,6 +35,9 @@ const PRODUCTS = [
 ];
 
 export default function Jewelry() {
+  useMetaDescription(
+    'Memorial jewelry in sterling silver — resin pendants, rings, and earrings holding ashes or fingerprints of loved ones. Wearable remembrance.'
+  );
   const [loading, setLoading] = useState(null);
 
   useEffect(() => {

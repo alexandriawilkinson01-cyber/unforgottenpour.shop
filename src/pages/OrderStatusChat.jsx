@@ -3,10 +3,14 @@ import { base44 } from '@/api/base44Client';
 import ReactMarkdown from 'react-markdown';
 import { Send } from 'lucide-react';
 import Navbar from '@/components/Navbar';
+import { useMetaDescription } from '@/hooks/useMetaDescription';
 
 const AGENT_NAME = 'order_status_assistant';
 
 export default function OrderStatusChat() {
+  useMetaDescription(
+    'Track your Unforgotten Pour order status — chat with our assistant using your order reference number for real-time updates on your resin preservation piece.'
+  );
   const [conversationId, setConversationId] = useState(null);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');

@@ -1,6 +1,7 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
+import { useMetaDescription } from '@/hooks/useMetaDescription';
 
 const CHECKLIST = [
   'Sturdy corrugated shipping box (new if possible)',
@@ -89,6 +90,9 @@ const SPECIAL = [
 ];
 
 export default function ShippingGuide() {
+  useMetaDescription(
+    'Step-by-step shipping guide for sending flowers, ashes, and keepsakes to our resin preservation studio — packing tips, materials checklist, and tracking.'
+  );
   return (
     <div style={{ background: '#0A0A0C', minHeight: '100vh', color: '#F2F2F2' }}>
       <Navbar />

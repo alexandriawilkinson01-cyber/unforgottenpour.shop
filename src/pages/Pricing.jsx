@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import { GLOBES, SHAPES, NOTEBOOK, JEWELRY } from '@/data/products';
 import { trackViewContent } from '@/lib/tiktokPixel';
+import { useMetaDescription } from '@/hooks/useMetaDescription';
 
 function SectionHeader({ label, title, subtitle }) {
   return (
@@ -15,6 +16,9 @@ function SectionHeader({ label, title, subtitle }) {
 }
 
 export default function Pricing() {
+  useMetaDescription(
+    'Transparent pricing for custom resin preservation — resin globes from $50, shaped blocks, notebooks, and memorial jewelry. View our full price list.'
+  );
   useEffect(() => {
     trackViewContent({
       contentId: 'pricing',

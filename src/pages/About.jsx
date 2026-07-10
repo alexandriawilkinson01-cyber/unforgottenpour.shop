@@ -1,7 +1,11 @@
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
+import { useMetaDescription } from '@/hooks/useMetaDescription';
 
 export default function About() {
+  useMetaDescription(
+    'Unforgotten Pour is a boutique resin preservation studio turning life\'s most meaningful flowers, ashes, and keepsakes into permanent, handcrafted heirlooms.'
+  );
   return (
     <div style={{ background: '#0A0A0C', minHeight: '100vh', color: '#F2F2F2' }}>
       <Navbar />

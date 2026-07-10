@@ -4,6 +4,7 @@ import { base44 } from '@/api/base44Client';
 import Navbar from '../components/Navbar';
 import { GLOBES, SHAPES, NOTEBOOK, JEWELRY, PET_MEMORIAL, ALL_ITEMS } from '@/data/products';
 import { trackAddToCart, trackAddPaymentInfo, trackInitiateCheckout, trackPlaceAnOrder, identifyUser } from '@/lib/tiktokPixel';
+import { useMetaDescription } from '@/hooks/useMetaDescription';
 
 const inputStyle = {
   width: '100%', boxSizing: 'border-box',
@@ -15,6 +16,9 @@ const inputStyle = {
 const labelStyle = { display: 'block', fontSize: '12px', letterSpacing: '0.06em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.5)', marginBottom: '8px' };
 
 export default function Order() {
+  useMetaDescription(
+    'Start your custom resin preservation order — choose from resin globes, shaped blocks, memorial jewelry, and notebooks. Secure checkout with Stripe.'
+  );
   const urlParams = new URLSearchParams(window.location.search);
   const [form, setForm] = useState({
     firstName: '', lastName: '', email: '', phone: '',

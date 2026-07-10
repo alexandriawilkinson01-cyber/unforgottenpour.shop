@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { trackViewContent } from '@/lib/tiktokPixel';
+import { useMetaDescription } from '@/hooks/useMetaDescription';
 
 const CATEGORIES = [
   {
@@ -100,6 +101,9 @@ const FORMATS = [
 ];
 
 export default function Portfolio() {
+  useMetaDescription(
+    'Explore our portfolio of custom resin preservation pieces — wedding bouquets, memorial keepsakes, and milestone artifacts cast in crystal-clear resin.'
+  );
   const [activeTab, setActiveTab] = useState('wedding');
 
   useEffect(() => {

@@ -1,5 +1,6 @@
 import * as XLSX from 'xlsx';
 import { GLOBES, SHAPES, NOTEBOOK, JEWELRY } from '@/data/products';
+import { useMetaDescription } from '@/hooks/useMetaDescription';
 
 const PRODUCTS = [
   ...GLOBES.map(g => ({
@@ -41,6 +42,9 @@ const PRODUCTS = [
 ];
 
 export default function DownloadCatalog() {
+  useMetaDescription(
+    'Download the Unforgotten Pour product catalog — resin globes, shaped blocks, notebooks, and memorial jewelry with full pricing and product details.'
+  );
   const handleDownload = () => {
     const ws = XLSX.utils.json_to_sheet(PRODUCTS);
     ws['!cols'] = [
