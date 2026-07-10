@@ -5,6 +5,19 @@ function sanitizeHeader(value) {
   return String(value || '').replace(/[\r\n]/g, '');
 }
 
+// Sanitize body text: strip CR (normalize to LF) and remove null bytes.
+// name and email get all newlines stripped (single-line fields); message
+// preserves newlines (textarea) but normalizes CRLF to LF only.
+function sanitizeBodyField(value, { stripNewlines = false } = {}) {
+  let v = String(value || '').replace(/\0/g, '');
+  if (stripNewlines) {
+    v = v.replace(/[\r\n]/g, '');
+  } else {
+    v = v.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+  }
+  return v;
+}
+
 // Build an RFC 2822 message with proper base64url encoding for Gmail API
 function buildGmailMessage(to, subject, body) {
   const lines = [
@@ -50,8 +63,11 @@ Deno.serve(async (req) => {
     let emailSent = false;
     try {
       const { accessToken } = await base44.asServiceRole.connectors.getConnection('gmail');
-      const subject = `New message from ${name}`;
-      const emailBody = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+      const safeName = sanitizeBodyField(name, { stripNewlines: true });
+      const safeEmail = sanitizeBodyField(email, { stripNewlines: true });
+      const safeMessage = sanitizeBodyField(message);
+      const subject = `New message from ${safeName}`;
+      const emailBody = `Name: ${safeName}\nEmail: ${safeEmail}\n\n${safeMessage}`;
       const raw = buildGmailMessage('AlexandriaWilkinson01@gmail.com', subject, emailBody);
 
       const res = await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send', {

@@ -1,7 +1,8 @@
 import Stripe from 'npm:stripe@14';
 
-// Server-side mapping: planId → Stripe priceId
-// Clients send only planId; the price is resolved here so it can't be tampered with.
+// Server-side mappings: planId → Stripe priceId and product name.
+// Clients send only planId; price and product name are resolved here so they
+// can't be tampered with via client-supplied metadata.
 const PRICE_MAP = {
   'globe-4': 'price_1TozQ5LfTuG5tMiXzTI8UePr',
   'globe-3': 'price_1TozQ5LfTuG5tMiXmlbFzmr8',
@@ -19,6 +20,27 @@ const PRICE_MAP = {
   'ring': 'price_1TncnOLfTuG5tMiXLkAZaseC',
   'set': 'price_1TncnOLfTuG5tMiXixbr0SOg',
   'dog-tag-angels': 'price_1TpS1zLfTuG5tMiXz5okDdmR',
+};
+
+// Server-side product name map — overrides any client-supplied item name in
+// metadata so the charged price and recorded product always match.
+const PRODUCT_NAME_MAP = {
+  'globe-4': '4" Resin Globe',
+  'globe-3': '3" Resin Globe',
+  'globe-2.5': '2.5" Resin Globe',
+  'globe-2': '2" Resin Globe',
+  'globe-1.7': '1.7" Resin Globe',
+  'globe-1.3': '1.3" Resin Globe',
+  'globe-0.9': '0.9" Resin Globe',
+  'square': 'Square Block',
+  'hexagon': 'Hexagon Block',
+  'heart': 'Heart Shaped Resin',
+  'ornaments': 'Small Circle Ornaments (Set of 4)',
+  'notebook': 'Resin Notebook',
+  'pendant': 'Memorial Pendant',
+  'ring': 'Memorial Ring',
+  'set': 'Memorial Jewelry Set',
+  'dog-tag-angels': '"Man\'s Best Friend" Memorial Dog Tag',
 };
 
 /**
@@ -65,6 +87,7 @@ Deno.serve(async (req) => {
         ...(metadata && typeof metadata === 'object' ? metadata : {}),
         base44_app_id: Deno.env.get('BASE44_APP_ID'),
         plan: planId,
+        item: PRODUCT_NAME_MAP[planId] || planId,
       },
     });
 
