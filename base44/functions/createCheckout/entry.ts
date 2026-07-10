@@ -62,9 +62,9 @@ Deno.serve(async (req) => {
       success_url: safeSuccessUrl,
       cancel_url: safeCancelUrl,
       metadata: {
+        ...(metadata && typeof metadata === 'object' ? metadata : {}),
         base44_app_id: Deno.env.get('BASE44_APP_ID'),
         plan: planId,
-        ...metadata,
       },
     });
 
