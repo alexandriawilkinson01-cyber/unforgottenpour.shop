@@ -6,16 +6,9 @@ const CURRENCY = 'USD';
 const PII_KEY = 'ttq_user_pii';
 const EXT_ID_KEY = 'ttq_external_id';
 
-// TikTok Pixel test event code — set to verify events in TikTok's Test Event tool.
-// Remove or set to null after testing is complete.
-const TEST_EVENT_CODE = 'TEST09143';
-
 function safe(fn) {
   if (typeof window === 'undefined' || !window.ttq) return;
   try {
-    if (TEST_EVENT_CODE && typeof window.ttq.setTestEventCode === 'function') {
-      window.ttq.setTestEventCode(TEST_EVENT_CODE);
-    }
     fn();
   } catch {
     // swallow — tracking should never break the page
