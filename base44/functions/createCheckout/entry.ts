@@ -21,6 +21,24 @@ const PRICE_MAP = {
   'dog-tag-angels': 'price_1TpS1zLfTuG5tMiXz5okDdmR',
 };
 
+/**
+ * Validate that a client-supplied URL points back to the app's own origin.
+ * Prevents open redirect attacks via attacker-controlled success/cancel URLs.
+ */
+function validateReturnUrl(url, fallbackPath, req) {
+  const reqOrigin = new URL(`https://${req.headers.get('host') || 'localhost'}`).origin;
+
+  try {
+    const parsed = new URL(url, reqOrigin);
+    if (parsed.origin === reqOrigin) {
+      return parsed.href;
+    }
+  } catch {
+    // invalid URL — fall through to fallback
+  }
+  return reqOrigin + fallbackPath;
+}
+
 Deno.serve(async (req) => {
   try {
     const { planId, quantity, successUrl, cancelUrl, metadata } = await req.json();
@@ -32,14 +50,17 @@ Deno.serve(async (req) => {
 
     const qty = Math.max(1, Math.min(100, parseInt(quantity, 10) || 1));
 
+    const safeSuccessUrl = validateReturnUrl(successUrl, '/success', req);
+    const safeCancelUrl = validateReturnUrl(cancelUrl, '/order', req);
+
     const stripe = new Stripe(Deno.env.get('STRIPE_SECRET_KEY'));
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: [{ price: priceId, quantity: qty }],
       mode: 'payment',
-      success_url: successUrl,
-      cancel_url: cancelUrl,
+      success_url: safeSuccessUrl,
+      cancel_url: safeCancelUrl,
       metadata: {
         base44_app_id: Deno.env.get('BASE44_APP_ID'),
         plan: planId,
