@@ -5,11 +5,11 @@ import { useMetaDescription } from '@/hooks/useMetaDescription';
 const FOUNDER_IMG = 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/49c75d14c_518369981_10237132799118159_5249936405228807948_n.jpg';
 const FOUNDER_NAME = 'Alexandria';
 const FOUNDER_BIO = [
-  'Hi, I\'m Alexandria — the hands behind every piece that comes out of Unforgotten Pour.',
-  'This studio didn\'t start as a business plan. It started with losing my nana — the hardest thing I\'ve ever gone through. She was the one person who believed in me no matter what, through everything, and when she passed, I didn\'t just want a photo or an urn on a shelf. I wanted her with me. I wanted to carry her without carrying an ashes container everywhere I went. When I couldn\'t find anyone who understood what I actually needed — something small enough to keep close, permanent enough to never lose — I taught myself to make it myself.',
-  'Since then, resin has become less of a craft and more of a quiet promise I make to every person who trusts me with something irreplaceable — a wedding bouquet, a loved one\'s ashes, a pet\'s collar, a child\'s first shoes. I take on a limited number of commissions each month so that every single piece, from intake to final polish, passes through my own hands, not a factory line.',
+  'Hi, I\'m Alexandria, the hands behind every piece that comes out of Unforgotten Pour.',
+  'This studio didn\'t start as a business plan. It started with losing my nana, the hardest thing I\'ve ever gone through. She was the one person who believed in me no matter what, through everything, and when she passed, I didn\'t just want a photo or an urn on a shelf. I wanted her with me. I wanted to carry her without carrying an ashes container everywhere I went. When I couldn\'t find anyone who understood what I actually needed, something small enough to keep close, permanent enough to never lose, I taught myself to make it myself.',
+  'Since then, resin has become less of a craft and more of a quiet promise I make to every person who trusts me with something irreplaceable, a wedding bouquet, a loved one\'s ashes, a pet\'s collar, a child\'s first shoes. I take on a limited number of commissions each month so that every single piece, from intake to final polish, passes through my own hands, not a factory line.',
   'If you\'re sending me something that matters this much, I want you to know exactly who\'s receiving it. I\'ve been where you are. And I don\'t take it lightly.',
-  '— Alexandria, Unforgotten Pour · Blacksburg, South Carolina',
+  'Alexandria, Unforgotten Pour · Blacksburg, South Carolina',
 ];
 
 export default function About() {
