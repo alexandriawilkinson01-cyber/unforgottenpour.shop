@@ -166,7 +166,7 @@ export default function Portfolio() {
             }
               {cat.images.map((img, i) =>
             <div key={i} style={{ position: 'relative', gridColumn: i === 0 ? '1 / -1' : 'auto' }}>
-                  <img src="https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/d1c4908c2_140ad2f2-bbd0-4b5b-bf29-d132bbfa7f99.png" alt={img.label} style={{ width: '100%', display: 'block', objectFit: 'cover', aspectRatio: i === 0 ? '16/10' : '1' }} />
+                  <img src={img.url} alt={img.label} style={{ width: '100%', display: 'block', objectFit: 'cover', aspectRatio: i === 0 ? '16/10' : '1' }} />
                   {img.label &&
               <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '12px 16px', background: 'linear-gradient(to top, rgba(10,10,12,0.85), transparent)' }}>
                       <span style={{ fontSize: '11px', color: 'rgba(242,242,242,0.7)', letterSpacing: '0.05em' }}>{img.label}</span>
