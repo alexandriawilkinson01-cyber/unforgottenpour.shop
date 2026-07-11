@@ -12,12 +12,12 @@ Deno.serve(async (req) => {
     const base44 = createClientFromRequest(req);
     const { session_id } = await req.json();
 
-    if (!session_id) {
-      return Response.json({ error: 'Order reference number is required' }, { status: 400 });
+    if (typeof session_id !== 'string' || !session_id.trim()) {
+      return Response.json({ error: 'A valid order reference number is required' }, { status: 400 });
     }
 
     const all = await base44.asServiceRole.entities.Order.filter({
-      stripe_session_id: session_id,
+      stripe_session_id: session_id.trim(),
     });
     const orders = all.slice(0, 1);
 
