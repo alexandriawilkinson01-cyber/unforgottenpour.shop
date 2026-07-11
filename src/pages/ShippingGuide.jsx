@@ -108,6 +108,16 @@ export default function ShippingGuide() {
         </p>
       </section>
 
+      {/* Reassurance */}
+      <section style={{ maxWidth: '780px', margin: '0 auto', padding: '0 24px 60px', textAlign: 'center' }}>
+        <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(18px, 2.5vw, 24px)', fontWeight: 500, color: 'rgba(242,242,242,0.75)', lineHeight: 1.7, maxWidth: '680px', margin: '0 auto' }}>
+          We know sending something this personal can feel daunting — especially when you're already navigating grief. Take a breath. We've walked hundreds of families through this exact process, and we'll walk through it with you, too.
+        </p>
+        <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.4)', maxWidth: '560px', margin: '20px auto 0', lineHeight: 1.75 }}>
+          Every detail below is here to make sure your keepsake arrives safely. If anything feels unclear or you'd rather talk it through, email <a href="mailto:AlexandriaWilkinson01@gmail.com" style={{ color: '#C8681E', textDecoration: 'none' }}>AlexandriaWilkinson01@gmail.com</a> — Alexandria will respond personally.
+        </p>
+      </section>
+
       {/* Checklist */}
       <section style={{ maxWidth: '900px', margin: '0 auto', padding: '0 24px 80px' }}>
         <div style={{ background: '#111113', border: '1px solid rgba(255,255,255,0.05)', padding: '40px 48px' }}>
