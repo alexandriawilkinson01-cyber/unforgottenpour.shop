@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
-import { base44 } from '@/api/base44Client';
 import { NOTEBOOK } from '@/data/products';
-import { trackViewContent, trackInitiateCheckout } from '@/lib/tiktokPixel';
+import { trackViewContent } from '@/lib/tiktokPixel';
 import { useMetaDescription } from '@/hooks/useMetaDescription';
 
 const EXAMPLES = [
@@ -27,8 +27,6 @@ export default function Notebooks() {
   useMetaDescription(
     'Handcrafted resin notebooks with pressed flowers, gold leaf, and botanicals sealed under crystal-clear covers. Each A5 journal is one of a kind.'
   );
-  const [qty, setQty] = useState(1);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     trackViewContent({
@@ -38,30 +36,6 @@ export default function Notebooks() {
       price: NOTEBOOK.price,
     });
   }, []);
-
-  const total = NOTEBOOK.price * qty;
-
-  const handleOrder = async () => {
-    if (window.self !== window.top) {
-      alert('Checkout is only available from the published app, not inside an iframe preview.');
-      return;
-    }
-    setLoading(true);
-    trackInitiateCheckout({ contentId: NOTEBOOK.id, contentName: NOTEBOOK.name, value: NOTEBOOK.price * qty });
-    try {
-      const res = await base44.functions.invoke('createCheckout', {
-        planId: NOTEBOOK.id,
-        quantity: qty,
-        successUrl: window.location.origin + `/success?value=${NOTEBOOK.price * qty}&content_id=${NOTEBOOK.id}`,
-        cancelUrl: window.location.href,
-      });
-      if (res.data?.url) window.location.href = res.data.url;
-    } catch (e) {
-      alert('Something went wrong. Please try again.');
-    } finally {
-      setLoading(false);
-    }
-  };
 
   return (
     <div style={{ background: '#0A0A0C', minHeight: '100vh', color: '#F2F2F2' }}>
@@ -93,33 +67,17 @@ export default function Notebooks() {
           ))}
         </div>
 
-        {/* Order card */}
-        <div style={{ background: '#111113', border: '1px solid rgba(255,255,255,0.07)', padding: '48px', maxWidth: '600px', margin: '0 auto' }}>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '28px', fontWeight: 700, marginBottom: '8px' }}>Order a Notebook</h2>
-          <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.4)', marginBottom: '36px' }}>Each piece is handmade to order. Allow 4–6 weeks for delivery.</p>
-
-          {/* Qty */}
-          <div style={{ marginBottom: '28px' }}>
-            <label style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.5)', display: 'block', marginBottom: '10px' }}>Quantity</label>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-              <button onClick={() => setQty(q => Math.max(1, q - 1))} style={{ width: '36px', height: '36px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#F2F2F2', fontSize: '18px', cursor: 'pointer', borderRadius: '4px' }}>−</button>
-              <span style={{ fontSize: '20px', fontWeight: 600, minWidth: '24px', textAlign: 'center' }}>{qty}</span>
-              <button onClick={() => setQty(q => q + 1)} style={{ width: '36px', height: '36px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#F2F2F2', fontSize: '18px', cursor: 'pointer', borderRadius: '4px' }}>+</button>
-            </div>
-          </div>
-
-          {/* Total & CTA */}
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)', paddingTop: '24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
-            <div>
-              <p style={{ fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.35)', marginBottom: '4px' }}>Total</p>
-              <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '32px', fontWeight: 700 }}>${total}</p>
-              <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.3)', marginTop: '2px' }}>{qty} × ${NOTEBOOK.price}</p>
-            </div>
-            <button onClick={handleOrder} disabled={loading}
-              style={{ background: loading ? 'rgba(200,104,30,0.5)' : '#C8681E', color: '#fff', border: 'none', borderRadius: '999px', padding: '15px 36px', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', transition: 'background 0.2s' }}>
-              {loading ? 'Redirecting…' : 'Order Now'}
-            </button>
-          </div>
+        {/* CTA */}
+        <div style={{ textAlign: 'center', maxWidth: '500px', margin: '0 auto' }}>
+          <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.45)', lineHeight: 1.75, marginBottom: '32px' }}>
+            Each notebook is handmade to order with your choice of botanicals. Allow 4–6 weeks for delivery.
+          </p>
+          <Link to="/order?item=notebook" style={{ display: 'inline-block', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '15px 40px', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
+            Start Order
+          </Link>
+          <Link to="/pricing" style={{ display: 'inline-block', marginLeft: '16px', color: 'rgba(242,242,242,0.5)', borderRadius: '999px', padding: '15px 28px', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(242,242,242,0.15)' }}>
+            View Pricing
+          </Link>
         </div>
       </section>
     </div>

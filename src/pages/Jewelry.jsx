@@ -1,8 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
-import { base44 } from '@/api/base44Client';
-import { trackViewContent, trackInitiateCheckout } from '@/lib/tiktokPixel';
+import { trackViewContent } from '@/lib/tiktokPixel';
 import { useMetaDescription } from '@/hooks/useMetaDescription';
 
 const PIECES = [
@@ -28,17 +27,10 @@ const PIECES = [
   },
 ];
 
-const PRODUCTS = [
-  { name: 'Pendant', price: 209, priceId: 'price_1TncnOLfTuG5tMiXlgKFswNl', features: ['Sterling silver bezel', 'Teardrop, circle, or hexagon', '18″ chain included', 'Gift box'] },
-  { name: 'Ring', price: 261, priceId: 'price_1TncnOLfTuG5tMiXLkAZaseC', features: ['Silver or gold finish', 'Full size range', 'Channel-set resin inlay', 'Comfort fit band'] },
-  { name: 'Set', price: 419, priceId: 'price_1TncnOLfTuG5tMiXixbr0SOg', featured: true, features: ['Matching ring + pendant', 'Choice of finishes', 'Premium gift presentation', 'Save $51 vs. individual'] },
-];
-
 export default function Jewelry() {
   useMetaDescription(
     'Memorial jewelry in sterling silver — resin pendants, rings, and earrings holding ashes or fingerprints of loved ones. Wearable remembrance.'
   );
-  const [loading, setLoading] = useState(null);
 
   useEffect(() => {
     trackViewContent({
@@ -48,28 +40,6 @@ export default function Jewelry() {
       price: 209,
     });
   }, []);
-
-  const handleOrder = async (product) => {
-    if (window.self !== window.top) {
-      alert('Checkout is only available from the published app, not inside an iframe preview.');
-      return;
-    }
-    setLoading(product.priceId);
-    trackInitiateCheckout({ contentId: product.name, contentName: product.name, value: product.price });
-    try {
-      const res = await base44.functions.invoke('createCheckout', {
-        planId: product.id,
-        quantity: 1,
-        successUrl: window.location.origin + `/success?value=${product.price}&content_id=${product.name}`,
-        cancelUrl: window.location.href,
-      });
-      if (res.data?.url) window.location.href = res.data.url;
-    } catch {
-      alert('Something went wrong. Please try again.');
-    } finally {
-      setLoading(null);
-    }
-  };
 
   return (
     <div style={{ background: '#0A0A0C', minHeight: '100vh', color: '#F2F2F2' }}>
@@ -129,30 +99,17 @@ export default function Jewelry() {
           ))}
         </div>
 
-        {/* Pricing cards */}
-        <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '16px' }}>Pricing</p>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '32px', fontWeight: 700 }}>Select Your Piece</h2>
-        </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '2px', maxWidth: '920px', margin: '0 auto' }}>
-          {PRODUCTS.map((prod) => (
-            <div key={prod.name} style={{ background: prod.featured ? 'rgba(200,104,30,0.08)' : '#111113', border: prod.featured ? '1px solid rgba(200,104,30,0.3)' : '1px solid rgba(255,255,255,0.07)', padding: '40px 32px', display: 'flex', flexDirection: 'column' }}>
-              {prod.featured && <p style={{ fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '12px' }}>Best Value</p>}
-              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: 600, marginBottom: '8px' }}>{prod.name}</h3>
-              <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '36px', fontWeight: 700, marginBottom: '24px' }}>${prod.price}</p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 32px', flex: 1 }}>
-                {prod.features.map((f, i) => (
-                  <li key={i} style={{ fontSize: '14px', color: 'rgba(242,242,242,0.5)', lineHeight: 1.7, paddingLeft: '18px', position: 'relative', marginBottom: '6px' }}>
-                    <span style={{ position: 'absolute', left: 0, color: '#C8681E' }}>·</span>{f}
-                  </li>
-                ))}
-              </ul>
-              <button onClick={() => handleOrder(prod)} disabled={loading === prod.priceId}
-                style={{ width: '100%', background: loading === prod.priceId ? 'rgba(200,104,30,0.5)' : prod.featured ? '#C8681E' : 'transparent', color: '#F2F2F2', border: prod.featured ? 'none' : '1px solid rgba(242,242,242,0.2)', borderRadius: '999px', padding: '14px', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, cursor: loading === prod.priceId ? 'not-allowed' : 'pointer', transition: 'all 0.2s' }}>
-                {loading === prod.priceId ? 'Redirecting…' : 'Order Now'}
-              </button>
-            </div>
-          ))}
+        {/* CTA */}
+        <div style={{ textAlign: 'center', padding: '20px 0 0' }}>
+          <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.45)', maxWidth: '440px', margin: '0 auto 32px', lineHeight: 1.75 }}>
+            Pendants, rings, and heirloom sets — each handmade to order with your loved one's ashes or botanicals.
+          </p>
+          <Link to="/order?category=memorial&format=jewelry" style={{ display: 'inline-block', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '15px 40px', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
+            Start Order
+          </Link>
+          <Link to="/pricing" style={{ display: 'inline-block', marginLeft: '16px', color: 'rgba(242,242,242,0.5)', borderRadius: '999px', padding: '15px 28px', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(242,242,242,0.15)' }}>
+            View Pricing
+          </Link>
         </div>
       </section>
     </div>
