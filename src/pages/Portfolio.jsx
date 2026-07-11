@@ -149,9 +149,9 @@ export default function Portfolio() {
       {CATEGORIES.filter((c) => c.id === activeTab).map((cat) =>
       <section key={cat.id} style={{ maxWidth: '1100px', margin: '0 auto', padding: '80px 24px' }}>
           <div style={{ display: 'flex', gap: '8px', alignItems: 'flex-start', marginBottom: '60px', flexWrap: 'wrap' }}>
-            <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '80px', fontWeight: 700, color: 'rgba(242,242,242,0.06)', lineHeight: 1, marginRight: '16px' }}>{cat.num}</span>
+            
             <div style={{ paddingTop: '12px' }}>
-              <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '8px' }}>Category {cat.num}</p>
+              
               <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 700, color: '#F2F2F2' }}>{cat.title}</h2>
             </div>
           </div>
@@ -205,7 +205,7 @@ export default function Portfolio() {
             {FORMATS.map((f) =>
             <div key={f.name} style={{ background: '#111113', padding: '28px 24px' }} className="rounded-[20px]">
                 <div style={{ fontSize: '20px', marginBottom: '12px', opacity: 0.5 }}>{f.icon}</div>
-                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '16px', fontWeight: 600, color: '#F2F2F2', marginBottom: '8px' }}>{f.name}</h3>
+                
                 <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.4)', lineHeight: 1.6 }}>{f.desc}</p>
               </div>
             )}
