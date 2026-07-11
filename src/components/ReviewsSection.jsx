@@ -5,7 +5,7 @@ const REVIEWS = [
     name: 'Sarah M.',
     location: 'Charleston, SC',
     rating: 5,
-    text: 'I sent in my wedding bouquet and received back something I can only describe as a work of art. The flowers look exactly as they did on our wedding day. I cry every time I look at it — in the best way.',
+    text: 'I sent in my wedding bouquet and received back something I can only describe as a work of art. The flowers look exactly as they did on our wedding day. I cry every time I look at it, in the best way.',
     item: 'Wedding Bouquet',
   },
   {
@@ -26,7 +26,7 @@ const REVIEWS = [
     name: 'Marcus W.',
     location: 'Richmond, VA',
     rating: 5,
-    text: "My son's first shoes are now in a paperweight on my office desk. I get asked about it constantly. The quality is museum-level — you'd never know it wasn't always meant to be displayed this way.",
+    text: "My son's first shoes are now in a paperweight on my office desk. I get asked about it constantly. The quality is museum-level, you'd never know it wasn't always meant to be displayed this way.",
     item: 'Baby Shoes',
   },
   {
@@ -40,7 +40,7 @@ const REVIEWS = [
     name: 'Tom B.',
     location: 'Greenville, SC',
     rating: 5,
-    text: "Fast turnaround, beautiful packaging, and the finished piece exceeded my expectations. The resin is perfectly clear — no bubbles, no cloudiness. This is genuine craftsmanship.",
+    text: "Fast turnaround, beautiful packaging, and the finished piece exceeded my expectations. The resin is perfectly clear, no bubbles, no cloudiness. This is genuine craftsmanship.",
     item: 'Championship Trophy Fragment',
   },
 ];

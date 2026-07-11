@@ -21,7 +21,7 @@ const STEPS = [
   {
     num: '02',
     title: 'Prep Fresh & Dried Florals',
-    body: 'If your flowers are fresh, place them between sheets of acid-free tissue, gently cushion with bubble wrap, and ship within 48 hours of your event — or freeze and ship overnight on dry ice for best color retention. Dried botanicals can be layered in tissue and packed loosely so they are not crushed.',
+    body: 'If your flowers are fresh, place them between sheets of acid-free tissue, gently cushion with bubble wrap, and ship within 48 hours of your event, or freeze and ship overnight on dry ice for best color retention. Dried botanicals can be layered in tissue and packed loosely so they are not crushed.',
   },
   {
     num: '03',
@@ -31,7 +31,7 @@ const STEPS = [
   {
     num: '04',
     title: 'Wrap Keepsakes & Jewelry',
-    body: 'Wrap small keepsakes — rings, baby shoes, medals, fabric — individually in tissue paper and then bubble wrap. Fragile items should be immobilized so they cannot shift inside the box during transit.',
+    body: 'Wrap small keepsakes, rings, baby shoes, medals, fabric, individually in tissue paper and then bubble wrap. Fragile items should be immobilized so they cannot shift inside the box during transit.',
   },
   {
     num: '05',
@@ -60,7 +60,7 @@ const SPECIAL = [
     title: 'Cremation Ashes',
     icon: '✦',
     rules: [
-      'Must be shipped via USPS Priority Mail Express only — no other carrier is permitted.',
+      'Must be shipped via USPS Priority Mail Express only, no other carrier is permitted.',
       'Seal ashes in a sift-proof inner container, then place inside a sturdy outer box.',
       'Affix USPS Label 139 (Cremated Remains) securely over the box seam.',
       'Clearly mark "Human Remains" on the exterior of the package.',
@@ -73,7 +73,7 @@ const SPECIAL = [
     rules: [
       'Ship within 48 hours of your event for best results, or refrigerate (do not freeze) until shipping.',
       'Layer stems between acid-free tissue, wrap loosely in damp paper towels at the base, and cushion with bubble wrap.',
-      'Ship overnight with a cold pack — never loose ice or dry ice in direct contact with petals.',
+      'Ship overnight with a cold pack, never loose ice or dry ice in direct contact with petals.',
       'Call or email us before shipping so we can prepare to receive and process them immediately.',
     ],
   },
@@ -91,7 +91,7 @@ const SPECIAL = [
 
 export default function ShippingGuide() {
   useMetaDescription(
-    'Step-by-step shipping guide for sending flowers, ashes, and keepsakes to our resin preservation studio — packing tips, materials checklist, and tracking.'
+    'Step-by-step shipping guide for sending flowers, ashes, and keepsakes to our resin preservation studio, packing tips, materials checklist, and tracking.'
   );
   return (
     <div style={{ background: '#0A0A0C', minHeight: '100vh', color: '#F2F2F2' }}>
@@ -111,10 +111,10 @@ export default function ShippingGuide() {
       {/* Reassurance */}
       <section style={{ maxWidth: '780px', margin: '0 auto', padding: '0 24px 60px', textAlign: 'center' }}>
         <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(18px, 2.5vw, 24px)', fontWeight: 500, color: 'rgba(242,242,242,0.75)', lineHeight: 1.7, maxWidth: '680px', margin: '0 auto' }}>
-          We know sending something this personal can feel daunting — especially when you're already navigating grief. Take a breath. We've walked hundreds of families through this exact process, and we'll walk through it with you, too.
+          We know sending something this personal can feel daunting, especially when you're already navigating grief. Take a breath. We've walked hundreds of families through this exact process, and we'll walk through it with you, too.
         </p>
         <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.4)', maxWidth: '560px', margin: '20px auto 0', lineHeight: 1.75 }}>
-          Every detail below is here to make sure your keepsake arrives safely. If anything feels unclear or you'd rather talk it through, email <a href="mailto:AlexandriaWilkinson01@gmail.com" style={{ color: '#C8681E', textDecoration: 'none' }}>AlexandriaWilkinson01@gmail.com</a> — Alexandria will respond personally.
+          Every detail below is here to make sure your keepsake arrives safely. If anything feels unclear or you'd rather talk it through, email <a href="mailto:AlexandriaWilkinson01@gmail.com" style={{ color: '#C8681E', textDecoration: 'none' }}>AlexandriaWilkinson01@gmail.com</a>, Alexandria will respond personally.
         </p>
       </section>
 

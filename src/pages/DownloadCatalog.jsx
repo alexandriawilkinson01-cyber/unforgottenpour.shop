@@ -33,7 +33,7 @@ const PRODUCTS = [
   ...JEWELRY.map(j => ({
     Category: 'Memorial Jewelry',
     Name: j.name,
-    Size: '—',
+    Size: 'N/A',
     Price: `$${j.price.toFixed(2)}`,
     'Price ID': j.priceId,
     'Product ID': j.productId,
@@ -43,7 +43,7 @@ const PRODUCTS = [
 
 export default function DownloadCatalog() {
   useMetaDescription(
-    'Download the Unforgotten Pour product catalog — resin globes, shaped blocks, notebooks, and memorial jewelry with full pricing and product details.'
+    'Download the Unforgotten Pour product catalog, resin globes, shaped blocks, notebooks, and memorial jewelry with full pricing and product details.'
   );
   const handleDownload = () => {
     const ws = XLSX.utils.json_to_sheet(PRODUCTS);

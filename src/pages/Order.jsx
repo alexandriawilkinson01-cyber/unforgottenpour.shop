@@ -18,7 +18,7 @@ const labelStyle = { display: 'block', fontSize: '12px', letterSpacing: '0.06em'
 
 export default function Order() {
   useMetaDescription(
-    'Start your custom resin preservation order — choose from resin globes, shaped blocks, memorial jewelry, and notebooks. Secure checkout with Stripe.'
+    'Start your custom resin preservation order, choose from resin globes, shaped blocks, memorial jewelry, and notebooks. Secure checkout with Stripe.'
   );
   const urlParams = new URLSearchParams(window.location.search);
   const [form, setForm] = useState({
@@ -170,19 +170,19 @@ export default function Order() {
             <select required style={{ ...inputStyle, cursor: 'pointer' }} value={form.item} onChange={handleItemSelect}>
               <option value="">Choose a piece</option>
               <optgroup label="Resin Globes">
-                {GLOBES.map(g => <option key={g.id} value={g.id}>{g.name} — ${g.price}</option>)}
+                {GLOBES.map(g => <option key={g.id} value={g.id}>{g.name}, ${g.price}</option>)}
               </optgroup>
               <optgroup label="Shaped Pieces">
-                {SHAPES.map(s => <option key={s.id} value={s.id}>{s.name} — ${s.price}</option>)}
+                {SHAPES.map(s => <option key={s.id} value={s.id}>{s.name}, ${s.price}</option>)}
               </optgroup>
               <optgroup label="Notebooks">
-                <option value={NOTEBOOK.id}>{NOTEBOOK.name} — ${NOTEBOOK.price}</option>
+                <option value={NOTEBOOK.id}>{NOTEBOOK.name}, ${NOTEBOOK.price}</option>
               </optgroup>
               <optgroup label="Memorial Jewelry">
-                {JEWELRY.map(j => <option key={j.id} value={j.id}>{j.name} — ${j.price}</option>)}
+                {JEWELRY.map(j => <option key={j.id} value={j.id}>{j.name}, ${j.price}</option>)}
               </optgroup>
               <optgroup label="Pet Memorials">
-                {PET_MEMORIAL.map(p => <option key={p.id} value={p.id}>{p.name} — ${p.price}</option>)}
+                {PET_MEMORIAL.map(p => <option key={p.id} value={p.id}>{p.name}, ${p.price}</option>)}
               </optgroup>
             </select>
             {selectedItem && (

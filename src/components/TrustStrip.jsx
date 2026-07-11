@@ -14,7 +14,7 @@ const TRUST_ITEMS = [
         <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
       </svg>
     ),
-    title: '4–6 Week Turnaround',
+    title: '4-6 Week Turnaround',
     sub: 'Packing kit shipped in 24 hrs',
   },
   {

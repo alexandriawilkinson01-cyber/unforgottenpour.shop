@@ -15,7 +15,7 @@ const ITEMS = [
 
 export default function Memorial() {
   useMetaDescription(
-    'Custom resin keepsakes preserving ashes, flowers, and fingerprints — a lasting tribute to someone you love. Memorial orbs, pendants, and paperweights.'
+    'Custom resin keepsakes preserving ashes, flowers, and fingerprints, a lasting tribute to someone you love. Memorial orbs, pendants, and paperweights.'
   );
   useEffect(() => {
     trackViewContent({
@@ -41,7 +41,7 @@ export default function Memorial() {
             A permanent way<br />to hold someone close.
           </h1>
           <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.55)', lineHeight: 1.75, marginBottom: '44px' }}>
-            Funeral flowers, cremation ashes, dried botanicals from gravesites, pet fur and paw prints, handwritten letters. Whatever connects you to the person or companion you have lost — preserved forever in museum-quality resin.
+            Funeral flowers, cremation ashes, dried botanicals from gravesites, pet fur and paw prints, handwritten letters. Whatever connects you to the person or companion you have lost, preserved forever in museum-quality resin.
           </p>
           <Link to="/order?category=memorial" style={{ display: 'inline-block', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '14px 36px', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
             Begin Memorial Order

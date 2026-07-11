@@ -10,7 +10,7 @@ const CATEGORIES = [
     label: 'Wedding & Event Florals',
     num: '01',
     title: 'Wedding & Event Florals',
-    desc: 'Bridal bouquets, boutonnieres, corsages, and ceremonial arrangements — preserved in crystal-clear resin blocks, orbs, and jewelry. Your wedding flowers deserve to outlast the day.',
+    desc: 'Bridal bouquets, boutonnieres, corsages, and ceremonial arrangements, preserved in crystal-clear resin blocks, orbs, and jewelry. Your wedding flowers deserve to outlast the day.',
     items: ['Bridal bouquets', 'Boutonnieres & corsages', 'Ceremonial arrangements', 'Pressed petals & confetti', 'Champagne corks & ribbons'],
     images: [
       { url: 'https://pub-629428d185ca4960a0a73c850d32294b.r2.dev/company_126549/images/c74e8c31-759e-4744-80ef-b6034f08f266.png', label: 'Featured Work' },
@@ -35,7 +35,7 @@ const CATEGORIES = [
     label: 'Memorial Keepsakes',
     num: '02',
     title: 'Memorial Keepsakes',
-    desc: 'Funeral flowers, cremation ashes, dried botanicals from gravesites. A permanent, tangible way to hold someone close — transformed into something beautiful you can keep forever.',
+    desc: 'Funeral flowers, cremation ashes, dried botanicals from gravesites. A permanent, tangible way to hold someone close, transformed into something beautiful you can keep forever.',
     items: ['Funeral florals', 'Cremation ashes', 'Graveside botanicals', 'Pet fur & paw prints', 'Handwritten letters'],
     images: [
       { url: 'https://pub-629428d185ca4960a0a73c850d32294b.r2.dev/company_126549/images/53e2d4d9-1b21-47bb-ad2d-34ed75b18430.png', label: 'Memorial Collection' },
@@ -49,7 +49,7 @@ const CATEGORIES = [
     label: 'Resin Spheres',
     num: '04',
     title: 'Floral Resin Spheres',
-    desc: 'Perfect crystal spheres encasing preserved roses, baby\'s breath, lavender, and eucalyptus. Each orb is hand-poured and polished to a glass-like finish — a complete floral world suspended in time, striking as décor and meaningful as keepsake.',
+    desc: 'Perfect crystal spheres encasing preserved roses, baby\'s breath, lavender, and eucalyptus. Each orb is hand-poured and polished to a glass-like finish, a complete floral world suspended in time, striking as décor and meaningful as keepsake.',
     items: ['Bridal rose arrangements', 'Baby\'s breath & lavender', 'Eucalyptus & botanicals', 'Blush, mauve & peach palettes', 'Custom floral combinations'],
     images: [
       { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/563e26a68_373b4dc6-ac8c-43bb-888f-db4b8c87d5b33.png', label: '' },
@@ -60,7 +60,7 @@ const CATEGORIES = [
     label: 'Memorial Jewelry',
     num: '05',
     title: 'Memorial Jewelry',
-    desc: 'Cremation ashes and preserved botanicals set into wearable resin pendants, rings, and earrings — intimate, portable keepsakes you can carry every day.',
+    desc: 'Cremation ashes and preserved botanicals set into wearable resin pendants, rings, and earrings, intimate, portable keepsakes you can carry every day.',
     items: ['Resin pendants', 'Memorial rings', 'Earring sets', 'Ashes & petal infusion', 'Custom shapes & color tints'],
     images: [
       { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/b6cd0ae4c_517298203_10166088166648747_5996983620115148223_n.jpg', label: '' },
@@ -71,7 +71,7 @@ const CATEGORIES = [
     label: 'Studio Notebooks',
     num: '06',
     title: 'Hand-Poured Notebooks',
-    desc: 'A5 journals with hand-poured resin covers featuring preserved botanicals and florals — one-of-a-kind functional art for your desk or journaling practice.',
+    desc: 'A5 journals with hand-poured resin covers featuring preserved botanicals and florals, one-of-a-kind functional art for your desk or journaling practice.',
     items: ['Botanical resin covers', 'Crystal-clear UV resin', 'A5 lined journals', 'One-of-a-kind designs', 'Custom flower & name options'],
     images: [
       { url: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/1df70194a_Firefly_GeminiFlash_customresin4notebooks522599.png', label: 'Botanical Collection' },
@@ -84,7 +84,7 @@ const CATEGORIES = [
     label: 'Milestone Artifacts',
     num: '03',
     title: 'Milestone Artifacts',
-    desc: "Baby's first shoes, hospital wristbands, locks of hair. The small objects that mark enormous moments — now preserved in museum-quality resin to last for generations.",
+    desc: "Baby's first shoes, hospital wristbands, locks of hair. The small objects that mark enormous moments, now preserved in museum-quality resin to last for generations.",
     items: ["Baby's first shoes", 'Hospital wristbands', 'Locks of hair', 'First teeth & keepsakes', 'Graduation & achievement items'],
     images: [
       { url: 'https://pub-629428d185ca4960a0a73c850d32294b.r2.dev/company_126549/images/b72be2d5-7e0a-422a-9fdb-dafda1a53c4a.png', label: 'Milestone Series' },
@@ -93,16 +93,16 @@ const CATEGORIES = [
 ];
 
 const FORMATS = [
-  { icon: '◎', name: 'Jewelry', desc: 'Pendants, rings, and earrings — wear your memory every day.' },
+  { icon: '◎', name: 'Jewelry', desc: 'Pendants, rings, and earrings, wear your memory every day.' },
   { icon: '▪', name: 'Paperweight', desc: 'A polished block for desk or shelf display.' },
   { icon: '⬜', name: 'Shadow Box', desc: 'Framed resin inlay paired with photographs or mementos.' },
-  { icon: '○', name: 'Orb', desc: 'A perfect sphere suspended in time — striking as décor.' },
+  { icon: '○', name: 'Orb', desc: 'A perfect sphere suspended in time, striking as décor.' },
   { icon: '◆', name: 'Tabletop Art', desc: 'Custom sculptural pieces made to anchor a room.' },
 ];
 
 export default function Portfolio() {
   useMetaDescription(
-    'Explore our portfolio of custom resin preservation pieces — wedding bouquets, memorial keepsakes, and milestone artifacts cast in crystal-clear resin.'
+    'Explore our portfolio of custom resin preservation pieces, wedding bouquets, memorial keepsakes, and milestone artifacts cast in crystal-clear resin.'
   );
   const [activeTab, setActiveTab] = useState('wedding');
 
@@ -129,7 +129,7 @@ export default function Portfolio() {
           Every category.<br />Every memory.
         </h1>
         <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.5)', maxWidth: '500px', margin: '0 auto', lineHeight: 1.7 }}>
-          From bridal bouquets to memorial tributes to milestone keepsakes — real pieces from our studio, each one handcrafted and unique.
+          From bridal bouquets to memorial tributes to milestone keepsakes, real pieces from our studio, each one handcrafted and unique.
         </p>
       </section>
 

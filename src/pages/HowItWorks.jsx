@@ -16,7 +16,7 @@ const STEPS = [
   {
     number: '03',
     title: 'Casting & Curing',
-    body: 'Your preserved items are hand-arranged inside custom molds and encapsulated in multiple layers of optical-clarity, UV-resistant resin. Each pour is allowed to cure fully before the next layer is added — a process that can take up to two weeks — to eliminate bubbles and ensure the piece remains clear and stable for generations.',
+    body: 'Your preserved items are hand-arranged inside custom molds and encapsulated in multiple layers of optical-clarity, UV-resistant resin. Each pour is allowed to cure fully before the next layer is added, a process that can take up to two weeks, to eliminate bubbles and ensure the piece remains clear and stable for generations.',
   },
   {
     number: '04',
@@ -27,22 +27,22 @@ const STEPS = [
 
 const SHIPPING = [
   {
-    title: 'Inbound Shipping — Sending Items to the Studio',
+    title: 'Inbound Shipping, Sending Items to the Studio',
     points: [
       'Pack all florals, ashes, and keepsakes in a sturdy box with ample padding. Place delicate flowers between sheets of tissue paper and seal cremation ashes in a labeled, double-bagged container.',
       'Ship via UPS, FedEx, or USPS with tracking and insurance. We recommend insuring your outbound shipment for the item\'s sentimental or declared value. Cremation ashes must be shipped exclusively via USPS Priority Mail Express and the package must be clearly labeled "Human Remains" on the outside, in accordance with USPS Publication 52 guidelines.',
       'Ship fresh florals within 48 hours of your event if possible, or freeze them and ship overnight on dry ice for best color retention. Detailed packing instructions are included with every order confirmation.',
-      'Cremation ashes must be shipped via USPS Priority Mail Express only — no other carrier is permitted. The package must be clearly labeled "Human Remains" on the exterior and sealed in a sift-proof inner container. USPS requires the sender to use their designated Cremated Remains label (Label 139) and tape it securely over the box seam. Visit your local Post Office or usps.com to obtain the proper shipping kit.',
+      'Cremation ashes must be shipped via USPS Priority Mail Express only, no other carrier is permitted. The package must be clearly labeled "Human Remains" on the exterior and sealed in a sift-proof inner container. USPS requires the sender to use their designated Cremated Remains label (Label 139) and tape it securely over the box seam. Visit your local Post Office or usps.com to obtain the proper shipping kit.',
       'Address all shipments to: Unforgotten Pour Studio, Blacksburg, South Carolina. You will receive a confirmation email with the exact shipping address after placing your order.',
     ],
   },
   {
-    title: 'Return Shipping — Finished Piece Delivery',
+    title: 'Return Shipping, Finished Piece Delivery',
     points: [
       'All finished pieces are shipped fully insured via FedEx or UPS Ground, with signature confirmation required upon delivery.',
       'Return shipping is complimentary within the continental United States for all preservation tiers. International shipping is available at a flat rate of $45 USD, with applicable customs duties paid by the recipient.',
       'Each piece is packed in a keepsake gift box with a certificate of authenticity, enclosed inside a crush-resistant shipping carton with custom foam inserts.',
-      'Tracking information is emailed the moment your finished piece leaves the studio. Typical domestic transit time is 3–5 business days; international transit ranges from 7–14 business days.',
+      'Tracking information is emailed the moment your finished piece leaves the studio. Typical domestic transit time is 3-5 business days; international transit ranges from 7-14 business days.',
     ],
   },
   {
@@ -63,7 +63,7 @@ const FAQS = [
   },
   {
     q: 'How long does the process take?',
-    a: 'All pieces typically take 4–6 weeks, depending on current studio volume. Rush options are available on select tiers — inquire when placing your order.',
+    a: 'All pieces typically take 4-6 weeks, depending on current studio volume. Rush options are available on select tiers, inquire when placing your order.',
   },
   {
     q: 'Will my preserved piece last forever?',
@@ -71,7 +71,7 @@ const FAQS = [
   },
   {
     q: 'Can I include more than one type of item?',
-    a: 'Yes — many clients choose to combine ashes with flowers from a memorial service, or mix botanicals from a wedding bouquet with a pinch of soil from a meaningful location. We accommodate multi-material casts at no extra charge provided all items fit within the chosen format dimensions.',
+    a: 'Yes, many clients choose to combine ashes with flowers from a memorial service, or mix botanicals from a wedding bouquet with a pinch of soil from a meaningful location. We accommodate multi-material casts at no extra charge provided all items fit within the chosen format dimensions.',
   },
   {
     q: 'What happens if my items are damaged in transit?',
@@ -81,7 +81,7 @@ const FAQS = [
 
 export default function HowItWorks() {
   useMetaDescription(
-    'How it works — ship your flowers or keepsakes, we dry and prepare them, cast in optical-clarity resin, and ship your finished heirloom back in 4–6 weeks.'
+    'How it works, ship your flowers or keepsakes, we dry and prepare them, cast in optical-clarity resin, and ship your finished heirloom back in 4-6 weeks.'
   );
   return (
     <div style={{ background: '#0A0A0C', minHeight: '100vh', color: '#F2F2F2' }}>
@@ -96,7 +96,7 @@ export default function HowItWorks() {
           How we turn your memories into permanent, handcrafted resin keepsakes
         </h1>
         <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.5)', maxWidth: '580px', margin: '0 auto 48px', lineHeight: 1.8 }}>
-          Unforgotten Pour is a boutique preservation studio that encapsulates flowers, cremation ashes, personal objects, and botanicals into optical-clarity resin jewelry, orbs, paperweights, and custom art pieces. Every order is handled personally by our studio artisans — no factories, no shortcuts. Below is a detailed walkthrough of our four-stage process, from the moment you ship your items to the day your finished piece arrives back at your door.
+          Unforgotten Pour is a boutique preservation studio that encapsulates flowers, cremation ashes, personal objects, and botanicals into optical-clarity resin jewelry, orbs, paperweights, and custom art pieces. Every order is handled personally by our studio artisans, no factories, no shortcuts. Below is a detailed walkthrough of our four-stage process, from the moment you ship your items to the day your finished piece arrives back at your door.
         </p>
       </section>
 
@@ -176,7 +176,7 @@ export default function HowItWorks() {
           Ready to begin?
         </h2>
         <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.45)', marginBottom: '36px', lineHeight: 1.7 }}>
-          Start your order today — we'll guide you through every step.
+          Start your order today, we'll guide you through every step.
         </p>
         <Link to="/order" style={{ display: 'inline-block', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '14px 36px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
           Start My Order

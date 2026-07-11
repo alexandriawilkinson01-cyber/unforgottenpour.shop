@@ -46,7 +46,7 @@ export default function ProductCategoriesSection() {
             What would you like<br />to preserve?
           </h2>
           <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.45)', maxWidth: '480px', margin: '0 auto', lineHeight: 1.7 }}>
-            Choose a format below to get started — or browse the full portfolio for inspiration.
+            Choose a format below to get started, or browse the full portfolio for inspiration.
           </p>
         </div>
 

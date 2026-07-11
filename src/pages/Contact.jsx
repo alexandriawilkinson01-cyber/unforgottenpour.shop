@@ -55,7 +55,7 @@ export default function Contact() {
           We'd love to hear from you.
         </h1>
         <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.45)', maxWidth: '420px', margin: '0 auto', lineHeight: 1.7 }}>
-          Questions about an order, a custom commission, or just want to say hello — reach out any time.
+          Questions about an order, a custom commission, or just want to say hello, reach out any time.
         </p>
       </section>
 
@@ -72,7 +72,7 @@ export default function Contact() {
 
           <div style={{ marginBottom: '28px' }}>
             <p style={{ fontSize: '10px', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '8px' }}>Studio Hours</p>
-            <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.5)', lineHeight: 1.7 }}>Monday – Friday<br />9:00 AM – 5:00 PM EST</p>
+            <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.5)', lineHeight: 1.7 }}>Monday to Friday<br />9:00 AM to 5:00 PM EST</p>
           </div>
 
           <div style={{ marginBottom: '28px' }}>
