@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { base44 } from '@/api/base44Client';
 import Navbar from '../components/Navbar';
+import TrustStrip from '../components/TrustStrip';
 import { GLOBES, SHAPES, NOTEBOOK, JEWELRY, PET_MEMORIAL, ALL_ITEMS } from '@/data/products';
 import { trackAddToCart, trackAddPaymentInfo, trackInitiateCheckout, trackPlaceAnOrder, identifyUser } from '@/lib/tiktokPixel';
 import { useMetaDescription } from '@/hooks/useMetaDescription';
@@ -91,6 +92,8 @@ export default function Order() {
             Select your piece, tell us what you'd like preserved, and complete secure checkout. We'll send a packing kit within 24 hours.
           </p>
         </div>
+
+        <TrustStrip />
 
         <form onSubmit={handleSubmit}>
           {/* Your Details */}

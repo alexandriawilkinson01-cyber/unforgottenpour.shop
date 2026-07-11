@@ -26,7 +26,7 @@ export default function Footer() {
           <div>
             <p className="text-xs tracking-[0.15em] uppercase text-honey mb-4">Navigate</p>
             <div className="flex flex-col gap-2">
-              {[['/', 'Home'], ['/portfolio', 'Portfolio'], ['/order', 'Begin Order']].map(([to, label]) => (
+              {[['/', 'Home'], ['/portfolio', 'Portfolio'], ['/order', 'Begin Order'], ['/track-order', 'Track Order'], ['/download-catalog', 'Download Catalog']].map(([to, label]) => (
                 <Link key={to} to={to} className="text-xs text-bone/50 hover:text-bone transition-colors">{label}</Link>
               ))}
             </div>

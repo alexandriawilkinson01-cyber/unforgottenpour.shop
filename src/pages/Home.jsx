@@ -2,6 +2,7 @@ import Navbar from '../components/Navbar';
 import { useMetaDescription } from '../hooks/useMetaDescription';
 import FadeIn from '../components/FadeIn';
 import HeroSection from '../components/HeroSection';
+import ProductCategoriesSection from '../components/ProductCategoriesSection';
 import StorySection from '../components/StorySection';
 import ServicesSection from '../components/ServicesSection';
 import ProcessSection from '../components/ProcessSection';
@@ -18,6 +19,7 @@ export default function Home() {
     <div style={{ background: '#0A0A0C', minHeight: '100vh' }}>
       <Navbar />
       <HeroSection />
+      <FadeIn><ProductCategoriesSection /></FadeIn>
       <FadeIn><StorySection /></FadeIn>
       <FadeIn><ServicesSection /></FadeIn>
       <FadeIn><ProcessSection /></FadeIn>

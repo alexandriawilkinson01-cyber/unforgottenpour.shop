@@ -33,6 +33,10 @@ export default function HeroSection() {
             See the Work
           </Link>
         </div>
+
+        <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.35)', marginTop: '32px', letterSpacing: '0.06em' }}>
+          Globes from $50 · Jewelry from $209 · Notebooks $100 · <Link to="/pricing" style={{ color: '#C8681E', textDecoration: 'none' }}>View all pricing</Link>
+        </p>
       </div>
     </section>
   );
