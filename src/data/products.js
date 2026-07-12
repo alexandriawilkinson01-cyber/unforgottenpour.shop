@@ -17,6 +17,8 @@ export const SHAPES = [
 
 export const NOTEBOOK = { id: 'notebook', name: 'Resin Notebook', size: 'A5 journal', price: 100, priceId: 'price_1TozQ5LfTuG5tMiXUfkbrFra', productId: 'prod_UocfTeAeFPfn52', img: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/1df70194a_Firefly_GeminiFlash_customresin4notebooks522599.png' };
 
+export const KEYCHAIN = { id: 'keychain', name: 'Small Resin Keychain', size: 'Pocket size', price: 1, priceId: 'price_1TsKcKLfTuG5tMiXu7rwhKZ8', productId: 'prod_Us4l5M3mCkJWSG', img: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/90808d596_generated_image.png' };
+
 export const JEWELRY = [
   { id: 'pendant', name: 'Memorial Pendant', price: 209, priceId: 'price_1TncnOLfTuG5tMiXlgKFswNl', productId: 'prod_UjLcqTq6HjkvbP', link: '/jewelry', img: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/d1c4908c2_140ad2f2-bbd0-4b5b-bf29-d132bbfa7f99.png' },
   { id: 'ring', name: 'Memorial Ring', price: 261, priceId: 'price_1TncnOLfTuG5tMiXLkAZaseC', productId: 'prod_UjLcJE2vxqzLPR', link: '/jewelry', img: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/e5ddbd8a1_042b7cf9-ed66-44e9-9cd7-5255d02c6c72.png' },
@@ -27,4 +29,4 @@ export const PET_MEMORIAL = [
   { id: 'dog-tag-angels', name: '"Man\'s Best Friend" Memorial Dog Tag', size: 'Resin block with angels', price: 150, priceId: 'price_1TpS1zLfTuG5tMiXz5okDdmR', productId: 'prod_Up6EmZESeAFfoe', img: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/7dabab3d5_UnforgottenPour_DogTagMemorialwithAngels.png' },
 ];
 
-export const ALL_ITEMS = [...GLOBES, ...SHAPES, NOTEBOOK, ...JEWELRY, ...PET_MEMORIAL];
+export const ALL_ITEMS = [...GLOBES, ...SHAPES, NOTEBOOK, KEYCHAIN, ...JEWELRY, ...PET_MEMORIAL];

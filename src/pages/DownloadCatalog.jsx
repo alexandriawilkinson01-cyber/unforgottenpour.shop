@@ -1,5 +1,5 @@
 import * as XLSX from 'xlsx';
-import { GLOBES, SHAPES, NOTEBOOK, JEWELRY } from '@/data/products';
+import { GLOBES, SHAPES, NOTEBOOK, KEYCHAIN, JEWELRY } from '@/data/products';
 import { useMetaDescription } from '@/hooks/useMetaDescription';
 
 const PRODUCTS = [
@@ -29,6 +29,15 @@ const PRODUCTS = [
     'Price ID': NOTEBOOK.priceId,
     'Product ID': NOTEBOOK.productId,
     'Order URL': '/notebooks',
+  },
+  {
+    Category: 'Keychains',
+    Name: KEYCHAIN.name,
+    Size: KEYCHAIN.size,
+    Price: `$${KEYCHAIN.price.toFixed(2)}`,
+    'Price ID': KEYCHAIN.priceId,
+    'Product ID': KEYCHAIN.productId,
+    'Order URL': '/order',
   },
   ...JEWELRY.map(j => ({
     Category: 'Memorial Jewelry',

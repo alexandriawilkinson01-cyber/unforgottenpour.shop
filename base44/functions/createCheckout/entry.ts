@@ -20,6 +20,7 @@ const PRICE_MAP = {
   'ring': 'price_1TncnOLfTuG5tMiXLkAZaseC',
   'set': 'price_1TncnOLfTuG5tMiXixbr0SOg',
   'dog-tag-angels': 'price_1TpS1zLfTuG5tMiXz5okDdmR',
+  'keychain': 'price_1TsKcKLfTuG5tMiXu7rwhKZ8',
 };
 
 // Server-side product name map — overrides any client-supplied item name in
@@ -41,6 +42,7 @@ const PRODUCT_NAME_MAP = {
   'ring': 'Memorial Ring',
   'set': 'Memorial Jewelry Set',
   'dog-tag-angels': '"Man\'s Best Friend" Memorial Dog Tag',
+  'keychain': 'Small Resin Keychain',
 };
 
 /**

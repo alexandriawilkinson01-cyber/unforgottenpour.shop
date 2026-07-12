@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
-import { GLOBES, SHAPES, NOTEBOOK, JEWELRY } from '@/data/products';
+import { GLOBES, SHAPES, NOTEBOOK, KEYCHAIN, JEWELRY } from '@/data/products';
 import { trackViewContent } from '@/lib/tiktokPixel';
 import { useMetaDescription } from '@/hooks/useMetaDescription';
 
@@ -101,6 +101,24 @@ export default function Pricing() {
               <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '40px', fontWeight: 700, color: '#F2F2F2', marginBottom: '28px' }}>${NOTEBOOK.price}</div>
               <Link to="/notebooks" style={{ display: 'block', textAlign: 'center', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '13px 24px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
                 Order Notebook
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Keychains */}
+      <section style={{ maxWidth: '1100px', margin: '0 auto', padding: '60px 24px', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <SectionHeader label="Keychains" title="Carry your memory anywhere." subtitle="A small, pocket-size resin keychain with your preserved flowers or keepsakes." />
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div style={{ background: '#111113', maxWidth: '360px', width: '100%', overflow: 'hidden' }}>
+            <img src={KEYCHAIN.img} alt={KEYCHAIN.name} style={{ width: '100%', height: '280px', objectFit: 'cover', display: 'block' }} />
+            <div style={{ padding: '32px 28px' }}>
+              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: 700, color: '#F2F2F2', marginBottom: '6px' }}>{KEYCHAIN.name}</h3>
+              <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.4)', marginBottom: '24px', lineHeight: 1.5 }}>{KEYCHAIN.size} resin keychain with your preserved flowers, ashes, or small keepsakes.</p>
+              <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '40px', fontWeight: 700, color: '#F2F2F2', marginBottom: '28px' }}>${KEYCHAIN.price}</div>
+              <Link to="/order?item=keychain" style={{ display: 'block', textAlign: 'center', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '13px 24px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
+                Order Keychain
               </Link>
             </div>
           </div>

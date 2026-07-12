@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { base44 } from '@/api/base44Client';
 import Navbar from '../components/Navbar';
 import TrustStrip from '../components/TrustStrip';
-import { GLOBES, SHAPES, NOTEBOOK, JEWELRY, PET_MEMORIAL, ALL_ITEMS } from '@/data/products';
+import { GLOBES, SHAPES, NOTEBOOK, KEYCHAIN, JEWELRY, PET_MEMORIAL, ALL_ITEMS } from '@/data/products';
 import { trackAddToCart, trackAddPaymentInfo, trackInitiateCheckout, trackPlaceAnOrder, identifyUser } from '@/lib/tiktokPixel';
 import { useMetaDescription } from '@/hooks/useMetaDescription';
 
@@ -177,6 +177,9 @@ export default function Order() {
               </optgroup>
               <optgroup label="Notebooks">
                 <option value={NOTEBOOK.id}>{NOTEBOOK.name}, ${NOTEBOOK.price}</option>
+              </optgroup>
+              <optgroup label="Keychains">
+                <option value={KEYCHAIN.id}>{KEYCHAIN.name}, ${KEYCHAIN.price}</option>
               </optgroup>
               <optgroup label="Memorial Jewelry">
                 {JEWELRY.map(j => <option key={j.id} value={j.id}>{j.name}, ${j.price}</option>)}
