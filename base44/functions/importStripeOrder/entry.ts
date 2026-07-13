@@ -36,16 +36,21 @@ Deno.serve(async (req) => {
     const amountTotal = session.amount_total / 100;
     const product = session.metadata?.item || session.metadata?.plan || 'Custom Order';
 
+    const meta = session.metadata || {};
     const order = await base44.asServiceRole.entities.Order.create({
-      customer_name: customerName,
+      customer_name: meta.customer_name || customerName,
       customer_email: customerEmail,
+      phone: meta.phone || '',
       amount: amountTotal,
       currency: session.currency || 'USD',
       product,
+      category: meta.category || '',
+      format: meta.format || '',
+      description: meta.description || '',
+      instructions: meta.instructions || '',
       stripe_session_id: session.id,
       stripe_payment_intent_id: session.payment_intent || '',
       status: 'new',
-      description: session.metadata?.description || '',
     });
 
     return Response.json({ message: 'Order imported successfully', order });

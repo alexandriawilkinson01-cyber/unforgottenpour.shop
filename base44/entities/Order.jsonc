@@ -11,6 +11,10 @@
       "title": "Customer Email",
       "format": "email"
     },
+    "phone": {
+      "type": "string",
+      "title": "Phone"
+    },
     "amount": {
       "type": "number",
       "title": "Amount"
@@ -23,6 +27,24 @@
     "product": {
       "type": "string",
       "title": "Product"
+    },
+    "category": {
+      "type": "string",
+      "title": "Category"
+    },
+    "format": {
+      "type": "string",
+      "title": "Preferred Format"
+    },
+    "description": {
+      "type": "string",
+      "title": "Item Description",
+      "maxLength": 1000
+    },
+    "instructions": {
+      "type": "string",
+      "title": "Special Instructions",
+      "maxLength": 1000
     },
     "stripe_session_id": {
       "type": "string",
@@ -47,11 +69,6 @@
         "delivered"
       ],
       "default": "new"
-    },
-    "description": {
-      "type": "string",
-      "title": "Description",
-      "maxLength": 1000
     }
   },
   "required": [

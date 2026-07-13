@@ -63,7 +63,15 @@ export default function Order() {
         planId: selectedItem.id,
         successUrl: `${origin}/success?value=${selectedItem.price}&content_id=${selectedItem.id}`,
         cancelUrl: `${origin}/order`,
-        metadata: { item: selectedItem.name, description: form.description },
+        metadata: {
+          item: selectedItem.name,
+          description: form.description,
+          customer_name: `${form.firstName} ${form.lastName}`.trim(),
+          phone: form.phone,
+          category: form.category,
+          format: form.format,
+          instructions: form.instructions,
+        },
       });
       if (response.data?.url) {
         window.location.href = response.data.url;

@@ -64,12 +64,18 @@ Deno.serve(async (req) => {
 
       // Save order to database
       try {
+        const meta = session.metadata || {};
         await base44.asServiceRole.entities.Order.create({
-          customer_name: customerName,
+          customer_name: meta.customer_name || customerName,
           customer_email: customerEmail,
+          phone: meta.phone || '',
           amount: parseFloat(amountPaid),
           currency,
           product: plan,
+          category: meta.category || '',
+          format: meta.format || '',
+          description: meta.description || '',
+          instructions: meta.instructions || '',
           stripe_session_id: sessionId,
           stripe_payment_intent_id: session.payment_intent || '',
           status: 'new',

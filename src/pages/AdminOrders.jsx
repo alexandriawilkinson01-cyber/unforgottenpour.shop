@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import ContactSubmissions from '../components/ContactSubmissions';
@@ -15,6 +15,17 @@ const STATUS_STYLES = {
 
 const STATUS_OPTIONS = ['new', 'processing', 'in_production', 'shipped', 'delivered'];
 
+function DetailField({ label, value, mono }) {
+  return (
+    <div>
+      <p style={{ fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', marginBottom: '6px' }}>{label}</p>
+      <p style={{ fontSize: '14px', color: value ? 'rgba(242,242,242,0.8)' : 'rgba(242,242,242,0.25)', fontFamily: mono ? 'monospace' : 'inherit', wordBreak: 'break-word' }}>
+        {value || '—'}
+      </p>
+    </div>
+  );
+}
+
 export default function AdminOrders() {
   const [user, setUser] = useState(null);
   const [authChecked, setAuthChecked] = useState(false);
@@ -25,6 +36,7 @@ export default function AdminOrders() {
   const [updatingId, setUpdatingId] = useState(null);
   const [syncing, setSyncing] = useState(false);
   const [syncResult, setSyncResult] = useState(null);
+  const [expandedId, setExpandedId] = useState(null);
 
   const loadOrders = useCallback(async () => {
     setLoading(true);
@@ -258,13 +270,15 @@ export default function AdminOrders() {
                   <th style={{ textAlign: 'right', padding: '16px 20px', fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', fontWeight: 500 }}>Amount</th>
                   <th style={{ textAlign: 'left', padding: '16px 20px', fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', fontWeight: 500 }}>Status</th>
                   <th style={{ textAlign: 'left', padding: '16px 20px', fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', fontWeight: 500 }}>Update</th>
+                  <th style={{ textAlign: 'center', padding: '16px 20px', fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', fontWeight: 500 }}>Details</th>
                 </tr>
               </thead>
               <tbody>
                 {filteredOrders.map(order => {
                   const style = STATUS_STYLES[order.status] || STATUS_STYLES.new;
                   return (
-                    <tr key={order.id} style={{ borderBottom: '1px solid rgba(242,242,242,0.04)' }}>
+                    <Fragment key={order.id}>
+                    <tr style={{ borderBottom: '1px solid rgba(242,242,242,0.04)' }}>
                       <td style={{ padding: '16px 20px', fontSize: '13px', color: 'rgba(242,242,242,0.5)', whiteSpace: 'nowrap' }}>{formatDate(order.created_date)}</td>
                       <td style={{ padding: '16px 20px' }}>
                         <p style={{ fontSize: '14px', color: '#F2F2F2', marginBottom: '2px' }}>{order.customer_name}</p>
@@ -294,7 +308,38 @@ export default function AdminOrders() {
                           ))}
                         </select>
                       </td>
+                      <td style={{ padding: '16px 20px', textAlign: 'center' }}>
+                        <button
+                          onClick={() => setExpandedId(expandedId === order.id ? null : order.id)}
+                          style={{ background: expandedId === order.id ? '#C8681E' : '#1A1A1E', color: expandedId === order.id ? '#fff' : 'rgba(242,242,242,0.6)', border: '1px solid rgba(242,242,242,0.1)', borderRadius: '6px', padding: '6px 14px', fontSize: '11px', cursor: 'pointer', fontWeight: 600 }}
+                        >
+                          {expandedId === order.id ? 'Hide' : 'View'}
+                        </button>
+                      </td>
                     </tr>
+                    {expandedId === order.id && (
+                      <tr>
+                        <td colSpan={7} style={{ padding: '0', background: '#0D0D0F' }}>
+                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', padding: '24px 32px' }}>
+                            <DetailField label="Phone" value={order.phone} />
+                            <DetailField label="Category" value={order.category} />
+                            <DetailField label="Preferred Format" value={order.format} />
+                            <DetailField label="Stripe Session ID" value={order.stripe_session_id} mono />
+                            <DetailField label="Payment Intent ID" value={order.stripe_payment_intent_id} mono />
+                            <DetailField label="Square Order ID" value={order.square_order_id} mono />
+                            <div style={{ gridColumn: '1 / -1' }}>
+                              <p style={{ fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', marginBottom: '8px' }}>Item Description</p>
+                              <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.8)', lineHeight: 1.6, whiteSpace: 'pre-wrap' }}>{order.description || '—'}</p>
+                            </div>
+                            <div style={{ gridColumn: '1 / -1' }}>
+                              <p style={{ fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', marginBottom: '8px' }}>Special Instructions</p>
+                              <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.8)', lineHeight: 1.6, whiteSpace: 'pre-wrap' }}>{order.instructions || '—'}</p>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    )}
+                    </Fragment>
                   );
                 })}
               </tbody>

@@ -46,6 +46,22 @@ const PRODUCT_NAME_MAP = {
 };
 
 /**
+ * Whitelist and sanitize client-supplied metadata fields for the Stripe session.
+ * Only these fields are passed through; everything else is dropped.
+ */
+function buildSafeMetadata(metadata) {
+  if (!metadata || typeof metadata !== 'object') return {};
+  const allowed = ['description', 'customer_name', 'phone', 'category', 'format', 'instructions'];
+  const result = {};
+  for (const key of allowed) {
+    if (typeof metadata[key] === 'string' && metadata[key].trim()) {
+      result[key] = metadata[key].slice(0, 500);
+    }
+  }
+  return result;
+}
+
+/**
  * Validate that a client-supplied URL points back to the app's own origin.
  * Prevents open redirect attacks via attacker-controlled success/cancel URLs.
  */
@@ -92,9 +108,7 @@ Deno.serve(async (req) => {
         base44_app_id: Deno.env.get('BASE44_APP_ID'),
         plan: planId,
         item: PRODUCT_NAME_MAP[planId] || planId,
-        ...(metadata && typeof metadata.description === 'string'
-          ? { description: metadata.description.slice(0, 500) }
-          : {}),
+        ...buildSafeMetadata(metadata),
       },
     });
 
