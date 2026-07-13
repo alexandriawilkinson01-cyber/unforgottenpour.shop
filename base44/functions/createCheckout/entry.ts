@@ -50,17 +50,20 @@ const PRODUCT_NAME_MAP = {
  * Prevents open redirect attacks via attacker-controlled success/cancel URLs.
  */
 function validateReturnUrl(url, fallbackPath, req) {
-  const reqOrigin = new URL(`https://${req.headers.get('host') || 'localhost'}`).origin;
+  // Use a hardcoded app base URL from env if configured (most secure);
+  // otherwise fall back to the runtime-provided request origin.
+  const trustedOrigin = Deno.env.get('APP_BASE_URL') || new URL(req.url).origin;
 
   try {
-    const parsed = new URL(url, reqOrigin);
-    if (parsed.origin === reqOrigin) {
-      return parsed.href;
-    }
+    // Extract ONLY the pathname + search params from the user-supplied URL.
+    // The origin from user input is never used — prevents open redirect
+    // via Host header manipulation or attacker-controlled URLs.
+    const parsed = new URL(url, trustedOrigin);
+    return trustedOrigin + parsed.pathname + parsed.search;
   } catch {
     // invalid URL — fall through to fallback
   }
-  return reqOrigin + fallbackPath;
+  return trustedOrigin + fallbackPath;
 }
 
 Deno.serve(async (req) => {
