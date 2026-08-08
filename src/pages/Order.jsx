@@ -14,6 +14,13 @@ const inputStyle = {
   outline: 'none', fontFamily: 'Inter Tight, sans-serif',
 };
 
+// Selects need a solid (non-transparent) background so the closed control
+// stays legible and native option rendering stays consistent with the theme.
+const selectStyle = {
+  ...inputStyle,
+  background: '#111113',
+};
+
 const labelStyle = { display: 'block', fontSize: '12px', letterSpacing: '0.06em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.5)', marginBottom: '8px' };
 
 export default function Order() {
@@ -134,7 +141,7 @@ export default function Order() {
             <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>About Your Item</p>
             <div style={{ marginBottom: '12px' }}>
               <label style={labelStyle}>Item Category *</label>
-              <select required style={{ ...inputStyle, cursor: 'pointer' }} value={form.category} onChange={e => set('category', e.target.value)}>
+              <select required style={{ ...selectStyle, cursor: 'pointer' }} value={form.category} onChange={e => set('category', e.target.value)}>
                 <option value="">Select a category</option>
                 <option value="wedding">Wedding &amp; Event Florals</option>
                 <option value="memorial">Memorial Keepsakes</option>
@@ -146,7 +153,7 @@ export default function Order() {
             </div>
             <div style={{ marginBottom: '12px' }}>
               <label style={labelStyle}>Preferred Format *</label>
-              <select required style={{ ...inputStyle, cursor: 'pointer' }} value={form.format} onChange={e => set('format', e.target.value)}>
+              <select required style={{ ...selectStyle, cursor: 'pointer' }} value={form.format} onChange={e => set('format', e.target.value)}>
                 <option value="">Choose a format</option>
                 <option value="jewelry">Jewelry (pendant, ring, earring)</option>
                 <option value="paperweight">Paperweight / Display Block</option>
@@ -175,7 +182,7 @@ export default function Order() {
           {/* Item Selection */}
           <div style={{ marginBottom: '40px' }}>
             <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>Select Your Piece *</p>
-            <select required style={{ ...inputStyle, cursor: 'pointer' }} value={form.item} onChange={handleItemSelect}>
+            <select required style={{ ...selectStyle, cursor: 'pointer' }} value={form.item} onChange={handleItemSelect}>
               <option value="">Choose a piece</option>
               <optgroup label="Resin Globes">
                 {GLOBES.map(g => <option key={g.id} value={g.id}>{g.name}, ${g.price}</option>)}

@@ -130,3 +130,18 @@
     overflow-x: hidden;
   }
 }
+
+/* Dropdown options — native <option> elements ignore inherited colors and
+   render on the browser default white background, making light text illegible
+   on this dark theme. Force dark background + light text here. */
+select option,
+select optgroup {
+  background-color: #111113;
+  color: #F2F2F2;
+}
+
+select optgroup {
+  color: #C8681E;
+  font-weight: 700;
+  font-style: normal;
+}
