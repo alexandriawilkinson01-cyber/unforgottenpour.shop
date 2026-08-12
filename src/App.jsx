@@ -22,6 +22,7 @@ import AdminOrders from './pages/AdminOrders';
 import OrderStatusChat from './pages/OrderStatusChat';
 import ShippingGuide from './pages/ShippingGuide';
 import Inquiries from './pages/Inquiries';
+import StyleAdvisor from './pages/StyleAdvisor';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -65,6 +66,7 @@ const AuthenticatedApp = () => {
       <Route path="/inquiries" element={<Inquiries />} />
       <Route path="/shipping-guide" element={<ShippingGuide />} />
       <Route path="/track-order" element={<OrderStatusChat />} />
+      <Route path="/style-advisor" element={<StyleAdvisor />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
