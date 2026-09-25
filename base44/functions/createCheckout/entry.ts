@@ -1,4 +1,5 @@
 import Stripe from 'npm:stripe@14';
+import { createClientFromRequest } from 'npm:@base44/sdk@0.8.31';
 
 // Server-side mappings: planId → Stripe priceId and product name.
 // Clients send only planId; price and product name are resolved here so they
@@ -111,6 +112,15 @@ Deno.serve(async (req) => {
         ...buildSafeMetadata(metadata),
       },
     });
+
+    // Track that a checkout was initiated (marketing KPI). Wrapped so an
+    // analytics failure can never break the checkout redirect.
+    try {
+      const base44 = createClientFromRequest(req);
+      await base44.analytics.track({ eventName: 'checkout_initiated' });
+    } catch (analyticsError) {
+      console.error('Analytics track error:', analyticsError);
+    }
 
     return Response.json({ url: session.url });
   } catch (error) {

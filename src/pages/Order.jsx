@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { base44 } from '@/api/base44Client';
 import Navbar from '../components/Navbar';
@@ -34,6 +34,13 @@ export default function Order() {
     item: urlParams.get('item') || '',
   });
   const [loading, setLoading] = useState(false);
+  const startedRef = useRef(false);
+
+  const handleFormStart = () => {
+    if (startedRef.current) return;
+    startedRef.current = true;
+    base44.analytics.track({ eventName: 'order_form_started' });
+  };
 
   const set = (key, val) => setForm(f => ({ ...f, [key]: val }));
 
@@ -110,7 +117,7 @@ export default function Order() {
 
         <TrustStrip />
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} onFocus={handleFormStart}>
           {/* Your Details */}
           <div style={{ marginBottom: '40px' }}>
             <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>Your Details</p>
