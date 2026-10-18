@@ -3,8 +3,13 @@
 
 const BRAND = 'Unforgotten Pour';
 const CURRENCY = 'USD';
-const PII_KEY = 'ttq_user_pii';
 const EXT_ID_KEY = 'ttq_external_id';
+
+// PII (email/phone) is held in memory only for the current session — never
+// persisted to localStorage. The TikTok pixel hashes these values internally
+// at identify time, so there is no need to retain the raw forms across page
+// loads or sessions.
+let inMemoryPII = {};
 
 function safe(fn) {
   if (typeof window === 'undefined' || !window.ttq) return;
@@ -29,27 +34,11 @@ function normalizePhoneE164(phone) {
 }
 
 /**
- * Retrieve persisted user PII from localStorage.
- */
-function getStoredPII() {
-  try {
-    return JSON.parse(localStorage.getItem(PII_KEY) || '{}');
-  } catch {
-    return {};
-  }
-}
-
-/**
- * Persist user PII to localStorage so it survives page navigations.
+ * Merge PII into the in-memory (session-only) cache and return the merged set.
  */
 function storePII(data) {
-  try {
-    const merged = { ...getStoredPII(), ...data };
-    localStorage.setItem(PII_KEY, JSON.stringify(merged));
-    return merged;
-  } catch {
-    return data;
-  }
+  inMemoryPII = { ...inMemoryPII, ...data };
+  return inMemoryPII;
 }
 
 /**
@@ -85,13 +74,12 @@ function callIdentify(email, phone, externalId) {
 
 /**
  * Initialize pixel identification on page load.
- * Reads persisted PII and external ID from localStorage and calls ttq.identify
- * so that all subsequent events (including the pageview) carry user data.
+ * Calls ttq.identify with any in-memory PII and the external ID so that
+ * subsequent events (including the pageview) carry user data.
  */
 export function initPixel() {
-  const pii = getStoredPII();
   const externalId = getOrCreateExternalId();
-  callIdentify(pii.email, pii.phone ? normalizePhoneE164(pii.phone) : '', externalId);
+  callIdentify(inMemoryPII.email, inMemoryPII.phone, externalId);
 }
 
 /**
