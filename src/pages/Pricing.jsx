@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
-import { GLOBES, SHAPES, NOTEBOOK, KEYCHAIN, JEWELRY } from '@/data/products';
+import { GLOBES, GLOBE, SHAPES, NOTEBOOK, KEYCHAIN, JEWELRY } from '@/data/products';
 import { trackViewContent } from '@/lib/tiktokPixel';
 import { useMetaDescription } from '@/hooks/useMetaDescription';
 
@@ -28,6 +28,9 @@ export default function Pricing() {
     });
   }, []);
 
+  const [globeSizeId, setGlobeSizeId] = useState(GLOBES[0].id);
+  const selectedGlobe = GLOBES.find(g => g.id === globeSizeId) || GLOBES[0];
+
   return (
     <div style={{ background: '#0A0A0C', minHeight: '100vh' }}>
       <Navbar />
@@ -49,23 +52,25 @@ export default function Pricing() {
         </Link>
       </section>
 
-      {/* Resin Globes */}
+      {/* Resin Globe — single listing with size dropdown */}
       <section style={{ maxWidth: '700px', margin: '0 auto', padding: '60px 24px' }}>
-        <SectionHeader label="Resin Globes" title="Preservation globes by size." subtitle="Crystal-clear resin globes in seven sizes — pick the one that fits your keepsake." />
-        <div style={{ background: '#111113', border: '1px solid rgba(255,255,255,0.05)' }}>
-          {GLOBES.map((g, i) => (
-            <div key={g.id} style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '16px 28px', borderBottom: i < GLOBES.length - 1 ? '1px solid rgba(255,255,255,0.04)' : 'none' }}>
-              <img src={g.img} alt={g.name} style={{ width: '64px', height: '64px', objectFit: 'cover', borderRadius: '6px', flexShrink: 0, background: '#0A0A0C' }} />
-              <div style={{ flex: 1 }}>
-                <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '18px', fontWeight: 600, color: '#F2F2F2' }}>{g.name}</span>
-                <span style={{ fontSize: '13px', color: 'rgba(242,242,242,0.35)', marginLeft: '12px' }}>{g.size}</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-                <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: 700, color: '#F2F2F2' }}>${g.price}</span>
-                <Link to={`/order?item=${g.id}`} style={{ fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#C8681E', textDecoration: 'none', fontWeight: 600 }}>Select →</Link>
+        <SectionHeader label="Resin Globes" title="Preservation globe." subtitle="One handcrafted crystal-clear resin globe, available in seven sizes — choose the size that fits your keepsake." />
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div style={{ background: '#111113', maxWidth: '420px', width: '100%', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
+            <img src={GLOBE.img} alt={GLOBE.name} style={{ width: '100%', height: '280px', objectFit: 'cover', display: 'block', background: '#0A0A0C' }} />
+            <div style={{ padding: '32px 28px' }}>
+              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '24px', fontWeight: 700, color: '#F2F2F2', marginBottom: '8px' }}>{GLOBE.name}</h3>
+              <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.4)', marginBottom: '24px', lineHeight: 1.6 }}>{GLOBE.description}</p>
+              <label style={{ display: 'block', fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.5)', marginBottom: '8px' }}>Size</label>
+              <select value={globeSizeId} onChange={e => setGlobeSizeId(e.target.value)} style={{ width: '100%', boxSizing: 'border-box', background: '#0A0A0C', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '6px', padding: '12px 14px', color: '#F2F2F2', fontSize: '15px', fontFamily: 'Inter Tight, sans-serif', outline: 'none', marginBottom: '24px', cursor: 'pointer' }}>
+                {GLOBES.map(g => <option key={g.id} value={g.id}>{g.size} — ${g.price}</option>)}
+              </select>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '36px', fontWeight: 700, color: '#F2F2F2' }}>${selectedGlobe.price}</span>
+                <Link to={`/order?item=${selectedGlobe.id}`} style={{ fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#C8681E', textDecoration: 'none', fontWeight: 600 }}>Select →</Link>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </section>
 

@@ -8,6 +8,16 @@ export const GLOBES = [
   { id: 'globe-0.9', name: '0.9" Resin Globe', size: '0.9" diameter', price: 25, priceId: 'price_1UK11hLfTuG5tMiX5uZ56o3j', productId: 'prod_UocfiaOykFER4R', img: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/90808d596_generated_image.png' },
 ];
 
+// Single storefront listing for the resin globe. The seven sizes remain as
+// purchasable variants (each maps to its own Stripe price); the dropdown on
+// the Pricing page selects among them and updates the displayed price.
+export const GLOBE = {
+  name: 'Resin Globe',
+  img: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/563e26a68_373b4dc6-ac8c-43bb-888f-db4b8c87d5b33.png',
+  description: 'Crystal-clear resin globe, hand-poured and polished to a glass-like finish. Choose the size that fits your keepsake.',
+  variants: GLOBES,
+};
+
 export const SHAPES = [
   { id: 'square', name: 'Square Block', size: '6.6" × 6.6"', price: 75, priceId: 'price_1UK11iLfTuG5tMiXb3Z7GlEw', productId: 'prod_UocfuLsBdF8b0B', img: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/e10352708_generated_image.png' },
   { id: 'hexagon', name: 'Hexagon Block', size: '9.1" × 7.8" × 2"', price: 125, priceId: 'price_1UK11iLfTuG5tMiXX63ap3Tc', productId: 'prod_UocfbSli19H2yI', img: 'https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/8fb275cb3_generated_image.png' },
