@@ -1,5 +1,13 @@
 User-agent: *
 Disallow: /admin/
+Disallow: /order
+Disallow: /success
+Disallow: /oauth/
+Disallow: /login
+Disallow: /register
+Disallow: /forgot-password
+Disallow: /reset-password
+Disallow: /inquiries
 Allow: /
 
-Sitemap: /sitemap.xml
+Sitemap: https://unforgottenpour.shop/sitemap.xml
