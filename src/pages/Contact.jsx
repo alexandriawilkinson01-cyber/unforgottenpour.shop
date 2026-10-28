@@ -54,7 +54,7 @@ export default function Contact() {
         <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 5vw, 64px)', fontWeight: 700, lineHeight: 1.1, marginBottom: '20px' }}>
           We'd love to hear from you.
         </h1>
-        <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.45)', maxWidth: '420px', margin: '0 auto', lineHeight: 1.7 }}>
+        <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.68)', maxWidth: '420px', margin: '0 auto', lineHeight: 1.7 }}>
           Questions about an order, a custom commission, or just want to say hello, reach out any time.
         </p>
       </section>
@@ -72,12 +72,12 @@ export default function Contact() {
 
           <div style={{ marginBottom: '28px' }}>
             <p style={{ fontSize: '10px', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '8px' }}>Studio Hours</p>
-            <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.5)', lineHeight: 1.7 }}>Monday to Friday<br />9:00 AM to 5:00 PM EST</p>
+            <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.69)', lineHeight: 1.7 }}>Monday to Friday<br />9:00 AM to 5:00 PM EST</p>
           </div>
 
           <div style={{ marginBottom: '28px' }}>
             <p style={{ fontSize: '10px', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '8px' }}>Location</p>
-            <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.5)', lineHeight: 1.7 }}>Blacksburg, South Carolina<br />Shipping worldwide</p>
+            <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.69)', lineHeight: 1.7 }}>Blacksburg, South Carolina<br />Shipping worldwide</p>
           </div>
 
 
@@ -89,21 +89,21 @@ export default function Contact() {
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', textAlign: 'center', gap: '16px' }}>
               <div style={{ width: '52px', height: '52px', borderRadius: '999px', background: 'rgba(200,104,30,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px' }}>✓</div>
               <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: 700 }}>Message sent</h3>
-              <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.45)', lineHeight: 1.7 }}>We'll get back to you within one business day.</p>
+              <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.68)', lineHeight: 1.7 }}>We'll get back to you within one business day.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '24px', fontWeight: 700, marginBottom: '12px' }}>Send a message</h2>
               <div>
-                <label style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', display: 'block', marginBottom: '8px' }}>Your Name</label>
+                <label style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.67)', display: 'block', marginBottom: '8px' }}>Your Name</label>
                 <input required value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} style={input} placeholder="Jane Smith" />
               </div>
               <div>
-                <label style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', display: 'block', marginBottom: '8px' }}>Email Address</label>
+                <label style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.67)', display: 'block', marginBottom: '8px' }}>Email Address</label>
                 <input required type="email" value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))} style={input} placeholder="jane@example.com" />
               </div>
               <div>
-                <label style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', display: 'block', marginBottom: '8px' }}>Message</label>
+                <label style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.67)', display: 'block', marginBottom: '8px' }}>Message</label>
                 <textarea required rows={5} value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))} style={{ ...input, resize: 'vertical' }} placeholder="Tell us about your item or ask us anything…" />
               </div>
               {error && (

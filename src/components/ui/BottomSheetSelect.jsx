@@ -67,7 +67,7 @@ export default function BottomSheetSelect({
             textAlign: 'left',
           }}
         >
-          <span style={{ color: selected ? '#F2F2F2' : 'rgba(242,242,242,0.45)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+          <span style={{ color: selected ? '#F2F2F2' : 'rgba(242,242,242,0.68)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
             {selected ? selected.label : placeholder}
           </span>
           <ChevronDown size={16} style={{ flexShrink: 0, opacity: 0.6 }} />

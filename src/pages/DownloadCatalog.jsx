@@ -75,7 +75,7 @@ export default function DownloadCatalog() {
       <div style={{ textAlign: 'center', padding: '48px 24px' }}>
         <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>Product Catalog</p>
         <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 700, marginBottom: '16px' }}>Download Your Catalog</h1>
-        <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.45)', marginBottom: '40px' }}>{PRODUCTS.length} products with prices, sizes, IDs, and order URLs.</p>
+        <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.68)', marginBottom: '40px' }}>{PRODUCTS.length} products with prices, sizes, IDs, and order URLs.</p>
         <button onClick={handleDownload}
           style={{ background: '#C8681E', color: '#fff', border: 'none', borderRadius: '999px', padding: '14px 36px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, cursor: 'pointer' }}>
           Download Excel File

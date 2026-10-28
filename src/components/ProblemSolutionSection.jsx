@@ -19,7 +19,7 @@ export default function ProblemSolutionSection() {
             <h2 className="font-playfair font-bold leading-tight mb-8" style={{ fontSize: 'clamp(36px, 5vw, 64px)', color: '#F2F2F2' }}>
               Memories fade.<br />
               Objects deteriorate.<br />
-              <span style={{ color: 'rgba(242,242,242,0.4)' }}>Time doesn't wait.</span>
+              <span style={{ color: 'rgba(242,242,242,0.67)' }}>Time doesn't wait.</span>
             </h2>
             <p className="text-base text-bone/50 leading-relaxed max-w-xl">
               That wedding bouquet dries and crumbles within weeks. The championship jersey yellows in a closet. Your grandmother's brooch tarnishes in a drawer nobody opens. The physical things that anchor our most important memories are quietly disappearing.

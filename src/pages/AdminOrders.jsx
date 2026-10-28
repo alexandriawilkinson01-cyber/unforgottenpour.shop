@@ -18,8 +18,8 @@ const STATUS_OPTIONS = ['new', 'processing', 'in_production', 'shipped', 'delive
 function DetailField({ label, value, mono }) {
   return (
     <div>
-      <p style={{ fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', marginBottom: '6px' }}>{label}</p>
-      <p style={{ fontSize: '14px', color: value ? 'rgba(242,242,242,0.8)' : 'rgba(242,242,242,0.25)', fontFamily: mono ? 'monospace' : 'inherit', wordBreak: 'break-word' }}>
+      <p style={{ fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.67)', marginBottom: '6px' }}>{label}</p>
+      <p style={{ fontSize: '14px', color: value ? 'rgba(242,242,242,0.8)' : 'rgba(242,242,242,0.65)', fontFamily: mono ? 'monospace' : 'inherit', wordBreak: 'break-word' }}>
         {value || '—'}
       </p>
     </div>
@@ -111,7 +111,7 @@ export default function AdminOrders() {
         <Navbar />
         <div style={{ paddingTop: '140px', textAlign: 'center', padding: '140px 24px 80px' }}>
           <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px,4vw,48px)', fontWeight: 700, marginBottom: '16px' }}>Admin Access Required</h1>
-          <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.5)', marginBottom: '32px' }}>Please log in with an admin account to view orders.</p>
+          <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.69)', marginBottom: '32px' }}>Please log in with an admin account to view orders.</p>
           <button onClick={() => base44.auth.redirectToLogin('/admin/orders')}
             style={{ background: '#C8681E', color: '#fff', border: 'none', borderRadius: '999px', padding: '14px 36px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, cursor: 'pointer' }}>
             Log In
@@ -127,7 +127,7 @@ export default function AdminOrders() {
         <Navbar />
         <div style={{ paddingTop: '140px', textAlign: 'center', padding: '140px 24px 80px' }}>
           <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px,4vw,48px)', fontWeight: 700, marginBottom: '16px' }}>Access Denied</h1>
-          <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.5)' }}>Your account doesn't have admin permissions.</p>
+          <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.69)' }}>Your account doesn't have admin permissions.</p>
         </div>
       </div>
     );
@@ -164,19 +164,19 @@ export default function AdminOrders() {
         {/* Stats */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', marginBottom: '40px' }}>
           <div style={{ background: '#111113', padding: '24px', borderTop: '2px solid #C8681E' }}>
-            <p style={{ fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', marginBottom: '8px' }}>Total Orders</p>
+            <p style={{ fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.67)', marginBottom: '8px' }}>Total Orders</p>
             <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '32px', fontWeight: 700 }}>{orders.length}</p>
           </div>
           <div style={{ background: '#111113', padding: '24px', borderTop: '2px solid #FFB800' }}>
-            <p style={{ fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', marginBottom: '8px' }}>Total Revenue</p>
+            <p style={{ fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.67)', marginBottom: '8px' }}>Total Revenue</p>
             <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '32px', fontWeight: 700 }}>${totalRevenue.toFixed(2)}</p>
           </div>
           <div style={{ background: '#111113', padding: '24px', borderTop: '2px solid #818cf8' }}>
-            <p style={{ fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', marginBottom: '8px' }}>New</p>
+            <p style={{ fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.67)', marginBottom: '8px' }}>New</p>
             <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '32px', fontWeight: 700 }}>{newCount}</p>
           </div>
           <div style={{ background: '#111113', padding: '24px', borderTop: '2px solid #4ade80' }}>
-            <p style={{ fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', marginBottom: '8px' }}>Delivered</p>
+            <p style={{ fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.67)', marginBottom: '8px' }}>Delivered</p>
             <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '32px', fontWeight: 700 }}>{completedCount}</p>
           </div>
         </div>
@@ -196,7 +196,7 @@ export default function AdminOrders() {
             style={{
               display: 'flex', alignItems: 'center', gap: '8px',
               background: '#111113',
-              color: syncing ? 'rgba(242,242,242,0.4)' : '#F2F2F2',
+              color: syncing ? 'rgba(242,242,242,0.67)' : '#F2F2F2',
               border: '1px solid rgba(242,242,242,0.15)',
               borderRadius: '999px',
               padding: '10px 20px',
@@ -257,20 +257,20 @@ export default function AdminOrders() {
           </div>
         ) : filteredOrders.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '60px', background: '#111113' }}>
-            <p style={{ color: 'rgba(242,242,242,0.4)', fontSize: '15px' }}>No orders found.</p>
+            <p style={{ color: 'rgba(242,242,242,0.67)', fontSize: '15px' }}>No orders found.</p>
           </div>
         ) : (
           <div style={{ overflowX: 'auto', background: '#111113' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '800px' }}>
               <thead>
                 <tr style={{ borderBottom: '1px solid rgba(242,242,242,0.06)' }}>
-                  <th style={{ textAlign: 'left', padding: '16px 20px', fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', fontWeight: 500 }}>Date</th>
-                  <th style={{ textAlign: 'left', padding: '16px 20px', fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', fontWeight: 500 }}>Customer</th>
-                  <th style={{ textAlign: 'left', padding: '16px 20px', fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', fontWeight: 500 }}>Product</th>
-                  <th style={{ textAlign: 'right', padding: '16px 20px', fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', fontWeight: 500 }}>Amount</th>
-                  <th style={{ textAlign: 'left', padding: '16px 20px', fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', fontWeight: 500 }}>Status</th>
-                  <th style={{ textAlign: 'left', padding: '16px 20px', fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', fontWeight: 500 }}>Update</th>
-                  <th style={{ textAlign: 'center', padding: '16px 20px', fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', fontWeight: 500 }}>Details</th>
+                  <th style={{ textAlign: 'left', padding: '16px 20px', fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.67)', fontWeight: 500 }}>Date</th>
+                  <th style={{ textAlign: 'left', padding: '16px 20px', fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.67)', fontWeight: 500 }}>Customer</th>
+                  <th style={{ textAlign: 'left', padding: '16px 20px', fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.67)', fontWeight: 500 }}>Product</th>
+                  <th style={{ textAlign: 'right', padding: '16px 20px', fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.67)', fontWeight: 500 }}>Amount</th>
+                  <th style={{ textAlign: 'left', padding: '16px 20px', fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.67)', fontWeight: 500 }}>Status</th>
+                  <th style={{ textAlign: 'left', padding: '16px 20px', fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.67)', fontWeight: 500 }}>Update</th>
+                  <th style={{ textAlign: 'center', padding: '16px 20px', fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.67)', fontWeight: 500 }}>Details</th>
                 </tr>
               </thead>
               <tbody>
@@ -279,10 +279,10 @@ export default function AdminOrders() {
                   return (
                     <Fragment key={order.id}>
                     <tr style={{ borderBottom: '1px solid rgba(242,242,242,0.04)' }}>
-                      <td style={{ padding: '16px 20px', fontSize: '13px', color: 'rgba(242,242,242,0.5)', whiteSpace: 'nowrap' }}>{formatDate(order.created_date)}</td>
+                      <td style={{ padding: '16px 20px', fontSize: '13px', color: 'rgba(242,242,242,0.69)', whiteSpace: 'nowrap' }}>{formatDate(order.created_date)}</td>
                       <td style={{ padding: '16px 20px' }}>
                         <p style={{ fontSize: '14px', color: '#F2F2F2', marginBottom: '2px' }}>{order.customer_name}</p>
-                        <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.4)' }}>{order.customer_email}</p>
+                        <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.67)' }}>{order.customer_email}</p>
                       </td>
                       <td style={{ padding: '16px 20px', fontSize: '14px', color: 'rgba(242,242,242,0.7)' }}>
             {order.product}
@@ -328,11 +328,11 @@ export default function AdminOrders() {
                             <DetailField label="Payment Intent ID" value={order.stripe_payment_intent_id} mono />
                             <DetailField label="Square Order ID" value={order.square_order_id} mono />
                             <div style={{ gridColumn: '1 / -1' }}>
-                              <p style={{ fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', marginBottom: '8px' }}>Item Description</p>
+                              <p style={{ fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.67)', marginBottom: '8px' }}>Item Description</p>
                               <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.8)', lineHeight: 1.6, whiteSpace: 'pre-wrap' }}>{order.description || '—'}</p>
                             </div>
                             <div style={{ gridColumn: '1 / -1' }}>
-                              <p style={{ fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.4)', marginBottom: '8px' }}>Special Instructions</p>
+                              <p style={{ fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.67)', marginBottom: '8px' }}>Special Instructions</p>
                               <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.8)', lineHeight: 1.6, whiteSpace: 'pre-wrap' }}>{order.instructions || '—'}</p>
                             </div>
                           </div>

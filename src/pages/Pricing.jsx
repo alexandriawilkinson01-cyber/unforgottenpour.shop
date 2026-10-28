@@ -11,7 +11,7 @@ function SectionHeader({ label, title, subtitle }) {
     <div style={{ marginBottom: '48px', textAlign: 'center' }}>
       <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '16px' }}>{label}</p>
       <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 700, color: '#F2F2F2', lineHeight: 1.15, marginBottom: '12px' }}>{title}</h2>
-      <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.4)', maxWidth: '440px', margin: '0 auto', lineHeight: 1.7 }}>{subtitle}</p>
+      <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.67)', maxWidth: '440px', margin: '0 auto', lineHeight: 1.7 }}>{subtitle}</p>
     </div>
   );
 }
@@ -38,13 +38,13 @@ export default function Pricing() {
 
       {/* Hero */}
       <section style={{ paddingTop: '120px', paddingBottom: '60px', textAlign: 'center', padding: '120px 24px 60px' }}>
-        <div style={{ display: 'inline-block', border: '1px solid rgba(242,242,242,0.2)', borderRadius: '999px', padding: '7px 18px', fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.55)', marginBottom: '32px' }}>
+        <div style={{ display: 'inline-block', border: '1px solid rgba(242,242,242,0.2)', borderRadius: '999px', padding: '7px 18px', fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.7)', marginBottom: '32px' }}>
           Individual Pricing
         </div>
         <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 5vw, 64px)', fontWeight: 700, color: '#F2F2F2', lineHeight: 1.1, marginBottom: '20px' }}>
           Every piece, priced individually.
         </h1>
-        <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.45)', maxWidth: '440px', margin: '0 auto', lineHeight: 1.7 }}>
+        <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.68)', maxWidth: '440px', margin: '0 auto', lineHeight: 1.7 }}>
           Choose the exact size and shape you want. No tiers, no bundles — just honest per-piece pricing.
         </p>
         <Link to="/download-catalog" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginTop: '28px', fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#C8681E', textDecoration: 'none', border: '1px solid rgba(200,104,30,0.4)', borderRadius: '999px', padding: '10px 22px', fontWeight: 600, transition: 'border-color 0.2s' }}
@@ -61,8 +61,8 @@ export default function Pricing() {
             <img src={GLOBE.img} alt={GLOBE.name} style={{ width: '100%', height: '280px', objectFit: 'cover', display: 'block', background: '#0A0A0C' }} />
             <div style={{ padding: '32px 28px' }}>
               <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '24px', fontWeight: 700, color: '#F2F2F2', marginBottom: '8px' }}>{GLOBE.name}</h3>
-              <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.4)', marginBottom: '24px', lineHeight: 1.6 }}>{GLOBE.description}</p>
-              <label style={{ display: 'block', fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.5)', marginBottom: '8px' }}>Size</label>
+              <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.67)', marginBottom: '24px', lineHeight: 1.6 }}>{GLOBE.description}</p>
+              <label style={{ display: 'block', fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.69)', marginBottom: '8px' }}>Size</label>
               <BottomSheetSelect
                 value={globeSizeId}
                 onChange={setGlobeSizeId}
@@ -89,7 +89,7 @@ export default function Pricing() {
               <img src={s.img} alt={s.name} style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block' }} />
               <div style={{ padding: '28px 24px' }}>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '20px', fontWeight: 600, color: '#F2F2F2', marginBottom: '6px' }}>{s.name}</h3>
-                <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.35)', marginBottom: '24px' }}>{s.size}</p>
+                <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.66)', marginBottom: '24px' }}>{s.size}</p>
                 <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '36px', fontWeight: 700, color: '#F2F2F2', marginBottom: '24px' }}>${s.price}</div>
                 <Link to={`/order?item=${s.id}`} style={{ display: 'block', textAlign: 'center', background: 'rgba(255,255,255,0.07)', color: '#fff', borderRadius: '999px', padding: '12px 24px', fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
                   Select {s.name}
@@ -108,7 +108,7 @@ export default function Pricing() {
             <img src={NOTEBOOK.img} alt={NOTEBOOK.name} style={{ width: '100%', height: '280px', objectFit: 'cover', display: 'block' }} />
             <div style={{ padding: '32px 28px' }}>
               <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: 700, color: '#F2F2F2', marginBottom: '6px' }}>{NOTEBOOK.name}</h3>
-              <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.4)', marginBottom: '24px', lineHeight: 1.5 }}>Hand-poured resin cover with preserved botanicals. A5 lined journal. 4–6 week turnaround.</p>
+              <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.67)', marginBottom: '24px', lineHeight: 1.5 }}>Hand-poured resin cover with preserved botanicals. A5 lined journal. 4–6 week turnaround.</p>
               <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '40px', fontWeight: 700, color: '#F2F2F2', marginBottom: '28px' }}>${NOTEBOOK.price}</div>
               <Link to="/notebooks" style={{ display: 'block', textAlign: 'center', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '13px 24px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
                 Order Notebook
@@ -126,7 +126,7 @@ export default function Pricing() {
             <img src={KEYCHAIN.img} alt={KEYCHAIN.name} style={{ width: '100%', height: '280px', objectFit: 'cover', display: 'block' }} />
             <div style={{ padding: '32px 28px' }}>
               <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: 700, color: '#F2F2F2', marginBottom: '6px' }}>{KEYCHAIN.name}</h3>
-              <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.4)', marginBottom: '24px', lineHeight: 1.5 }}>{KEYCHAIN.size} resin keychain with your preserved flowers, ashes, or small keepsakes.</p>
+              <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.67)', marginBottom: '24px', lineHeight: 1.5 }}>{KEYCHAIN.size} resin keychain with your preserved flowers, ashes, or small keepsakes.</p>
               <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '40px', fontWeight: 700, color: '#F2F2F2', marginBottom: '28px' }}>${KEYCHAIN.price}</div>
               <Link to="/order?item=keychain" style={{ display: 'block', textAlign: 'center', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '13px 24px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
                 Order Keychain

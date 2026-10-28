@@ -38,16 +38,16 @@ function FunctionDisplay({ toolCall }) {
         <span style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}>{proj.label || toolCall.name || 'Tool'} — {hideDetails ? (isFailed ? (proj.error_label || 'Failed') : (proj.active_label || label)) : label}</span>
       </button>
       {!hideDetails && expanded && (
-        <div style={{ marginTop: '8px', paddingLeft: '22px', color: 'rgba(242,242,242,0.55)' }}>
+        <div style={{ marginTop: '8px', paddingLeft: '22px', color: 'rgba(242,242,242,0.7)' }}>
           {toolCall.arguments_string && (
             <div style={{ marginBottom: '8px' }}>
-              <p style={{ fontSize: '10px', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.35)', marginBottom: '4px' }}>Parameters</p>
+              <p style={{ fontSize: '10px', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.66)', marginBottom: '4px' }}>Parameters</p>
               <pre style={{ whiteSpace: 'pre-wrap', fontSize: '11px', margin: 0 }}>{JSON.stringify(parsedArgs, null, 2)}</pre>
             </div>
           )}
           {toolCall.results !== undefined && (
             <div>
-              <p style={{ fontSize: '10px', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.35)', marginBottom: '4px' }}>Result</p>
+              <p style={{ fontSize: '10px', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.66)', marginBottom: '4px' }}>Result</p>
               <pre style={{ whiteSpace: 'pre-wrap', fontSize: '11px', margin: 0, color: resultsFailed ? '#f87171' : 'inherit' }}>{JSON.stringify(parsedResults, null, 2)}</pre>
             </div>
           )}

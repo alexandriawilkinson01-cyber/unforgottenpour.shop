@@ -106,7 +106,7 @@ export default function OrderStatusChat() {
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', maxWidth: '720px', width: '100%', margin: '0 auto', padding: '120px 24px 40px' }}>
         <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '12px' }}>Order Tracking</p>
         <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(24px,4vw,36px)', fontWeight: 700, marginBottom: '8px' }}>Check Your Order Status</h1>
-        <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.45)', marginBottom: '32px' }}>
+        <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.68)', marginBottom: '32px' }}>
           Ask about your order — provide your order reference number or the email you used at checkout.
         </p>
 
@@ -121,7 +121,7 @@ export default function OrderStatusChat() {
             <>
               {messages.length === 0 && (
                 <div style={{ background: '#111113', padding: '24px', borderRadius: '12px', border: '1px solid rgba(242,242,242,0.06)' }}>
-                  <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.6)', lineHeight: 1.6 }}>
+                  <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.71)', lineHeight: 1.6 }}>
                     Hi! I'm here to help you track your order. Just share your order reference number or the email you used when placing your order, and I'll look it up for you.
                   </p>
                 </div>
@@ -146,7 +146,7 @@ export default function OrderStatusChat() {
                         <>
                           <ReactMarkdown className="text-sm prose prose-sm prose-invert max-w-none">{msg.content || ''}</ReactMarkdown>
                           {msg.tool_calls?.map((tc, i) => (
-                            <div key={i} style={{ marginTop: '8px', fontSize: '11px', color: 'rgba(242,242,242,0.35)', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                            <div key={i} style={{ marginTop: '8px', fontSize: '11px', color: 'rgba(242,242,242,0.66)', display: 'flex', alignItems: 'center', gap: '6px' }}>
                               {tc.status === 'running' || tc.status === 'pending' || tc.status === 'in_progress' ? '⏳' :
                                tc.status === 'failed' || tc.status === 'error' ? '⚠️' : '✓'}
                               {tc.display_projection?.label || tc.display_projection?.active_label || tc.name}

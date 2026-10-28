@@ -171,6 +171,36 @@ html {
   }
 }
 
+/* Stack flex layouts into a single column on phones. */
+.flex-col-mobile {
+  flex-direction: row;
+}
+
+@media (max-width: 767px) {
+  .flex-col-mobile {
+    flex-direction: column;
+  }
+}
+
+/* Portfolio image/detail split: two columns on desktop, one on phones. */
+.portfolio-split {
+  grid-template-columns: 1fr 1fr;
+}
+
+.portfolio-details {
+  padding-left: 16px;
+}
+
+@media (max-width: 767px) {
+  .portfolio-split {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-details {
+    padding-left: 0;
+  }
+}
+
 /* Prevent accidental text selection on interactive chrome. */
 button,
 [role="button"],

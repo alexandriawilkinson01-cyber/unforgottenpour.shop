@@ -28,7 +28,7 @@ export default function CategoriesSection() {
           <p className="text-xs tracking-[0.3em] uppercase text-honey mb-4">What We Preserve</p>
           <h2 className="font-playfair font-bold" style={{ fontSize: 'clamp(32px, 4vw, 56px)', color: '#F2F2F2' }}>
             Not just flowers.<br />
-            <span style={{ color: 'rgba(242,242,242,0.35)' }}>Everything that matters.</span>
+            <span style={{ color: 'rgba(242,242,242,0.66)' }}>Everything that matters.</span>
           </h2>
         </motion.div>
 

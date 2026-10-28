@@ -95,7 +95,7 @@ export default function HowItWorks() {
         <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 5vw, 64px)', fontWeight: 700, lineHeight: 1.1, marginBottom: '24px', maxWidth: '820px', margin: '0 auto 24px' }}>
           How we turn your memories into permanent, handcrafted resin keepsakes
         </h1>
-        <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.5)', maxWidth: '580px', margin: '0 auto 48px', lineHeight: 1.8 }}>
+        <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.69)', maxWidth: '580px', margin: '0 auto 48px', lineHeight: 1.8 }}>
           Unforgotten Pour is a boutique preservation studio that encapsulates flowers, cremation ashes, personal objects, and botanicals into optical-clarity resin jewelry, orbs, paperweights, and custom art pieces. Every order is handled personally by our studio artisans, no factories, no shortcuts. Below is a detailed walkthrough of our four-stage process, from the moment you ship your items to the day your finished piece arrives back at your door.
         </p>
       </section>
@@ -112,7 +112,7 @@ export default function HowItWorks() {
                 <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '24px', fontWeight: 700, color: '#F2F2F2', marginBottom: '14px' }}>
                   {step.title}
                 </h2>
-                <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.6)', lineHeight: 1.85 }}>
+                <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.71)', lineHeight: 1.85 }}>
                   {step.body}
                 </p>
               </div>
@@ -135,7 +135,7 @@ export default function HowItWorks() {
               <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '18px', fontWeight: 700, color: '#F2F2F2', marginBottom: '12px' }}>
                 {faq.q}
               </h3>
-              <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.55)', lineHeight: 1.8 }}>
+              <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.7)', lineHeight: 1.8 }}>
                 {faq.a}
               </p>
             </div>
@@ -159,7 +159,7 @@ export default function HowItWorks() {
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                 {section.points.map((point, i) => (
-                  <li key={i} style={{ display: 'flex', gap: '12px', padding: '10px 0', fontSize: '14px', color: 'rgba(242,242,242,0.55)', lineHeight: 1.8, borderTop: i === 0 ? 'none' : '1px solid rgba(255,255,255,0.04)' }}>
+                  <li key={i} style={{ display: 'flex', gap: '12px', padding: '10px 0', fontSize: '14px', color: 'rgba(242,242,242,0.7)', lineHeight: 1.8, borderTop: i === 0 ? 'none' : '1px solid rgba(255,255,255,0.04)' }}>
                     <span style={{ color: '#C8681E', flexShrink: 0, marginTop: '2px' }}>▪</span>
                     <span>{point}</span>
                   </li>
@@ -175,7 +175,7 @@ export default function HowItWorks() {
         <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 700, color: '#F2F2F2', marginBottom: '20px' }}>
           Ready to begin?
         </h2>
-        <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.45)', marginBottom: '36px', lineHeight: 1.7 }}>
+        <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.68)', marginBottom: '36px', lineHeight: 1.7 }}>
           Start your order today, we'll guide you through every step.
         </p>
         <Link to="/order" style={{ display: 'inline-block', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '14px 36px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>

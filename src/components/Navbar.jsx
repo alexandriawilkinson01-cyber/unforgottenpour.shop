@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Menu, User, X } from 'lucide-react';
 
+const NO_BACK_PATHS = ['/', '/portfolio', '/order', '/style-advisor'];
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const isHome = location.pathname === '/';
+  const showBack = !NO_BACK_PATHS.includes(location.pathname);
 
   const goBack = () => {
     if (window.history.length > 1) {
@@ -20,7 +22,7 @@ export default function Navbar() {
     <>
       <nav className="select-none" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', paddingTop: 'calc(20px + env(safe-area-inset-top))', paddingBottom: '20px', paddingLeft: 'calc(20px + env(safe-area-inset-left))', paddingRight: 'calc(20px + env(safe-area-inset-right))', background: 'rgba(10,10,12,0.85)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', minWidth: 0 }}>
-          {!isHome && (
+          {showBack && (
             <button type="button" onClick={goBack} aria-label="Go back" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '34px', height: '34px', flexShrink: 0, background: 'rgba(242,242,242,0.06)', border: '1px solid rgba(242,242,242,0.12)', borderRadius: '999px', color: '#F2F2F2', cursor: 'pointer', padding: 0 }}>
               <ArrowLeft size={16} />
             </button>
@@ -32,47 +34,47 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <div style={{ alignItems: 'center', gap: '36px' }} className="hidden md:flex">
-          <Link to="/portfolio" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
+          <Link to="/portfolio" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.71)', textDecoration: 'none', transition: 'color 0.2s' }}
             onMouseEnter={e => e.target.style.color='#F2F2F2'} onMouseLeave={e => e.target.style.color='rgba(242,242,242,0.6)'}>
             Portfolio
           </Link>
-          <Link to="/memorial" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
+          <Link to="/memorial" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.71)', textDecoration: 'none', transition: 'color 0.2s' }}
             onMouseEnter={e => e.target.style.color='#F2F2F2'} onMouseLeave={e => e.target.style.color='rgba(242,242,242,0.6)'}>
             Memorial
           </Link>
-          <Link to="/notebooks" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
+          <Link to="/notebooks" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.71)', textDecoration: 'none', transition: 'color 0.2s' }}
             onMouseEnter={e => e.target.style.color='#F2F2F2'} onMouseLeave={e => e.target.style.color='rgba(242,242,242,0.6)'}>
             Notebooks
           </Link>
-          <Link to="/jewelry" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
+          <Link to="/jewelry" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.71)', textDecoration: 'none', transition: 'color 0.2s' }}
             onMouseEnter={e => e.target.style.color='#F2F2F2'} onMouseLeave={e => e.target.style.color='rgba(242,242,242,0.6)'}>
             Jewelry
           </Link>
-          <Link to="/style-advisor" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
+          <Link to="/style-advisor" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.71)', textDecoration: 'none', transition: 'color 0.2s' }}
             onMouseEnter={e => e.target.style.color='#F2F2F2'} onMouseLeave={e => e.target.style.color='rgba(242,242,242,0.6)'}>
             Style Advisor
           </Link>
-          <Link to="/pricing" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
+          <Link to="/pricing" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.71)', textDecoration: 'none', transition: 'color 0.2s' }}
             onMouseEnter={e => e.target.style.color='#F2F2F2'} onMouseLeave={e => e.target.style.color='rgba(242,242,242,0.6)'}>
             Pricing
           </Link>
-          <Link to="/how-it-works" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
+          <Link to="/how-it-works" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.71)', textDecoration: 'none', transition: 'color 0.2s' }}
             onMouseEnter={e => e.target.style.color='#F2F2F2'} onMouseLeave={e => e.target.style.color='rgba(242,242,242,0.6)'}>
             How It Works
           </Link>
-          <Link to="/shipping-guide" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
+          <Link to="/shipping-guide" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.71)', textDecoration: 'none', transition: 'color 0.2s' }}
             onMouseEnter={e => e.target.style.color='#F2F2F2'} onMouseLeave={e => e.target.style.color='rgba(242,242,242,0.6)'}>
             Shipping Guide
           </Link>
-          <Link to="/about" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
+          <Link to="/about" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.71)', textDecoration: 'none', transition: 'color 0.2s' }}
             onMouseEnter={e => e.target.style.color='#F2F2F2'} onMouseLeave={e => e.target.style.color='rgba(242,242,242,0.6)'}>
             About
           </Link>
-          <Link to="/contact" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
+          <Link to="/contact" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.71)', textDecoration: 'none', transition: 'color 0.2s' }}
             onMouseEnter={e => e.target.style.color='#F2F2F2'} onMouseLeave={e => e.target.style.color='rgba(242,242,242,0.6)'}>
             Contact
           </Link>
-          <Link to="/track-order" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
+          <Link to="/track-order" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.71)', textDecoration: 'none', transition: 'color 0.2s' }}
             onMouseEnter={e => e.target.style.color='#F2F2F2'} onMouseLeave={e => e.target.style.color='rgba(242,242,242,0.6)'}>
             Track Order
           </Link>

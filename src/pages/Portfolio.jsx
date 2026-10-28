@@ -130,13 +130,13 @@ export default function Portfolio() {
 
       {/* Hero */}
       <section style={{ paddingTop: '120px', paddingBottom: '80px', textAlign: 'center', padding: '120px 24px 80px' }}>
-        <div style={{ display: 'inline-block', border: '1px solid rgba(242,242,242,0.2)', borderRadius: '999px', padding: '7px 18px', fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.55)', marginBottom: '32px' }}>
+        <div style={{ display: 'inline-block', border: '1px solid rgba(242,242,242,0.2)', borderRadius: '999px', padding: '7px 18px', fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.7)', marginBottom: '32px' }}>
           What We Preserve
         </div>
         <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(40px, 6vw, 72px)', fontWeight: 700, color: '#F2F2F2', lineHeight: 1.1, marginBottom: '24px' }}>
           Every category.<br />Every memory.
         </h1>
-        <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.5)', maxWidth: '500px', margin: '0 auto', lineHeight: 1.7 }}>
+        <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.69)', maxWidth: '500px', margin: '0 auto', lineHeight: 1.7 }}>
           From bridal bouquets to memorial tributes to milestone keepsakes, real pieces from our studio, each one handcrafted and unique.
         </p>
       </section>
@@ -164,11 +164,11 @@ export default function Portfolio() {
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', alignItems: 'start' }}>
+          <div className="portfolio-split" style={{ display: 'grid', gap: '24px', alignItems: 'start' }}>
             {/* Images */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '4px' }}>
               {cat.images.length === 0 &&
-            <div style={{ gridColumn: '1 / -1', display: 'flex', alignItems: 'center', justifyContent: 'center', aspectRatio: '16/10', background: '#111113', border: '1px dashed rgba(255,255,255,0.1)', color: 'rgba(242,242,242,0.25)', fontSize: '13px', letterSpacing: '0.05em' }}>
+            <div style={{ gridColumn: '1 / -1', display: 'flex', alignItems: 'center', justifyContent: 'center', aspectRatio: '16/10', background: '#111113', border: '1px dashed rgba(255,255,255,0.1)', color: 'rgba(242,242,242,0.65)', fontSize: '13px', letterSpacing: '0.05em' }}>
                   Photos coming soon
                 </div>
             }
@@ -185,11 +185,11 @@ export default function Portfolio() {
             </div>
 
             {/* Details */}
-            <div style={{ paddingLeft: '16px' }}>
-              <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.55)', lineHeight: 1.75, marginBottom: '28px' }}>{cat.desc}</p>
+            <div className="portfolio-details">
+              <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.7)', lineHeight: 1.75, marginBottom: '28px' }}>{cat.desc}</p>
               <ul style={{ listStyle: 'none', padding: 0, marginBottom: '36px' }}>
                 {cat.items.map((item) =>
-              <li key={item} style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.05)', fontSize: '14px', color: 'rgba(242,242,242,0.6)' }}>
+              <li key={item} style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.05)', fontSize: '14px', color: 'rgba(242,242,242,0.71)' }}>
                     <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#C8681E', flexShrink: 0 }} />
                     {item}
                   </li>
@@ -214,13 +214,13 @@ export default function Portfolio() {
             <div key={f.name} style={{ background: '#111113', padding: '28px 24px' }} className="rounded-[20px]">
                 <div style={{ fontSize: '20px', marginBottom: '12px', opacity: 0.5 }}>{f.icon}</div>
                 
-                <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.4)', lineHeight: 1.6 }}>{f.desc}</p>
+                <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.67)', lineHeight: 1.6 }}>{f.desc}</p>
               </div>
             )}
           </div>
           <div style={{ marginTop: '64px', textAlign: 'center' }}>
             <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '28px', fontWeight: 600, color: '#F2F2F2', marginBottom: '12px' }}>Ready to start?</h3>
-            <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.45)', marginBottom: '28px' }}>Tell us what you have and we'll take it from there.</p>
+            <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.68)', marginBottom: '28px' }}>Tell us what you have and we'll take it from there.</p>
             <Link to="/order" style={{ display: 'inline-block', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '13px 32px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
               Begin My Order
             </Link>

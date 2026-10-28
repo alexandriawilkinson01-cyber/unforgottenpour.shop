@@ -103,7 +103,7 @@ export default function ShippingGuide() {
         <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 5vw, 64px)', fontWeight: 700, lineHeight: 1.1, marginBottom: '24px', maxWidth: '760px', margin: '0 auto 24px' }}>
           How to safely ship your sentimental items
         </h1>
-        <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.5)', maxWidth: '580px', margin: '0 auto', lineHeight: 1.8 }}>
+        <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.69)', maxWidth: '580px', margin: '0 auto', lineHeight: 1.8 }}>
           Your keepsakes are irreplaceable. This guide walks you through packing and mailing flowers, ashes, and small mementos so they arrive at our studio in perfect condition.
         </p>
       </section>
@@ -113,7 +113,7 @@ export default function ShippingGuide() {
         <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(18px, 2.5vw, 24px)', fontWeight: 500, color: 'rgba(242,242,242,0.75)', lineHeight: 1.7, maxWidth: '680px', margin: '0 auto' }}>
           We know sending something this personal can feel daunting, especially when you're already navigating grief. Take a breath. We've walked hundreds of families through this exact process, and we'll walk through it with you, too.
         </p>
-        <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.4)', maxWidth: '560px', margin: '20px auto 0', lineHeight: 1.75 }}>
+        <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.67)', maxWidth: '560px', margin: '20px auto 0', lineHeight: 1.75 }}>
           Every detail below is here to make sure your keepsake arrives safely. If anything feels unclear or you'd rather talk it through, email <a href="mailto:AlexandriaWilkinson01@gmail.com" style={{ color: '#C8681E', textDecoration: 'none' }}>AlexandriaWilkinson01@gmail.com</a>, Alexandria will respond personally.
         </p>
       </section>
@@ -145,7 +145,7 @@ export default function ShippingGuide() {
               <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '40px', fontWeight: 700, color: '#C8681E', lineHeight: 1, opacity: 0.7 }}>{step.num}</div>
               <div>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '20px', fontWeight: 700, color: '#F2F2F2', marginBottom: '10px' }}>{step.title}</h3>
-                <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.6)', lineHeight: 1.85 }}>{step.body}</p>
+                <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.71)', lineHeight: 1.85 }}>{step.body}</p>
               </div>
             </div>
           ))}
@@ -166,7 +166,7 @@ export default function ShippingGuide() {
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                 {s.rules.map((r, i) => (
-                  <li key={i} style={{ display: 'flex', gap: '12px', padding: '10px 0', fontSize: '14px', color: 'rgba(242,242,242,0.55)', lineHeight: 1.8, borderTop: i === 0 ? 'none' : '1px solid rgba(255,255,255,0.04)' }}>
+                  <li key={i} style={{ display: 'flex', gap: '12px', padding: '10px 0', fontSize: '14px', color: 'rgba(242,242,242,0.7)', lineHeight: 1.8, borderTop: i === 0 ? 'none' : '1px solid rgba(255,255,255,0.04)' }}>
                     <span style={{ color: '#C8681E', flexShrink: 0, marginTop: '2px' }}>▪</span>
                     <span>{r}</span>
                   </li>
@@ -182,8 +182,8 @@ export default function ShippingGuide() {
         <div style={{ background: '#111113', border: '1px solid rgba(200,104,30,0.3)', padding: '48px', textAlign: 'center' }}>
           <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '16px' }}>Ship To</p>
           <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '24px', fontWeight: 700, color: '#F2F2F2', marginBottom: '8px' }}>Unforgotten Pour Studio</h3>
-          <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.5)', marginBottom: '4px' }}>Blacksburg, South Carolina</p>
-          <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.35)', marginBottom: '32px' }}>The exact shipping address is included in your order confirmation email.</p>
+          <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.69)', marginBottom: '4px' }}>Blacksburg, South Carolina</p>
+          <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.66)', marginBottom: '32px' }}>The exact shipping address is included in your order confirmation email.</p>
           <Link to="/order" style={{ display: 'inline-block', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '14px 36px', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
             Start My Order
           </Link>

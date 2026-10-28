@@ -64,7 +64,7 @@ export default function MobileTabBar() {
               gap: '4px',
               padding: '10px 2px 11px',
               textDecoration: 'none',
-              color: active ? '#C8681E' : 'rgba(242,242,242,0.5)',
+              color: active ? '#C8681E' : 'rgba(242,242,242,0.69)',
             }}
           >
             <Icon size={20} strokeWidth={active ? 2.4 : 1.7} />

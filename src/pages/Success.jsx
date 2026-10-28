@@ -46,12 +46,12 @@ export default function Success() {
       {showPopup && (
         <div style={{ position: 'fixed', inset: 0, zIndex: 200, background: 'rgba(10,10,12,0.85)', backdropFilter: 'blur(6px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }} onClick={() => setShowPopup(false)}>
           <div onClick={e => e.stopPropagation()} style={{ background: '#111113', border: '1px solid rgba(200,104,30,0.4)', borderRadius: '12px', maxWidth: '560px', width: '100%', maxHeight: '90vh', overflowY: 'auto', padding: '48px 40px', textAlign: 'center', position: 'relative' }}>
-            <button onClick={() => setShowPopup(false)} style={{ position: 'absolute', top: '16px', right: '20px', background: 'none', border: 'none', color: 'rgba(242,242,242,0.4)', fontSize: '20px', cursor: 'pointer', zIndex: 2 }}>✕</button>
+            <button onClick={() => setShowPopup(false)} style={{ position: 'absolute', top: '16px', right: '20px', background: 'none', border: 'none', color: 'rgba(242,242,242,0.67)', fontSize: '20px', cursor: 'pointer', zIndex: 2 }}>✕</button>
             <div style={{ width: '56px', height: '56px', borderRadius: '50%', border: '2px solid #C8681E', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px', color: '#C8681E' }}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '28px', fontWeight: 700, color: '#F2F2F2', marginBottom: '10px' }}>Thank you for your order!</h2>
-            <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.5)', lineHeight: 1.7, marginBottom: '28px' }}>
+            <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.69)', lineHeight: 1.7, marginBottom: '28px' }}>
               We're honored you've trusted us to preserve what matters most. Here's how to get your keepsake to our studio safely.
             </p>
 
@@ -61,7 +61,7 @@ export default function Success() {
                   <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '20px', fontWeight: 700, color: '#C8681E', lineHeight: 1.2 }}>{step.num}</div>
                   <div>
                     <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '15px', fontWeight: 700, color: '#F2F2F2', marginBottom: '3px' }}>{step.title}</h3>
-                    <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.5)', lineHeight: 1.6 }}>{step.body}</p>
+                    <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.69)', lineHeight: 1.6 }}>{step.body}</p>
                   </div>
                 </div>
               ))}
@@ -80,16 +80,16 @@ export default function Success() {
       {/* Hero */}
       <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: '480px' }}>
-          <div style={{ display: 'inline-block', border: '1px solid rgba(242,242,242,0.2)', borderRadius: '999px', padding: '7px 18px', fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.55)', marginBottom: '28px' }}>
+          <div style={{ display: 'inline-block', border: '1px solid rgba(242,242,242,0.2)', borderRadius: '999px', padding: '7px 18px', fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.7)', marginBottom: '28px' }}>
             Order Confirmed
           </div>
           <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 700, color: '#F2F2F2', lineHeight: 1.15, marginBottom: '24px' }}>
             Your legacy<br />is secured.
           </h1>
-          <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.5)', lineHeight: 1.75, marginBottom: '12px' }}>
+          <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.69)', lineHeight: 1.75, marginBottom: '12px' }}>
             Your preservation order has been received. We'll be in touch within 24 hours with your shipping kit and next steps.
           </p>
-          <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.25)', marginBottom: '44px', letterSpacing: '0.03em' }}>Handcrafted in Blacksburg, South Carolina.</p>
+          <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.65)', marginBottom: '44px', letterSpacing: '0.03em' }}>Handcrafted in Blacksburg, South Carolina.</p>
           <Link to="/shipping-guide" style={{ display: 'inline-block', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '13px 32px', fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none', marginRight: '12px', marginBottom: '12px' }}>
             Shipping Guide
           </Link>
@@ -111,13 +111,13 @@ export default function Success() {
               <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '32px', fontWeight: 700, color: '#C8681E', lineHeight: 1, opacity: 0.7 }}>{step.num}</div>
               <div>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '18px', fontWeight: 700, color: '#F2F2F2', marginBottom: '8px' }}>{step.title}</h3>
-                <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.55)', lineHeight: 1.8 }}>{step.body}</p>
+                <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.7)', lineHeight: 1.8 }}>{step.body}</p>
               </div>
             </div>
           ))}
         </div>
         <div style={{ background: '#111113', border: '1px solid rgba(200,104,30,0.3)', padding: '32px', textAlign: 'center', marginTop: '32px' }}>
-          <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.6)', marginBottom: '16px' }}>Need the full step-by-step packing guide with material lists and special handling instructions?</p>
+          <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.71)', marginBottom: '16px' }}>Need the full step-by-step packing guide with material lists and special handling instructions?</p>
           <Link to="/shipping-guide" style={{ display: 'inline-block', background: 'none', color: '#C8681E', border: '1px solid rgba(200,104,30,0.4)', borderRadius: '999px', padding: '12px 28px', fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
             View Full Shipping Guide
           </Link>

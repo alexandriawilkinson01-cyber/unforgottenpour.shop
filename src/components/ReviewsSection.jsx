@@ -63,7 +63,7 @@ export default function ReviewsSection() {
           <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>Customer Reviews</p>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 700, color: '#F2F2F2', lineHeight: 1.2, marginBottom: '12px' }}>
             Trusted by families<br />
-            <span style={{ color: 'rgba(242,242,242,0.35)' }}>across the country.</span>
+            <span style={{ color: 'rgba(242,242,242,0.66)' }}>across the country.</span>
           </h2>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '20px' }}>
             <div style={{ display: 'flex', gap: '3px' }}>
@@ -73,7 +73,7 @@ export default function ReviewsSection() {
                 </svg>
               ))}
             </div>
-            <span style={{ fontSize: '14px', color: 'rgba(242,242,242,0.5)' }}>5.0 · 200+ verified orders</span>
+            <span style={{ fontSize: '14px', color: 'rgba(242,242,242,0.69)' }}>5.0 · 200+ verified orders</span>
           </div>
         </div>
 
@@ -92,7 +92,7 @@ export default function ReviewsSection() {
               <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                 <div>
                   <p style={{ fontSize: '13px', fontWeight: 600, color: '#F2F2F2', marginBottom: '2px' }}>{r.name}</p>
-                  <p style={{ fontSize: '11px', color: 'rgba(242,242,242,0.3)', letterSpacing: '0.04em' }}>{r.location}</p>
+                  <p style={{ fontSize: '11px', color: 'rgba(242,242,242,0.65)', letterSpacing: '0.04em' }}>{r.location}</p>
                 </div>
                 <div style={{ fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#C8681E', background: 'rgba(200,104,30,0.1)', padding: '4px 10px', borderRadius: '999px' }}>
                   {r.item}

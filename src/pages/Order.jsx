@@ -22,7 +22,7 @@ const selectStyle = {
   background: '#111113',
 };
 
-const labelStyle = { display: 'block', fontSize: '12px', letterSpacing: '0.06em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.5)', marginBottom: '8px' };
+const labelStyle = { display: 'block', fontSize: '12px', letterSpacing: '0.06em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.69)', marginBottom: '8px' };
 
 export default function Order() {
   useMetaDescription(
@@ -108,13 +108,13 @@ export default function Order() {
       <Navbar />
       <div style={{ maxWidth: '720px', margin: '0 auto', padding: '100px 24px 80px' }}>
         <div style={{ marginBottom: '48px' }}>
-          <div style={{ display: 'inline-block', border: '1px solid rgba(242,242,242,0.2)', borderRadius: '999px', padding: '7px 18px', fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.55)', marginBottom: '24px' }}>
+          <div style={{ display: 'inline-block', border: '1px solid rgba(242,242,242,0.2)', borderRadius: '999px', padding: '7px 18px', fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.7)', marginBottom: '24px' }}>
             Preservation Intake
           </div>
           <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 700, color: '#F2F2F2', lineHeight: 1.1, marginBottom: '16px' }}>
             Tell us about your item.
           </h1>
-          <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.45)', lineHeight: 1.7 }}>
+          <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.68)', lineHeight: 1.7 }}>
             Select your piece, tell us what you'd like preserved, and complete secure checkout. We'll send a packing kit within 24 hours.
           </p>
         </div>
@@ -184,7 +184,7 @@ export default function Order() {
                   { value: 'tabletop', label: 'Tabletop Art / Custom Sculpture' },
                 ]}
               />
-              <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.3)', marginTop: '6px' }}>
+              <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.65)', marginTop: '6px' }}>
                 Not sure? <Link to="/portfolio" style={{ color: '#C8681E', textDecoration: 'none' }}>Browse the portfolio</Link> for format examples.
               </p>
             </div>
@@ -224,12 +224,12 @@ export default function Order() {
               <div style={{ marginTop: '16px', background: '#1A1A1E', border: '2px solid #C8681E', borderRadius: '4px', padding: '20px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <div>
                   <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: 700, color: '#F2F2F2' }}>{selectedItem.name}</div>
-                  {selectedItem.size && <div style={{ fontSize: '13px', color: 'rgba(242,242,242,0.4)', marginTop: '2px' }}>{selectedItem.size}</div>}
+                  {selectedItem.size && <div style={{ fontSize: '13px', color: 'rgba(242,242,242,0.67)', marginTop: '2px' }}>{selectedItem.size}</div>}
                 </div>
                 <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '32px', fontWeight: 700, color: '#C8681E' }}>${selectedItem.price}</div>
               </div>
             )}
-            <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.3)', marginTop: '10px' }}>
+            <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.65)', marginTop: '10px' }}>
               Not sure? <Link to="/pricing" style={{ color: '#C8681E', textDecoration: 'none' }}>View all pricing</Link>. You'll be directed to secure payment after submitting.
             </p>
           </div>
@@ -239,7 +239,7 @@ export default function Order() {
             {loading ? 'Processing...' : 'Continue to Payment →'}
           </button>
 
-          <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.25)', textAlign: 'center', marginTop: '16px', lineHeight: 1.6 }}>
+          <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.65)', textAlign: 'center', marginTop: '16px', lineHeight: 1.6 }}>
             Your order details are saved immediately. You'll be directed to Stripe's secure checkout to complete payment. We'll email you a confirmation and packing kit instructions after payment.
           </p>
         </form>

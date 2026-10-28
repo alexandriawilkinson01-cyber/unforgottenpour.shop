@@ -46,7 +46,7 @@ export default function ContactSubmissions() {
           <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '8px' }}>Inquiries</p>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(22px,3vw,32px)', fontWeight: 700 }}>Contact Form Submissions</h2>
         </div>
-        <span style={{ background: '#111113', padding: '8px 16px', borderRadius: '999px', fontSize: '13px', color: 'rgba(242,242,242,0.6)' }}>
+        <span style={{ background: '#111113', padding: '8px 16px', borderRadius: '999px', fontSize: '13px', color: 'rgba(242,242,242,0.71)' }}>
           {submissions.length} total
         </span>
       </div>
@@ -57,7 +57,7 @@ export default function ContactSubmissions() {
         </div>
       ) : submissions.length === 0 ? (
         <div style={{ textAlign: 'center', padding: '40px', background: '#111113' }}>
-          <p style={{ color: 'rgba(242,242,242,0.4)', fontSize: '15px' }}>No contact submissions yet.</p>
+          <p style={{ color: 'rgba(242,242,242,0.67)', fontSize: '15px' }}>No contact submissions yet.</p>
         </div>
       ) : (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -71,7 +71,7 @@ export default function ContactSubmissions() {
                   <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: s.email_sent ? '#4ade80' : '#ef4444', flexShrink: 0 }} />
                   <div>
                     <p style={{ fontSize: '14px', color: '#F2F2F2', marginBottom: '2px' }}>{s.name}</p>
-                    <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.4)' }}>{s.email} · {formatDate(s.created_date)}</p>
+                    <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.67)' }}>{s.email} · {formatDate(s.created_date)}</p>
                   </div>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -80,7 +80,7 @@ export default function ContactSubmissions() {
                       Email Failed
                     </span>
                   )}
-                  <span style={{ fontSize: '18px', color: 'rgba(242,242,242,0.3)' }}>
+                  <span style={{ fontSize: '18px', color: 'rgba(242,242,242,0.65)' }}>
                     {expandedId === s.id ? '−' : '+'}
                   </span>
                 </div>

@@ -47,7 +47,7 @@ export default function Notebooks() {
         <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 5vw, 64px)', fontWeight: 700, lineHeight: 1.1, marginBottom: '24px' }}>
           Handcrafted<br />Resin Notebooks
         </h1>
-        <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.5)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.75 }}>
+        <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.69)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.75 }}>
           Each notebook cover is hand-poured with preserved botanicals and premium resin. A journal you'll never want to put away.
         </p>
       </section>
@@ -61,7 +61,7 @@ export default function Notebooks() {
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,10,12,0.92) 0%, rgba(10,10,12,0.2) 55%, transparent 100%)' }} />
               <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '28px 28px 28px' }}>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '20px', fontWeight: 600, marginBottom: '8px', color: '#F2F2F2' }}>{ex.label}</h3>
-                <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.55)', lineHeight: 1.65 }}>{ex.desc}</p>
+                <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.7)', lineHeight: 1.65 }}>{ex.desc}</p>
               </div>
             </div>
           ))}
@@ -69,13 +69,13 @@ export default function Notebooks() {
 
         {/* CTA */}
         <div style={{ textAlign: 'center', maxWidth: '500px', margin: '0 auto' }}>
-          <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.45)', lineHeight: 1.75, marginBottom: '32px' }}>
+          <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.68)', lineHeight: 1.75, marginBottom: '32px' }}>
             Each notebook is handmade to order with your choice of botanicals. Allow 4–6 weeks for delivery.
           </p>
           <Link to="/order?item=notebook" style={{ display: 'inline-block', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '15px 40px', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
             Start Order
           </Link>
-          <Link to="/pricing" style={{ display: 'inline-block', marginLeft: '16px', color: 'rgba(242,242,242,0.5)', borderRadius: '999px', padding: '15px 28px', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(242,242,242,0.15)' }}>
+          <Link to="/pricing" style={{ display: 'inline-block', marginLeft: '16px', color: 'rgba(242,242,242,0.69)', borderRadius: '999px', padding: '15px 28px', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(242,242,242,0.15)' }}>
             View Pricing
           </Link>
         </div>

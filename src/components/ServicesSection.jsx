@@ -19,7 +19,7 @@ export default function ServicesSection() {
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, color: '#F2F2F2', lineHeight: 1.2, marginBottom: '16px' }}>
             Not just flowers.<br />Everything that matters.
           </h2>
-          <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.45)', maxWidth: '480px', lineHeight: 1.7 }}>
+          <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.68)', maxWidth: '480px', lineHeight: 1.7 }}>
             Most preservation studios only handle bouquets. Unforgotten Pour was built for the full spectrum of what people treasure.
           </p>
         </div>
@@ -35,7 +35,7 @@ export default function ServicesSection() {
               onMouseEnter={e => e.currentTarget.style.background='#161618'} onMouseLeave={e => e.currentTarget.style.background='#111113'}>
               <div style={{ fontSize: '24px', marginBottom: '20px', opacity: 0.6 }}>{s.icon}</div>
               <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '18px', fontWeight: 600, color: '#F2F2F2', marginBottom: '12px' }}>{s.title}</h3>
-              <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.45)', lineHeight: 1.7 }}>{s.desc}</p>
+              <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.68)', lineHeight: 1.7 }}>{s.desc}</p>
             </motion.div>
           ))}
         </div>

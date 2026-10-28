@@ -25,7 +25,7 @@ export default function ProcessSection() {
               transition={{ duration: 0.5, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}>
               <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '52px', fontWeight: 700, color: 'rgba(242,242,242,0.08)', marginBottom: '16px', lineHeight: 1 }}>{step.num}</div>
               <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '20px', fontWeight: 600, color: '#F2F2F2', marginBottom: '12px' }}>{step.title}</h3>
-              <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.45)', lineHeight: 1.75 }}>{step.desc}</p>
+              <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.68)', lineHeight: 1.75 }}>{step.desc}</p>
             </motion.div>
           ))}
         </div>

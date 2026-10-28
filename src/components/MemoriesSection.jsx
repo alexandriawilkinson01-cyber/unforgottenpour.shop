@@ -54,7 +54,7 @@ export default function MemoriesSection() {
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 700, color: '#F2F2F2', lineHeight: 1.2, marginBottom: '16px' }}>
             In their own words.
           </h2>
-          <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.4)', lineHeight: 1.7 }}>
+          <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.67)', lineHeight: 1.7 }}>
             The pieces we make are only half the story. Here's what our customers said when they arrived home.
           </p>
         </div>
@@ -80,7 +80,7 @@ export default function MemoriesSection() {
                 </div>
                 <div>
                   <p style={{ fontSize: '13px', fontWeight: 600, color: '#F2F2F2', marginBottom: '2px' }}>{m.name}</p>
-                  <p style={{ fontSize: '11px', color: 'rgba(242,242,242,0.3)', marginBottom: '4px' }}>{m.location}</p>
+                  <p style={{ fontSize: '11px', color: 'rgba(242,242,242,0.65)', marginBottom: '4px' }}>{m.location}</p>
                   <p style={{ fontSize: '11px', color: '#C8681E', letterSpacing: '0.05em' }}>{m.item}</p>
                 </div>
               </div>

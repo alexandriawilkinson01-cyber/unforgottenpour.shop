@@ -102,7 +102,7 @@ export default function StyleAdvisor() {
       <div style={{ maxWidth: '760px', margin: '0 auto', width: '100%', padding: '100px 24px 40px', flex: 1, display: 'flex', flexDirection: 'column' }}>
         <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '10px' }}>Style Advisor</p>
         <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px,4vw,42px)', fontWeight: 700, color: '#F2F2F2', marginBottom: '6px' }}>Find your perfect piece</h1>
-        <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.45)', marginBottom: '32px' }}>
+        <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.68)', marginBottom: '32px' }}>
           Tell us what you'd like to preserve and how you'd like to keep it. We'll recommend the resin piece that fits your style and budget.
         </p>
 

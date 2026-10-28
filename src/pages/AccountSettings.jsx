@@ -17,7 +17,7 @@ const LABEL = {
   fontSize: '10px',
   letterSpacing: '0.16em',
   textTransform: 'uppercase',
-  color: 'rgba(242,242,242,0.45)',
+  color: 'rgba(242,242,242,0.68)',
   marginBottom: '8px',
 };
 
@@ -96,7 +96,7 @@ export default function AccountSettings() {
       <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: 600, marginBottom: '10px' }}>
         Sign in to manage your account
       </h2>
-      <p style={{ fontSize: '13px', lineHeight: 1.7, color: 'rgba(242,242,242,0.55)', marginBottom: '22px' }}>
+      <p style={{ fontSize: '13px', lineHeight: 1.7, color: 'rgba(242,242,242,0.7)', marginBottom: '22px' }}>
         Account settings are only available to signed-in customers. Sign in with the email you used when placing an order.
       </p>
       <Link to="/login" style={{ ...BUTTON, background: '#C8681E', color: '#0A0A0C' }}>
@@ -116,7 +116,7 @@ export default function AccountSettings() {
         <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 5vw, 52px)', fontWeight: 700, lineHeight: 1.1, marginBottom: '16px' }}>
           Account Settings
         </h1>
-        <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.5)', maxWidth: '520px', margin: '0 auto' }}>
+        <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.69)', maxWidth: '520px', margin: '0 auto' }}>
           Review your profile and control what we keep.
         </p>
       </section>
@@ -154,14 +154,14 @@ export default function AccountSettings() {
               </h2>
 
               {loadingRequest ? (
-                <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.5)' }}>Checking your request status...</p>
+                <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.69)' }}>Checking your request status...</p>
               ) : existing && existing.status === 'pending' ? (
-                <p style={{ fontSize: '13px', lineHeight: 1.7, color: 'rgba(242,242,242,0.6)' }}>
+                <p style={{ fontSize: '13px', lineHeight: 1.7, color: 'rgba(242,242,242,0.71)' }}>
                   Your deletion request was received and is pending review. We will confirm by email once your profile data has been removed.
                 </p>
               ) : (
                 <form onSubmit={handleSubmit}>
-                  <p style={{ fontSize: '13px', lineHeight: 1.7, color: 'rgba(242,242,242,0.6)', marginBottom: '20px' }}>
+                  <p style={{ fontSize: '13px', lineHeight: 1.7, color: 'rgba(242,242,242,0.71)', marginBottom: '20px' }}>
                     Submitting a request asks us to permanently remove your profile and contact details. Order records required for tax and accounting purposes are retained. This action cannot be undone.
                   </p>
                   <label htmlFor="deletion-reason" style={LABEL}>

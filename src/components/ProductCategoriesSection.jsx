@@ -45,7 +45,7 @@ export default function ProductCategoriesSection() {
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, color: '#F2F2F2', lineHeight: 1.2, marginBottom: '16px' }}>
             What would you like<br />to preserve?
           </h2>
-          <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.45)', maxWidth: '480px', margin: '0 auto', lineHeight: 1.7 }}>
+          <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.68)', maxWidth: '480px', margin: '0 auto', lineHeight: 1.7 }}>
             Choose a format below to get started, or browse the full portfolio for inspiration.
           </p>
         </div>
@@ -66,9 +66,9 @@ export default function ProductCategoriesSection() {
                   <div style={{ position: 'relative', marginTop: '-60px', zIndex: 2, padding: '0 28px 32px' }}>
                     <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: '10px' }}>
                       <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: 600, color: '#F2F2F2' }}>{cat.title}</h3>
-                      <span style={{ fontSize: '11px', color: 'rgba(242,242,242,0.35)' }}>from ${cat.from}</span>
+                      <span style={{ fontSize: '11px', color: 'rgba(242,242,242,0.66)' }}>from ${cat.from}</span>
                     </div>
-                    <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.45)', lineHeight: 1.65, marginBottom: '20px' }}>{cat.desc}</p>
+                    <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.68)', lineHeight: 1.65, marginBottom: '20px' }}>{cat.desc}</p>
                     <span style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#C8681E', fontWeight: 600 }}>
                       {cat.cta} →
                     </span>

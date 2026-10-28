@@ -18,10 +18,10 @@ export default function CTASection() {
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, color: '#F2F2F2', lineHeight: 1.2, marginBottom: '28px' }}>
             Some things deserve to last<br />as long as the memory does.
           </h2>
-          <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.5)', lineHeight: 1.75, marginBottom: '16px' }}>
+          <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.69)', lineHeight: 1.75, marginBottom: '16px' }}>
             Unforgotten Pour exists because the most meaningful objects in our lives are also the most fragile. We believe if something matters enough to keep, it matters enough to preserve forever.
           </p>
-          <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.3)', marginBottom: '44px', letterSpacing: '0.03em' }}>
+          <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.65)', marginBottom: '44px', letterSpacing: '0.03em' }}>
             Handcrafted in Blacksburg, South Carolina. Shipped nationwide.
           </p>
           <Link to="/order" style={{ display: 'inline-block', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '15px 36px', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
@@ -39,7 +39,7 @@ export default function CTASection() {
           <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '24px', fontWeight: 600, color: '#F2F2F2', marginBottom: '12px' }}>
             Get preservation tips &amp; $25 off your first order
           </h3>
-          <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.4)', lineHeight: 1.7, marginBottom: '32px' }}>
+          <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.67)', lineHeight: 1.7, marginBottom: '32px' }}>
             Join families who've turned memorial flowers into heirlooms. One email a month, unsubscribe anytime.
           </p>
 
@@ -58,7 +58,7 @@ export default function CTASection() {
                   Get $25 Off
                 </button>
               </div>
-              <p style={{ fontSize: '11px', color: 'rgba(242,242,242,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
+              <p style={{ fontSize: '11px', color: 'rgba(242,242,242,0.65)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                 We'll never share your email.
               </p>

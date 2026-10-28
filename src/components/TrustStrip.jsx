@@ -48,7 +48,7 @@ export default function TrustStrip() {
             </div>
             <div>
               <p style={{ fontSize: '13px', fontWeight: 600, color: '#F2F2F2', lineHeight: 1.3 }}>{item.title}</p>
-              <p style={{ fontSize: '11px', color: 'rgba(242,242,242,0.4)', marginTop: '2px' }}>{item.sub}</p>
+              <p style={{ fontSize: '11px', color: 'rgba(242,242,242,0.67)', marginTop: '2px' }}>{item.sub}</p>
             </div>
           </div>
         ))}

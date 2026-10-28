@@ -54,7 +54,7 @@ export default function Jewelry() {
           <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 5vw, 64px)', fontWeight: 700, lineHeight: 1.1, marginBottom: '24px' }}>
             Carry Them<br />With You
           </h1>
-          <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.5)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.75 }}>
+          <p style={{ fontSize: '16px', color: 'rgba(242,242,242,0.69)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.75 }}>
             Cremation ashes set into handcrafted resin jewelry — pendants, rings, and heirloom sets that keep your loved one close, always.
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function Jewelry() {
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,10,12,0.92) 0%, rgba(10,10,12,0.2) 55%, transparent 100%)' }} />
               <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '28px' }}>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '20px', fontWeight: 600, marginBottom: '8px', color: '#F2F2F2' }}>{p.label}</h3>
-                <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.55)', lineHeight: 1.65 }}>{p.desc}</p>
+                <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.7)', lineHeight: 1.65 }}>{p.desc}</p>
                 <p style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#C8681E', marginTop: '12px' }}>Start Order →</p>
               </div>
             </Link>
@@ -80,7 +80,7 @@ export default function Jewelry() {
         <div style={{ textAlign: 'center', marginBottom: '64px' }}>
           <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '16px' }}>The Process</p>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '32px', fontWeight: 700, marginBottom: '12px' }}>How It Works</h2>
-          <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.4)', maxWidth: '480px', margin: '0 auto', lineHeight: 1.7 }}>
+          <p style={{ fontSize: '14px', color: 'rgba(242,242,242,0.67)', maxWidth: '480px', margin: '0 auto', lineHeight: 1.7 }}>
             A simple, reverent process from start to finish.
           </p>
         </div>
@@ -94,20 +94,20 @@ export default function Jewelry() {
             <div key={i} style={{ padding: '32px 24px', background: '#111113', borderTop: '2px solid rgba(200,104,30,0.3)' }}>
               <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '13px', color: '#C8681E', marginBottom: '12px' }}>{s.step}</p>
               <h4 style={{ fontSize: '16px', fontWeight: 600, marginBottom: '8px' }}>{s.title}</h4>
-              <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.45)', lineHeight: 1.65 }}>{s.desc}</p>
+              <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.68)', lineHeight: 1.65 }}>{s.desc}</p>
             </div>
           ))}
         </div>
 
         {/* CTA */}
         <div style={{ textAlign: 'center', padding: '20px 0 0' }}>
-          <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.45)', maxWidth: '440px', margin: '0 auto 32px', lineHeight: 1.75 }}>
+          <p style={{ fontSize: '15px', color: 'rgba(242,242,242,0.68)', maxWidth: '440px', margin: '0 auto 32px', lineHeight: 1.75 }}>
             Pendants, rings, and heirloom sets — each handmade to order with your loved one's ashes or botanicals.
           </p>
           <Link to="/order?category=memorial&format=jewelry" style={{ display: 'inline-block', background: '#C8681E', color: '#fff', borderRadius: '999px', padding: '15px 40px', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none' }}>
             Start Order
           </Link>
-          <Link to="/pricing" style={{ display: 'inline-block', marginLeft: '16px', color: 'rgba(242,242,242,0.5)', borderRadius: '999px', padding: '15px 28px', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(242,242,242,0.15)' }}>
+          <Link to="/pricing" style={{ display: 'inline-block', marginLeft: '16px', color: 'rgba(242,242,242,0.69)', borderRadius: '999px', padding: '15px 28px', fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(242,242,242,0.15)' }}>
             View Pricing
           </Link>
         </div>
