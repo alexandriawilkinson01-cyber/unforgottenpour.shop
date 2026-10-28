@@ -6,6 +6,7 @@ import TrustStrip from '../components/TrustStrip';
 import { GLOBES, SHAPES, NOTEBOOK, KEYCHAIN, JEWELRY, PET_MEMORIAL, ALL_ITEMS } from '@/data/products';
 import { trackAddToCart, trackAddPaymentInfo, trackInitiateCheckout, trackPlaceAnOrder, identifyUser } from '@/lib/tiktokPixel';
 import { useMetaDescription } from '@/hooks/useMetaDescription';
+import BottomSheetSelect from '@/components/ui/BottomSheetSelect';
 
 const inputStyle = {
   width: '100%', boxSizing: 'border-box',
@@ -46,8 +47,7 @@ export default function Order() {
 
   const selectedItem = ALL_ITEMS.find(i => i.id === form.item);
 
-  const handleItemSelect = (e) => {
-    const itemId = e.target.value;
+  const handleItemSelect = (itemId) => {
     set('item', itemId);
     const item = ALL_ITEMS.find(i => i.id === itemId);
     if (item) {
@@ -57,6 +57,10 @@ export default function Order() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!form.category || !form.format) {
+      alert('Please choose an item category and preferred format.');
+      return;
+    }
     if (!selectedItem) {
       alert('Please select an item to purchase.');
       return;
@@ -148,26 +152,38 @@ export default function Order() {
             <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>About Your Item</p>
             <div style={{ marginBottom: '12px' }}>
               <label style={labelStyle}>Item Category *</label>
-              <select required style={{ ...selectStyle, cursor: 'pointer' }} value={form.category} onChange={e => set('category', e.target.value)}>
-                <option value="">Select a category</option>
-                <option value="wedding">Wedding &amp; Event Florals</option>
-                <option value="memorial">Memorial Keepsakes</option>
-                <option value="milestone">Milestone Artifacts</option>
-                <option value="legacy">Legacy Pieces</option>
-                <option value="sports">Sports &amp; Achievement</option>
-                <option value="custom">Custom Commission</option>
-              </select>
+              <BottomSheetSelect
+                value={form.category}
+                onChange={(val) => set('category', val)}
+                title="Select a category"
+                placeholder="Select a category"
+                triggerStyle={{ ...selectStyle, cursor: 'pointer' }}
+                options={[
+                  { value: 'wedding', label: 'Wedding & Event Florals' },
+                  { value: 'memorial', label: 'Memorial Keepsakes' },
+                  { value: 'milestone', label: 'Milestone Artifacts' },
+                  { value: 'legacy', label: 'Legacy Pieces' },
+                  { value: 'sports', label: 'Sports & Achievement' },
+                  { value: 'custom', label: 'Custom Commission' },
+                ]}
+              />
             </div>
             <div style={{ marginBottom: '12px' }}>
               <label style={labelStyle}>Preferred Format *</label>
-              <select required style={{ ...selectStyle, cursor: 'pointer' }} value={form.format} onChange={e => set('format', e.target.value)}>
-                <option value="">Choose a format</option>
-                <option value="jewelry">Jewelry (pendant, ring, earring)</option>
-                <option value="paperweight">Paperweight / Display Block</option>
-                <option value="shadowbox">Shadow Box</option>
-                <option value="orb">Orb</option>
-                <option value="tabletop">Tabletop Art / Custom Sculpture</option>
-              </select>
+              <BottomSheetSelect
+                value={form.format}
+                onChange={(val) => set('format', val)}
+                title="Choose a format"
+                placeholder="Choose a format"
+                triggerStyle={{ ...selectStyle, cursor: 'pointer' }}
+                options={[
+                  { value: 'jewelry', label: 'Jewelry (pendant, ring, earring)' },
+                  { value: 'paperweight', label: 'Paperweight / Display Block' },
+                  { value: 'shadowbox', label: 'Shadow Box' },
+                  { value: 'orb', label: 'Orb' },
+                  { value: 'tabletop', label: 'Tabletop Art / Custom Sculpture' },
+                ]}
+              />
               <p style={{ fontSize: '12px', color: 'rgba(242,242,242,0.3)', marginTop: '6px' }}>
                 Not sure? <Link to="/portfolio" style={{ color: '#C8681E', textDecoration: 'none' }}>Browse the portfolio</Link> for format examples.
               </p>
@@ -189,27 +205,21 @@ export default function Order() {
           {/* Item Selection */}
           <div style={{ marginBottom: '40px' }}>
             <p style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C8681E', marginBottom: '20px' }}>Select Your Piece *</p>
-            <select required style={{ ...selectStyle, cursor: 'pointer' }} value={form.item} onChange={handleItemSelect}>
-              <option value="">Choose a piece</option>
-              <optgroup label="Resin Globes">
-                {GLOBES.map(g => <option key={g.id} value={g.id}>{g.name}, ${g.price}</option>)}
-              </optgroup>
-              <optgroup label="Shaped Pieces">
-                {SHAPES.map(s => <option key={s.id} value={s.id}>{s.name}, ${s.price}</option>)}
-              </optgroup>
-              <optgroup label="Notebooks">
-                <option value={NOTEBOOK.id}>{NOTEBOOK.name}, ${NOTEBOOK.price}</option>
-              </optgroup>
-              <optgroup label="Keychains">
-                <option value={KEYCHAIN.id}>{KEYCHAIN.name}, ${KEYCHAIN.price}</option>
-              </optgroup>
-              <optgroup label="Memorial Jewelry">
-                {JEWELRY.map(j => <option key={j.id} value={j.id}>{j.name}, ${j.price}</option>)}
-              </optgroup>
-              <optgroup label="Pet Memorials">
-                {PET_MEMORIAL.map(p => <option key={p.id} value={p.id}>{p.name}, ${p.price}</option>)}
-              </optgroup>
-            </select>
+            <BottomSheetSelect
+              value={form.item}
+              onChange={handleItemSelect}
+              title="Select your piece"
+              placeholder="Choose a piece"
+              triggerStyle={{ ...selectStyle, cursor: 'pointer' }}
+              groups={[
+                { label: 'Resin Globes', options: GLOBES.map(g => ({ value: g.id, label: `${g.name}, $${g.price}` })) },
+                { label: 'Shaped Pieces', options: SHAPES.map(s => ({ value: s.id, label: `${s.name}, $${s.price}` })) },
+                { label: 'Notebooks', options: [{ value: NOTEBOOK.id, label: `${NOTEBOOK.name}, $${NOTEBOOK.price}` }] },
+                { label: 'Keychains', options: [{ value: KEYCHAIN.id, label: `${KEYCHAIN.name}, $${KEYCHAIN.price}` }] },
+                { label: 'Memorial Jewelry', options: JEWELRY.map(j => ({ value: j.id, label: `${j.name}, $${j.price}` })) },
+                { label: 'Pet Memorials', options: PET_MEMORIAL.map(p => ({ value: p.id, label: `${p.name}, $${p.price}` })) },
+              ]}
+            />
             {selectedItem && (
               <div style={{ marginTop: '16px', background: '#1A1A1E', border: '2px solid #C8681E', borderRadius: '4px', padding: '20px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <div>

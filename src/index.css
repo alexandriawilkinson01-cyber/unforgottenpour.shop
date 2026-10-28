@@ -181,3 +181,16 @@ nav a,
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
+
+/* Kill native rubber-band bouncing and browser pull-to-refresh in the
+   webview; the app supplies its own pull-to-refresh gesture. */
+html,
+body {
+  overscroll-behavior-y: none;
+}
+
+[data-scroll-container],
+.overscroll-contain {
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+}

@@ -43,7 +43,13 @@ export default function StyleAdvisor() {
   useEffect(() => {
     if (!conversation?.id) return;
     const unsubscribe = base44.agents.subscribeToConversation(conversation.id, (data) => {
-      setMessages(data.messages || []);
+      setMessages((prev) => {
+        const server = data.messages || [];
+        const pending = prev.filter(
+          (m) => m.optimistic && !server.some((s) => s.role === m.role && s.content === m.content)
+        );
+        return [...server, ...pending];
+      });
     });
     return () => unsubscribe();
   }, [conversation?.id]);
@@ -59,12 +65,23 @@ export default function StyleAdvisor() {
     e.preventDefault();
     const text = input.trim();
     if (!text || sending || !conversation) return;
+    const optimisticId = `optimistic-${Date.now()}`;
     setInput('');
     setSending(true);
+    setMessages(prev => [...prev, { id: optimisticId, role: 'user', content: text, optimistic: true }]);
     try {
       const updated = await base44.agents.addMessage(conversation, { role: 'user', content: text });
       setConversation(updated);
+      if (updated?.messages) {
+        setMessages((prev) => {
+          const pending = prev.filter(
+            (m) => m.optimistic && !updated.messages.some((s) => s.role === m.role && s.content === m.content)
+          );
+          return [...updated.messages, ...pending];
+        });
+      }
     } catch (err) {
+      setMessages(prev => prev.filter(m => m.id !== optimisticId));
       console.error('Failed to send message:', err);
     } finally {
       setSending(false);
@@ -89,7 +106,7 @@ export default function StyleAdvisor() {
           Tell us what you'd like to preserve and how you'd like to keep it. We'll recommend the resin piece that fits your style and budget.
         </p>
 
-        <div ref={scrollRef} style={{ flex: 1, minHeight: '300px', maxHeight: '52vh', overflowY: 'auto', paddingRight: '8px', marginBottom: '16px' }}>
+        <div ref={scrollRef} data-scroll-container style={{ flex: 1, minHeight: '300px', maxHeight: '52vh', overflowY: 'auto', overscrollBehaviorY: 'contain', WebkitOverflowScrolling: 'touch', paddingRight: '8px', marginBottom: '16px' }}>
           {loading ? (
             <div style={{ textAlign: 'center', padding: '40px' }}>
               <div className="w-7 h-7 border-4 border-slate-700 border-t-amber-500 rounded-full animate-spin" style={{ margin: '0 auto' }} />

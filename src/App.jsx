@@ -30,6 +30,7 @@ import ResetPassword from './pages/ResetPassword';
 import OAuthConsent from './pages/OAuthConsent';
 import AccountSettings from './pages/AccountSettings';
 import MobileTabBar from './components/MobileTabBar';
+import PageTransition from './components/PageTransition';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -57,6 +58,7 @@ const AuthenticatedApp = () => {
   // Render the main app
   return (
     <>
+    <PageTransition>
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
@@ -83,6 +85,7 @@ const AuthenticatedApp = () => {
       <Route path="/account" element={<AccountSettings />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
+    </PageTransition>
     <MobileTabBar />
     </>
   );

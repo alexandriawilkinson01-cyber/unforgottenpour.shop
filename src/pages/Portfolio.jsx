@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { trackViewContent } from '@/lib/tiktokPixel';
 import { useMetaDescription } from '@/hooks/useMetaDescription';
+import PullToRefresh from '@/components/PullToRefresh';
 
 const CATEGORIES = [
 {
@@ -104,6 +105,12 @@ export default function Portfolio() {
     'Explore our portfolio of custom resin preservation pieces, wedding bouquets, memorial keepsakes, and milestone artifacts cast in crystal-clear resin.'
   );
   const [activeTab, setActiveTab] = useState('wedding');
+  const [refreshKey, setRefreshKey] = useState(0);
+
+  const handleRefresh = async () => {
+    await new Promise((resolve) => setTimeout(resolve, 600));
+    setRefreshKey((prev) => prev + 1);
+  };
 
   useEffect(() => {
     const cat = CATEGORIES.find((c) => c.id === activeTab) || CATEGORIES[0];
@@ -118,6 +125,8 @@ export default function Portfolio() {
   return (
     <div style={{ background: '#0A0A0C', minHeight: '100vh' }}>
       <Navbar />
+
+      <PullToRefresh onRefresh={handleRefresh}>
 
       {/* Hero */}
       <section style={{ paddingTop: '120px', paddingBottom: '80px', textAlign: 'center', padding: '120px 24px 80px' }}>
@@ -146,7 +155,7 @@ export default function Portfolio() {
 
       {/* Category Content */}
       {CATEGORIES.filter((c) => c.id === activeTab).map((cat) =>
-      <section key={cat.id} style={{ maxWidth: '1100px', margin: '0 auto', padding: '80px 24px' }}>
+      <section key={`${cat.id}-${refreshKey}`} style={{ maxWidth: '1100px', margin: '0 auto', padding: '80px 24px' }}>
           <div style={{ display: 'flex', gap: '8px', alignItems: 'flex-start', marginBottom: '60px', flexWrap: 'wrap' }}>
             
             <div style={{ paddingTop: '12px' }}>
@@ -218,6 +227,7 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
+      </PullToRefresh>
     </div>);
 
 }

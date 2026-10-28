@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import { GLOBES, GLOBE, SHAPES, NOTEBOOK, KEYCHAIN, JEWELRY } from '@/data/products';
 import { trackViewContent } from '@/lib/tiktokPixel';
 import { useMetaDescription } from '@/hooks/useMetaDescription';
+import BottomSheetSelect from '@/components/ui/BottomSheetSelect';
 
 function SectionHeader({ label, title, subtitle }) {
   return (
@@ -62,9 +63,14 @@ export default function Pricing() {
               <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '24px', fontWeight: 700, color: '#F2F2F2', marginBottom: '8px' }}>{GLOBE.name}</h3>
               <p style={{ fontSize: '13px', color: 'rgba(242,242,242,0.4)', marginBottom: '24px', lineHeight: 1.6 }}>{GLOBE.description}</p>
               <label style={{ display: 'block', fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.5)', marginBottom: '8px' }}>Size</label>
-              <select value={globeSizeId} onChange={e => setGlobeSizeId(e.target.value)} style={{ width: '100%', boxSizing: 'border-box', background: '#0A0A0C', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '6px', padding: '12px 14px', color: '#F2F2F2', fontSize: '15px', fontFamily: 'Inter Tight, sans-serif', outline: 'none', marginBottom: '24px', cursor: 'pointer' }}>
-                {GLOBES.map(g => <option key={g.id} value={g.id}>{g.size} — ${g.price}</option>)}
-              </select>
+              <BottomSheetSelect
+                value={globeSizeId}
+                onChange={setGlobeSizeId}
+                title="Choose a globe size"
+                placeholder="Select a size"
+                options={GLOBES.map(g => ({ value: g.id, label: `${g.size} — $${g.price}` }))}
+                triggerStyle={{ width: '100%', boxSizing: 'border-box', background: '#0A0A0C', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '6px', padding: '12px 14px', color: '#F2F2F2', fontSize: '15px', fontFamily: 'Inter Tight, sans-serif', outline: 'none', marginBottom: '24px', cursor: 'pointer' }}
+              />
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '36px', fontWeight: 700, color: '#F2F2F2' }}>${selectedGlobe.price}</span>
                 <Link to={`/order?item=${selectedGlobe.id}`} style={{ fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#C8681E', textDecoration: 'none', fontWeight: 600 }}>Select →</Link>

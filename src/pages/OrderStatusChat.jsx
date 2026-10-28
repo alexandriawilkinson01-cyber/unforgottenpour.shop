@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import { Send } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import { useMetaDescription } from '@/hooks/useMetaDescription';
+import PullToRefresh from '@/components/PullToRefresh';
 
 const AGENT_NAME = 'order_status_assistant';
 
@@ -46,7 +47,13 @@ export default function OrderStatusChat() {
   useEffect(() => {
     if (!conversationId) return;
     const unsubscribe = base44.agents.subscribeToConversation(conversationId, (data) => {
-      setMessages(data.messages || []);
+      setMessages((prev) => {
+        const server = data.messages || [];
+        const pending = prev.filter(
+          (m) => m.optimistic && !server.some((s) => s.role === m.role && s.content === m.content)
+        );
+        return [...server, ...pending];
+      });
       setSending(false);
     });
     return () => unsubscribe();
@@ -56,16 +63,30 @@ export default function OrderStatusChat() {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
+  const refreshMessages = async () => {
+    if (!conversationId) return;
+    const conv = await base44.agents.getConversation(conversationId);
+    setMessages((prev) => {
+      const server = conv?.messages || [];
+      const pending = prev.filter(
+        (m) => m.optimistic && !server.some((s) => s.role === m.role && s.content === m.content)
+      );
+      return [...server, ...pending];
+    });
+  };
+
   const handleSend = async () => {
     if (!input.trim() || !conversationId || sending) return;
     const userMsg = input.trim();
+    const optimisticId = `optimistic-${Date.now()}`;
     setInput('');
     setSending(true);
+    setMessages(prev => [...prev, { id: optimisticId, role: 'user', content: userMsg, optimistic: true }]);
     try {
       const conv = await base44.agents.getConversation(conversationId);
       await base44.agents.addMessage(conv, { role: 'user', content: userMsg });
-      setMessages(prev => [...prev, { role: 'user', content: userMsg }]);
     } catch (err) {
+      setMessages(prev => prev.filter(m => m.id !== optimisticId));
       console.error('Failed to send message:', err);
       setSending(false);
     }
@@ -91,6 +112,7 @@ export default function OrderStatusChat() {
 
         {/* Chat area */}
         <div style={{ flex: 1, minHeight: '300px', display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '24px' }}>
+          <PullToRefresh onRefresh={refreshMessages} style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '16px' }}>
           {loading ? (
             <div style={{ textAlign: 'center', padding: '40px' }}>
               <div className="w-8 h-8 border-4 border-slate-700 border-t-amber-500 rounded-full animate-spin" style={{ margin: '0 auto' }} />
@@ -149,6 +171,7 @@ export default function OrderStatusChat() {
               )}
             </>
           )}
+          </PullToRefresh>
           <div ref={messagesEndRef} />
         </div>
 
