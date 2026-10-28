@@ -28,6 +28,8 @@ import Register from './pages/Register';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
 import OAuthConsent from './pages/OAuthConsent';
+import AccountSettings from './pages/AccountSettings';
+import MobileTabBar from './components/MobileTabBar';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -54,6 +56,7 @@ const AuthenticatedApp = () => {
 
   // Render the main app
   return (
+    <>
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
@@ -77,8 +80,11 @@ const AuthenticatedApp = () => {
       <Route path="/shipping-guide" element={<ShippingGuide />} />
       <Route path="/track-order" element={<OrderStatusChat />} />
       <Route path="/style-advisor" element={<StyleAdvisor />} />
+      <Route path="/account" element={<AccountSettings />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
+    <MobileTabBar />
+    </>
   );
 };
 

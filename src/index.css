@@ -145,3 +145,39 @@ select optgroup {
   font-weight: 700;
   font-style: normal;
 }
+
+/* ------------------------------------------------------------------
+   Native webview (Android container) support
+   ------------------------------------------------------------------ */
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Base container: keep content clear of notches and gesture bars. */
+#root {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Room for the mobile tab bar above the gesture bar. */
+@media (max-width: 767px) {
+  #root {
+    padding-bottom: calc(68px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Prevent accidental text selection on interactive chrome. */
+button,
+[role="button"],
+nav a,
+.tab-select,
+.select-none {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}

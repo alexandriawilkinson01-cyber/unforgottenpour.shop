@@ -1,0 +1,60 @@
+{
+  "name": "AccountDeletionRequest",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "title": "User Email",
+      "format": "email"
+    },
+    "user_name": {
+      "type": "string",
+      "title": "User Name"
+    },
+    "reason": {
+      "type": "string",
+      "title": "Reason",
+      "maxLength": 1000
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "pending",
+        "completed",
+        "rejected"
+      ],
+      "default": "pending"
+    }
+  },
+  "required": [
+    "user_email"
+  ],
+  "rls": {
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "read": {
+      "$or": [
+        {
+          "created_by_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
