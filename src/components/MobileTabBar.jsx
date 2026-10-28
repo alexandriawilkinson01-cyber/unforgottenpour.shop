@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Home, Images, ShoppingBag, Sparkles } from 'lucide-react';
 
@@ -21,15 +22,25 @@ const HIDDEN_PREFIXES = [
 
 export default function MobileTabBar() {
   const { pathname } = useLocation();
+  const isHidden = HIDDEN_PREFIXES.some((prefix) => pathname.startsWith(prefix));
 
-  if (HIDDEN_PREFIXES.some((prefix) => pathname.startsWith(prefix))) {
+  // Lets the mobile styles add bottom spacing only where the tab bar exists.
+  useEffect(() => {
+    const root = document.documentElement;
+    root.dataset.tabbar = isHidden ? 'off' : 'on';
+    return () => {
+      delete root.dataset.tabbar;
+    };
+  }, [isHidden]);
+
+  if (isHidden) {
     return null;
   }
 
   return (
     <nav
       aria-label="Primary"
-      className="md:hidden select-none"
+      className="lg:hidden select-none"
       style={{
         position: 'fixed',
         left: 0,

@@ -164,9 +164,10 @@ html {
   padding-right: env(safe-area-inset-right);
 }
 
-/* Room for the mobile tab bar above the gesture bar. */
-@media (max-width: 767px) {
-  #root {
+/* Room for the mobile tab bar above the gesture bar, only on screens where
+   the tab bar is actually rendered (set by MobileTabBar). */
+@media (max-width: 1023px) {
+  [data-tabbar="on"] #root {
     padding-bottom: calc(68px + env(safe-area-inset-bottom));
   }
 }
@@ -210,6 +211,16 @@ nav a,
   -webkit-user-select: none;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+}
+
+/* Phones zoom into any focused field smaller than 16px, which breaks the
+   app-like feel. Keep mobile form text at 16px. */
+@media (max-width: 767px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
 }
 
 /* Kill native rubber-band bouncing and browser pull-to-refresh in the

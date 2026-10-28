@@ -1,0 +1,19 @@
+{
+  "name": "Unforgotten Pour",
+  "short_name": "Unforgotten",
+  "description": "Custom resin preservation jewelry and art for wedding flowers, ashes, and keepsakes.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0A0A0C",
+  "theme_color": "#0A0A0C",
+  "icons": [
+    {
+      "src": "https://media.base44.com/images/public/6a1409421a03fb2ce09225b7/316baa3a9_logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

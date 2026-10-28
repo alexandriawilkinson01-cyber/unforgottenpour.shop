@@ -33,7 +33,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop nav */}
-        <div style={{ alignItems: 'center', gap: '36px' }} className="hidden md:flex">
+        <div style={{ alignItems: 'center', gap: '36px' }} className="hidden lg:flex">
           <Link to="/portfolio" style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(242,242,242,0.71)', textDecoration: 'none', transition: 'color 0.2s' }}
             onMouseEnter={e => e.target.style.color='#F2F2F2'} onMouseLeave={e => e.target.style.color='rgba(242,242,242,0.6)'}>
             Portfolio
@@ -89,7 +89,7 @@ export default function Navbar() {
           <Link to="/account" aria-label="Account settings" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '34px', height: '34px', borderRadius: '999px', border: '1px solid rgba(242,242,242,0.12)', color: 'rgba(242,242,242,0.75)', textDecoration: 'none' }}>
             <User size={16} />
           </Link>
-          <button className="md:hidden" onClick={() => setOpen(true)} aria-label="Open menu" style={{ color: '#F2F2F2', background: 'none', border: 'none', cursor: 'pointer', display: 'inline-flex', padding: 0 }}>
+          <button className="lg:hidden" onClick={() => setOpen(true)} aria-label="Open menu" style={{ color: '#F2F2F2', background: 'none', border: 'none', cursor: 'pointer', display: 'inline-flex', padding: 0 }}>
             <Menu size={22} />
           </button>
         </div>
