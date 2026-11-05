@@ -28,6 +28,17 @@ Deno.serve(async (req) => {
 
       const base44 = createClientFromRequest(req);
 
+      // Stripe redelivers events (timeouts, transient errors, manual replays),
+      // so fulfillment must be replay-safe: bail out if this session was
+      // already recorded before any email is sent or any order is created.
+      const existingOrders = await base44.asServiceRole.entities.Order.filter({
+        stripe_session_id: sessionId,
+      });
+      if (existingOrders && existingOrders.length > 0) {
+        console.log(`Duplicate webhook for session ${sessionId} — already fulfilled, skipping`);
+        return Response.json({ received: true, duplicate: true });
+      }
+
       // Studio notification
       await base44.asServiceRole.integrations.Core.SendEmail({
         to: 'AlexandriaWilkinson01@gmail.com',
